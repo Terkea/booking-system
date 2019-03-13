@@ -6,10 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Hyperlink;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -26,15 +23,20 @@ public class login {
     private PasswordField password;
 
     @FXML
+    private Label errorLabel;
+
+    @FXML
     private Hyperlink register;
 
     @FXML
     private void login(ActionEvent event) {
-        if (email.getText().equals("Marian")){
-            System.out.println("Yes");
+        if (email.getText().equals("terkea")&& password.getText().equals("123")){
+            System.out.println("text: " + email.getText());
         }else{
-            System.out.println("No");
+            errorLabel.setText("Invalid e-mail or password");
+
         }
+
     }
 
     @FXML
