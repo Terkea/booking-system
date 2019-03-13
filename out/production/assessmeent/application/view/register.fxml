@@ -17,25 +17,25 @@
             <Font size="58.0" />
          </font>
       </Text>
-      <TextField id="corporateName" layoutX="96.0" layoutY="337.0" prefHeight="25.0" prefWidth="584.0" promptText="Corporate Name" />
-      <TextField id="lastName" layoutX="415.0" layoutY="130.0" prefHeight="25.0" prefWidth="265.0" promptText="Last Name" />
+      <TextField id="corporateName" fx:id="corporateNameText" layoutX="96.0" layoutY="337.0" prefHeight="25.0" prefWidth="584.0" promptText="Corporate Name" />
+      <TextField id="lastName" fx:id="lastNameText" layoutX="415.0" layoutY="130.0" prefHeight="25.0" prefWidth="265.0" promptText="Last Name" />
       <ComboBox id="titleCombo" fx:id="titleComboBox" layoutX="96.0" layoutY="164.0" prefHeight="25.0" prefWidth="173.0" promptText="Title" />
-      <ComboBox id="genderCombo" layoutX="304.0" layoutY="164.0" prefHeight="25.0" prefWidth="173.0" promptText="Gender" />
-      <DatePicker id="dobDatePicker" layoutX="494.0" layoutY="164.0" prefHeight="25.0" prefWidth="186.0" promptText="Date of Birth" />
-      <TextField id="address1" layoutX="96.0" layoutY="199.0" prefHeight="25.0" prefWidth="265.0" promptText="Address 1" />
-      <TextField id="address2" layoutX="415.0" layoutY="199.0" prefHeight="25.0" prefWidth="265.0" promptText="Address 2 **" />
-      <TextField id="city" layoutX="96.0" layoutY="233.0" prefHeight="25.0" prefWidth="173.0" promptText="Town / City" />
-      <TextField id="postCode" layoutX="507.0" layoutY="233.0" prefHeight="25.0" prefWidth="173.0" promptText="Post Code" />
-      <TextField id="county" layoutX="304.0" layoutY="233.0" prefHeight="25.0" prefWidth="173.0" promptText="County" />
-      <TextField id="contactNo" layoutX="415.0" layoutY="267.0" prefHeight="25.0" prefWidth="265.0" promptText="Contact Number **" />
-      <TextField id="contactName" layoutX="96.0" layoutY="267.0" prefHeight="25.0" prefWidth="265.0" promptText="Contact Name **" />
-      <TextField id="email" layoutX="96.0" layoutY="301.0" prefHeight="25.0" prefWidth="173.0" promptText="E-mail address" />
-      <TextField id="phone" layoutX="304.0" layoutY="301.0" prefHeight="25.0" prefWidth="173.0" promptText="Phone" />
-      <TextField id="website" layoutX="507.0" layoutY="301.0" prefHeight="25.0" prefWidth="173.0" promptText="Website" />
-      <PasswordField id="password" layoutX="96.0" layoutY="373.0" prefHeight="25.0" prefWidth="265.0" promptText="Password" />
-      <PasswordField id="passwordCheck" layoutX="415.0" layoutY="373.0" prefHeight="25.0" prefWidth="265.0" promptText="Password Check" />
-      <CheckBox id="termsCheckBox" layoutX="282.0" layoutY="410.0" mnemonicParsing="false" text="I agree to the Terms and Conditions" />
-      <TextField id="firstName" layoutX="96.0" layoutY="130.0" prefHeight="25.0" prefWidth="265.0" promptText="First Name" />
+      <ComboBox id="genderCombo" fx:id="genderComboBox" layoutX="304.0" layoutY="164.0" prefHeight="25.0" prefWidth="173.0" promptText="Gender" />
+      <DatePicker id="dobDatePicker" fx:id="dobDatePicker" layoutX="494.0" layoutY="164.0" prefHeight="25.0" prefWidth="186.0" promptText="Date of Birth" />
+      <TextField id="address1" fx:id="address1Text" layoutX="96.0" layoutY="199.0" prefHeight="25.0" prefWidth="265.0" promptText="Address 1" />
+      <TextField id="address2" fx:id="address2Text" layoutX="415.0" layoutY="199.0" prefHeight="25.0" prefWidth="265.0" promptText="Address 2 **" />
+      <TextField id="city" fx:id="townText" layoutX="96.0" layoutY="233.0" prefHeight="25.0" prefWidth="173.0" promptText="Town / City" />
+      <TextField id="postCode" fx:id="postcodeText" layoutX="507.0" layoutY="233.0" prefHeight="25.0" prefWidth="173.0" promptText="Post Code" />
+      <TextField id="county" fx:id="countyText" layoutX="304.0" layoutY="233.0" prefHeight="25.0" prefWidth="173.0" promptText="County" />
+      <TextField id="contactNo" fx:id="contactNumberText" layoutX="415.0" layoutY="267.0" prefHeight="25.0" prefWidth="265.0" promptText="Contact Number **" />
+      <TextField id="contactName" fx:id="contactNameText" layoutX="96.0" layoutY="267.0" prefHeight="25.0" prefWidth="265.0" promptText="Contact Name **" />
+      <TextField id="email" fx:id="emailText" layoutX="96.0" layoutY="301.0" prefHeight="25.0" prefWidth="173.0" promptText="E-mail address" />
+      <TextField id="phone" fx:id="phoneText" layoutX="304.0" layoutY="301.0" prefHeight="25.0" prefWidth="173.0" promptText="Phone" />
+      <TextField id="website" fx:id="websiteText" layoutX="507.0" layoutY="301.0" prefHeight="25.0" prefWidth="173.0" promptText="Website" />
+      <PasswordField id="password" fx:id="password" layoutX="96.0" layoutY="373.0" prefHeight="25.0" prefWidth="265.0" promptText="Password" />
+      <PasswordField id="passwordCheck" fx:id="passwordCheck" layoutX="415.0" layoutY="373.0" prefHeight="25.0" prefWidth="265.0" promptText="Password Check" />
+      <CheckBox id="termsCheckBox" fx:id="termaCheckBox" layoutX="282.0" layoutY="410.0" mnemonicParsing="false" text="I agree to the Terms and Conditions" />
+      <TextField id="firstName" fx:id="firstNameText" layoutX="96.0" layoutY="130.0" prefHeight="25.0" prefWidth="265.0" promptText="First Name" />
       <Button fx:id="submit" layoutX="208.0" layoutY="437.0" mnemonicParsing="false" onAction="#goToLogin" prefHeight="25.0" prefWidth="366.0" text="Submit" />
    </children>
 </AnchorPane>
