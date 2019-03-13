@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.register">
+   <children>
+      <Text layoutX="196.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vikings Register">
+         <font>
+            <Font size="58.0" />
+         </font>
+      </Text>
+      <TextField id="corporateName" layoutX="96.0" layoutY="337.0" prefHeight="25.0" prefWidth="584.0" promptText="Corporate Name" />
+      <TextField id="lastName" layoutX="415.0" layoutY="130.0" prefHeight="25.0" prefWidth="265.0" promptText="Last Name" />
+      <ComboBox id="titleCombo" fx:id="titleComboBox" layoutX="96.0" layoutY="164.0" prefHeight="25.0" prefWidth="173.0" promptText="Title" />
+      <ComboBox id="genderCombo" layoutX="304.0" layoutY="164.0" prefHeight="25.0" prefWidth="173.0" promptText="Gender" />
+      <DatePicker id="dobDatePicker" layoutX="494.0" layoutY="164.0" prefHeight="25.0" prefWidth="186.0" promptText="Date of Birth" />
+      <TextField id="address1" layoutX="96.0" layoutY="199.0" prefHeight="25.0" prefWidth="265.0" promptText="Address 1" />
+      <TextField id="address2" layoutX="415.0" layoutY="199.0" prefHeight="25.0" prefWidth="265.0" promptText="Address 2 **" />
+      <TextField id="city" layoutX="96.0" layoutY="233.0" prefHeight="25.0" prefWidth="173.0" promptText="Town / City" />
+      <TextField id="postCode" layoutX="507.0" layoutY="233.0" prefHeight="25.0" prefWidth="173.0" promptText="Post Code" />
+      <TextField id="county" layoutX="304.0" layoutY="233.0" prefHeight="25.0" prefWidth="173.0" promptText="County" />
+      <TextField id="contactNo" layoutX="415.0" layoutY="267.0" prefHeight="25.0" prefWidth="265.0" promptText="Contact Number **" />
+      <TextField id="contactName" layoutX="96.0" layoutY="267.0" prefHeight="25.0" prefWidth="265.0" promptText="Contact Name **" />
+      <TextField id="email" layoutX="96.0" layoutY="301.0" prefHeight="25.0" prefWidth="173.0" promptText="E-mail address" />
+      <TextField id="phone" layoutX="304.0" layoutY="301.0" prefHeight="25.0" prefWidth="173.0" promptText="Phone" />
+      <TextField id="website" layoutX="507.0" layoutY="301.0" prefHeight="25.0" prefWidth="173.0" promptText="Website" />
+      <PasswordField id="password" layoutX="96.0" layoutY="373.0" prefHeight="25.0" prefWidth="265.0" promptText="Password" />
+      <PasswordField id="passwordCheck" layoutX="415.0" layoutY="373.0" prefHeight="25.0" prefWidth="265.0" promptText="Password Check" />
+      <CheckBox id="termsCheckBox" layoutX="282.0" layoutY="410.0" mnemonicParsing="false" text="I agree to the Terms and Conditions" />
+      <TextField id="firstName" layoutX="96.0" layoutY="130.0" prefHeight="25.0" prefWidth="265.0" promptText="First Name" />
+      <Button fx:id="submit" layoutX="208.0" layoutY="437.0" mnemonicParsing="false" onAction="#goToLogin" prefHeight="25.0" prefWidth="366.0" text="Submit" />
+   </children>
+</AnchorPane>
