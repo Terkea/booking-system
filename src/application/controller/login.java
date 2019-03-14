@@ -33,6 +33,7 @@ public class login {
         if (email.getText().equals("terkea")&& password.getText().equals("123")){
             System.out.println("text: " + email.getText());
         }else{
+            System.out.println("text: " + email.getText());
             errorLabel.setText("Invalid e-mail or password");
 
         }
