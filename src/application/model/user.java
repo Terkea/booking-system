@@ -20,6 +20,30 @@ public class user {
     private String corporateName;
     private String password;
 
+    //    CONSTRUCTOR
+    public user(String firstName, String lastName, String title, String gender, String dateOfBirth,
+                String address1, String address2, String town, String county, String postCode, String contactName,
+                String contactNumber, String emailAddress, String phoneNo,
+                String website, String corporateName, String password) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.title = title;
+        this.gender = gender;
+        this.dateOfBirth = dateOfBirth;
+        this.address1 = address1;
+        this.address2 = address2;
+        this.town = town;
+        this.county = county;
+        this.postCode = postCode;
+        this.contactName = contactName;
+        this.contactNumber = contactNumber;
+        this.emailAddress = emailAddress;
+        this.phoneNo = phoneNo;
+        this.website = website;
+        this.corporateName = corporateName;
+        this.password = password;
+    }
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -158,30 +182,6 @@ public class user {
 
     public String getPassword() {
         return password;
-    }
-
-    //    CONSTRUCTOR
-    public user(String firstName, String lastName, String title, String gender, String dateOfBirth,
-                String address1, String address2, String town, String county, String postCode, String contactName,
-                String contactNumber, String emailAddress, String phoneNo,
-                String website, String corporateName, String password) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.title = title;
-        this.gender = gender;
-        this.dateOfBirth = dateOfBirth;
-        this.address1 = address1;
-        this.address2 = address2;
-        this.town = town;
-        this.county = county;
-        this.postCode = postCode;
-        this.contactName = contactName;
-        this.contactNumber = contactNumber;
-        this.emailAddress = emailAddress;
-        this.phoneNo = phoneNo;
-        this.website = website;
-        this.corporateName = corporateName;
-        this.password = password;
     }
 
     public void test(){
