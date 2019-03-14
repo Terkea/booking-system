@@ -187,4 +187,28 @@ public class user {
     public void test(){
         System.out.println("thats the power of extends");
     }
+
+    @Override
+    public String toString() {
+        return "user{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", title='" + title + '\'' +
+                ", gender='" + gender + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
+                ", address1='" + address1 + '\'' +
+                ", address2='" + address2 + '\'' +
+                ", town='" + town + '\'' +
+                ", county='" + county + '\'' +
+                ", postCode='" + postCode + '\'' +
+                ", contactName='" + contactName + '\'' +
+                ", contactNumber='" + contactNumber + '\'' +
+                ", emailAddress='" + emailAddress + '\'' +
+                ", phoneNo='" + phoneNo + '\'' +
+                ", website='" + website + '\'' +
+                ", corporateName='" + corporateName + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
 }
