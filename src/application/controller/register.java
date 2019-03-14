@@ -13,10 +13,10 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
+import application.model.user;
 import java.io.IOException;
 
-public class register {
+public class register{
 
     @FXML
     private TextField corporateNameText;
