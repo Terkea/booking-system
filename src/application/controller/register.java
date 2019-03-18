@@ -73,7 +73,7 @@ public class register{
     @FXML
     private Button submit;
 
-    public boolean validation(TextField userInput, String errorMessage) {
+    private boolean validation(TextField userInput, String errorMessage) {
         if(userInput.getText().isEmpty() || userInput.getText().equals(errorMessage)) {
             userInput.setStyle("-fx-border-color: #ff0000;" +
                     "-fx-border-radius: 5");
@@ -85,17 +85,36 @@ public class register{
         }
     }
 
+    private boolean checkBooleanArray(boolean[] array) {
+        for(boolean a : array){
+            if (!a == true){
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+
     @FXML
     void doValidation(ActionEvent event) {
-        String error = "FIELD REQUIRED";
+        //CHECK IF ALL REQUIRED FIELDS HAVE BEEN FILLED
 
-        //REQUIRED FIELDS
+        String error = "FIELD REQUIRED";
+        boolean resultOverAll = false;
+
         TextField fields[] = {firstNameText, lastNameText, address1Text, address2Text, townText
                 , countyText, postcodeText, emailText, phoneText, websiteText, corporateNameText};
+        //The result of the validation per field
         boolean[] validationResultsPerField = new boolean[fields.length];
 
         for (int i = 0; i < fields.length; i++){
-            validationResultsPerField[i] = validation(fields[i], error);
+            validationResultsPerField[i] = validation(fields[i], fields[i].getId() + " " + error);
         }
+
+        if (checkBooleanArray(validationResultsPerField)){
+            System.out.println("Validation PASSED");
+        }
+
     }
 }
