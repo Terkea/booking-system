@@ -20,6 +20,13 @@ public class user {
     private String corporateName;
     private String password;
 
+    /*  Empty constructor, the informations will be passeed later on
+    when the user log ins
+    */
+    public user(){
+
+    }
+
     //    CONSTRUCTOR
     public user(String firstName, String lastName, String title, String gender, String dateOfBirth,
                 String address1, String address2, String town, String county, String postCode, String contactName,

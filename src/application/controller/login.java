@@ -8,10 +8,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import application.model.user;
 
 import java.io.IOException;
 
 public class login {
+
+    //after the user logins we'll add the information
+    public login(){
+        user user = new user();
+    }
 
     @FXML
     private Button loginBtn;

@@ -35,7 +35,7 @@
       <PasswordField id="password" fx:id="password" layoutX="96.0" layoutY="373.0" prefHeight="25.0" prefWidth="265.0" promptText="Password" />
       <PasswordField id="passwordCheck" fx:id="passwordCheck" layoutX="415.0" layoutY="373.0" prefHeight="25.0" prefWidth="265.0" promptText="Password Check" />
       <CheckBox id="termsCheckBox" fx:id="termaCheckBox" layoutX="282.0" layoutY="410.0" mnemonicParsing="false" text="I agree to the Terms and Conditions" />
-      <TextField id="firstName" fx:id="firstNameText" layoutX="96.0" layoutY="130.0" prefHeight="25.0" prefWidth="265.0" promptText="First Name" />
-      <Button fx:id="submit" layoutX="208.0" layoutY="437.0" mnemonicParsing="false" onAction="#goToLogin" prefHeight="25.0" prefWidth="366.0" text="Submit" />
+      <TextField id="firstName" fx:id="firstNameText" layoutX="96.0" layoutY="130.0" prefHeight="25.0" prefWidth="265.0" promptText="First Name" style="bord: ff0000;" />
+      <Button fx:id="submit" layoutX="208.0" layoutY="437.0" mnemonicParsing="false" onAction="#doValidation" prefHeight="25.0" prefWidth="366.0" text="Submit" />
    </children>
 </AnchorPane>
