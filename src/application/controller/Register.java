@@ -8,10 +8,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-import application.model.user;
+import application.model.User;
 import java.io.IOException;
 
-public class register{
+public class Register {
 
     @FXML
     private TextField corporateNameText;

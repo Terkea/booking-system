@@ -1,4 +1,4 @@
-CREATE TABLE mytable(
+CREATE TABLE User(
    id         INTEGER  NOT NULL PRIMARY KEY 
   ,first_name VARCHAR(12) NOT NULL
   ,last_name  VARCHAR(18) NOT NULL

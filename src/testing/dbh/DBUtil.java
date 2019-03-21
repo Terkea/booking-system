@@ -1,4 +1,4 @@
-package application.util;
+package testing.dbh;
 
 import com.sun.rowset.CachedRowSetImpl;
 import java.sql.*;
@@ -47,28 +47,26 @@ public class DBUtil {
         }
     }
 
-    public static ResultSet dbExecuteQuery(String queryStmt) throws SQLException, ClassNotFoundException {
+    public static ResultSet dbExecuteQuery(String query) throws SQLException, ClassNotFoundException{
         Statement stmt = null;
-        ResultSet resultSet = null;
+        ResultSet rs = null;
         CachedRowSetImpl crs = null;
-        try {
+
+        try{
             dbConnect();
-            System.out.println("Select statement: " + queryStmt + "\n");
+            System.out.println("Select statement : " + query + "\n");
 
             stmt = conn.createStatement();
-
-            resultSet = stmt.executeQuery(queryStmt);
-
             crs = new CachedRowSetImpl();
-            crs.populate(resultSet);
-        } catch (SQLException e) {
-            System.out.println("Problem occurred at executeQuery operation : " + e);
+            crs.populate(rs);
+        } catch(SQLException e){
+            System.out.println("There's a problem with the query: " + e + "\n");
             throw e;
         } finally {
-            if (resultSet != null) {
-                resultSet.close();
+            if (rs != null){
+                rs.close();
             }
-            if (stmt != null) {
+            if (stmt != null){
                 stmt.close();
             }
             dbDisconnect();

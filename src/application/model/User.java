@@ -1,6 +1,6 @@
 package application.model;
 
-public class user {
+public class User {
     private int id;
     private String firstName;
     private String lastName;
@@ -23,12 +23,12 @@ public class user {
     /*  Empty constructor, the informations will be passeed later on
     when the user log ins
     */
-    public user(){
+    public User(){
 
     }
 
     //    CONSTRUCTOR
-    public user(String firstName, String lastName, String title, String gender, String dateOfBirth,
+    public User(String firstName, String lastName, String title, String gender, String dateOfBirth,
                 String address1, String address2, String town, String county, String postCode, String contactName,
                 String contactNumber, String emailAddress, String phoneNo,
                 String website, String corporateName, String password) {
