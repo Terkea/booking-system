@@ -76,7 +76,17 @@ public class UserDAO {
             System.out.println("SQL select operation has failed: " + e );
             throw e;
         }
+    }
 
+    public static void deleteUser(int userId) throws SQLException, ClassNotFoundException{
+        String stmt = "DELETE FROM user WHERE id = " + userId;
+
+        try{
+            DBUtil.dbExecuteUpdate(stmt);
+        }catch (SQLException e){
+            System.out.println("Error during DELETE operation: " +e );
+            throw e;
+        }
     }
 
 

@@ -4,10 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import testing.model.User;
 import testing.model.UserDAO;
 
@@ -15,7 +12,7 @@ import java.sql.SQLException;
 
 public class Accounts {
     @FXML
-    private TableView userTable;
+    private TableView<User> userTable;
 
     @FXML
     private TableColumn<User, Integer> idTableColumn;
@@ -118,17 +115,25 @@ public class Accounts {
     }
 
     @FXML
-    void addNewUser(ActionEvent event) {
+    private void addNewUser(ActionEvent event) {
         System.out.println("Button works");
     }
 
     @FXML
-    void deleteUser(ActionEvent event) {
-        System.out.println("Button works");
+    private void deleteUser(ActionEvent event) throws SQLException, ClassNotFoundException{
+        int id = userTable.getSelectionModel().getSelectedItem().getId();
+        try{
+            UserDAO.deleteUser(id);
+            System.out.println("User with id " + id + "  has been deleted");
+            initialize();
+        }catch (SQLException e){
+            System.out.println("Couldn't delete user id " + id);
+            throw e;
+        }
     }
 
     @FXML
-    void updateUser(ActionEvent event) {
+    private void updateUser(ActionEvent event) {
         System.out.println("Button works");
     }
 

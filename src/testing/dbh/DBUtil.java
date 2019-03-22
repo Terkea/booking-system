@@ -92,8 +92,4 @@ public class DBUtil {
         }
     }
 
-
-    public static void main(String[] args) throws SQLException, ClassNotFoundException {
-        dbExecuteQuery("SELECT * FROM user WHERE ID = 1");
-    }
 }
