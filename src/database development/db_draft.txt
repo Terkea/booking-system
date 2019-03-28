@@ -37,101 +37,178 @@
 		<type label="SET" length="1" sql="SET" quote=""/>
 		<type label="Bit" length="0" sql="bit" quote=""/>
 	</group>
-</datatypes><table x="728" y="33" name="Concerts">
-<row name="id" null="1" autoincrement="1">
+</datatypes><table x="398" y="14" name="BOOKING">
+<row name="id" null="0" autoincrement="1">
 <datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<key type="PRIMARY" name="">
-<part>id</part>
-</key>
-</table>
-<table x="736" y="129" name="Festivals">
-<row name="id" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<key type="PRIMARY" name="">
-<part>id</part>
-</key>
-</table>
-<table x="147" y="20" name="Users">
-<row name="id" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="title" null="0" autoincrement="0">
-<datatype>VARCHAR(10)</datatype>
-<default>'NULL'</default><comment>HELLO</comment>
 </row>
-<row name="first_name" null="1" autoincrement="0">
-<datatype>VARCHAR</datatype>
+<row name="number_of_tickets" null="0" autoincrement="0">
+<datatype>INTEGER</datatype>
+</row>
+<row name="payment_id" null="0" autoincrement="0">
+<datatype>INTEGER</datatype>
+<relation table="PAYMENT" row="id" />
+</row>
+<row name="festival_id" null="0" autoincrement="0">
+<datatype>INTEGER</datatype>
+<relation table="FESTIVAL" row="id" />
+</row>
+<row name="user_id" null="0" autoincrement="0">
+<datatype>INTEGER</datatype>
+<relation table="USER" row="id" />
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="165" y="83" name="FESTIVAL">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER</datatype>
+</row>
+<row name="location" null="0" autoincrement="0">
+<datatype>VARCHAR(255)</datatype>
+</row>
+<row name="date" null="0" autoincrement="0">
+<datatype>DATE</datatype>
+</row>
+<row name="festival_name" null="0" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+</row>
+<row name="venue" null="0" autoincrement="0">
+<datatype>VARCHAR(255)</datatype>
+</row>
+<row name="description" null="1" autoincrement="0">
+<datatype>VARCHAR(255)</datatype>
 <default>NULL</default></row>
-<row name="last_name" null="1" autoincrement="0">
-<datatype>VARCHAR</datatype>
+<row name="tickets_available" null="0" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>0</default></row>
+<row name="line_up_id" null="0" autoincrement="0">
+<datatype>INTEGER</datatype>
+<relation table="LINEUP" row="id" />
+</row>
+<row name="genre" null="0" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+</row>
+<row name="ticket_price" null="1" autoincrement="0">
+<datatype>DECIMAL</datatype>
+<default>0.00</default></row>
+<row name="event_type" null="1" autoincrement="0">
+<datatype>VARCHAR(255)</datatype>
 <default>NULL</default></row>
-<row name="address_line" null="1" autoincrement="0">
-<datatype>VARCHAR</datatype>
-<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="806" y="309" name="USER">
+<row name="id" null="0" autoincrement="1">
+<datatype>INTEGER</datatype>
+</row>
+<row name="first_name" null="0" autoincrement="0">
+<datatype>VARCHAR(25)</datatype>
+</row>
+<row name="last_name" null="0" autoincrement="0">
+<datatype>VARCHAR(25)</datatype>
+</row>
+<row name="gender" null="0" autoincrement="0">
+<datatype>VARCHAR(10)</datatype>
+<default>'Other'</default></row>
+<row name="address_line" null="0" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+</row>
 <row name="address_line2" null="1" autoincrement="0">
-<datatype>VARCHAR</datatype>
+<datatype>VARCHAR(30)</datatype>
 <default>NULL</default></row>
-<row name="town" null="1" autoincrement="0">
-<datatype>VARCHAR</datatype>
+<row name="town" null="0" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+</row>
+<row name="county" null="0" autoincrement="0">
+<datatype>VARCHAR(25)</datatype>
+</row>
+<row name="postcode" null="0" autoincrement="0">
+<datatype>VARCHAR(8)</datatype>
+</row>
+<row name="dob" null="0" autoincrement="0">
+<datatype>DATE</datatype>
+</row>
+<row name="contact_name" null="0" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+</row>
+<row name="organisation_name" null="1" autoincrement="0">
+<datatype>VARCHAR(75)</datatype>
 <default>NULL</default></row>
-<row name="postcode" null="1" autoincrement="0">
-<datatype>VARCHAR</datatype>
-<default>NULL</default></row>
-<row name="contact_name" null="1" autoincrement="0">
-<datatype>VARCHAR</datatype>
-<default>NULL</default></row>
-<row name="corporate_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="email" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="phone_no" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
+<row name="email_address" null="0" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<comment>add unique contraint</comment>
+</row>
+<row name="phone_no" null="0" autoincrement="0">
+<datatype>INTEGER(11)</datatype>
+</row>
+<row name="mobile_no" null="0" autoincrement="0">
+<datatype>INTEGER(11)</datatype>
+</row>
 <row name="web_address" null="1" autoincrement="0">
-<datatype>VARCHAR</datatype>
+<datatype>VARCHAR(200)</datatype>
 <default>NULL</default></row>
-<row name="password" null="1" autoincrement="0">
-<datatype>VARCHAR</datatype>
-<default>NULL</default></row>
-<row name="Is_corporate" null="1" autoincrement="0">
+<row name="password" null="0" autoincrement="0">
+<datatype>VARCHAR(255)</datatype>
+</row>
+<row name="is_corporate" null="1" autoincrement="0">
 <datatype>BINARY</datatype>
 <default>NULL</default></row>
 <row name="is_admin" null="1" autoincrement="0">
 <datatype>BINARY</datatype>
 <default>NULL</default></row>
-<row name="county" null="0" autoincrement="0">
-<datatype>VARCHAR(25)</datatype>
-<default>'NOT NULL'</default></row>
+<row name="title" null="0" autoincrement="0">
+<datatype>CHAR(4)</datatype>
+</row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 </table>
-<table x="990" y="92" name="Payments">
-<row name="id" null="1" autoincrement="1">
+<table x="805" y="185" name="PAYMENT">
+<row name="id" null="0" autoincrement="1">
 <datatype>INTEGER</datatype>
-<default>NULL</default></row>
+</row>
+<row name="charge" null="0" autoincrement="0">
+<datatype>DECIMAL</datatype>
+</row>
+<row name="card_no" null="0" autoincrement="0">
+<datatype>INTEGER</datatype>
+</row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 </table>
-<table x="518" y="33" name="Artists">
+<table x="404" y="243" name="LINEUP">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
+<row name="performance_time" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+</row>
+<row name="artist" null="0" autoincrement="0">
+<datatype>VARCHAR(255)</datatype>
+</row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 </table>
-<table x="584" y="128" name="Bands">
+<table x="808" y="22" name="TICKET">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
+<row name="ticket_no" null="0" autoincrement="0">
+<datatype>INTEGER</datatype>
+</row>
+<row name="booking_id" null="0" autoincrement="0">
+<datatype>INTEGER</datatype>
+<relation table="BOOKING" row="id" />
+</row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 </table>
 </sql>
+
+
+
