@@ -8,17 +8,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-import application.model.User;
 
 import java.io.IOException;
 
-public class Login {
-
-    //after the user logins we'll add the information
-    @FXML
-    public void checkLoginInformations(){
-        User user = new User();
-    }
+public class login {
 
     @FXML
     private Button loginBtn;
@@ -40,7 +33,6 @@ public class Login {
         if (email.getText().equals("terkea")&& password.getText().equals("123")){
             System.out.println("text: " + email.getText());
         }else{
-            System.out.println("text: " + email.getText());
             errorLabel.setText("Invalid e-mail or password");
 
         }
