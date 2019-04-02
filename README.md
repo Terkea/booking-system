@@ -26,7 +26,8 @@ the system and add concert details, edit concert details and cancel concerts whe
 Occasionally, a concert needs to be cancelled. All bookings for the concert are then cancelled automatically, and the customers and corporate
 organisations are notified by the system administrator.
 
-https://i.imgur.com/jUJc563.png
+
+![alt text](https://i.imgur.com/jUJc563.png "UML")
 
 Global Music Concert / Festival Booking Agency System containing the functionality shown in the
 Use Case Diagram in Figure 1, taking the different user roles (customer, corporate organization, administrator, and concert/festival organiser)
