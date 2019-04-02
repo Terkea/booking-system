@@ -1,6 +1,6 @@
 package testing.model;
 
-import application.util.DBUtil;
+import application.system.DB;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -55,7 +55,7 @@ public class UserDAO {
                 "OR last_name " +
                 "LIKE \"%" + keyword + "\"";
         try{
-            ResultSet rsUsers = DBUtil.dbExecuteQuery(selectStmt);
+            ResultSet rsUsers = DB.dbExecuteQuery(selectStmt);
             ObservableList<User> userList = getUserList(rsUsers);
 
             return userList;
@@ -68,7 +68,7 @@ public class UserDAO {
     public static ObservableList<User> getAllUsers () throws SQLException, ClassNotFoundException{
         String selectStmt = "SELECT * FROM user";
         try {
-            ResultSet rsUsers = DBUtil.dbExecuteQuery(selectStmt);
+            ResultSet rsUsers = DB.dbExecuteQuery(selectStmt);
             ObservableList<User> userList = getUserList(rsUsers);
 
             return userList;
@@ -82,7 +82,7 @@ public class UserDAO {
         String stmt = "DELETE FROM user WHERE id = " + userId;
 
         try{
-            DBUtil.dbExecuteUpdate(stmt);
+            DB.dbExecuteUpdate(stmt);
         }catch (SQLException e){
             System.out.println("Error during DELETE operation: " +e );
             throw e;
