@@ -14,7 +14,6 @@ import java.io.IOException;
 
 public class Login {
 
-    //after the user logins we'll add the information
     @FXML
     public void checkLoginInformations(){
         User user = new User();

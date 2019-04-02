@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="org.springframework.security:spring-security-crypto:3.2.7.RELEASE" type="repository">
+    <properties maven-id="org.springframework.security:spring-security-crypto:3.2.7.RELEASE" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-crypto/3.2.7.RELEASE/spring-security-crypto-3.2.7.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
