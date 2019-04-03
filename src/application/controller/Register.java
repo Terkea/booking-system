@@ -1,5 +1,7 @@
 package application.controller;
 
+import application.model.User;
+import application.system.Password;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -87,7 +89,6 @@ public class Register {
         if(dobDatePicker.getValue() == null){
             dobDatePicker.setStyle("-fx-border-color: #ff0000;" +
                     "-fx-border-radius: 5");
-            System.out.println(dobDatePicker.getValue());
             return false;
         }else{
             dobDatePicker.setStyle(null);
@@ -211,6 +212,33 @@ public class Register {
                 && checkPasswordsMatch(password, passwordCheck) && checkPasswords(password, passwordCheck)
                 && termsAndConditionsCheck(termsCheckBox) && checkDOB()){
             System.out.println("Validation PASSED");
+
+            User user = new User();
+            user.setTitle(titleComboBox.getValue());
+            user.setFirst_name(firstNameText.getText());
+            user.setLast_name(lastNameText.getText());
+            user.setGender(genderComboBox.getValue());
+            user.setAddress_line(address1Text.getText());
+            user.setAddress_line2(address2Text.getText());
+            user.setTown(townText.getText());
+            user.setCounty(countyText.getText());
+            user.setPostcode(postcodeText.getText());
+            user.setDob(dobDatePicker.getValue().toString());
+            user.setContact_name(contactNameText.getText());
+            user.setContact_phone(contactNumberText.getText());
+            user.setCorporate_name(corporateNameText.getText());
+            user.setEmail_address(emailText.getText());
+            user.setMobile_no(phoneText.getText());
+            user.setWebsite_address(websiteText.getText());
+
+            Password pwd = new Password();
+            String hasshedPassword = pwd.hash(password.getText());
+            user.setPassword(hasshedPassword);
+
+            user.setOrganization_name(null);
+            user.setIs_admin(false);
+
+            
             //INSERT INTO USER TABLE
         }else{
             requiredFieldsLabel.setText("You have to fill the required fields");
