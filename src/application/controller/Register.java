@@ -2,14 +2,7 @@ package application.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.stage.Stage;
-import application.model.User;
-import java.io.IOException;
 
 public class Register {
 
@@ -20,10 +13,10 @@ public class Register {
     private TextField lastNameText;
 
     @FXML
-    private ComboBox<?> titleComboBox;
+    private ComboBox<String> titleComboBox = new ComboBox();
 
     @FXML
-    private ComboBox<?> genderComboBox;
+    private ComboBox<String> genderComboBox = new ComboBox();
 
     @FXML
     private DatePicker dobDatePicker;
@@ -73,16 +66,53 @@ public class Register {
     @FXML
     private Button submit;
 
-    private boolean validation(TextField userInput, String errorMessage) {
-        if(userInput.getText().isEmpty() || userInput.getText().equals(errorMessage)) {
+    @FXML
+    private Label requiredFieldsLabel;
+
+    @FXML
+    private Label passwordsMatch;
+
+    @FXML
+    public void initialize(){
+        titleComboBox.getItems().addAll(
+          "Mr.","Mrs.","Ms","Miss","Master","Maid","Madam"
+        );
+
+        genderComboBox.getItems().addAll(
+          "Male", "Female"
+        );
+    }
+
+    private boolean validationForTextFields(TextField userInput) {
+        if(userInput.getText().isEmpty()) {
             userInput.setStyle("-fx-border-color: #ff0000;" +
                     "-fx-border-radius: 5");
-            userInput.setText(errorMessage);
             return false;
         }else{
             userInput.setStyle(null);
             return true;
         }
+    }
+
+    private boolean validationForComboBox(ComboBox userInput) {
+        if(userInput.getSelectionModel().isEmpty()) {
+            userInput.setStyle("-fx-border-color: #ff0000;" +
+                    "-fx-border-radius: 5");
+            return false;
+        }else{
+            userInput.setStyle(null);
+            return true;
+        }
+    }
+
+
+    private boolean checkPasswordsMatch(PasswordField password, PasswordField password2) {
+        if (password.getText().equals(password2.getText()) && password2.getText().equals(password.getText())){
+            return true;
+        }else{
+            passwordsMatch.setText("Passwords doesn't match");
+        }
+        return false;
     }
 
     private boolean checkBooleanArray(boolean[] array) {
@@ -127,15 +157,31 @@ public class Register {
 
         TextField fields[] = {firstNameText, lastNameText, address1Text, townText
                 , countyText, postcodeText, emailText, phoneText}; // + title, gender, dob, password and password check
+        ComboBox comboFields[] = {genderComboBox, titleComboBox};
+
         //The result of the validation per field
         boolean[] validationResultsPerField = new boolean[fields.length];
+        boolean[] validationResultPerComboBox = new boolean[comboFields.length];
 
         for (int i = 0; i < fields.length; i++){
-            validationResultsPerField[i] = validation(fields[i], fields[i].getId() + " " + error);
+            validationResultsPerField[i] = validationForTextFields(fields[i]);
+        }
+        for (int i = 0; i < comboFields.length; i++){
+            validationResultPerComboBox[i] = validationForComboBox(comboFields[i]);
+        }
+        if(password.getText().isEmpty()) {
+            password.setStyle("-fx-border-color: #ff0000;" +
+                    "-fx-border-radius: 5");
+        }
+        if(passwordCheck.getText().isEmpty()) {
+            passwordCheck.setStyle("-fx-border-color: #ff0000;" +
+                    "-fx-border-radius: 5");
         }
 
-        if (checkBooleanArray(validationResultsPerField)){
+        if (checkBooleanArray(validationResultsPerField) && checkBooleanArray(validationResultPerComboBox) && checkPasswordsMatch(password, passwordCheck)){
             System.out.println("Validation PASSED");
+        }else{
+            requiredFieldsLabel.setText("You have to fill the required fields");
         }
 
     }
