@@ -35,10 +35,10 @@
       <TextField id="website" fx:id="websiteText" layoutX="507.0" layoutY="286.0" prefHeight="25.0" prefWidth="173.0" promptText="Website **" />
       <PasswordField id="password" fx:id="password" layoutX="96.0" layoutY="358.0" prefHeight="25.0" prefWidth="265.0" promptText="Password" />
       <PasswordField id="passwordCheck" fx:id="passwordCheck" layoutX="415.0" layoutY="358.0" prefHeight="25.0" prefWidth="265.0" promptText="Password Check" />
-      <CheckBox id="termsCheckBox" fx:id="termaCheckBox" layoutX="282.0" layoutY="395.0" mnemonicParsing="false" text="I agree to the Terms and Conditions" />
+      <CheckBox id="termsCheckBox" fx:id="termsCheckBox" layoutX="282.0" layoutY="395.0" mnemonicParsing="false" text="I agree to the Terms and Conditions" />
       <TextField id="firstName" fx:id="firstNameText" layoutX="96.0" layoutY="115.0" prefHeight="25.0" prefWidth="265.0" promptText="First Name" style="bord: ff0000;" />
       <Button fx:id="submit" layoutX="208.0" layoutY="422.0" mnemonicParsing="false" onAction="#doValidation" prefHeight="25.0" prefWidth="366.0" text="Submit" />
       <Label fx:id="requiredFieldsLabel" layoutX="295.0" layoutY="454.0" prefHeight="17.0" prefWidth="186.0" textFill="RED" />
-      <Label fx:id="passwordsMatch" layoutX="295.0" layoutY="474.0" prefHeight="17.0" prefWidth="186.0" textFill="RED" />
+      <Label fx:id="passwordsMatch" layoutX="321.0" layoutY="478.0" prefHeight="17.0" prefWidth="135.0" textFill="RED" />
    </children>
 </AnchorPane>

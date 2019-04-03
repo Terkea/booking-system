@@ -58,7 +58,7 @@ public class Register {
     private PasswordField passwordCheck;
 
     @FXML
-    private CheckBox termaCheckBox;
+    private CheckBox termsCheckBox = new CheckBox();
 
     @FXML
     private TextField firstNameText;
@@ -115,6 +115,28 @@ public class Register {
         return false;
     }
 
+    private boolean termsAndConditionsCheck(CheckBox cb){
+        if (cb.isSelected()){
+            return true;
+        }else{
+            cb.setStyle("-fx-border-color: #ff0000;" +
+                    "-fx-border-radius: 5");
+        }
+        return false;
+    }
+
+    private boolean checkPasswords(PasswordField p1, PasswordField p2){
+        if((p1.getText().equals("") || p1.getText().isEmpty()) && (p2.getText().equals("") || p2.getText().isEmpty())) {
+            p1.setStyle("-fx-border-color: #ff0000;" +
+                    "-fx-border-radius: 5");
+            p2.setStyle("-fx-border-color: #ff0000;" +
+                    "-fx-border-radius: 5");
+            return false;
+        }else{
+            return true;
+        }
+    }
+
     private boolean checkBooleanArray(boolean[] array) {
         for(boolean a : array){
             if (!a == true){
@@ -169,16 +191,11 @@ public class Register {
         for (int i = 0; i < comboFields.length; i++){
             validationResultPerComboBox[i] = validationForComboBox(comboFields[i]);
         }
-        if(password.getText().isEmpty()) {
-            password.setStyle("-fx-border-color: #ff0000;" +
-                    "-fx-border-radius: 5");
-        }
-        if(passwordCheck.getText().isEmpty()) {
-            passwordCheck.setStyle("-fx-border-color: #ff0000;" +
-                    "-fx-border-radius: 5");
-        }
 
-        if (checkBooleanArray(validationResultsPerField) && checkBooleanArray(validationResultPerComboBox) && checkPasswordsMatch(password, passwordCheck)){
+
+        if (checkBooleanArray(validationResultsPerField) && checkBooleanArray(validationResultPerComboBox)
+                && checkPasswordsMatch(password, passwordCheck) && checkPasswords(password, passwordCheck)
+                && termsAndConditionsCheck(termsCheckBox)){
             System.out.println("Validation PASSED");
         }else{
             requiredFieldsLabel.setText("You have to fill the required fields");
