@@ -19,7 +19,7 @@ public class Register {
     private ComboBox<String> genderComboBox = new ComboBox();
 
     @FXML
-    private DatePicker dobDatePicker;
+    private DatePicker dobDatePicker = new DatePicker();
 
     @FXML
     private TextField address1Text;
@@ -81,6 +81,19 @@ public class Register {
         genderComboBox.getItems().addAll(
           "Male", "Female"
         );
+    }
+
+    private boolean checkDOB(){
+        if(dobDatePicker.getValue() == null){
+            dobDatePicker.setStyle("-fx-border-color: #ff0000;" +
+                    "-fx-border-radius: 5");
+            System.out.println(dobDatePicker.getValue());
+            return false;
+        }else{
+            dobDatePicker.setStyle(null);
+            return true;
+        }
+
     }
 
     private boolean validationForTextFields(TextField userInput) {
@@ -191,12 +204,14 @@ public class Register {
         for (int i = 0; i < comboFields.length; i++){
             validationResultPerComboBox[i] = validationForComboBox(comboFields[i]);
         }
+        checkDOB();
 
 
         if (checkBooleanArray(validationResultsPerField) && checkBooleanArray(validationResultPerComboBox)
                 && checkPasswordsMatch(password, passwordCheck) && checkPasswords(password, passwordCheck)
-                && termsAndConditionsCheck(termsCheckBox)){
+                && termsAndConditionsCheck(termsCheckBox) && checkDOB()){
             System.out.println("Validation PASSED");
+            //INSERT INTO USER TABLE
         }else{
             requiredFieldsLabel.setText("You have to fill the required fields");
         }
