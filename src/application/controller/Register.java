@@ -103,8 +103,30 @@ public class Register {
         String error = "FIELD REQUIRED";
         boolean resultOverAll = false;
 
-        TextField fields[] = {firstNameText, lastNameText, address1Text, address2Text, townText
-                , countyText, postcodeText, emailText, phoneText, websiteText, corporateNameText};
+        /*
+        private StringProperty title; 1
+        private StringProperty first_name; 1
+        private StringProperty last_name; 1
+        private StringProperty gender; 1
+        private StringProperty address_line; 1
+        private StringProperty address_line2; // default null 1
+        private StringProperty town; 1
+        private StringProperty county; 1
+        private StringProperty postcode; 1
+        private StringProperty dob; 1
+        private StringProperty contact_name; // default null 1
+        private StringProperty contact_phone; // default null 1
+        private StringProperty organization_name; // default null
+        private StringProperty email_address; // unique 1
+        private StringProperty mobile_no; 1
+        private StringProperty website_address; // default null 1
+        private StringProperty password; 1
+        private StringProperty corporate_name; // default null 1
+        private BooleanProperty is_admin; // default null
+         */
+
+        TextField fields[] = {firstNameText, lastNameText, address1Text, townText
+                , countyText, postcodeText, emailText, phoneText}; // + title, gender, dob, password and password check
         //The result of the validation per field
         boolean[] validationResultsPerField = new boolean[fields.length];
 

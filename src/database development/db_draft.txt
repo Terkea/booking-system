@@ -220,10 +220,10 @@
 <datatype>VARCHAR(255)</datatype>
 <default>NULL</default></row>
 <row name="genre" null="1" autoincrement="0">
-<datatype>VARCHAR(255)</datatype>
+<datatype>INTEGER(255)</datatype>
 <default>NULL</default><relation table="genre" row="id" />
 </row>
-<row name="agent" null="1" autoincrement="0">
+<row name="agent_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="USER" row="id" />
 </row>

@@ -17,7 +17,7 @@
             <Font size="58.0" />
          </font>
       </Text>
-      <TextField id="corporateName" fx:id="corporateNameText" layoutX="96.0" layoutY="337.0" prefHeight="25.0" prefWidth="584.0" promptText="Corporate Name" />
+      <TextField id="corporateName" fx:id="corporateNameText" layoutX="96.0" layoutY="337.0" prefHeight="25.0" prefWidth="584.0" promptText="Corporate Name **" />
       <TextField id="lastName" fx:id="lastNameText" layoutX="415.0" layoutY="130.0" prefHeight="25.0" prefWidth="265.0" promptText="Last Name" />
       <ComboBox id="titleCombo" fx:id="titleComboBox" layoutX="96.0" layoutY="164.0" prefHeight="25.0" prefWidth="173.0" promptText="Title" />
       <ComboBox id="genderCombo" fx:id="genderComboBox" layoutX="304.0" layoutY="164.0" prefHeight="25.0" prefWidth="173.0" promptText="Gender" />
@@ -31,7 +31,7 @@
       <TextField id="contactName" fx:id="contactNameText" layoutX="96.0" layoutY="267.0" prefHeight="25.0" prefWidth="265.0" promptText="Contact Name **" />
       <TextField id="email" fx:id="emailText" layoutX="96.0" layoutY="301.0" prefHeight="25.0" prefWidth="173.0" promptText="E-mail address" />
       <TextField id="phone" fx:id="phoneText" layoutX="304.0" layoutY="301.0" prefHeight="25.0" prefWidth="173.0" promptText="Phone" />
-      <TextField id="website" fx:id="websiteText" layoutX="507.0" layoutY="301.0" prefHeight="25.0" prefWidth="173.0" promptText="Website" />
+      <TextField id="website" fx:id="websiteText" layoutX="507.0" layoutY="301.0" prefHeight="25.0" prefWidth="173.0" promptText="Website **" />
       <PasswordField id="password" fx:id="password" layoutX="96.0" layoutY="373.0" prefHeight="25.0" prefWidth="265.0" promptText="Password" />
       <PasswordField id="passwordCheck" fx:id="passwordCheck" layoutX="415.0" layoutY="373.0" prefHeight="25.0" prefWidth="265.0" promptText="Password Check" />
       <CheckBox id="termsCheckBox" fx:id="termaCheckBox" layoutX="282.0" layoutY="410.0" mnemonicParsing="false" text="I agree to the Terms and Conditions" />
