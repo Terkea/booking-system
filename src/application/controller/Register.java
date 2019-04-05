@@ -6,6 +6,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
 public class Register {
 
     @FXML
@@ -75,7 +78,7 @@ public class Register {
     private Label passwordsMatch;
 
     @FXML
-    public void initialize(){
+    public void initialize(URL url, ResourceBundle rb){
         titleComboBox.getItems().addAll(
           "Mr.","Mrs.","Ms","Miss","Master","Maid","Madam"
         );
@@ -238,7 +241,7 @@ public class Register {
             user.setOrganization_name(null);
             user.setIs_admin(false);
 
-            
+
             //INSERT INTO USER TABLE
         }else{
             requiredFieldsLabel.setText("You have to fill the required fields");

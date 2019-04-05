@@ -1,11 +1,14 @@
 package application;
 
+import application.model.UserDAO;
 import application.system.Password;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+import java.sql.SQLException;
 
 public class Main extends Application {
 
@@ -21,5 +24,13 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
+        UserDAO ud = new UserDAO();
+        try {
+            System.out.println(ud.searchUsersByEmail("terkeabt@gmai"));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }

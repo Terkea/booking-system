@@ -11,6 +11,8 @@ import javafx.stage.Stage;
 import application.model.User;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class Login {
 
@@ -33,6 +35,11 @@ public class Login {
 
     @FXML
     private Hyperlink register;
+
+    @FXML
+    public void initialize(URL url, ResourceBundle rb){
+
+    }
 
     @FXML
     private void login(ActionEvent event) {

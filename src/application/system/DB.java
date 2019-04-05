@@ -7,7 +7,7 @@ public class DB {
 
     private static Connection conn = null;
 
-    private static final String DBNAME = "practice";
+    private static final String DBNAME = "booking-system";
     private static final String USER = "root";
     private static final String PASSWORD = "";
 
