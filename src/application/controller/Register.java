@@ -78,7 +78,7 @@ public class Register {
     private Label passwordsMatch;
 
     @FXML
-    public void initialize(URL url, ResourceBundle rb){
+    public void initialize(){
         titleComboBox.getItems().addAll(
           "Mr.","Mrs.","Ms","Miss","Master","Maid","Madam"
         );
@@ -193,6 +193,7 @@ public class Register {
         private StringProperty corporate_name; // default null 1
         private BooleanProperty is_admin; // default null
          */
+
 
         TextField fields[] = {firstNameText, lastNameText, address1Text, townText
                 , countyText, postcodeText, emailText, phoneText}; // + title, gender, dob, password and password check

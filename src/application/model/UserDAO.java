@@ -3,14 +3,14 @@ package application.model;
 import application.system.DB;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import application.model.User;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UserDAO {
-    public static User getUserFromResultSet(ResultSet rs) throws SQLException {
+    private static User getUserFromResultSet(ResultSet rs) throws SQLException {
         User user = null;
         if (rs.next()){
+            user = new User();
             user.setId(rs.getInt("id"));
             user.setTitle(rs.getString("title"));
             user.setFirst_name(rs.getString("first_name"));
@@ -31,12 +31,11 @@ public class UserDAO {
             user.setPassword(rs.getString("password"));
             user.setCorporate_name(rs.getString("corporate_name"));
             user.setIs_admin(rs.getBoolean("is_admin"));
-
         }
         return user;
     }
 
-    public static ObservableList<User> getUserList(ResultSet rs) throws SQLException, ClassNotFoundException{
+    private static ObservableList<User> getUserList(ResultSet rs) throws SQLException, ClassNotFoundException{
         ObservableList<User> userList = FXCollections.observableArrayList();
 
         while (rs.next()){
@@ -85,15 +84,15 @@ public class UserDAO {
         }
     }
 
-    public static ObservableList<User> searchUsersByEmail (String keyword) throws SQLException, ClassNotFoundException {
+    public static User searchUsersByEmail (String keyword) throws SQLException, ClassNotFoundException {
         String selectStmt = "SELECT * " +
                 "FROM `user` " +
                 "WHERE email_address = \"" + keyword + "\"";
         try{
-            ResultSet rsUsers = DB.dbExecuteQuery(selectStmt);
-            ObservableList<User> userList = getUserList(rsUsers);
+            ResultSet rs = DB.dbExecuteQuery(selectStmt);
+            User user = getUserFromResultSet(rs);
 
-            return userList;
+            return user;
         }catch(SQLException e){
             System.out.println("ERROR While searching for a User with: " + keyword + " name, error occured: " + e);
             System.out.println(selectStmt);
@@ -123,5 +122,22 @@ public class UserDAO {
             System.out.println("Error during DELETE operation: " +e );
             throw e;
         }
+    }
+
+    public static boolean checkEmailUnique(String email){
+        try {
+            if (searchUsersByEmail(email) == null){
+                return true;
+            }else{
+                return false;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("checkEmailUnique error");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+            System.out.println("checkEmailUnique error");
+        }
+        return false;
     }
 }

@@ -25,12 +25,10 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
         UserDAO ud = new UserDAO();
-        try {
-            System.out.println(ud.searchUsersByEmail("terkeabt@gmai"));
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+
+
+        System.out.println(ud.checkEmailUnique("terkeabt@gmail.co"));
+
+
     }
 }
