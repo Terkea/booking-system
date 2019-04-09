@@ -140,4 +140,29 @@ public class UserDAO {
         }
         return false;
     }
+
+    public static void insertUser (String title, String first_name, String last_name, String gender, String address_line,
+                                  String address_line2, String town, String county, String postcode, String dob,
+                                  String contact_name, String contact_phone, String organization_name, String email_address,
+                                  String mobile_no, String web_address, String password, String corporate_name, boolean is_admin) throws SQLException, ClassNotFoundException {
+        //Declare a DELETE statement
+        String updateStmt = "INSERT INTO `user` " +
+                        "(`title`, `first_name`, `last_name`, `gender`, `address_line`, `address_line2`, `town`, `county`, `postcode`, `dob`, " +
+                         "`contact_name`, `contact_phone`, `organisation_name`, `email_address`, `mobile_no`, `web_address`, `password`, `corporate_name`, `is_admin`) " +
+                        "VALUES\n" +
+                        "('" +title+ "', '" +first_name+ "', '" +last_name+ "', '"+gender+ "', '"+address_line+ "', '"+address_line2+ "', '"+town+ "', '"+
+                        county+ "', '"+postcode+ "', '"+dob+ "', '"+contact_name+ "', '"+contact_phone+ "', '"+organization_name+ "', '"+email_address+ "', '"+
+                        mobile_no+ "', '"+web_address+ "', '"+password+ "', '"+corporate_name+ "', "+is_admin+ ");";
+
+//        System.out.println(updateStmt);
+
+        try {
+            DB.dbExecuteUpdate(updateStmt);
+        } catch (SQLException e) {
+            System.out.print("Error occurred while DELETE Operation: " + e);
+            throw e;
+        }
+    }
+
+
 }

@@ -5,9 +5,16 @@ import application.model.UserDAO;
 import application.system.Password;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class Register {
@@ -167,7 +174,7 @@ public class Register {
 
 
     @FXML
-    void doValidation(ActionEvent event) {
+    void doValidation(ActionEvent event) throws IOException {
         //CHECK IF ALL REQUIRED FIELDS HAVE BEEN FILLED
 
         String error = "FIELD REQUIRED";
@@ -221,6 +228,33 @@ public class Register {
 
                 user.setOrganization_name(null);
                 user.setIs_admin(false);
+
+
+                UserDAO insert = new UserDAO();
+                try {
+                    insert.insertUser(user.getTitle(), user.getFirst_name(), user.getLast_name(), user.getGender(), user.getAddress_line(), user.getAddress_line2(),
+                            user.getTown(), user.getCounty(), user.getPostcode(), user.getDob(), user.getContact_name(), user.getContact_phone(),
+                            user.getOrganization_name(), user.getEmail_address(), user.getMobile_no(), user.getWebsite_address(), user.getPassword(), user.getCorporate_name(),
+                            user.isIs_admin());
+
+
+
+                    Parent registerParent = FXMLLoader.load(getClass().getResource("../view/login.fxml"));
+                    Scene registerScene = new Scene(registerParent);
+
+                    Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+                    window.hide();
+                    window.setScene(registerScene);
+                    window.show();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                    System.err.println("SQL syntax error");
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                    System.err.println("Class not found error");
+                }
+
+
             }else{
                 System.err.println("The email address has to be unique");
                 requiredFieldsLabel.setText("The email address has to be unique");
