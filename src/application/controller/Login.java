@@ -13,9 +13,7 @@ import javafx.stage.Stage;
 import application.model.User;
 
 import java.io.IOException;
-import java.net.URL;
 import java.sql.SQLException;
-import java.util.ResourceBundle;
 
 public class Login {
 
@@ -35,7 +33,7 @@ public class Login {
     private Hyperlink register;
 
     @FXML
-    private void login(ActionEvent event) {
+    private void login(ActionEvent event) throws IOException {
 
         UserDAO checkLogin = new UserDAO();
         try {
@@ -48,6 +46,18 @@ public class Login {
                     if (checkCredentials.verifyHash(password.getText(), loginAttempt.getPassword())){
                         System.out.println("password match");
                         //redirect
+
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/application.fxml"));
+                        Parent root = (Parent) loader.load();
+
+                        Application appController = loader.getController();
+                        appController.loadUser(loginAttempt);
+
+                        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                        stage.hide();
+                        stage.setScene(new Scene(root));
+                        stage.setResizable(true);
+                        stage.show();
 
 
                     }else{
