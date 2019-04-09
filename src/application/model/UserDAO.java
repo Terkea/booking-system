@@ -79,7 +79,7 @@ public class UserDAO {
 
             return userList;
         }catch(SQLException e){
-            System.out.println("ERROR While searching for a User with: " + keyword + " name, error occured: " + e);
+            System.err.println("ERROR While searching for a User with: " + keyword + " name, error occured: " + e);
             throw e;
         }
     }
@@ -94,8 +94,8 @@ public class UserDAO {
 
             return user;
         }catch(SQLException e){
-            System.out.println("ERROR While searching for a User with: " + keyword + " name, error occured: " + e);
-            System.out.println(selectStmt);
+            System.err.println("ERROR While searching for a User with: " + keyword + " name, error occured: " + e);
+            System.err.println(selectStmt);
             throw e;
         }
     }
@@ -108,7 +108,7 @@ public class UserDAO {
 
             return userList;
         }catch (SQLException e){
-            System.out.println("SQL select operation has failed: " + e );
+            System.err.println("SQL select operation has failed: " + e );
             throw e;
         }
     }
@@ -119,7 +119,7 @@ public class UserDAO {
         try{
             DB.dbExecuteUpdate(stmt);
         }catch (SQLException e){
-            System.out.println("Error during DELETE operation: " +e );
+            System.err.println("Error during DELETE operation: " +e );
             throw e;
         }
     }
@@ -133,10 +133,10 @@ public class UserDAO {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            System.out.println("checkEmailUnique error");
+            System.err.println("checkEmailUnique error");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
-            System.out.println("checkEmailUnique error");
+            System.err.println("checkEmailUnique error");
         }
         return false;
     }

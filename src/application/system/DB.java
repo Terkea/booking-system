@@ -18,7 +18,7 @@ public class DB {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
-            System.out.println("Could not load driver");
+            System.err.println("Could not load driver");
             e.printStackTrace();
             throw e;
         }
@@ -33,7 +33,7 @@ public class DB {
             throw e;
         }
 
-        System.out.println("Connected to the DB");
+        System.err.println("Connected to the DB");
 
     }
 
@@ -62,7 +62,7 @@ public class DB {
             crs = new CachedRowSetImpl();
             crs.populate(resultSet);
         } catch (SQLException e) {
-            System.out.println("Problem occurred at executeQuery operation : " + e);
+            System.err.println("Problem occurred at executeQuery operation : " + e);
             throw e;
         } finally {
             if (resultSet != null) {
@@ -85,7 +85,7 @@ public class DB {
             stmt = conn.createStatement();
             stmt.executeUpdate(query);
         }catch(SQLException e){
-            System.out.println("There's a problem with the query: " + e + "\n");
+            System.err.println("There's a problem with the query: " + e + "\n");
         } finally {
             if (stmt != null){
                 stmt.close();

@@ -24,11 +24,5 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
-        UserDAO ud = new UserDAO();
-
-
-        System.out.println(ud.checkEmailUnique("terkeabt@gmail.co"));
-
-
     }
 }
