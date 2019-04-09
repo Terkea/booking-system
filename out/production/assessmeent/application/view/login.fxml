@@ -11,7 +11,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.Login">
     <children>
-        <Button fx:id="loginBtn" layoutX="29.0" layoutY="311.0" mnemonicParsing="false" onAction="#checkLoginInformations" prefHeight="34.0" prefWidth="300.0" text="LOG IN" />
+        <Button fx:id="loginBtn" layoutX="29.0" layoutY="311.0" mnemonicParsing="false" onAction="#login" prefHeight="34.0" prefWidth="300.0" text="LOG IN" />
         <Text layoutX="88.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vikings">
             <font>
                 <Font size="58.0" />
@@ -29,7 +29,7 @@
                 <Font size="15.0" />
             </font>
         </Hyperlink>
-      <Label fx:id="errorLabel" layoutX="29.0" layoutY="169.0" prefHeight="17.0" prefWidth="244.0" textFill="RED">
+      <Label fx:id="errorLabel" layoutX="29.0" layoutY="167.0" prefHeight="20.0" prefWidth="300.0" textAlignment="CENTER" textFill="RED">
          <font>
             <Font size="14.0" />
          </font>
