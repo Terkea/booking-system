@@ -1,78 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.Application">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="600.0" minWidth="799.0" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.Application">
     <children>
-          <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: #8cd3f7;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+          <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: #FF7061;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
               <children>
-                  <Label fx:id="welcomeLabel" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #8688e0;" textAlignment="CENTER" textFill="#573535" VBox.vgrow="ALWAYS">
+                  <Label fx:id="welcomeLabel" alignment="CENTER" prefHeight="91.0" prefWidth="200.0" style="-fx-background-color: #FF4F40;" text="Hi Name" textAlignment="CENTER" textFill="#fff2f2" VBox.vgrow="ALWAYS">
                       <font>
-                          <Font size="19.0" />
+                          <Font size="22.0" />
                       </font>
             </Label>
-                  <Button alignment="TOP_CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" text="Your Account" VBox.vgrow="ALWAYS">
-                      <font>
-                          <Font size="13.0" />
-                      </font>
-                  </Button>
-                  <Button alignment="TOP_CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" text="View Concerts / Festivals" VBox.vgrow="ALWAYS">
-                      <font>
-                          <Font name="System Bold" size="13.0" />
-                      </font>
-                  </Button>
-                  <Button alignment="TOP_CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" text="Make Booking" VBox.vgrow="ALWAYS">
-                      <font>
-                          <Font name="System Bold" size="13.0" />
-                      </font>
-                  </Button>
-                  <Button alignment="TOP_CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" text="View Bookings" VBox.vgrow="ALWAYS">
-                      <font>
-                          <Font name="System Bold" size="13.0" />
-                      </font>
-                  </Button>
-                  <Button alignment="TOP_CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" text="Add Concerts / Festivals" VBox.vgrow="ALWAYS">
-                      <font>
-                          <Font name="System Bold" size="13.0" />
-                      </font>
-                  </Button>
-                  <Button fx:id="editConcert" alignment="TOP_CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" text="Edit /  Cancel CF" VBox.vgrow="ALWAYS">
-                      <font>
-                          <Font name="System Bold" size="13.0" />
-                      </font>
-                  </Button>
-                  <Button alignment="TOP_CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" text="Manage Concerts / Festivals" VBox.vgrow="ALWAYS">
-                      <font>
-                          <Font name="System Bold" size="13.0" />
-                      </font>
-                  </Button>
-                  <Button alignment="TOP_CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" text="Customers Accounts" VBox.vgrow="ALWAYS">
-                      <font>
-                          <Font name="System Bold" size="13.0" />
-                      </font>
-                  </Button>
-                  <Button alignment="TOP_CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" text="Manage Bookings" VBox.vgrow="ALWAYS">
-                      <font>
-                          <Font name="System Bold" size="13.0" />
-                      </font>
-                  </Button>
-                  <Button alignment="TOP_CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" text="Make Payment" VBox.vgrow="ALWAYS">
-                      <font>
-                          <Font name="System Bold" size="13.0" />
-                      </font>
-                  </Button>
-                  <Button alignment="TOP_CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" text="Monthly Invoices" VBox.vgrow="ALWAYS">
-                      <font>
-                          <Font name="System Bold" size="13.0" />
-                      </font>
-                  </Button>
-                  <Label contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="74.0" prefWidth="200.0" style="-fx-background-color: #8688e0;" text="Welcome : &quot;Username&quot;" textAlignment="CENTER" VBox.vgrow="ALWAYS" />
-                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="38.0" prefWidth="200.0" text="Log Out" VBox.vgrow="ALWAYS" />
+            <JFXButton fx:id="myAccountButton" alignment="CENTER" contentDisplay="CENTER" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="200.0" text="My account" textFill="#ffe6e3">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="viewConcertsFestivalsButton" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="200.0" text="View concerts/festivals" textFill="#ffe6e3">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="viewBookingsButton" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="200.0" text="View bookings" textFill="#ffe6e3">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXButton>
               </children>
           </VBox>
+      <AnchorPane layoutX="200.0" prefHeight="600.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #FFF2F2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="72.0" layoutY="255.0" prefHeight="91.0" prefWidth="457.0" text="WELCOME PAGE">
+                     <font>
+                        <Font size="58.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="viewConcertsPane" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #FFF2F2;">
+               <children>
+                  <Label layoutX="236.0" layoutY="292.0" prefHeight="17.0" prefWidth="99.0" text="View concerts" />
+               </children>
+            </Pane>
+            <Pane fx:id="viewBookingsPane" layoutX="-1.0" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #FFF2F2;">
+               <children>
+                  <Label layoutX="236.0" layoutY="292.0" prefHeight="17.0" prefWidth="99.0" text="view bookings" />
+               </children>
+            </Pane>
+            <AnchorPane fx:id="accountPane" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #FFF2F0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane layoutY="90.0" prefHeight="510.0" prefWidth="600.0" style="-fx-background-color: #FFF2F2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="89.0" />
+                  <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="90.0" prefWidth="600.0" style="-fx-background-color: #FFE5E2;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="203.0" layoutY="26.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Account Settings" AnchorPane.leftAnchor="203.0" AnchorPane.rightAnchor="203.0" AnchorPane.topAnchor="26.0">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
     </children>
 </AnchorPane>
