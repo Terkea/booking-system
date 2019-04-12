@@ -2,7 +2,9 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TreeTableColumn?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
@@ -36,25 +38,30 @@
           </VBox>
       <AnchorPane layoutX="200.0" prefHeight="600.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Pane prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #FFF2F2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane fx:id="viewConcertsPane" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #FFE5E2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Label layoutX="72.0" layoutY="255.0" prefHeight="91.0" prefWidth="457.0" text="WELCOME PAGE">
+                  <JFXTreeTableView layoutX="23.0" layoutY="63.0" prefHeight="456.0" prefWidth="554.0" style="-fx-background-color: #FFF2F2;" AnchorPane.bottomAnchor="81.0" AnchorPane.leftAnchor="23.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="63.0">
+                     <columns>
+                        <TreeTableColumn prefWidth="75.0" text="Name" />
+                        <TreeTableColumn prefWidth="109.0" text="Date" />
+                        <TreeTableColumn prefWidth="110.0" text="Location" />
+                        <TreeTableColumn prefWidth="116.0" text="Tickets Available" />
+                        <TreeTableColumn prefWidth="143.0" text="Price" />
+                     </columns>
+                  </JFXTreeTableView>
+                  <JFXTextField focusColor="#ff7060" layoutX="383.0" layoutY="22.0" prefHeight="25.0" prefWidth="194.0" promptText="Search" unFocusColor="BLACK" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="22.0">
                      <font>
-                        <Font size="58.0" />
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <Label layoutX="23.0" layoutY="30.0" prefHeight="20.0" prefWidth="349.0" text="1000 Events Available" AnchorPane.leftAnchor="23.0" AnchorPane.topAnchor="30.0">
+                     <font>
+                        <Font size="18.0" />
                      </font>
                   </Label>
+                  <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="59.0" layoutY="538.0" prefHeight="38.0" prefWidth="482.0" style="-fx-background-color: #FF998E;" text="See more details about that event" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="59.0" AnchorPane.rightAnchor="59.0" />
                </children>
-            </Pane>
-            <Pane fx:id="viewConcertsPane" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #FFF2F2;">
-               <children>
-                  <Label layoutX="236.0" layoutY="292.0" prefHeight="17.0" prefWidth="99.0" text="View concerts" />
-               </children>
-            </Pane>
-            <Pane fx:id="viewBookingsPane" layoutX="-1.0" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #FFF2F2;">
-               <children>
-                  <Label layoutX="236.0" layoutY="292.0" prefHeight="17.0" prefWidth="99.0" text="view bookings" />
-               </children>
-            </Pane>
+            </AnchorPane>
             <AnchorPane fx:id="accountPane" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #FFF2F0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <AnchorPane layoutY="90.0" prefHeight="510.0" prefWidth="600.0" style="-fx-background-color: #FFF2F2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="89.0">
@@ -122,6 +129,28 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
+            <AnchorPane fx:id="viewBookingsPane" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #FFF2F2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <JFXTreeTableView prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #FFF2F2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <columns>
+                        <TreeTableColumn editable="false" prefWidth="86.0" text="Name" />
+                        <TreeTableColumn editable="false" maxWidth="1.7976931348623157E308" prefWidth="76.0" text="Date" />
+                        <TreeTableColumn editable="false" maxWidth="1.7976931348623157E308" prefWidth="135.0" text="Location" />
+                        <TreeTableColumn editable="false" prefWidth="138.0" text="Number of Tickets" />
+                        <TreeTableColumn editable="false" maxWidth="1.7976931348623157E308" prefWidth="164.0" text="Invoice" />
+                     </columns>
+                  </JFXTreeTableView>
+               </children>
+            </AnchorPane>
+            <Pane prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #FFF2F2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="72.0" layoutY="255.0" prefHeight="91.0" prefWidth="457.0" text="WELCOME PAGE">
+                     <font>
+                        <Font size="58.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
          </children>
       </AnchorPane>
     </children>
