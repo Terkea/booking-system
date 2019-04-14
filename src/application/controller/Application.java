@@ -41,6 +41,8 @@ public class Application implements Initializable {
     @FXML
     private Pane viewBookingsPane;
 
+    @FXML
+    private Pane editProfilePane;
 
     @FXML
     private JFXTextField addressesAccountPaneTextField;
@@ -126,6 +128,19 @@ public class Application implements Initializable {
         else if (event.getSource() == viewBookingsButton){
             viewBookingsPane.toFront();
         }
+    }
+
+
+
+    // ACCOUNT PANE
+    @FXML
+    void changePasswordProfileAccountPane(ActionEvent event) {
+
+    }
+
+    @FXML
+    void editProfileAccountPane(ActionEvent event) {
+        editProfilePane.toFront();
     }
 
 }

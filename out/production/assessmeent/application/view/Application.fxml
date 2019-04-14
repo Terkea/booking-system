@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import com.jfoenix.controls.JFXTreeTableView?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TreeTableColumn?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -135,8 +139,8 @@
                                     <Font size="18.0" />
                                  </font>
                               </JFXTextField>
-                              <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="9.0" layoutY="424.0" prefHeight="38.0" prefWidth="482.0" style="-fx-background-color: #FF998E;" text="Change Password" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="9.0" />
-                              <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="9.0" layoutY="376.0" prefHeight="38.0" prefWidth="482.0" style="-fx-background-color: #FF998E;" text="Edit profile" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="9.0" />
+                              <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="9.0" layoutY="424.0" onAction="#editProfileAccountPane" prefHeight="38.0" prefWidth="482.0" style="-fx-background-color: #FF998E;" text="Change Password" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="9.0" />
+                              <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="9.0" layoutY="376.0" onAction="#editProfileAccountPane" prefHeight="38.0" prefWidth="482.0" style="-fx-background-color: #FF998E;" text="Edit profile" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="9.0" />
                            </children>
                         </AnchorPane>
                      </children></AnchorPane>
@@ -149,6 +153,28 @@
                         </Label>
                      </children>
                   </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="editProfilePane" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #FFE5E2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <GridPane alignment="CENTER" prefHeight="600.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <JFXTextField text="first Name" GridPane.columnIndex="1" />
+                        <JFXTextField text="last Name" GridPane.columnIndex="2" />
+                        <JFXComboBox prefHeight="25.0" prefWidth="210.0" promptText="Mr." />
+                     </children>
+                  </GridPane>
                </children>
             </AnchorPane>
          </children>
