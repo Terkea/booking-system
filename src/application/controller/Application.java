@@ -8,6 +8,7 @@ import java.util.ResourceBundle;
 
 import application.model.User;
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
@@ -41,7 +42,35 @@ public class Application implements Initializable {
     private Pane viewBookingsPane;
 
 
-    private User ACTUALUSER = null;
+    @FXML
+    private JFXTextField addressesAccountPaneTextField;
+
+    @FXML
+    private JFXTextField titleNameAccountPaneTextField = new JFXTextField();
+
+    @FXML
+    private JFXTextField townCountPostCodeAccountPaneTextField;
+
+    @FXML
+    private JFXTextField contactNamePhoneAccountPaneTextField;
+
+    @FXML
+    private JFXTextField emailAccountPaneTextField;
+
+    @FXML
+    private JFXTextField phoneAccountPaneTextField;
+
+    @FXML
+    private JFXTextField websiteAccountPaneTextField;
+
+    @FXML
+    private JFXTextField corporatOrganizationAccountPaneTextField;
+
+    @FXML
+    private JFXTextField dobAccountPaneTextField;
+
+
+    public User ACTUALUSER = null;
 
     @Override
     public void initialize(URL url, ResourceBundle rs){
@@ -53,6 +82,36 @@ public class Application implements Initializable {
         if (user != null){
             this.ACTUALUSER = user;
             welcomeLabel.setText(user.getTitle() + " " + user.getFirst_name() + " " + user.getLast_name());
+            loadMyAcount();
+        }
+    }
+
+    private void loadMyAcount(){
+        titleNameAccountPaneTextField.setText(ACTUALUSER.getTitle() + " " + ACTUALUSER.getFirst_name() + " " + ACTUALUSER.getLast_name());
+        dobAccountPaneTextField.setText(ACTUALUSER.getDob());
+        addressesAccountPaneTextField.setText(ACTUALUSER.getAddress_line() + ", " + ACTUALUSER.getAddress_line2());
+        townCountPostCodeAccountPaneTextField.setText(ACTUALUSER.getTown() + ", " + ACTUALUSER.getCounty() + ", " + ACTUALUSER.getPostcode());
+        if (ACTUALUSER.getContact_name() != null){
+            contactNamePhoneAccountPaneTextField.setText(ACTUALUSER.getContact_name() + ", " + ACTUALUSER.getContact_phone());
+        }else{
+            contactNamePhoneAccountPaneTextField.setVisible(false);
+        }
+        emailAccountPaneTextField.setText(ACTUALUSER.getEmail_address());
+        phoneAccountPaneTextField.setText(ACTUALUSER.getMobile_no());
+        if (ACTUALUSER.getContact_name() != null){
+            websiteAccountPaneTextField.setText(ACTUALUSER.getContact_name());
+        }else{
+            websiteAccountPaneTextField.setVisible(false);
+        }
+        if (ACTUALUSER.getCorporate_name() != null){
+            corporatOrganizationAccountPaneTextField.setText(ACTUALUSER.getCorporate_name());
+        }else{
+            corporatOrganizationAccountPaneTextField.setVisible(false);
+        }
+        if (ACTUALUSER.getOrganization_name() != null){
+            corporatOrganizationAccountPaneTextField.appendText(", " + ACTUALUSER.getCorporate_name());
+        }else{
+            corporatOrganizationAccountPaneTextField.setVisible(false);
         }
     }
 
