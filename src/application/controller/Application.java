@@ -8,6 +8,8 @@ import java.util.ResourceBundle;
 
 import application.model.User;
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -70,6 +72,49 @@ public class Application implements Initializable {
 
     @FXML
     private JFXTextField dobAccountPaneTextField;
+
+    @FXML
+    private JFXTextField firstNameUpdateProfileTextField;
+
+    @FXML
+    private JFXTextField lastNameUpdateProfileTextField;
+
+    @FXML
+    private JFXComboBox<String> titleEditProfileComboBox = new JFXComboBox<>();
+
+    @FXML
+    private JFXDatePicker dobUpdateProfileDatePicker = new JFXDatePicker();
+
+    @FXML
+    private JFXTextField addressUpdateProfileTextField;
+
+    @FXML
+    private JFXTextField address2UpdateProfileTextField;
+
+    @FXML
+    private JFXTextField townUpdateProfileTextField;
+
+    @FXML
+    private JFXTextField countyUpdateProfileTextField;
+
+    @FXML
+    private JFXTextField postcodeUpdateProfileTextField;
+
+    @FXML
+    private JFXTextField phoneUpdateProfileTextField;
+
+    @FXML
+    private JFXTextField websiteUpdateProfileTextField;
+
+    @FXML
+    private JFXTextField corporateNameUpdateProfileTextField;
+
+    @FXML
+    private JFXTextField contactNameUpdateProfileTextField;
+
+    @FXML
+    private JFXTextField contactPhoneUpdateProfileTextField;
+
 
 
     public User ACTUALUSER = null;
@@ -140,6 +185,20 @@ public class Application implements Initializable {
 
     @FXML
     void editProfileAccountPane(ActionEvent event) {
+        firstNameUpdateProfileTextField.setText(ACTUALUSER.getFirst_name());
+        lastNameUpdateProfileTextField.setText(ACTUALUSER.getLast_name());
+        addressUpdateProfileTextField.setText(ACTUALUSER.getAddress_line());
+        address2UpdateProfileTextField.setText(ACTUALUSER.getAddress_line2());
+        townUpdateProfileTextField.setText(ACTUALUSER.getTown());
+        countyUpdateProfileTextField.setText(ACTUALUSER.getCounty());
+        postcodeUpdateProfileTextField.setText(ACTUALUSER.getPostcode());
+        phoneUpdateProfileTextField.setText(ACTUALUSER.getMobile_no());
+        websiteUpdateProfileTextField.setText(ACTUALUSER.getWebsite_address());
+        corporateNameUpdateProfileTextField.setText(ACTUALUSER.getCorporate_name());
+        contactNameUpdateProfileTextField.setText(ACTUALUSER.getContact_name());
+        contactPhoneUpdateProfileTextField.setText(ACTUALUSER.getContact_phone());
+        titleEditProfileComboBox.setPromptText(ACTUALUSER.getTitle());
+        dobUpdateProfileDatePicker.setPromptText(ACTUALUSER.getDob());
         editProfilePane.toFront();
     }
 

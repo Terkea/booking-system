@@ -183,22 +183,22 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <JFXTextField focusColor="#ff7060" promptText="first Name" unFocusColor="BLACK" GridPane.columnIndex="1">
+                        <JFXTextField fx:id="firstNameUpdateProfileTextField" focusColor="#ff7060" promptText="first Name" unFocusColor="BLACK" GridPane.columnIndex="1">
                            <GridPane.margin>
                               <Insets left="10.0" right="10.0" />
                            </GridPane.margin>
                         </JFXTextField>
-                        <JFXTextField focusColor="#ff7060" promptText="last Name" unFocusColor="BLACK" GridPane.columnIndex="2">
+                        <JFXTextField fx:id="lastNameUpdateProfileTextField" focusColor="#ff7060" promptText="last Name" unFocusColor="BLACK" GridPane.columnIndex="2">
                            <GridPane.margin>
                               <Insets left="10.0" right="10.0" />
                            </GridPane.margin>
                         </JFXTextField>
-                        <JFXComboBox focusColor="#ff7060" prefHeight="25.0" prefWidth="1047.0" promptText="Mr." unFocusColor="BLACK">
+                        <JFXComboBox fx:id="titleEditProfileComboBox" focusColor="#ff7060" prefHeight="25.0" prefWidth="1047.0" promptText="title" unFocusColor="BLACK">
                            <GridPane.margin>
                               <Insets left="10.0" right="10.0" />
                            </GridPane.margin>
                         </JFXComboBox>
-                        <JFXDatePicker defaultColor="#ff7060" prefHeight="28.0" prefWidth="418.0" GridPane.rowIndex="1">
+                        <JFXDatePicker fx:id="dobUpdateProfileDatePicker" defaultColor="#ff7060" prefHeight="28.0" prefWidth="418.0" GridPane.rowIndex="1">
                            <opaqueInsets>
                               <Insets left="10.0" right="10.0" />
                            </opaqueInsets>
@@ -208,7 +208,7 @@
                            <padding>
                               <Insets left="10.0" right="10.0" />
                            </padding></JFXDatePicker>
-                        <JFXTextField focusColor="#ff7060" promptText="address" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <JFXTextField fx:id="addressUpdateProfileTextField" focusColor="#ff7060" promptText="address" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <opaqueInsets>
                               <Insets left="10.0" right="10.0" />
                            </opaqueInsets>
@@ -216,7 +216,7 @@
                               <Insets left="10.0" right="10.0" />
                            </padding>
                         </JFXTextField>
-                        <JFXTextField focusColor="#ff7060" promptText="address2 *" unFocusColor="BLACK" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                        <JFXTextField fx:id="address2UpdateProfileTextField" focusColor="#ff7060" promptText="address2 *" unFocusColor="BLACK" GridPane.columnIndex="2" GridPane.rowIndex="1">
                            <opaqueInsets>
                               <Insets left="10.0" right="10.0" />
                            </opaqueInsets>
@@ -224,7 +224,7 @@
                               <Insets left="10.0" right="10.0" />
                            </padding>
                         </JFXTextField>
-                        <JFXTextField focusColor="#ff7060" promptText="town/city" unFocusColor="BLACK" GridPane.rowIndex="2">
+                        <JFXTextField fx:id="townUpdateProfileTextField" focusColor="#ff7060" promptText="town/city" unFocusColor="BLACK" GridPane.rowIndex="2">
                            <opaqueInsets>
                               <Insets left="10.0" right="10.0" />
                            </opaqueInsets>
@@ -232,7 +232,7 @@
                               <Insets left="10.0" right="10.0" />
                            </padding>
                         </JFXTextField>
-                        <JFXTextField focusColor="#ff7060" promptText="county" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <JFXTextField fx:id="countyUpdateProfileTextField" focusColor="#ff7060" promptText="county" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <opaqueInsets>
                               <Insets left="10.0" right="10.0" />
                            </opaqueInsets>
@@ -240,7 +240,7 @@
                               <Insets left="10.0" right="10.0" />
                            </padding>
                         </JFXTextField>
-                        <JFXTextField focusColor="#ff7060" promptText="postcode" unFocusColor="BLACK" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                        <JFXTextField fx:id="postcodeUpdateProfileTextField" focusColor="#ff7060" promptText="postcode" unFocusColor="BLACK" GridPane.columnIndex="2" GridPane.rowIndex="2">
                            <opaqueInsets>
                               <Insets left="10.0" right="10.0" />
                            </opaqueInsets>
@@ -248,7 +248,7 @@
                               <Insets left="10.0" right="10.0" />
                            </padding>
                         </JFXTextField>
-                        <JFXTextField focusColor="#ff7060" promptText="phone" unFocusColor="BLACK" GridPane.rowIndex="3">
+                        <JFXTextField fx:id="phoneUpdateProfileTextField" focusColor="#ff7060" promptText="phone" unFocusColor="BLACK" GridPane.rowIndex="3">
                            <opaqueInsets>
                               <Insets left="10.0" right="10.0" />
                            </opaqueInsets>
@@ -256,7 +256,7 @@
                               <Insets left="10.0" right="10.0" />
                            </padding>
                         </JFXTextField>
-                        <JFXTextField focusColor="#ff7060" promptText="website*" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        <JFXTextField fx:id="websiteUpdateProfileTextField" focusColor="#ff7060" promptText="website*" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.rowIndex="3">
                            <opaqueInsets>
                               <Insets left="10.0" right="10.0" />
                            </opaqueInsets>
@@ -264,7 +264,7 @@
                               <Insets left="10.0" right="10.0" />
                            </padding>
                         </JFXTextField>
-                        <JFXTextField focusColor="#ff7060" promptText="corporate name*" unFocusColor="BLACK" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                        <JFXTextField fx:id="corporateNameUpdateProfileTextField" focusColor="#ff7060" promptText="corporate name*" unFocusColor="BLACK" GridPane.columnIndex="2" GridPane.rowIndex="3">
                            <opaqueInsets>
                               <Insets left="10.0" right="10.0" />
                            </opaqueInsets>
@@ -272,7 +272,7 @@
                               <Insets left="10.0" right="10.0" />
                            </padding>
                         </JFXTextField>
-                        <JFXTextField focusColor="#ff7060" promptText="contact name*" unFocusColor="BLACK" GridPane.rowIndex="4">
+                        <JFXTextField fx:id="contactNameUpdateProfileTextField" focusColor="#ff7060" promptText="contact name*" unFocusColor="BLACK" GridPane.rowIndex="4">
                            <opaqueInsets>
                               <Insets left="10.0" right="10.0" />
                            </opaqueInsets>
@@ -280,7 +280,7 @@
                               <Insets left="10.0" right="10.0" />
                            </padding>
                         </JFXTextField>
-                        <JFXTextField focusColor="#ff7060" promptText="contact phone*" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                        <JFXTextField fx:id="contactPhoneUpdateProfileTextField" focusColor="#ff7060" promptText="contact phone*" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.rowIndex="4">
                            <opaqueInsets>
                               <Insets left="10.0" right="10.0" />
                            </opaqueInsets>
