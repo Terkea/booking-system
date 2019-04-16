@@ -100,6 +100,22 @@ public class UserDAO {
         }
     }
 
+    public static User searchUsersByID (int keyword) throws SQLException, ClassNotFoundException {
+        String selectStmt = "SELECT * " +
+                "FROM `user` " +
+                "WHERE id = \"" + keyword + "\"";
+        try{
+            ResultSet rs = DB.dbExecuteQuery(selectStmt);
+            User user = getUserFromResultSet(rs);
+
+            return user;
+        }catch(SQLException e){
+            System.err.println("ERROR While searching for a User with: " + keyword + " name, error occured: " + e);
+            System.err.println(selectStmt);
+            throw e;
+        }
+    }
+
     public static ObservableList<User> getAllUsers () throws SQLException, ClassNotFoundException{
         String selectStmt = "SELECT * FROM user";
         try {
@@ -193,5 +209,20 @@ public class UserDAO {
         }
     }
 
+
+    public void updateUserPassword(int id, String password){
+
+        String query = "UPDATE user " +
+                "SET password = '" + password + "' " +
+                "WHERE id = '" + id + "';";
+        try {
+            DB.dbExecuteUpdate(query);
+            System.out.println("Restart required to apply settings");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
 }
