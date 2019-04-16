@@ -98,7 +98,7 @@ public class Application implements Initializable {
     private JFXTextField lastNameUpdateProfileTextField;
 
     @FXML
-    private JFXComboBox<String> titleEditProfileComboBox = new JFXComboBox<>();
+    private JFXComboBox<String> titleEditProfileComboBox = new JFXComboBox();
 
     @FXML
     private JFXDatePicker dobUpdateProfileDatePicker = new JFXDatePicker();
@@ -233,6 +233,9 @@ public class Application implements Initializable {
 
     @FXML
     void editProfileAccountPane(ActionEvent event) {
+        titleEditProfileComboBox.getItems().addAll(
+                "Mr.","Mrs.","Ms","Miss","Master","Maid","Madam"
+        );
         firstNameUpdateProfileTextField.setText(ACTUALUSER.getFirst_name());
         lastNameUpdateProfileTextField.setText(ACTUALUSER.getLast_name());
         addressUpdateProfileTextField.setText(ACTUALUSER.getAddress_line());
@@ -314,7 +317,7 @@ public class Application implements Initializable {
     void updateMyProfile(ActionEvent event) {
         User update = new User();
         update.setId(ACTUALUSER.getId());
-        update.setTitle(titleEditProfileComboBox.getPromptText());
+        update.setTitle(titleEditProfileComboBox.getValue());
         update.setFirst_name(firstNameUpdateProfileTextField.getText());
         update.setLast_name(lastNameUpdateProfileTextField.getText());
         update.setAddress_line(addressUpdateProfileTextField.getText());
@@ -322,7 +325,7 @@ public class Application implements Initializable {
         update.setTown(townUpdateProfileTextField.getText());
         update.setCounty(countyUpdateProfileTextField.getText());
         update.setPostcode(postcodeUpdateProfileTextField.getText());
-        update.setDob(dobUpdateProfileDatePicker.getAccessibleText());
+        update.setDob(dobUpdateProfileDatePicker.getValue().toString());
         update.setContact_name(contactNameUpdateProfileTextField.getText());
         update.setContact_phone(contactPhoneUpdateProfileTextField.getText());
         update.setOrganization_name(corporateNameUpdateProfileTextField.getText());
