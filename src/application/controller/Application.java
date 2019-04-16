@@ -368,7 +368,7 @@ public class Application implements Initializable {
 
 
         try{
-            ObservableList<Event> eventData = EventDAO.getAllEvents();
+            ObservableList<Event> eventData = EventDAO.getAllActiveEvents();
             populateEvents(eventData);
         }catch(SQLException e){
             System.err.println("Error occured while getting event information from DB " + e);
@@ -392,7 +392,7 @@ public class Application implements Initializable {
     @FXML
     void searchConcertsPane(ActionEvent event) {
         try{
-            ObservableList<Event> eventData = EventDAO.searchEvent(searchTextFieldConcertsPane.getText());
+            ObservableList<Event> eventData = EventDAO.searchActiveEvent(searchTextFieldConcertsPane.getText());
             populateEvents(eventData);
         }catch(SQLException e){
             System.out.println("Error occured while getting event information from DB " + e);

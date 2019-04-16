@@ -47,8 +47,8 @@ public class EventDAO {
         return eventList;
     }
 
-    public static ObservableList<Event> getAllEvents () throws SQLException, ClassNotFoundException{
-        String selectStmt = "SELECT * FROM event";
+    public static ObservableList<Event> getAllActiveEvents () throws SQLException, ClassNotFoundException{
+        String selectStmt = "SELECT * FROM event WHERE status = 1";
         try {
             ResultSet rsEvent = DB.dbExecuteQuery(selectStmt);
             ObservableList<Event> eventList = getEventList(rsEvent);
@@ -60,13 +60,46 @@ public class EventDAO {
         }
     }
 
+    public static ObservableList<Event> getAllEvents () throws SQLException, ClassNotFoundException{
+        String selectStmt = "SELECT * FROM event WHERE status = 1";
+        try {
+            ResultSet rsEvent = DB.dbExecuteQuery(selectStmt);
+            ObservableList<Event> eventList = getEventList(rsEvent);
+
+            return eventList;
+        }catch (SQLException e){
+            System.err.println("SQL select operation has failed: " + e );
+            throw e;
+        }
+    }
+
+    public static ObservableList<Event> searchActiveEvent (String keyword) throws SQLException, ClassNotFoundException {
+        String selectStmt = "SELECT * " +
+                "FROM event " +
+                "WHERE name " +
+                "LIKE \"%" + keyword + "\"" +
+                "OR location " +
+                "LIKE \"%" + keyword + "\"" +
+                "WHERE status = 1";
+        try{
+            ResultSet rsEvent = DB.dbExecuteQuery(selectStmt);
+            ObservableList<Event> eventList = getEventList(rsEvent);
+
+            return eventList;
+        }catch(SQLException e){
+            System.out.println("ERROR While searching for a User with: " + keyword + " name, error occured: " + e);
+            throw e;
+        }
+    }
+
     public static ObservableList<Event> searchEvent (String keyword) throws SQLException, ClassNotFoundException {
         String selectStmt = "SELECT * " +
                 "FROM event " +
                 "WHERE name " +
                 "LIKE \"%" + keyword + "\"" +
                 "OR location " +
-                "LIKE \"%" + keyword + "\"";
+                "LIKE \"%" + keyword + "\"" +
+                "WHERE status = 1";
         try{
             ResultSet rsEvent = DB.dbExecuteQuery(selectStmt);
             ObservableList<Event> eventList = getEventList(rsEvent);
