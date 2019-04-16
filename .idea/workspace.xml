@@ -7,9 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e45a1d1-83c6-47d2-83a7-58cd49d8d856" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assessmeent/application/view/Application.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assessmeent/application/view/Application.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/controller/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/controller/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/model/EventDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/model/EventDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/view/application.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/view/application.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -25,6 +24,15 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/testing/controller/Accounts.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="301">
+              <caret line="107" selection-start-line="107" selection-end-line="113" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/application/controller/Login.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="680">
@@ -36,20 +44,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/application/controller/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="327" column="78" selection-start-line="327" selection-start-column="76" selection-end-line="327" selection-end-column="78" />
+            <state relative-caret-position="347">
+              <caret line="395" column="65" selection-start-line="395" selection-start-column="65" selection-end-line="395" selection-end-column="65" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/application/controller/Register.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="89" column="8" selection-start-line="89" selection-start-column="8" selection-end-line="91" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -57,11 +56,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/application/model/EventDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+            <state relative-caret-position="418">
+              <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/testing/model/UserDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="49" selection-start-line="49" selection-end-line="65" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -91,8 +99,10 @@
       <find>loadUser</find>
       <find>loadMyAcount</find>
       <find>tableview</find>
-      <find>title</find>
       <find>titleComboBox</find>
+      <find>title</find>
+      <find>dob</find>
+      <find>searchTextFieldConcertsPane</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -102,7 +112,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/application/system/DB.java" />
-        <option value="$PROJECT_DIR$/src/application/controller/Register.java" />
         <option value="$PROJECT_DIR$/src/application/Main.java" />
         <option value="$PROJECT_DIR$/src/application/controller/Login.java" />
         <option value="$PROJECT_DIR$/src/application/view/application.fxml" />
@@ -110,8 +119,9 @@
         <option value="$PROJECT_DIR$/src/application/model/Concert.java" />
         <option value="$PROJECT_DIR$/src/application/model/Festival.java" />
         <option value="$PROJECT_DIR$/src/application/model/Event.java" />
-        <option value="$PROJECT_DIR$/src/application/model/EventDAO.java" />
+        <option value="$PROJECT_DIR$/src/application/controller/Register.java" />
         <option value="$PROJECT_DIR$/src/application/controller/Application.java" />
+        <option value="$PROJECT_DIR$/src/application/model/EventDAO.java" />
       </list>
     </option>
   </component>
@@ -249,7 +259,7 @@
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.16684435" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.16684435" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.3336887" />
       <window_info id="Designer" order="3" />
@@ -258,7 +268,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3290461" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3290461" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39978564" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -360,13 +370,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/testing/model/UserDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-940">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/application/model/Event.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -450,23 +453,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/model/EventDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/testing/controller/Accounts.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1400">
-          <caret line="78" column="63" selection-start-line="78" selection-start-column="52" selection-end-line="78" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/testing/model/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -474,17 +460,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/testing/controller/Accounts.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="107" selection-start-line="107" selection-end-line="113" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/application/controller/Register.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="89" column="8" selection-start-line="89" selection-start-column="8" selection-end-line="91" selection-end-column="10" />
+        <state relative-caret-position="182">
+          <caret line="34" column="26" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/testing/model/UserDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="49" selection-start-line="49" selection-end-line="65" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/model/EventDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/application/controller/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="327" column="78" selection-start-line="327" selection-start-column="76" selection-end-line="327" selection-end-column="78" />
+        <state relative-caret-position="347">
+          <caret line="395" column="65" selection-start-line="395" selection-start-column="65" selection-end-line="395" selection-end-column="65" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

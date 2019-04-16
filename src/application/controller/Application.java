@@ -1,7 +1,6 @@
 package application.controller;
 
 
-import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -25,7 +24,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.event.ActionEvent;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
@@ -36,6 +34,12 @@ public class Application implements Initializable {
 
     @FXML
     private Label welcomeLabel;
+
+    @FXML
+    private JFXTextField searchTextFieldConcertsPane;
+
+    @FXML
+    private JFXButton searchButtonConcertsPane;
 
     @FXML
     private JFXButton seeMoreButtonConcertPane;
@@ -363,10 +367,9 @@ public class Application implements Initializable {
             ObservableList<Event> eventData = EventDAO.getAllEvents();
             populateEvents(eventData);
         }catch(SQLException e){
-            System.out.println("Error occured while getting employees information from DB " + e);
-//            throw e;
+            System.err.println("Error occured while getting event information from DB " + e);
         }catch (ClassNotFoundException e){
-//            throw e;
+            System.err.println("Error occured while getting event information from DB " + e);
         }
     }
 
@@ -382,5 +385,16 @@ public class Application implements Initializable {
         concertsTableConcertsPane.setItems(eventData);
     }
 
+    @FXML
+    void searchConcertsPane(ActionEvent event) {
+        try{
+            ObservableList<Event> eventData = EventDAO.searchEvent(searchTextFieldConcertsPane.getText());
+            populateEvents(eventData);
+        }catch(SQLException e){
+            System.out.println("Error occured while getting event information from DB " + e);
+        }catch (ClassNotFoundException e){
+            System.err.println("Error occured while getting event information from DB " + e);
+        }
+    }
 
 }
