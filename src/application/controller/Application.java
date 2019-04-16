@@ -173,6 +173,9 @@ public class Application implements Initializable {
     @FXML
     private TableColumn<Event, Double> priceColumnConcertsPane;
 
+    @FXML
+    private TableColumn<Event, String> typeColumnConcertsPane;
+
 
     public User ACTUALUSER = null;
 
@@ -359,6 +362,7 @@ public class Application implements Initializable {
         nameColumnConcertsPane.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
         dateColumnConcertsPane.setCellValueFactory(cellData -> cellData.getValue().dateProperty());
         locationColumnConcertsPane.setCellValueFactory(cellData -> cellData.getValue().locationProperty());
+        typeColumnConcertsPane.setCellValueFactory(cellData -> cellData.getValue().event_typeProperty());
         ticketsColumnConcertsPane.setCellValueFactory(cellData -> cellData.getValue().tickets_availableProperty().asObject());
         priceColumnConcertsPane.setCellValueFactory(cellData -> cellData.getValue().ticket_priceProperty().asObject());
 

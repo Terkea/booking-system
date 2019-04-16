@@ -315,10 +315,11 @@
                   <TableView fx:id="concertsTableConcertsPane" layoutX="41.0" layoutY="157.0" prefHeight="363.0" prefWidth="560.0" style="-fx-background-color: #FFE5E2;" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="157.0">
                     <columns>
                       <TableColumn fx:id="nameColumnConcertsPane" prefWidth="75.0" text="Name" />
-                      <TableColumn fx:id="dateColumnConcertsPane" prefWidth="145.0" text="Date" />
-                        <TableColumn fx:id="locationColumnConcertsPane" prefWidth="135.0" text="Location" />
-                        <TableColumn fx:id="ticketsColumnConcertsPane" prefWidth="103.0" text="Tickets Available" />
-                        <TableColumn fx:id="priceColumnConcertsPane" prefWidth="101.0" text="Price" />
+                        <TableColumn fx:id="locationColumnConcertsPane" prefWidth="106.0" text="Location" />
+                        <TableColumn fx:id="ticketsColumnConcertsPane" prefWidth="124.0" text="Tickets Available" />
+                        <TableColumn fx:id="priceColumnConcertsPane" prefWidth="71.0" text="Price" />
+                        <TableColumn fx:id="typeColumnConcertsPane" prefWidth="71.0" text="Type" />
+                      <TableColumn fx:id="dateColumnConcertsPane" prefWidth="112.0" text="Date" />
                     </columns>
                   </TableView>
                   <JFXTextField fx:id="searchTextFieldConcertsPane" focusColor="#ff7060" layoutX="20.0" layoutY="107.0" prefHeight="30.0" prefWidth="435.0" unFocusColor="BLACK" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="145.0" AnchorPane.topAnchor="107.0">
