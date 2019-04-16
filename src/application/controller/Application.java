@@ -21,6 +21,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.event.ActionEvent;
+import javafx.scene.control.TreeTableColumn;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.control.Label;
@@ -31,6 +32,9 @@ public class Application implements Initializable {
 
     @FXML
     private Label welcomeLabel;
+
+    @FXML
+    private JFXButton seeMoreButtonConcertPane;
 
     @FXML
     private Label errorLabelPasswordPane;
@@ -142,6 +146,24 @@ public class Application implements Initializable {
 
     @FXML
     private JFXPasswordField confirmPasswordChangePasswordPane;
+
+    @FXML
+    private JFXTreeTableView<?> concertsTableConcertsPane;
+
+    @FXML
+    private TreeTableColumn<?, ?> nameColumnConcertsPane;
+
+    @FXML
+    private TreeTableColumn<?, ?> dateColumnConcertsPane;
+
+    @FXML
+    private TreeTableColumn<?, ?> locationColumnConcertsPane;
+
+    @FXML
+    private TreeTableColumn<?, ?> ticketsColumnConcertsPane;
+
+    @FXML
+    private TreeTableColumn<?, ?> priceColumnConcertsPane;
 
 
     public User ACTUALUSER = null;
