@@ -164,5 +164,34 @@ public class UserDAO {
         }
     }
 
+    public void updateUser(User user){
+
+        String query = "UPDATE user " +
+                "SET title = '" + user.getTitle() + "', " +
+                "first_name = '" + user.getFirst_name() + "', " +
+                "last_name = '" + user.getLast_name() + "', " +
+//                "gender = " + user.getGender() + ", " +
+                "address_line = '" + user.getAddress_line() + "', " +
+                "address_line2 = '" + user.getAddress_line2() + "', " +
+                "town = '" + user.getTown() + "', " +
+                "county = '" + user.getCounty() + "', " +
+                "postcode = '" + user.getPostcode() + "', " +
+                "dob = '" + user.getDob() + "', " +
+                "contact_name = '" + user.getContact_name() + "', " +
+                "contact_phone = '" + user.getContact_phone() + "', " +
+                "organisation_name = '" + user.getOrganization_name() + "', " +
+                "mobile_no = '" + user.getMobile_no() + "', " +
+                "web_address = '" + user.getWebsite_address() + "' " +
+                "WHERE id = '" + user.getId() + "';";
+        try {
+            DB.dbExecuteUpdate(query);
+            System.out.println("Restart required to apply settings");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }

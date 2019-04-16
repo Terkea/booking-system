@@ -288,7 +288,7 @@
                               <Insets left="10.0" right="10.0" />
                            </padding>
                         </JFXTextField>
-                        <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" prefHeight="38.0" prefWidth="482.0" style="-fx-background-color: #FF998E;" text="Update" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <JFXButton fx:id="updateProfileButtonUpdatePane" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" onAction="#updateProfile" prefHeight="38.0" prefWidth="482.0" style="-fx-background-color: #FF998E;" text="Update" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                      </children>
                   </GridPane>
                </children>

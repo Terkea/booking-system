@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 
 
 import application.model.User;
+import application.model.UserDAO;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
@@ -115,6 +116,9 @@ public class Application implements Initializable {
     @FXML
     private JFXTextField contactPhoneUpdateProfileTextField;
 
+    @FXML
+    private JFXButton updateProfileButtonUpdatePane;
+
 
 
     public User ACTUALUSER = null;
@@ -199,7 +203,31 @@ public class Application implements Initializable {
         contactPhoneUpdateProfileTextField.setText(ACTUALUSER.getContact_phone());
         titleEditProfileComboBox.setPromptText(ACTUALUSER.getTitle());
         dobUpdateProfileDatePicker.setPromptText(ACTUALUSER.getDob());
+
         editProfilePane.toFront();
+    }
+
+    @FXML
+    void updateProfile(ActionEvent event) {
+        User update = new User();
+        update.setId(ACTUALUSER.getId());
+        update.setTitle(titleEditProfileComboBox.getPromptText());
+        update.setFirst_name(firstNameUpdateProfileTextField.getText());
+        update.setLast_name(lastNameUpdateProfileTextField.getText());
+        update.setAddress_line(addressUpdateProfileTextField.getText());
+        update.setAddress_line2(address2UpdateProfileTextField.getText());
+        update.setTown(townUpdateProfileTextField.getText());
+        update.setCounty(countyUpdateProfileTextField.getText());
+        update.setPostcode(postcodeUpdateProfileTextField.getText());
+        update.setDob(dobUpdateProfileDatePicker.getAccessibleText());
+        update.setContact_name(contactNameUpdateProfileTextField.getText());
+        update.setContact_phone(contactPhoneUpdateProfileTextField.getText());
+        update.setOrganization_name(corporateNameUpdateProfileTextField.getText());
+        update.setMobile_no(phoneUpdateProfileTextField.getText());
+        update.setWebsite_address(websiteUpdateProfileTextField.getText());
+
+        UserDAO dao = new UserDAO();
+        dao.updateUser(update);
     }
 
 }
