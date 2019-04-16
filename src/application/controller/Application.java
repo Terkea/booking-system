@@ -8,10 +8,14 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 
+import application.model.Event;
+import application.model.EventDAO;
 import application.model.User;
 import application.model.UserDAO;
 import application.system.Password;
 import com.jfoenix.controls.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -19,12 +23,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
+import javafx.scene.control.*;
 import javafx.event.ActionEvent;
-import javafx.scene.control.TreeTableColumn;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 public class Application implements Initializable {
@@ -148,22 +152,22 @@ public class Application implements Initializable {
     private JFXPasswordField confirmPasswordChangePasswordPane;
 
     @FXML
-    private JFXTreeTableView<?> concertsTableConcertsPane;
+    private TableView<Event> concertsTableConcertsPane;
 
     @FXML
-    private TreeTableColumn<?, ?> nameColumnConcertsPane;
+    private TableColumn<Event, String> nameColumnConcertsPane;
 
     @FXML
-    private TreeTableColumn<?, ?> dateColumnConcertsPane;
+    private TableColumn<Event, String> dateColumnConcertsPane;
 
     @FXML
-    private TreeTableColumn<?, ?> locationColumnConcertsPane;
+    private TableColumn<Event, String> locationColumnConcertsPane;
 
     @FXML
-    private TreeTableColumn<?, ?> ticketsColumnConcertsPane;
+    private TableColumn<Event, Integer> ticketsColumnConcertsPane;
 
     @FXML
-    private TreeTableColumn<?, ?> priceColumnConcertsPane;
+    private TableColumn<Event, Double> priceColumnConcertsPane;
 
 
     public User ACTUALUSER = null;
@@ -172,6 +176,22 @@ public class Application implements Initializable {
     public void initialize(URL url, ResourceBundle rs) {
     }
 
+    @FXML
+    void handleButtonAction(ActionEvent event) {
+        if (event.getSource() == myAccountButton) {
+            accountPane.toFront();
+        } else if (event.getSource() == viewConcertsFestivalsButton) {
+            viewConcertsPane.toFront();
+            loadEventsData();
+        } else if (event.getSource() == viewBookingsButton) {
+            viewBookingsPane.toFront();
+        }
+    }
+
+
+
+
+    // ACCOUNT PANE
     @FXML
     public void loadUser(User user) {
 
@@ -209,24 +229,6 @@ public class Application implements Initializable {
         } else {
             corporatOrganizationAccountPaneTextField.setVisible(false);
         }
-    }
-
-    @FXML
-    void handleButtonAction(ActionEvent event) {
-        if (event.getSource() == myAccountButton) {
-            accountPane.toFront();
-        } else if (event.getSource() == viewConcertsFestivalsButton) {
-            viewConcertsPane.toFront();
-        } else if (event.getSource() == viewBookingsButton) {
-            viewBookingsPane.toFront();
-        }
-    }
-
-
-    // ACCOUNT PANE
-    @FXML
-    void changePasswordProfileAccountPane(ActionEvent event) {
-
     }
 
     @FXML
@@ -341,8 +343,41 @@ public class Application implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
+
+
+
+    //EVENT PANE
+    private void loadEventsData(){
+        nameColumnConcertsPane.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
+        dateColumnConcertsPane.setCellValueFactory(cellData -> cellData.getValue().dateProperty());
+        locationColumnConcertsPane.setCellValueFactory(cellData -> cellData.getValue().locationProperty());
+        ticketsColumnConcertsPane.setCellValueFactory(cellData -> cellData.getValue().tickets_availableProperty().asObject());
+        priceColumnConcertsPane.setCellValueFactory(cellData -> cellData.getValue().ticket_priceProperty().asObject());
+
+
+        try{
+            ObservableList<Event> eventData = EventDAO.getAllEvents();
+            populateEvents(eventData);
+        }catch(SQLException e){
+            System.out.println("Error occured while getting employees information from DB " + e);
+//            throw e;
+        }catch (ClassNotFoundException e){
+//            throw e;
+        }
+    }
+
+    @FXML
+    private void populateEvents (Event event) throws ClassNotFoundException{
+        ObservableList<Event> eventData = FXCollections.observableArrayList();
+        eventData.add(event);
+        concertsTableConcertsPane.setItems(eventData);
+    }
+
+    @FXML
+    private void populateEvents(ObservableList<Event> eventData) throws ClassNotFoundException{
+        concertsTableConcertsPane.setItems(eventData);
+    }
+
 
 }

@@ -31,7 +31,6 @@ public class EventDAO {
 
         while (rs.next()){
             Event event = new Event();
-            event = new Event();
             event.setId(rs.getInt("id"));
             event.setName(rs.getString("name"));
             event.setLocation(rs.getString("location"));

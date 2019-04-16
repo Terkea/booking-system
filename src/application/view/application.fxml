@@ -8,6 +8,8 @@
 <?import com.jfoenix.controls.JFXTreeTableView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TreeTableColumn?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -203,6 +205,44 @@
                   </GridPane>
                </children>
             </AnchorPane>
+            <AnchorPane fx:id="changeMyPasswordPane" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #FFF2F2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane layoutX="-146.0" layoutY="18.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="90.0" prefWidth="600.0" style="-fx-background-color: #FFE5E2;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="164.0" layoutY="26.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="38.0" prefWidth="272.0" text="Change password" AnchorPane.leftAnchor="164.0" AnchorPane.rightAnchor="164.0" AnchorPane.topAnchor="26.0">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <VBox layoutX="73.0" layoutY="200.0" prefHeight="200.0" prefWidth="457.0" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="73.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="200.0">
+                     <children>
+                        <JFXPasswordField fx:id="currentPasswordChangePasswordPane" focusColor="#ff7060" promptText="Current password" unFocusColor="BLACK">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXPasswordField>
+                        <JFXPasswordField fx:id="passwordChangePasswordPane" focusColor="#ff7060" promptText="Password" unFocusColor="BLACK">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXPasswordField>
+                        <JFXPasswordField fx:id="confirmPasswordChangePasswordPane" focusColor="#ff7060" promptText="Password confirm" unFocusColor="BLACK">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXPasswordField>
+                     </children>
+                  </VBox>
+                  <JFXButton fx:id="updateProfileButtonUpdatePane1" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="124.0" layoutY="460.0" onAction="#updatePasswordMyProfile" prefHeight="38.0" prefWidth="356.0" style="-fx-background-color: #FF998E;" text="Update password" AnchorPane.bottomAnchor="102.0" AnchorPane.leftAnchor="124.0" AnchorPane.rightAnchor="120.0" />
+                  <Label fx:id="errorLabelPasswordPane" alignment="CENTER" contentDisplay="CENTER" layoutX="102.0" layoutY="424.0" prefHeight="20.0" prefWidth="397.0" textFill="RED" AnchorPane.bottomAnchor="156.0" AnchorPane.leftAnchor="102.0" AnchorPane.rightAnchor="101.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
             <AnchorPane fx:id="accountPane" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #FFF2F0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <AnchorPane layoutY="90.0" prefHeight="510.0" prefWidth="600.0" style="-fx-background-color: #FFF2F2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="89.0">
@@ -270,55 +310,17 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="changeMyPasswordPane" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #FFF2F2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <AnchorPane layoutX="-146.0" layoutY="18.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="90.0" prefWidth="600.0" style="-fx-background-color: #FFE5E2;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <Label alignment="CENTER" layoutX="164.0" layoutY="26.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="38.0" prefWidth="272.0" text="Change password" AnchorPane.leftAnchor="164.0" AnchorPane.rightAnchor="164.0" AnchorPane.topAnchor="26.0">
-                           <font>
-                              <Font size="26.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-                  <VBox layoutX="73.0" layoutY="200.0" prefHeight="200.0" prefWidth="457.0" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="73.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="200.0">
-                     <children>
-                        <JFXPasswordField fx:id="currentPasswordChangePasswordPane" focusColor="#ff7060" promptText="Current password" unFocusColor="BLACK">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </JFXPasswordField>
-                        <JFXPasswordField fx:id="passwordChangePasswordPane" focusColor="#ff7060" promptText="Password" unFocusColor="BLACK">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </JFXPasswordField>
-                        <JFXPasswordField fx:id="confirmPasswordChangePasswordPane" focusColor="#ff7060" promptText="Password confirm" unFocusColor="BLACK">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </JFXPasswordField>
-                     </children>
-                  </VBox>
-                  <JFXButton fx:id="updateProfileButtonUpdatePane1" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="124.0" layoutY="460.0" onAction="#updatePasswordMyProfile" prefHeight="38.0" prefWidth="356.0" style="-fx-background-color: #FF998E;" text="Update password" AnchorPane.bottomAnchor="102.0" AnchorPane.leftAnchor="124.0" AnchorPane.rightAnchor="120.0" />
-                  <Label fx:id="errorLabelPasswordPane" alignment="CENTER" contentDisplay="CENTER" layoutX="102.0" layoutY="424.0" prefHeight="20.0" prefWidth="397.0" textFill="RED" AnchorPane.bottomAnchor="156.0" AnchorPane.leftAnchor="102.0" AnchorPane.rightAnchor="101.0">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-               </children>
-            </AnchorPane>
             <AnchorPane fx:id="viewConcertsPane" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #FFE5E2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <JFXTreeTableView fx:id="concertsTableConcertsPane" layoutX="23.0" layoutY="63.0" prefHeight="456.0" prefWidth="554.0" style="-fx-background-color: #FFF2F2;" AnchorPane.bottomAnchor="81.0" AnchorPane.leftAnchor="23.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="63.0">
-                     <columns>
-                        <TreeTableColumn fx:id="nameColumnConcertsPane" prefWidth="75.0" text="Name" />
-                        <TreeTableColumn fx:id="dateColumnConcertsPane" prefWidth="109.0" text="Date" />
-                        <TreeTableColumn fx:id="locationColumnConcertsPane" prefWidth="110.0" text="Location" />
-                        <TreeTableColumn fx:id="ticketsColumnConcertsPane" prefWidth="116.0" text="Tickets Available" />
-                        <TreeTableColumn fx:id="priceColumnConcertsPane" prefWidth="143.0" text="Price" />
-                     </columns>
-                  </JFXTreeTableView>
+                  <TableView fx:id="concertsTableConcertsPane" layoutX="41.0" layoutY="90.0" prefHeight="411.0" prefWidth="519.0" style="-fx-background-color: #FFF2F2;" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="60.0">
+                    <columns>
+                      <TableColumn fx:id="nameColumnConcertsPane" prefWidth="75.0" text="Name" />
+                      <TableColumn fx:id="dateColumnConcertsPane" prefWidth="145.0" text="Date" />
+                        <TableColumn fx:id="locationColumnConcertsPane" prefWidth="135.0" text="Location" />
+                        <TableColumn fx:id="ticketsColumnConcertsPane" prefWidth="103.0" text="Tickets Available" />
+                        <TableColumn fx:id="priceColumnConcertsPane" prefWidth="101.0" text="Price" />
+                    </columns>
+                  </TableView>
                   <JFXTextField fx:id="searchTextFieldConcertsPane" focusColor="#ff7060" layoutX="383.0" layoutY="22.0" prefHeight="25.0" prefWidth="194.0" promptText="Search" unFocusColor="BLACK" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="22.0">
                      <font>
                         <Font size="14.0" />
