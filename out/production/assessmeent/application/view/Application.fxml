@@ -203,30 +203,6 @@
                   </GridPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="viewConcertsPane" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #FFE5E2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <JFXTreeTableView layoutX="23.0" layoutY="63.0" prefHeight="456.0" prefWidth="554.0" style="-fx-background-color: #FFF2F2;" AnchorPane.bottomAnchor="81.0" AnchorPane.leftAnchor="23.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="63.0">
-                     <columns>
-                        <TreeTableColumn prefWidth="75.0" text="Name" />
-                        <TreeTableColumn prefWidth="109.0" text="Date" />
-                        <TreeTableColumn prefWidth="110.0" text="Location" />
-                        <TreeTableColumn prefWidth="116.0" text="Tickets Available" />
-                        <TreeTableColumn prefWidth="143.0" text="Price" />
-                     </columns>
-                  </JFXTreeTableView>
-                  <JFXTextField focusColor="#ff7060" layoutX="383.0" layoutY="22.0" prefHeight="25.0" prefWidth="194.0" promptText="Search" unFocusColor="BLACK" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="22.0">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </JFXTextField>
-                  <Label layoutX="23.0" layoutY="30.0" prefHeight="20.0" prefWidth="349.0" text="1000 Events Available" AnchorPane.leftAnchor="23.0" AnchorPane.topAnchor="30.0">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="59.0" layoutY="538.0" prefHeight="38.0" prefWidth="482.0" style="-fx-background-color: #FF998E;" text="See more details about that event" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="59.0" AnchorPane.rightAnchor="59.0" />
-               </children>
-            </AnchorPane>
             <AnchorPane fx:id="accountPane" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #FFF2F0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <AnchorPane layoutY="90.0" prefHeight="510.0" prefWidth="600.0" style="-fx-background-color: #FFF2F2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="89.0">
@@ -330,6 +306,30 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="viewConcertsPane" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #FFE5E2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <JFXTreeTableView fx:id="concertsTableConcertsPane" layoutX="23.0" layoutY="63.0" prefHeight="456.0" prefWidth="554.0" style="-fx-background-color: #FFF2F2;" AnchorPane.bottomAnchor="81.0" AnchorPane.leftAnchor="23.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="63.0">
+                     <columns>
+                        <TreeTableColumn fx:id="nameColumnConcertsPane" prefWidth="75.0" text="Name" />
+                        <TreeTableColumn fx:id="dateColumnConcertsPane" prefWidth="109.0" text="Date" />
+                        <TreeTableColumn fx:id="locationColumnConcertsPane" prefWidth="110.0" text="Location" />
+                        <TreeTableColumn fx:id="ticketsColumnConcertsPane" prefWidth="116.0" text="Tickets Available" />
+                        <TreeTableColumn fx:id="priceColumnConcertsPane" prefWidth="143.0" text="Price" />
+                     </columns>
+                  </JFXTreeTableView>
+                  <JFXTextField fx:id="searchTextFieldConcertsPane" focusColor="#ff7060" layoutX="383.0" layoutY="22.0" prefHeight="25.0" prefWidth="194.0" promptText="Search" unFocusColor="BLACK" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="22.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <Label layoutX="23.0" layoutY="30.0" prefHeight="20.0" prefWidth="349.0" text="1000 Events Available" AnchorPane.leftAnchor="23.0" AnchorPane.topAnchor="30.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="seeMoreButtonConcertPane" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="59.0" layoutY="538.0" prefHeight="38.0" prefWidth="482.0" style="-fx-background-color: #FF998E;" text="See more details about that event" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="59.0" AnchorPane.rightAnchor="59.0" />
                </children>
             </AnchorPane>
          </children>

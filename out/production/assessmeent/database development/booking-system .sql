@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 08, 2019 at 09:10 PM
+-- Generation Time: Apr 16, 2019 at 04:46 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -89,14 +89,14 @@ CREATE TABLE `booking` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `festival`
+-- Table structure for table `event`
 --
 
-CREATE TABLE `festival` (
+CREATE TABLE `event` (
   `id` int(11) NOT NULL,
   `location` varchar(255) NOT NULL,
   `date` date NOT NULL,
-  `festival_name` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
   `description` varchar(255) DEFAULT NULL,
   `tickets_available` varchar(255) NOT NULL DEFAULT '0',
   `ticket_price` float DEFAULT '0',
@@ -194,7 +194,12 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `title`, `first_name`, `last_name`, `gender`, `address_line`, `address_line2`, `town`, `county`, `postcode`, `dob`, `contact_name`, `contact_phone`, `organisation_name`, `email_address`, `mobile_no`, `web_address`, `password`, `corporate_name`, `is_admin`) VALUES
-(1, 'Mr.', 'Marian', 'Terchila', 'Male', '242 Hitchin Road', '3 Hilary Court', 'Luton', 'Bedfordshire', 'lu20en', '08.09.1997', NULL, NULL, NULL, 'terkeabt@gmail.com', '07466652400', 'wwww.terkea.com', 'Parola1@3', NULL, 1);
+(1, 'Mr.', 'Marian', 'Terchila', 'Male', '242 Hitchin Road', '3 Hilary Court', 'Luton', 'Bedfordshire', 'lu20en', '08.09.1997', NULL, NULL, NULL, 'terkea', '07466652400', 'wwww.terkea.com', '$2a$08$.sTcI5bTjhCosuwChOLTu.IwRx1NoPBXs.IoXN9vQ48ygK2ImHZOq', NULL, 1),
+(3, 'Mr.', 'Marian', 'Terchila', 'Male', '242 Hitchin Road', '3 Hilary Court', 'Luton', 'Bedfordshire', 'lu20en', '08.09.1997', NULL, NULL, NULL, 'terkea@gmail.com', '07466652400', 'wwww.terkea.com', '$2a$08$LXJ2DS3ZazIYGCzNW7GIjevlNGPhYEMCqmTz4fizkwKGCisjk8R.6', NULL, 1),
+(8, 'Ms', '1', '1', 'Male', '1', '', '1', '1', '1', '2019-04-07', '', '', 'null', '1', '1', '2', '$2a$08$JCsnAzpEFbG8GR1Ki0SBVu0c66EFREYNNSLN9QLUUOfsgVnnko3YC', '', 0),
+(9, 'Ms', '1', '1', 'Male', '1', '', '1', '1', '1', '2019-04-07', '', '', 'null', '565', '1', '2', '$2a$08$G0dJ7Nrsn.OOdK1fzb./r.WwcXEmv.MiksPXIi6ypUI1ryEhwQ/ZS', 'test', 0),
+(10, 'Ms', '1', '1', 'Male', '1', 'test', '1', '1', '1', '2019-04-07', 'test', 'test', 'null', '2', '1', '2', '$2a$08$2SteSn3yHH3Yb5AIYkScwOLRgbztreqlaf.ekEmUawp7vo6U1nkS6', 'test', 0),
+(11, 'title', 'test', 'test', 'Male', 'SELECT * FROM USER', 'test', 'test', 'test', 'test', 'null', '', '', 'test', 'test', 'test', 'test', '$2a$08$UXRvh0FidoANOwE4Npw/7.bKFnWO4oeku3KMRMOOFa/CtO3wATsbO', 'test', 0);
 
 --
 -- Indexes for dumped tables
@@ -240,9 +245,9 @@ ALTER TABLE `booking`
   ADD KEY `payment_id` (`payment_id`);
 
 --
--- Indexes for table `festival`
+-- Indexes for table `event`
 --
-ALTER TABLE `festival`
+ALTER TABLE `event`
   ADD PRIMARY KEY (`id`),
   ADD KEY `organizer_id` (`organizer_id`);
 
@@ -317,9 +322,9 @@ ALTER TABLE `booking`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `festival`
+-- AUTO_INCREMENT for table `event`
 --
-ALTER TABLE `festival`
+ALTER TABLE `event`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -350,7 +355,7 @@ ALTER TABLE `ticket`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables
@@ -367,7 +372,7 @@ ALTER TABLE `band`
 -- Constraints for table `bands_list`
 --
 ALTER TABLE `bands_list`
-  ADD CONSTRAINT `bands_list_ibfk_1` FOREIGN KEY (`festival_id`) REFERENCES `festival` (`id`),
+  ADD CONSTRAINT `bands_list_ibfk_1` FOREIGN KEY (`festival_id`) REFERENCES `event` (`id`),
   ADD CONSTRAINT `bands_list_ibfk_2` FOREIGN KEY (`band_id`) REFERENCES `band` (`id`);
 
 --
@@ -381,15 +386,15 @@ ALTER TABLE `band_members`
 -- Constraints for table `booking`
 --
 ALTER TABLE `booking`
-  ADD CONSTRAINT `booking_ibfk_1` FOREIGN KEY (`festival_id`) REFERENCES `festival` (`id`),
+  ADD CONSTRAINT `booking_ibfk_1` FOREIGN KEY (`festival_id`) REFERENCES `event` (`id`),
   ADD CONSTRAINT `booking_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
   ADD CONSTRAINT `booking_ibfk_3` FOREIGN KEY (`payment_id`) REFERENCES `payment` (`id`);
 
 --
--- Constraints for table `festival`
+-- Constraints for table `event`
 --
-ALTER TABLE `festival`
-  ADD CONSTRAINT `festival_ibfk_1` FOREIGN KEY (`organizer_id`) REFERENCES `user` (`id`);
+ALTER TABLE `event`
+  ADD CONSTRAINT `event_ibfk_1` FOREIGN KEY (`organizer_id`) REFERENCES `user` (`id`);
 
 --
 -- Constraints for table `invoice`
@@ -404,7 +409,7 @@ ALTER TABLE `invoice`
 ALTER TABLE `ticket`
   ADD CONSTRAINT `ticket_ibfk_1` FOREIGN KEY (`booking_id`) REFERENCES `booking` (`id`),
   ADD CONSTRAINT `ticket_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
-  ADD CONSTRAINT `ticket_ibfk_3` FOREIGN KEY (`festival_id`) REFERENCES `festival` (`id`);
+  ADD CONSTRAINT `ticket_ibfk_3` FOREIGN KEY (`festival_id`) REFERENCES `event` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
