@@ -36,6 +36,9 @@ public class Application implements Initializable {
     private Label welcomeLabel;
 
     @FXML
+    private Label totalTicketPaymentPane;
+
+    @FXML
     private JFXTextField searchTextFieldConcertsPane;
 
     @FXML
@@ -108,6 +111,12 @@ public class Application implements Initializable {
     private JFXDatePicker dobUpdateProfileDatePicker = new JFXDatePicker();
 
     @FXML
+    private AnchorPane seeMoreEventPane;
+
+    @FXML
+    private AnchorPane ticketsPaymentPane;
+
+    @FXML
     private JFXTextField addressUpdateProfileTextField;
 
     @FXML
@@ -115,6 +124,27 @@ public class Application implements Initializable {
 
     @FXML
     private JFXTextField townUpdateProfileTextField;
+
+    @FXML
+    private Label unitsNameTicketPaymentPane;
+
+    @FXML
+    private Label quantityPriceTicketsPaymentPane;
+
+    @FXML
+    private JFXTextField cardNameTicketPaymentPane;
+
+    @FXML
+    private JFXTextField cardNumberTicketPaymentPane;
+
+    @FXML
+    private JFXTextField yearTicketPaymentPane;
+
+    @FXML
+    private JFXTextField monthTicketPaymentPane;
+
+    @FXML
+    private JFXTextField securityCodeTicketPaymentPane;
 
     @FXML
     private JFXTextField countyUpdateProfileTextField;
@@ -150,6 +180,9 @@ public class Application implements Initializable {
     private JFXPasswordField currentPasswordChangePasswordPane;
 
     @FXML
+    private JFXButton buyTicketsButtonMoreDetailsPane;
+
+    @FXML
     private JFXPasswordField passwordChangePasswordPane;
 
     @FXML
@@ -175,6 +208,32 @@ public class Application implements Initializable {
 
     @FXML
     private TableColumn<Event, String> typeColumnConcertsPane;
+
+    @FXML
+    private Label titleLabelMoreDetailsEventPane;
+
+    @FXML
+    private Label locationLabelMoreDetailsEventPane;
+
+    @FXML
+    private Label dateLabelMoreDetailsEventPane;
+
+    @FXML
+    private Label ticketsAvailableLabelMoreDetailsEventPane;
+
+    @FXML
+    private Label ticketPriceLabelMoreDetailsEventPane;
+
+    @FXML
+    private Label eventTypeLabelMoreDetailsEventPane;
+
+    @FXML
+    private Label descriptionLabelMoreDetailsEventPane;
+
+    @FXML
+    private JFXTextField howManyLabelMoreDetailsPane;
+
+
 
 
     public User ACTUALUSER = null;
@@ -399,6 +458,54 @@ public class Application implements Initializable {
         }catch (ClassNotFoundException e){
             System.err.println("Error occured while getting event information from DB " + e);
         }
+    }
+
+    @FXML
+    void seeMoreDetailsButtonConcertPane(ActionEvent event) {
+        Event selectedEvent = null;
+        try {
+            selectedEvent = EventDAO.getEventByID(concertsTableConcertsPane.getSelectionModel().getSelectedItem().getId());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
+        //concertsTableConcertsPane.getSelectionModel().getSelectedItem().getId()
+        seeMoreEventPane.toFront();
+        titleLabelMoreDetailsEventPane.setText(selectedEvent.getName());
+        locationLabelMoreDetailsEventPane.setText(selectedEvent.getLocation());
+        dateLabelMoreDetailsEventPane.setText(selectedEvent.getDate());
+        ticketsAvailableLabelMoreDetailsEventPane.setText(selectedEvent.getTickets_available() + "- tickets booked");
+        ticketPriceLabelMoreDetailsEventPane.setText(selectedEvent.getTicket_price() + " GBP");
+        eventTypeLabelMoreDetailsEventPane.setText(selectedEvent.getEvent_type());
+        descriptionLabelMoreDetailsEventPane.setText(selectedEvent.getDescription());
+        // NEED TO BE ADDED THE BANDS/ARTISTIS WHO ARE GONNA
+    }
+
+    @FXML
+    void buyTickets(ActionEvent event){
+        ticketsPaymentPane.toFront();
+        Event selectedEvent = null;
+        try {
+            selectedEvent = EventDAO.getEventByID(concertsTableConcertsPane.getSelectionModel().getSelectedItem().getId());
+            unitsNameTicketPaymentPane.setText(howManyLabelMoreDetailsPane.getText() + "x " + selectedEvent.getName() + " " + selectedEvent.getEvent_type());
+            quantityPriceTicketsPaymentPane.setText(selectedEvent.getTicket_price() + "GBP * " +howManyLabelMoreDetailsPane.getText());
+            totalTicketPaymentPane.setText(Double.parseDouble(howManyLabelMoreDetailsPane.getText()) * (selectedEvent.getTicket_price()) + " GBP");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @FXML
+    //BUY TICKETS PANE
+    void pay(ActionEvent event){
+
     }
 
 }

@@ -80,7 +80,7 @@ public class EventDAO {
                 "LIKE \"%" + keyword + "\"" +
                 "OR location " +
                 "LIKE \"%" + keyword + "\"" +
-                "WHERE status = 1";
+                "AND status = 1";
         try{
             ResultSet rsEvent = DB.dbExecuteQuery(selectStmt);
             ObservableList<Event> eventList = getEventList(rsEvent);
@@ -107,6 +107,23 @@ public class EventDAO {
             return eventList;
         }catch(SQLException e){
             System.out.println("ERROR While searching for a User with: " + keyword + " name, error occured: " + e);
+            throw e;
+        }
+    }
+
+    public static Event getEventByID (int keyword) throws SQLException, ClassNotFoundException {
+        String selectStmt = "SELECT * " +
+                "FROM `event` " +
+                "WHERE id = \"" + keyword + "\"";
+//                "AND status = 1";
+        try{
+            ResultSet rs = DB.dbExecuteQuery(selectStmt);
+            Event event = getEventFromResultSet(rs);
+
+            return event;
+        }catch(SQLException e){
+            System.err.println("ERROR While searching for a User with: " + keyword + " name, error occured: " + e);
+            System.err.println(selectStmt);
             throw e;
         }
     }

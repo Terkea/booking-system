@@ -11,7 +11,7 @@ public class DB {
     private static final String USER = "root";
     private static final String PASSWORD = "";
 
-    private static final String URL = "jdbc:mysql://localhost/" + DBNAME;
+    private static final String URL = "jdbc:mysql://localhost/" + DBNAME + "?useTimezone=true&serverTimezone=UTC";
 
 
     public static void dbConnect() throws SQLException, ClassNotFoundException{
