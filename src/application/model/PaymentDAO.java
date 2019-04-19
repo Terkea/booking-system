@@ -66,6 +66,10 @@ public class PaymentDAO {
             DB.dbExecuteUpdate(updateStmt);
         } catch (SQLException e) {
             System.err.print("Error occurred while INSERTING PAYMENT Operation: " + e);
+
+
+
+            
             throw e;
         }
     }
