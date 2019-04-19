@@ -19,6 +19,7 @@ public class PaymentDAO {
             payment.setCard_holder_name(rs.getString("card_holder_name"));
             payment.setCvs(rs.getString("cvs"));
             payment.setUser_id(rs.getInt("user_id"));
+            payment.setStatus(rs.getDouble("status"));
         }
         return payment;
     }
@@ -35,6 +36,7 @@ public class PaymentDAO {
             payment.setCard_holder_name(rs.getString("card_holder_name"));
             payment.setCvs(rs.getString("cvs"));
             payment.setUser_id(rs.getInt("user_id"));
+            payment.setStatus(rs.getDouble("status"));
             paymentList.add(payment);
         }
         return paymentList;
@@ -66,10 +68,6 @@ public class PaymentDAO {
             DB.dbExecuteUpdate(updateStmt);
         } catch (SQLException e) {
             System.err.print("Error occurred while INSERTING PAYMENT Operation: " + e);
-
-
-
-            
             throw e;
         }
     }
