@@ -7,15 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e45a1d1-83c6-47d2-83a7-58cd49d8d856" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assessmeent/application/controller/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assessmeent/application/controller/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assessmeent/application/model/EventDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assessmeent/application/model/EventDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assessmeent/application/system/DB.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assessmeent/application/system/DB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assessmeent/application/view/Application.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assessmeent/application/view/Application.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/controller/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/controller/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/model/EventDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/model/EventDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/system/DB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/system/DB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/view/application.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/view/application.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,11 +21,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/application/controller/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="482" column="85" lean-forward="true" selection-start-line="482" selection-start-column="85" selection-end-line="482" selection-end-column="85" />
+            <state relative-caret-position="360">
+              <caret line="427" lean-forward="true" selection-start-line="427" selection-end-line="427" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/application/model/PaymentDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -42,11 +46,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/application/view/application.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
+        <entry file="file://$PROJECT_DIR$/src/application/model/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5580">
-              <caret line="279" column="165" selection-start-line="279" selection-start-column="165" selection-end-line="279" selection-end-column="165" />
+            <state relative-caret-position="20">
+              <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -54,8 +57,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/application/model/EventDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2220">
-              <caret line="116" column="49" selection-start-line="116" selection-start-column="49" selection-end-line="116" selection-end-column="49" />
+            <state relative-caret-position="418">
+              <caret line="129" selection-start-line="129" selection-end-line="129" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -64,10 +67,24 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/application/model/UserDAO.java">
+        <entry file="file://$PROJECT_DIR$/src/application/model/Payment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1640">
-              <caret line="86" selection-start-line="86" selection-end-line="100" selection-end-column="5" />
+            <state relative-caret-position="-180">
+              <caret line="9" column="44" lean-forward="true" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+              <folding>
+                <element signature="e#768#769#0" expanded="true" />
+                <element signature="e#800#801#0" expanded="true" />
+                <element signature="e#843#844#0" expanded="true" />
+                <element signature="e#869#870#0" expanded="true" />
+                <element signature="e#907#908#0" expanded="true" />
+                <element signature="e#940#941#0" expanded="true" />
+                <element signature="e#971#972#0" expanded="true" />
+                <element signature="e#1007#1008#0" expanded="true" />
+                <element signature="e#1055#1056#0" expanded="true" />
+                <element signature="e#1085#1086#0" expanded="true" />
+                <element signature="e#1128#1129#0" expanded="true" />
+                <element signature="e#1169#1170#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -125,12 +142,14 @@
         <option value="$PROJECT_DIR$/src/testing/model/UserDAO.java" />
         <option value="$PROJECT_DIR$/src/application/system/DB.java" />
         <option value="$PROJECT_DIR$/src/testing/controller/Accounts.java" />
-        <option value="$PROJECT_DIR$/src/application/model/EventDAO.java" />
+        <option value="$PROJECT_DIR$/src/application/model/Payment.java" />
         <option value="$PROJECT_DIR$/src/application/controller/Application.java" />
+        <option value="$PROJECT_DIR$/src/application/model/EventDAO.java" />
+        <option value="$PROJECT_DIR$/src/application/model/PaymentDAO.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1057" />
@@ -159,6 +178,13 @@
               <item name="booking-system" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="application" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="booking-system" type="b2602c69:ProjectViewProjectNode" />
+              <item name="booking-system" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="booking-system" type="b2602c69:ProjectViewProjectNode" />
@@ -200,7 +226,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../SekiroSaveOrganizer" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.29622063" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -240,10 +266,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.1748401" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.1748401" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.3336887" />
       <window_info id="Designer" order="3" />
@@ -252,7 +278,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3290461" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3290461" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39978564" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -377,10 +403,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/testing/controller/Accounts.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="129" column="64" lean-forward="true" selection-start-line="129" selection-start-column="64" selection-end-line="129" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/application/model/Event.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="26" column="56" lean-forward="true" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="56" />
+        <state relative-caret-position="360">
+          <caret line="18" column="46" lean-forward="true" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="46" />
           <folding>
             <element signature="e#1861#1862#0" expanded="true" />
             <element signature="e#1892#1893#0" expanded="true" />
@@ -446,52 +479,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2280">
-          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/testing/controller/Accounts.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="129" column="64" lean-forward="true" selection-start-line="129" selection-start-column="64" selection-end-line="129" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/controller/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="482" column="85" lean-forward="true" selection-start-line="482" selection-start-column="85" selection-end-line="482" selection-end-column="85" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/application/view/application.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5580">
-          <caret line="279" column="165" selection-start-line="279" selection-start-column="165" selection-end-line="279" selection-end-column="165" />
+        <state relative-caret-position="316">
+          <caret line="268" column="37" lean-forward="true" selection-start-line="268" selection-start-column="37" selection-end-line="268" selection-end-column="37" />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/model/EventDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/application/model/Payment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2220">
-          <caret line="116" column="49" selection-start-line="116" selection-start-column="49" selection-end-line="116" selection-end-column="49" />
+        <state relative-caret-position="-180">
+          <caret line="9" column="44" lean-forward="true" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#768#769#0" expanded="true" />
+            <element signature="e#800#801#0" expanded="true" />
+            <element signature="e#843#844#0" expanded="true" />
+            <element signature="e#869#870#0" expanded="true" />
+            <element signature="e#907#908#0" expanded="true" />
+            <element signature="e#940#941#0" expanded="true" />
+            <element signature="e#971#972#0" expanded="true" />
+            <element signature="e#1007#1008#0" expanded="true" />
+            <element signature="e#1055#1056#0" expanded="true" />
+            <element signature="e#1085#1086#0" expanded="true" />
+            <element signature="e#1128#1129#0" expanded="true" />
+            <element signature="e#1169#1170#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/application/model/UserDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1640">
-          <caret line="86" selection-start-line="86" selection-end-line="100" selection-end-column="5" />
+        <state relative-caret-position="180">
+          <caret line="159" selection-start-line="159" selection-end-line="180" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/controller/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="427" lean-forward="true" selection-start-line="427" selection-end-line="427" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/model/EventDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="129" selection-start-line="129" selection-end-line="129" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/model/PaymentDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -536,10 +593,11 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.29622063" />
               </list>
             </option>
           </splitter-proportions>
@@ -562,7 +620,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.5168539" />
+                <option value="0.29622063" />
               </list>
             </option>
           </splitter-proportions>
