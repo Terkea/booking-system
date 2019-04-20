@@ -540,7 +540,7 @@ public class Application implements Initializable {
             if (cardNameTicketPaymentPane.getText().length() != 16){
                 errorPaymentFieldsNotFilled.setText("Invalid card number");
             }else{
-                //insert entry in payment table and update the booking one
+                System.out.print("It works");
             }
         }else{
             errorPaymentFieldsNotFilled.setText("All fields are required");
