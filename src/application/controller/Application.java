@@ -545,7 +545,7 @@ public class Application implements Initializable {
 
                     //DO THE BOOKING AFTERWARDS
                     //PAYMENT ID has to be retrieved based on the last entry in payments for the user or at least that how I see it
-                    
+
 
                 } catch (SQLException e) {
                     e.printStackTrace();
