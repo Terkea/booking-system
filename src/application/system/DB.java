@@ -53,7 +53,7 @@ public class DB {
         CachedRowSetImpl crs = null;
         try {
             dbConnect();
-            System.out.println("Select statement: " + queryStmt + "\n");
+            System.out.println("QUERY: " + queryStmt + "\n");
 
             stmt = conn.createStatement();
 
@@ -80,7 +80,7 @@ public class DB {
         Statement stmt = null;
         try{
             dbConnect();
-            System.out.println("Select statement : " + query + "\n");
+            System.out.println("QUERY: " + query + "\n");
 
             stmt = conn.createStatement();
             stmt.executeUpdate(query);

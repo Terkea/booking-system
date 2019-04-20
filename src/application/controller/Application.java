@@ -517,8 +517,8 @@ public class Application implements Initializable {
         return true;
     }
 
+    //BUY TICKETS PANE
     @FXML
-        //BUY TICKETS PANE
     void pay(ActionEvent event) {
 
         JFXTextField requiredFields[] = {cardNameTicketPaymentPane, cardNumberTicketPaymentPane, monthTicketPaymentPane, yearTicketPaymentPane, securityCodeTicketPaymentPane};
@@ -554,8 +554,10 @@ public class Application implements Initializable {
         } else {
             errorPaymentFieldsNotFilled.setText("All fields are required");
         }
-
-
     }
+
+    //BOOKINGS PANE
+
+
 
 }
