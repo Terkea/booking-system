@@ -20,6 +20,7 @@ public class PaymentDAO {
             payment.setCvs(rs.getString("cvs"));
             payment.setUser_id(rs.getInt("user_id"));
             payment.setStatus(rs.getDouble("status"));
+            payment.setDescription(rs.getString("description"));
         }
         return payment;
     }
@@ -37,6 +38,7 @@ public class PaymentDAO {
             payment.setCvs(rs.getString("cvs"));
             payment.setUser_id(rs.getInt("user_id"));
             payment.setStatus(rs.getDouble("status"));
+            payment.setDescription(rs.getString("description"));
             paymentList.add(payment);
         }
         return paymentList;
@@ -57,17 +59,18 @@ public class PaymentDAO {
         }
     }
 
-    public static void insertPayment (double ammount, String card_no, String expire_date, String card_holder_name, String cvs, int user_id) throws SQLException, ClassNotFoundException {
+    public static void insertPayment (double ammount, String card_no, String expire_date, String card_holder_name, String cvs, int user_id, String description, double status) throws SQLException, ClassNotFoundException {
         //Declare a DELETE statement
         String updateStmt = "INSERT INTO `payment` " +
-                "(`ammount`, `card_no`, `expire_date`, `card_holder_name`, `cvs`, `user_id`) " +
+                "(`ammount`, `card_no`, `expire_date`, `card_holder_name`, `cvs`, `user_id` , `description`, `status`) " +
                 "VALUES\n" +
-                "('" +ammount+ "', '" +card_no+ "', '" +expire_date+ "', '"+card_holder_name+ "', '"+cvs + "', '"+user_id+ "'";
+                "('" +ammount+ "', '" +card_no+ "', '" +expire_date+ "', '"+card_holder_name+ "', '"+cvs + "', '"+user_id+ "' ," + description + "', '" + status + "');";
 
         try {
             DB.dbExecuteUpdate(updateStmt);
         } catch (SQLException e) {
-            System.err.print("Error occurred while INSERTING PAYMENT Operation: " + e);
+            System.err.println("Error occurred while INSERTING PAYMENT Operation: " + e);
+            System.err.println(updateStmt);
             throw e;
         }
     }

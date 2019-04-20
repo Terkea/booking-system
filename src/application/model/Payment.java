@@ -11,6 +11,7 @@ public class Payment {
     private StringProperty cvs;
     private IntegerProperty user_id;
     private DoubleProperty status;
+    private StringProperty description;
 
 
     public Payment(){
@@ -22,17 +23,31 @@ public class Payment {
         this.cvs = new SimpleStringProperty();
         this.user_id = new SimpleIntegerProperty();
         this.status = new SimpleDoubleProperty();
+        this.description = new SimpleStringProperty();
     }
 
-    public Payment(IntegerProperty id, DoubleProperty ammount, StringProperty card_no, StringProperty expire_date, StringProperty card_holder_name, StringProperty cvs, IntegerProperty user_id, DoubleProperty status) {
-        this.id = id;
-        this.ammount = ammount;
-        this.card_no = card_no;
-        this.expire_date = expire_date;
-        this.card_holder_name = card_holder_name;
-        this.cvs = cvs;
-        this.user_id = user_id;
-        this.status = status;
+    public Payment(IntegerProperty id, DoubleProperty ammount, StringProperty card_no, StringProperty expire_date, StringProperty card_holder_name, StringProperty cvs, IntegerProperty user_id, DoubleProperty status, StringProperty description) {
+        this.id = new SimpleIntegerProperty();
+        this.ammount = new SimpleDoubleProperty();
+        this.card_no = new SimpleStringProperty();
+        this.expire_date = new SimpleStringProperty();
+        this.card_holder_name = new SimpleStringProperty();
+        this.cvs = new SimpleStringProperty();
+        this.user_id = new SimpleIntegerProperty();
+        this.status = new SimpleDoubleProperty();
+        this.description = new SimpleStringProperty();
+    }
+
+    public String getDescription() {
+        return description.get();
+    }
+
+    public StringProperty descriptionProperty() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description.set(description);
     }
 
     public double getStatus() {

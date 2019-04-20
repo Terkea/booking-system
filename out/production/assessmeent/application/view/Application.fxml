@@ -515,7 +515,7 @@
                         </JFXTextField>
                      </children>
                   </AnchorPane>
-                  <Label fx:id="errorPaymentFieldsNotFilled" alignment="CENTER" contentDisplay="CENTER" layoutX="86.0" layoutY="255.0" prefHeight="17.0" prefWidth="446.0" text="Label" textFill="RED">
+                  <Label fx:id="errorPaymentFieldsNotFilled" alignment="CENTER" contentDisplay="CENTER" layoutX="86.0" layoutY="255.0" prefHeight="17.0" prefWidth="446.0" textFill="RED" AnchorPane.leftAnchor="86.0" AnchorPane.rightAnchor="68.0">
                      <font>
                         <Font size="14.0" />
                      </font>

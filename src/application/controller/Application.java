@@ -7,10 +7,7 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 
-import application.model.Event;
-import application.model.EventDAO;
-import application.model.User;
-import application.model.UserDAO;
+import application.model.*;
 import application.system.Password;
 import com.jfoenix.controls.*;
 import javafx.collections.FXCollections;
@@ -237,8 +234,6 @@ public class Application implements Initializable {
     private JFXTextField howManyLabelMoreDetailsPane;
 
 
-
-
     public User ACTUALUSER = null;
 
     @Override
@@ -256,8 +251,6 @@ public class Application implements Initializable {
             viewBookingsPane.toFront();
         }
     }
-
-
 
 
     // ACCOUNT PANE
@@ -303,7 +296,7 @@ public class Application implements Initializable {
     @FXML
     void editProfileAccountPane(ActionEvent event) {
         titleEditProfileComboBox.getItems().addAll(
-                "Mr.","Mrs.","Ms","Miss","Master","Maid","Madam"
+                "Mr.", "Mrs.", "Ms", "Miss", "Master", "Maid", "Madam"
         );
         firstNameUpdateProfileTextField.setText(ACTUALUSER.getFirst_name());
         lastNameUpdateProfileTextField.setText(ACTUALUSER.getLast_name());
@@ -418,9 +411,8 @@ public class Application implements Initializable {
     }
 
 
-
     //EVENT PANE
-    private void loadEventsData(){
+    private void loadEventsData() {
         nameColumnConcertsPane.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
         dateColumnConcertsPane.setCellValueFactory(cellData -> cellData.getValue().dateProperty());
         locationColumnConcertsPane.setCellValueFactory(cellData -> cellData.getValue().locationProperty());
@@ -429,36 +421,36 @@ public class Application implements Initializable {
         priceColumnConcertsPane.setCellValueFactory(cellData -> cellData.getValue().ticket_priceProperty().asObject());
 
 
-        try{
+        try {
             ObservableList<Event> eventData = EventDAO.getAllActiveEvents();
             populateEvents(eventData);
-        }catch(SQLException e){
+        } catch (SQLException e) {
             System.err.println("Error occured while getting event information from DB " + e);
-        }catch (ClassNotFoundException e){
+        } catch (ClassNotFoundException e) {
             System.err.println("Error occured while getting event information from DB " + e);
         }
     }
 
     @FXML
-    private void populateEvents (Event event) throws ClassNotFoundException{
+    private void populateEvents(Event event) throws ClassNotFoundException {
         ObservableList<Event> eventData = FXCollections.observableArrayList();
         eventData.add(event);
         concertsTableConcertsPane.setItems(eventData);
     }
 
     @FXML
-    private void populateEvents(ObservableList<Event> eventData) throws ClassNotFoundException{
+    private void populateEvents(ObservableList<Event> eventData) throws ClassNotFoundException {
         concertsTableConcertsPane.setItems(eventData);
     }
 
     @FXML
     void searchConcertsPane(ActionEvent event) {
-        try{
+        try {
             ObservableList<Event> eventData = EventDAO.searchActiveEvent(searchTextFieldConcertsPane.getText());
             populateEvents(eventData);
-        }catch(SQLException e){
+        } catch (SQLException e) {
             System.out.println("Error occured while getting event information from DB " + e);
-        }catch (ClassNotFoundException e){
+        } catch (ClassNotFoundException e) {
             System.err.println("Error occured while getting event information from DB " + e);
         }
     }
@@ -488,13 +480,13 @@ public class Application implements Initializable {
     }
 
     @FXML
-    void buyTickets(ActionEvent event){
+    void buyTickets(ActionEvent event) {
         ticketsPaymentPane.toFront();
         Event selectedEvent = null;
         try {
             selectedEvent = EventDAO.getEventByID(concertsTableConcertsPane.getSelectionModel().getSelectedItem().getId());
             unitsNameTicketPaymentPane.setText(howManyLabelMoreDetailsPane.getText() + "x " + selectedEvent.getName() + " " + selectedEvent.getEvent_type());
-            quantityPriceTicketsPaymentPane.setText(selectedEvent.getTicket_price() + "GBP * " +howManyLabelMoreDetailsPane.getText());
+            quantityPriceTicketsPaymentPane.setText(selectedEvent.getTicket_price() + "GBP * " + howManyLabelMoreDetailsPane.getText());
             totalTicketPaymentPane.setText(Double.parseDouble(howManyLabelMoreDetailsPane.getText()) * (selectedEvent.getTicket_price()) + " GBP");
 
         } catch (SQLException e) {
@@ -506,19 +498,19 @@ public class Application implements Initializable {
     }
 
     private boolean validationForTextFields(JFXTextField userInput) {
-        if(userInput.getText().isEmpty()) {
+        if (userInput.getText().isEmpty()) {
             userInput.setStyle("-fx-border-color: #ff0000;" +
                     "-fx-border-radius: 5");
             return false;
-        }else{
+        } else {
             userInput.setStyle(null);
             return true;
         }
     }
 
     private boolean checkBooleanArray(boolean[] array) {
-        for(boolean a : array){
-            if (!a == true){
+        for (boolean a : array) {
+            if (!a == true) {
                 return false;
             }
         }
@@ -526,26 +518,42 @@ public class Application implements Initializable {
     }
 
     @FXML
-    //BUY TICKETS PANE
-    void pay(ActionEvent event){
+        //BUY TICKETS PANE
+    void pay(ActionEvent event) {
 
         JFXTextField requiredFields[] = {cardNameTicketPaymentPane, cardNumberTicketPaymentPane, monthTicketPaymentPane, yearTicketPaymentPane, securityCodeTicketPaymentPane};
         boolean[] checkResults = new boolean[requiredFields.length];
+        Event selectedEvent = null;
 
-        for (int i = 0; i < requiredFields.length; i++){
+        for (int i = 0; i < requiredFields.length; i++) {
             checkResults[i] = validationForTextFields(requiredFields[i]);
         }
 
-        if (checkBooleanArray(checkResults)){
-            if (cardNameTicketPaymentPane.getText().length() != 16){
+        if (checkBooleanArray(checkResults)) {
+            if (cardNumberTicketPaymentPane.getText().length() != 16) {
                 errorPaymentFieldsNotFilled.setText("Invalid card number");
-            }else{
-                System.out.print("It works");
+            } else {
+                PaymentDAO entry = new PaymentDAO();
+
+                try {
+                    selectedEvent = EventDAO.getEventByID(concertsTableConcertsPane.getSelectionModel().getSelectedItem().getId());
+                    PaymentDAO.insertPayment(Double.parseDouble(howManyLabelMoreDetailsPane.getText()) * (selectedEvent.getTicket_price()),
+                            cardNumberTicketPaymentPane.getText(), monthTicketPaymentPane.getText() + "/" + yearTicketPaymentPane.getText(),
+                            cardNameTicketPaymentPane.getText(), securityCodeTicketPaymentPane.getText(),
+                            ACTUALUSER.getId(),
+                            "'" + howManyLabelMoreDetailsPane.getText() + "x " + selectedEvent.getName() + " " + selectedEvent.getEvent_type() + " tickets", 1);
+
+                    //DO THE BOOKING AFTERWARDS
+
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
             }
-        }else{
+        } else {
             errorPaymentFieldsNotFilled.setText("All fields are required");
         }
-
 
 
     }
