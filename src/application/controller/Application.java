@@ -233,6 +233,22 @@ public class Application implements Initializable {
     @FXML
     private JFXTextField howManyLabelMoreDetailsPane;
 
+    @FXML
+    private TableView<Booking> myBookingsTable;
+
+    @FXML
+    private TableColumn<Booking, String> festivalNameColumnBookingsPane;
+
+    @FXML
+    private TableColumn<Booking, String> ticketsBoughtColumnBookingsPane;
+
+    @FXML
+    private TableColumn<Booking, String> dateColumnBookingsPane;
+
+    @FXML
+    private TableColumn<Booking, String> invoiceColumnBookingsPane;
+
+
 
     public User ACTUALUSER = null;
 
@@ -562,7 +578,36 @@ public class Application implements Initializable {
     }
 
     //BOOKINGS PANE
+    //EVENT PANE
+    private void loadMyBookingsData() {
+        festivalNameColumnBookingsPane.setCellValueFactory(cellData -> EventDAO.getEventByID(cellData.getValue().getEvent_id()).getName());
+        ticketsBoughtColumnBookingsPane.setCellValueFactory(cellData -> cellData.getValue().number_of_ticketsProperty().asString());
+        dateColumnBookingsPane.setCellValueFactory(cellData -> EventDAO.getEventByID(cellData.getValue().getEvent_id()).getDate());
+//        invoiceColumnBookingsPane.setCellValueFactory(cellData -> PaymentDAO.getP(cellData.getValue().getEvent_id()).getDate());
 
+
+
+//        try {
+//            ObservableList<Event> eventData = EventDAO.getAllActiveEvents();
+//            populateEvents(eventData);
+//        } catch (SQLException e) {
+//            System.err.println("Error occured while getting event information from DB " + e);
+//        } catch (ClassNotFoundException e) {
+//            System.err.println("Error occured while getting event information from DB " + e);
+//        }
+    }
+//
+//    @FXML
+//    private void populateEvents(Event event) throws ClassNotFoundException {
+//        ObservableList<Event> eventData = FXCollections.observableArrayList();
+//        eventData.add(event);
+//        concertsTableConcertsPane.setItems(eventData);
+//    }
+//
+//    @FXML
+//    private void populateEvents(ObservableList<Event> eventData) throws ClassNotFoundException {
+//        concertsTableConcertsPane.setItems(eventData);
+//    }
 
 
 }
