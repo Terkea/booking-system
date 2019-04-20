@@ -10,7 +10,7 @@ public class Payment {
     private StringProperty card_holder_name;
     private StringProperty cvs;
     private IntegerProperty user_id;
-    private DoubleProperty status;
+    private BooleanProperty status;
     private StringProperty description;
 
 
@@ -22,11 +22,11 @@ public class Payment {
         this.card_holder_name = new SimpleStringProperty();
         this.cvs = new SimpleStringProperty();
         this.user_id = new SimpleIntegerProperty();
-        this.status = new SimpleDoubleProperty();
+        this.status = new SimpleBooleanProperty();
         this.description = new SimpleStringProperty();
     }
 
-    public Payment(IntegerProperty id, DoubleProperty ammount, StringProperty card_no, StringProperty expire_date, StringProperty card_holder_name, StringProperty cvs, IntegerProperty user_id, DoubleProperty status, StringProperty description) {
+    public Payment(IntegerProperty id, DoubleProperty ammount, StringProperty card_no, StringProperty expire_date, StringProperty card_holder_name, StringProperty cvs, IntegerProperty user_id, BooleanProperty status, StringProperty description) {
         this.id = new SimpleIntegerProperty();
         this.ammount = new SimpleDoubleProperty();
         this.card_no = new SimpleStringProperty();
@@ -34,56 +34,8 @@ public class Payment {
         this.card_holder_name = new SimpleStringProperty();
         this.cvs = new SimpleStringProperty();
         this.user_id = new SimpleIntegerProperty();
-        this.status = new SimpleDoubleProperty();
+        this.status = new SimpleBooleanProperty();
         this.description = new SimpleStringProperty();
-    }
-
-    public String getDescription() {
-        return description.get();
-    }
-
-    public StringProperty descriptionProperty() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description.set(description);
-    }
-
-    public double getStatus() {
-        return status.get();
-    }
-
-    public DoubleProperty statusProperty() {
-        return status;
-    }
-
-    public void setStatus(double status) {
-        this.status.set(status);
-    }
-
-    public String getCvs() {
-        return cvs.get();
-    }
-
-    public StringProperty cvsProperty() {
-        return cvs;
-    }
-
-    public void setCvs(String cvs) {
-        this.cvs.set(cvs);
-    }
-
-    public int getUser_id() {
-        return user_id.get();
-    }
-
-    public IntegerProperty user_idProperty() {
-        return user_id;
-    }
-
-    public void setUser_id(int user_id) {
-        this.user_id.set(user_id);
     }
 
     public int getId() {
@@ -146,4 +98,51 @@ public class Payment {
         this.card_holder_name.set(card_holder_name);
     }
 
+    public String getCvs() {
+        return cvs.get();
+    }
+
+    public StringProperty cvsProperty() {
+        return cvs;
+    }
+
+    public void setCvs(String cvs) {
+        this.cvs.set(cvs);
+    }
+
+    public int getUser_id() {
+        return user_id.get();
+    }
+
+    public IntegerProperty user_idProperty() {
+        return user_id;
+    }
+
+    public void setUser_id(int user_id) {
+        this.user_id.set(user_id);
+    }
+
+    public boolean isStatus() {
+        return status.get();
+    }
+
+    public BooleanProperty statusProperty() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status.set(status);
+    }
+
+    public String getDescription() {
+        return description.get();
+    }
+
+    public StringProperty descriptionProperty() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description.set(description);
+    }
 }

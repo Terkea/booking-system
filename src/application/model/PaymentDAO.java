@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class PaymentDAO {
-    private static Payment getEventFromResultSet(ResultSet rs) throws SQLException {
+    private static Payment getPaymentFromResultSet(ResultSet rs) throws SQLException {
         Payment payment = null;
         if (rs.next()){
             payment = new Payment();
@@ -19,7 +19,7 @@ public class PaymentDAO {
             payment.setCard_holder_name(rs.getString("card_holder_name"));
             payment.setCvs(rs.getString("cvs"));
             payment.setUser_id(rs.getInt("user_id"));
-            payment.setStatus(rs.getDouble("status"));
+            payment.setStatus(rs.getBoolean("status"));
             payment.setDescription(rs.getString("description"));
         }
         return payment;
@@ -37,7 +37,7 @@ public class PaymentDAO {
             payment.setCard_holder_name(rs.getString("card_holder_name"));
             payment.setCvs(rs.getString("cvs"));
             payment.setUser_id(rs.getInt("user_id"));
-            payment.setStatus(rs.getDouble("status"));
+            payment.setStatus(rs.getBoolean("status"));
             payment.setDescription(rs.getString("description"));
             paymentList.add(payment);
         }
@@ -71,6 +71,25 @@ public class PaymentDAO {
         } catch (SQLException e) {
             System.err.println("Error occurred while INSERTING PAYMENT Operation: " + e);
             System.err.println(updateStmt);
+            throw e;
+        }
+    }
+
+
+    public static Payment getLastPaymentByID (int id) throws SQLException, ClassNotFoundException {
+        String selectStmt = "SELECT * \n" +
+                "FROM payment\n" +
+                "WHERE user_id = '" + id + "' " +
+                "ORDER BY id DESC\n" +
+                "LIMIT 1";
+        try{
+            ResultSet rs = DB.dbExecuteQuery(selectStmt);
+            Payment payment = getPaymentFromResultSet(rs);
+
+            return payment;
+        }catch(SQLException e){
+            System.err.println("ERROR While searching for a Payment with: " + id + " user_id, error occured: " + e);
+            System.err.println(selectStmt);
             throw e;
         }
     }

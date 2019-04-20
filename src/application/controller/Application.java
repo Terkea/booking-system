@@ -545,7 +545,10 @@ public class Application implements Initializable {
 
                     //DO THE BOOKING AFTERWARDS
                     //PAYMENT ID has to be retrieved based on the last entry in payments for the user or at least that how I see it
+                    Payment currentPayment = PaymentDAO.getLastPaymentByID(ACTUALUSER.getId());
+                    BookingDAO.insertBooking(Integer.parseInt(howManyLabelMoreDetailsPane.getText()), selectedEvent.getId(), ACTUALUSER.getId(), currentPayment.getId());
 
+                    viewBookingsPane.toFront();
 
                 } catch (SQLException e) {
                     e.printStackTrace();

@@ -1,5 +1,6 @@
 package application;
 
+import application.model.PaymentDAO;
 import application.model.UserDAO;
 import application.system.Password;
 import javafx.application.Application;
@@ -24,6 +25,5 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
-
     }
 }

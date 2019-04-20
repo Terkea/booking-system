@@ -59,7 +59,6 @@ public class BookingDAO {
                 "(`number_of_tickets`, `event_id`, `user_id`, `payment_id`) " +
                 "VALUES\n" +
                 "('" +number_of_tickets+ "', '" +event_id+ "', '" +user_id+ "', '"+payment_id+ "');";
-
         try {
             DB.dbExecuteUpdate(updateStmt);
         } catch (SQLException e) {
