@@ -36,6 +36,9 @@ public class Application implements Initializable {
     private Label welcomeLabel;
 
     @FXML
+    private Label errorPaymentFieldsNotFilled;
+
+    @FXML
     private Label totalTicketPaymentPane;
 
     @FXML
@@ -502,9 +505,48 @@ public class Application implements Initializable {
 
     }
 
+    private boolean validationForTextFields(JFXTextField userInput) {
+        if(userInput.getText().isEmpty()) {
+            userInput.setStyle("-fx-border-color: #ff0000;" +
+                    "-fx-border-radius: 5");
+            return false;
+        }else{
+            userInput.setStyle(null);
+            return true;
+        }
+    }
+
+    private boolean checkBooleanArray(boolean[] array) {
+        for(boolean a : array){
+            if (!a == true){
+                return false;
+            }
+        }
+        return true;
+    }
+
     @FXML
     //BUY TICKETS PANE
     void pay(ActionEvent event){
+
+        JFXTextField requiredFields[] = {cardNameTicketPaymentPane, cardNumberTicketPaymentPane, monthTicketPaymentPane, yearTicketPaymentPane, securityCodeTicketPaymentPane};
+        boolean[] checkResults = new boolean[requiredFields.length];
+
+        for (int i = 0; i < requiredFields.length; i++){
+            checkResults[i] = validationForTextFields(requiredFields[i]);
+        }
+
+        if (checkBooleanArray(checkResults)){
+            if (cardNameTicketPaymentPane.getText().length() != 16){
+                errorPaymentFieldsNotFilled.setText("Invalid card number");
+            }else{
+                //insert entry in payment table and update the booking one
+            }
+        }else{
+            errorPaymentFieldsNotFilled.setText("All fields are required");
+        }
+
+
 
     }
 

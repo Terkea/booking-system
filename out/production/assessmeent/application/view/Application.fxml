@@ -492,29 +492,34 @@
                   <JFXButton fx:id="payButtonPaymentPane" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="196.0" layoutY="515.0" onAction="#pay" prefHeight="38.0" prefWidth="228.0" style="-fx-background-color: #FF998E;" text="Pay" AnchorPane.bottomAnchor="47.0" AnchorPane.leftAnchor="196.0" AnchorPane.rightAnchor="176.0" />
                   <AnchorPane layoutX="81.0" layoutY="279.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="182.0" prefWidth="457.0" style="-fx-background-color: #FFE5E2;" AnchorPane.leftAnchor="81.0" AnchorPane.rightAnchor="62.0" AnchorPane.topAnchor="279.0">
                      <children>
-                        <JFXTextField fx:id="cardNameTicketPaymentPane" focusColor="#ff7060" layoutX="14.0" layoutY="28.0" prefHeight="25.0" prefWidth="427.0" promptText="Card holder name" unFocusColor="BLACK" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0">
+                        <JFXTextField fx:id="cardNameTicketPaymentPane" focusColor="#ff7060" layoutX="17.0" layoutY="31.0" prefHeight="25.0" prefWidth="427.0" promptText="Card holder name" unFocusColor="BLACK" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="15.0">
                            <font>
                               <Font size="14.0" />
                            </font></JFXTextField>
-                        <JFXTextField fx:id="cardNumberTicketPaymentPane" focusColor="#ff7060" layoutX="15.0" layoutY="74.0" prefHeight="25.0" prefWidth="427.0" promptText="Card number" unFocusColor="BLACK" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="56.0">
+                        <JFXTextField fx:id="cardNumberTicketPaymentPane" focusColor="#ff7060" layoutX="17.0" layoutY="64.0" prefHeight="25.0" prefWidth="427.0" promptText="Card number" unFocusColor="BLACK" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="64.0">
                            <font>
                               <Font size="14.0" />
                            </font></JFXTextField>
-                        <JFXTextField fx:id="yearTicketPaymentPane" focusColor="#ff7060" layoutX="234.0" layoutY="81.0" prefHeight="25.0" prefWidth="207.0" promptText="yy" unFocusColor="BLACK" AnchorPane.rightAnchor="16.0">
+                        <JFXTextField fx:id="yearTicketPaymentPane" focusColor="#ff7060" layoutX="234.0" layoutY="98.0" prefHeight="25.0" prefWidth="207.0" promptText="yy" unFocusColor="BLACK" AnchorPane.rightAnchor="16.0">
                            <font>
                               <Font size="14.0" />
                            </font></JFXTextField>
-                        <JFXTextField fx:id="monthTicketPaymentPane" focusColor="#ff7060" layoutX="16.0" layoutY="81.0" prefHeight="25.0" prefWidth="207.0" promptText="mm" unFocusColor="BLACK" AnchorPane.leftAnchor="16.0">
+                        <JFXTextField fx:id="monthTicketPaymentPane" focusColor="#ff7060" layoutX="16.0" layoutY="98.0" prefHeight="25.0" prefWidth="207.0" promptText="mm" unFocusColor="BLACK" AnchorPane.leftAnchor="16.0">
                            <font>
                               <Font size="14.0" />
                            </font></JFXTextField>
-                        <JFXTextField fx:id="securityCodeTicketPaymentPane" focusColor="#ff7060" layoutX="16.0" layoutY="109.0" prefHeight="25.0" prefWidth="425.0" promptText="mm" text="security coded" unFocusColor="BLACK" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0">
+                        <JFXTextField fx:id="securityCodeTicketPaymentPane" focusColor="#ff7060" layoutX="16.0" layoutY="129.0" prefHeight="25.0" prefWidth="425.0" promptText="security coded" unFocusColor="BLACK" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </JFXTextField>
                      </children>
                   </AnchorPane>
+                  <Label fx:id="errorPaymentFieldsNotFilled" alignment="CENTER" contentDisplay="CENTER" layoutX="86.0" layoutY="255.0" prefHeight="17.0" prefWidth="446.0" text="Label" textFill="RED">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
          </children>
