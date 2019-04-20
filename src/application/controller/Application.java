@@ -544,6 +544,8 @@ public class Application implements Initializable {
                             "'" + howManyLabelMoreDetailsPane.getText() + "x " + selectedEvent.getName() + " " + selectedEvent.getEvent_type() + " tickets", 1);
 
                     //DO THE BOOKING AFTERWARDS
+                    //PAYMENT ID has to be retrieved based on the last entry in payments for the user or at least that how I see it
+                    
 
                 } catch (SQLException e) {
                     e.printStackTrace();

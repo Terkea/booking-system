@@ -51,4 +51,23 @@ public class BookingDAO {
             throw e;
         }
     }
+
+
+    public static void insertBooking (int number_of_tickets, int event_id, int user_id, int payment_id) throws SQLException, ClassNotFoundException {
+        //Declare a DELETE statement
+        String updateStmt = "INSERT INTO `booking` " +
+                "(`number_of_tickets`, `event_id`, `user_id`, `payment_id`) " +
+                "VALUES\n" +
+                "('" +number_of_tickets+ "', '" +event_id+ "', '" +user_id+ "', '"+payment_id+ "');";
+
+        try {
+            DB.dbExecuteUpdate(updateStmt);
+        } catch (SQLException e) {
+            System.err.println("Error occurred while INSERTING PAYMENT Operation: " + e);
+            System.err.println(updateStmt);
+            throw e;
+        }
+    }
+
+
 }
