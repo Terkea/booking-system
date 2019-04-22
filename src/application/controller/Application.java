@@ -248,6 +248,13 @@ public class Application implements Initializable {
     @FXML
     private TableColumn<Booking, String> locationColumnBookingsPane;
 
+    @FXML
+    private JFXTextField keywordTextFieldMyBookindsPane;
+
+    @FXML
+    private JFXButton searchButtonMyBookings;
+
+
 
 
     public User ACTUALUSER = null;
@@ -606,6 +613,18 @@ public class Application implements Initializable {
     @FXML
     private void populatebookings(ObservableList<Booking> bookingData) throws ClassNotFoundException {
         myBookingsTable.setItems(bookingData);
+    }
+
+    @FXML
+    private void searchBooking(ActionEvent event){
+        try {
+            ObservableList<Booking> bookingData = BookingDAO.searchBookings(keywordTextFieldMyBookindsPane.getText(), ACTUALUSER.getId());
+            populatebookings(bookingData);
+        } catch (SQLException e) {
+            System.err.println("Error occured while getting event information from DB " + e);
+        } catch (ClassNotFoundException e) {
+            System.err.println("Error occured while getting event information from DB " + e);
+        }
     }
 
 

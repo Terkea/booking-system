@@ -517,12 +517,12 @@
                         <TableColumn fx:id="locationColumnBookingsPane" prefWidth="175.0" text="Location" />
                     </columns>
                   </TableView>
-                  <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="413.0" layoutY="104.0" prefHeight="30.0" prefWidth="167.0" style="-fx-background-color: #FF998E;" text="Search" AnchorPane.rightAnchor="20.0">
+                  <JFXButton fx:id="searchButtonMyBookings" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="413.0" layoutY="104.0" onAction="#searchBooking" prefHeight="30.0" prefWidth="167.0" style="-fx-background-color: #FF998E;" text="Search" AnchorPane.rightAnchor="20.0">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </JFXButton>
-                  <JFXTextField focusColor="#ff998e" layoutX="20.0" layoutY="106.0" prefHeight="25.0" prefWidth="370.0" promptText="keyword" unFocusColor="BLACK" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="210.0" />
+                  <JFXTextField fx:id="keywordTextFieldMyBookindsPane" focusColor="#ff998e" layoutX="20.0" layoutY="106.0" prefHeight="25.0" prefWidth="370.0" promptText="keyword" unFocusColor="BLACK" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="210.0" />
                   <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="123.0" layoutY="550.0" prefHeight="38.0" prefWidth="356.0" style="-fx-background-color: #FF998E;" text="See more details" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="115.0" AnchorPane.rightAnchor="115.0" />
                   <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="90.0" prefWidth="600.0" style="-fx-background-color: #FFE5E2;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>

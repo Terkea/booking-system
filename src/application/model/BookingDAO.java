@@ -103,4 +103,26 @@ public class BookingDAO {
     }
 
 
+    public static ObservableList<Booking> searchBookings (String keyword, int id) throws SQLException, ClassNotFoundException {
+        String selectStmt = "SELECT * " +
+                "FROM booking " +
+                "INNER JOIN event " +
+                "ON `booking`.`event_id` = `event`.`id` " +
+                "WHERE event.name " +
+                "LIKE \"%" + keyword + "%\"" +
+                " OR event.location " +
+                "LIKE \"%" + keyword + "%\"" +
+                " AND user_id = " + id;
+        try{
+            ResultSet rsEvent = DB.dbExecuteQuery(selectStmt);
+            ObservableList<Booking> bookingList = getFullBookings(rsEvent);
+
+            return bookingList;
+        }catch(SQLException e){
+            System.out.println("ERROR While searching for a booking with: " + keyword + " name, error occured: " + e);
+            throw e;
+        }
+    }
+
+
 }
