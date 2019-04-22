@@ -23,6 +23,9 @@ public class Booking {
         this.event_id = new SimpleIntegerProperty();
         this.user_id = new SimpleIntegerProperty();
         this.payment_id = new SimpleIntegerProperty();
+        this.event_name = new SimpleStringProperty();
+        this.event_date = new SimpleStringProperty();
+        this.location = new SimpleStringProperty();
     }
 
     public void setUpForeignKeys(){

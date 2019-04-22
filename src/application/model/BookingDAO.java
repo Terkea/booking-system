@@ -78,6 +78,7 @@ public class BookingDAO {
         try{
             ResultSet rs = DB.dbExecuteQuery(selectStmt);
             Booking booking = getBookingFromResultSet(rs);
+            booking.setUpForeignKeys();
 
             return booking;
         }catch(SQLException e){
@@ -103,7 +104,7 @@ public class BookingDAO {
     }
 
 
-    public static ObservableList<Booking> searchBookings (String keyword, int id) throws SQLException, ClassNotFoundException {
+    public static ObservableList<Booking> searchMyBookings (String keyword, int id) throws SQLException, ClassNotFoundException {
         String selectStmt = "SELECT * " +
                 "FROM booking " +
                 "INNER JOIN event " +

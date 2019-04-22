@@ -33,6 +33,27 @@ public class Application implements Initializable {
     private Label welcomeLabel;
 
     @FXML
+    private Label eventNameLabelMyBookingPane;
+
+    @FXML
+    private Label eventTypeLabelMyBookingPane;
+
+    @FXML
+    private Label locationLabelMyBookingPane;
+
+    @FXML
+    private Label dateLabelMyBookingPane;
+
+    @FXML
+    private JFXTextArea descriptionLabelMyBookingPane;
+
+    @FXML
+    private Label paymentStatusLabelMyBookingPane;
+
+    @FXML
+    private JFXButton seeMoreButtonMyBookingsPane;
+
+    @FXML
     private Label errorPaymentFieldsNotFilled;
 
     @FXML
@@ -253,6 +274,11 @@ public class Application implements Initializable {
 
     @FXML
     private JFXButton searchButtonMyBookings;
+
+    @FXML
+    private AnchorPane moreDetailsAboutMyBookingPane;
+
+
 
 
 
@@ -618,12 +644,39 @@ public class Application implements Initializable {
     @FXML
     private void searchBooking(ActionEvent event){
         try {
-            ObservableList<Booking> bookingData = BookingDAO.searchBookings(keywordTextFieldMyBookindsPane.getText(), ACTUALUSER.getId());
+            ObservableList<Booking> bookingData = BookingDAO.searchMyBookings(keywordTextFieldMyBookindsPane.getText(), ACTUALUSER.getId());
             populatebookings(bookingData);
         } catch (SQLException e) {
             System.err.println("Error occured while getting event information from DB " + e);
         } catch (ClassNotFoundException e) {
             System.err.println("Error occured while getting event information from DB " + e);
+        }
+    }
+
+    @FXML
+    private void seeMoreDetailsAboutEvent(ActionEvent event){
+        Booking selectedBooking = null;
+        Event currentEvent = null;
+        Payment currentPayment = null;
+        try {
+            selectedBooking = BookingDAO.getBookingBYID(myBookingsTable.getSelectionModel().getSelectedItem().getId());
+            currentEvent = EventDAO.getEventByIDProperty(selectedBooking.event_idProperty());
+            currentPayment = PaymentDAO.getPaymentByIdProperty(selectedBooking.payment_idProperty());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        moreDetailsAboutMyBookingPane.toFront();
+        eventNameLabelMyBookingPane.setText(selectedBooking.getEvent_name());
+        eventTypeLabelMyBookingPane.setText(currentEvent.getEvent_type());
+        locationLabelMyBookingPane.setText(currentEvent.getLocation());
+        dateLabelMyBookingPane.setText(currentEvent.getDate());
+        descriptionLabelMyBookingPane.setText(currentEvent.getDescription());
+        if (currentPayment.isStatus()){
+            paymentStatusLabelMyBookingPane.setText("Paid");
+        }else{
+            paymentStatusLabelMyBookingPane.setText("Pending");
         }
     }
 
