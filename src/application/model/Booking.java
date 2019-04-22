@@ -15,7 +15,7 @@ public class Booking {
     private IntegerProperty payment_id;
     private StringProperty event_name;
     private StringProperty event_date;
-    private StringProperty invoice;
+    private StringProperty location;
 
     public Booking(){
         this.id = new SimpleIntegerProperty();
@@ -28,9 +28,8 @@ public class Booking {
     public void setUpForeignKeys(){
         try {
             this.event_name = new SimpleStringProperty(EventDAO.getEventByIDProperty(event_id).getName());
-            System.out.println(event_name);
             this.event_date = new SimpleStringProperty(EventDAO.getEventByIDProperty(event_id).getDate());
-            this.invoice = new SimpleStringProperty(String.valueOf(PaymentDAO.getPaymentByIdProperty(payment_id).getId()));
+            this.location = new SimpleStringProperty((EventDAO.getEventByIDProperty(event_id).getLocation()));
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
@@ -81,16 +80,16 @@ public class Booking {
         this.event_date.set(event_date);
     }
 
-    public String getInvoice() {
-        return invoice.get();
+    public String getLocation() {
+        return location.get();
     }
 
-    public StringProperty invoiceProperty() {
-        return invoice;
+    public StringProperty locationProperty() {
+        return location;
     }
 
     public void setInvoice(String invoice) {
-        this.invoice.set(invoice);
+        this.location.set(invoice);
     }
 
     public int getId() {

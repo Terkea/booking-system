@@ -246,7 +246,7 @@ public class Application implements Initializable {
     private TableColumn<Booking, String> dateColumnBookingsPane;
 
     @FXML
-    private TableColumn<Booking, String> invoiceColumnBookingsPane;
+    private TableColumn<Booking, String> locationColumnBookingsPane;
 
 
 
@@ -583,9 +583,7 @@ public class Application implements Initializable {
         festivalNameColumnBookingsPane.setCellValueFactory(cellData -> cellData.getValue().event_nameProperty());
         ticketsBoughtColumnBookingsPane.setCellValueFactory(cellData -> cellData.getValue().number_of_ticketsProperty().asString());
         dateColumnBookingsPane.setCellValueFactory(cellData -> cellData.getValue().event_dateProperty());
-        invoiceColumnBookingsPane.setCellValueFactory(cellData -> cellData.getValue().payment_idProperty().asString());
-        invoiceColumnBookingsPane.setCellValueFactory(cellData -> cellData.getValue().invoiceProperty());
-
+        locationColumnBookingsPane.setCellValueFactory(cellData -> cellData.getValue().locationProperty());
 
         try {
             ObservableList<Booking> bookingData = BookingDAO.getBookingsByUserID(ACTUALUSER.getId());

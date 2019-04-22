@@ -514,7 +514,7 @@
                       <TableColumn fx:id="festivalNameColumnBookingsPane" prefWidth="106.0" text="Name" />
                       <TableColumn fx:id="ticketsBoughtColumnBookingsPane" prefWidth="145.0" text="Tickets" />
                         <TableColumn fx:id="dateColumnBookingsPane" prefWidth="133.0" text="Date" />
-                        <TableColumn fx:id="invoiceColumnBookingsPane" prefWidth="175.0" text="Invoice" />
+                        <TableColumn fx:id="locationColumnBookingsPane" prefWidth="175.0" text="Location" />
                     </columns>
                   </TableView>
                   <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="413.0" layoutY="104.0" prefHeight="30.0" prefWidth="167.0" style="-fx-background-color: #FF998E;" text="Search" AnchorPane.rightAnchor="20.0">
