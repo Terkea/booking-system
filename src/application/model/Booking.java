@@ -2,6 +2,10 @@ package application.model;
 
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
+import java.sql.SQLException;
 
 public class Booking {
     private IntegerProperty id;
@@ -9,6 +13,9 @@ public class Booking {
     private IntegerProperty event_id;
     private IntegerProperty user_id;
     private IntegerProperty payment_id;
+    private StringProperty event_name;
+    private StringProperty event_date;
+    private StringProperty invoice;
 
     public Booking(){
         this.id = new SimpleIntegerProperty();
@@ -16,6 +23,19 @@ public class Booking {
         this.event_id = new SimpleIntegerProperty();
         this.user_id = new SimpleIntegerProperty();
         this.payment_id = new SimpleIntegerProperty();
+    }
+
+    public void setUpForeignKeys(){
+        try {
+            this.event_name = new SimpleStringProperty(EventDAO.getEventByIDProperty(event_id).getName());
+            System.out.println(event_name);
+            this.event_date = new SimpleStringProperty(EventDAO.getEventByIDProperty(event_id).getDate());
+            this.invoice = new SimpleStringProperty(String.valueOf(PaymentDAO.getPaymentByIdProperty(payment_id).getId()));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     public Booking(IntegerProperty id, IntegerProperty number_of_tickets, IntegerProperty event_id, IntegerProperty user_id, IntegerProperty payment_id) {
@@ -35,6 +55,42 @@ public class Booking {
                 ", user_id=" + user_id +
                 ", payment_id=" + payment_id +
                 '}';
+    }
+
+    public String getEvent_name() {
+        return event_name.get();
+    }
+
+    public StringProperty event_nameProperty() {
+        return event_name;
+    }
+
+    public void setEvent_name(String event_name) {
+        this.event_name.set(event_name);
+    }
+
+    public String getEvent_date() {
+        return event_date.get();
+    }
+
+    public StringProperty event_dateProperty() {
+        return event_date;
+    }
+
+    public void setEvent_date(String event_date) {
+        this.event_date.set(event_date);
+    }
+
+    public String getInvoice() {
+        return invoice.get();
+    }
+
+    public StringProperty invoiceProperty() {
+        return invoice;
+    }
+
+    public void setInvoice(String invoice) {
+        this.invoice.set(invoice);
     }
 
     public int getId() {

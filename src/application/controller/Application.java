@@ -579,23 +579,12 @@ public class Application implements Initializable {
     }
 
     //BOOKINGS PANE
-    //EVENT PANE
     private void loadMyBookingsData() {
-//        festivalNameColumnBookingsPane.setCellValueFactory(cellData -> cellData.getValue().event_idProperty().asString());
-        festivalNameColumnBookingsPane.setCellValueFactory(cellData -> {
-            try {
-                return EventDAO.getEventByID(cellData.getValue().getEvent_id()).getName();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            }
-        });
+        festivalNameColumnBookingsPane.setCellValueFactory(cellData -> cellData.getValue().event_nameProperty());
         ticketsBoughtColumnBookingsPane.setCellValueFactory(cellData -> cellData.getValue().number_of_ticketsProperty().asString());
-//        dateColumnBookingsPane.setCellValueFactory(cellData -> cellData.getValue().);
-        invoiceColumnBookingsPane.setCellValueFactory(cellData-> cellData.getValue().payment_idProperty().asString());
-//        invoiceColumnBookingsPane.setCellValueFactory(cellData -> PaymentDAO.getP(cellData.getValue().getEvent_id()).getDate());
-
+        dateColumnBookingsPane.setCellValueFactory(cellData -> cellData.getValue().event_dateProperty());
+        invoiceColumnBookingsPane.setCellValueFactory(cellData -> cellData.getValue().payment_idProperty().asString());
+        invoiceColumnBookingsPane.setCellValueFactory(cellData -> cellData.getValue().invoiceProperty());
 
 
         try {
@@ -607,6 +596,7 @@ public class Application implements Initializable {
             System.err.println("Error occured while getting event information from DB " + e);
         }
     }
+
 
     @FXML
     private void populateBooking(Booking booking) throws ClassNotFoundException {

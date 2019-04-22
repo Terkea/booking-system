@@ -1,5 +1,7 @@
 package application;
 
+import application.model.Event;
+import application.model.EventDAO;
 import application.model.PaymentDAO;
 import application.model.UserDAO;
 import application.system.Password;
@@ -25,5 +27,14 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
+
+//        try {
+//            System.out.println(EventDAO.test(21).get(0));
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        } catch (ClassNotFoundException e) {
+//            e.printStackTrace();
+//        }
     }
+
 }

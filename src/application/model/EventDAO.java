@@ -1,6 +1,7 @@
 package application.model;
 
 import application.system.DB;
+import javafx.beans.property.IntegerProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -111,6 +112,7 @@ public class EventDAO {
         }
     }
 
+
     public static Event getEventByID (int keyword) throws SQLException, ClassNotFoundException {
         String selectStmt = "SELECT * " +
                 "FROM `event` " +
@@ -123,6 +125,23 @@ public class EventDAO {
             return event;
         }catch(SQLException e){
             System.err.println("ERROR While searching for a User with: " + keyword + " name, error occured: " + e);
+            System.err.println(selectStmt);
+            throw e;
+        }
+    }
+
+    public static Event getEventByIDProperty (IntegerProperty keyword) throws SQLException, ClassNotFoundException {
+        String selectStmt = "SELECT * " +
+                "FROM `event` " +
+                "WHERE id = \"" + keyword.getValue() + "\"";
+//                "AND status = 1";
+        try{
+            ResultSet rs = DB.dbExecuteQuery(selectStmt);
+            Event event = getEventFromResultSet(rs);
+            System.out.println(keyword);
+            return event;
+        }catch(SQLException e){
+            System.err.println("ERROR While searching for a Event with: " + keyword + " name, error occured: " + e);
             System.err.println(selectStmt);
             throw e;
         }

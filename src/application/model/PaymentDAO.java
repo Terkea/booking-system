@@ -1,6 +1,7 @@
 package application.model;
 
 import application.system.DB;
+import javafx.beans.property.IntegerProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -93,4 +94,42 @@ public class PaymentDAO {
             throw e;
         }
     }
+
+
+    public static Payment getPaymentByID (IntegerProperty keyword) throws SQLException, ClassNotFoundException {
+        String selectStmt = "SELECT * " +
+                "FROM `payment` " +
+                "WHERE id = \"" + keyword + "\"";
+//                "AND status = 1";
+        try{
+            ResultSet rs = DB.dbExecuteQuery(selectStmt);
+            Payment payment = getPaymentFromResultSet(rs);
+
+            return payment;
+        }catch(SQLException e){
+            System.err.println("ERROR While searching for a payment with: " + keyword + " name, error occured: " + e);
+            System.err.println(selectStmt);
+            throw e;
+        }
+    }
+
+    public static Payment getPaymentByIdProperty (IntegerProperty keyword) throws SQLException, ClassNotFoundException {
+        String selectStmt = "SELECT * " +
+                "FROM `payment` " +
+                "WHERE id = \"" + keyword.getValue() + "\"";
+//                "AND status = 1";
+        try{
+            ResultSet rs = DB.dbExecuteQuery(selectStmt);
+            Payment payment = getPaymentFromResultSet(rs);
+            System.out.println(keyword);
+            return payment;
+        }catch(SQLException e){
+            System.err.println("ERROR While searching for a Event with: " + keyword + " name, error occured: " + e);
+            System.err.println(selectStmt);
+            throw e;
+        }
+    }
+
+
+
 }

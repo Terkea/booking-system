@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class BookingDAO {
-    private static Booking getEventFromResultSet(ResultSet rs) throws SQLException {
+    private static Booking getBookingFromResultSet(ResultSet rs) throws SQLException {
         Booking booking = null;
         if (rs.next()){
             booking = new Booking();
@@ -37,13 +37,32 @@ public class BookingDAO {
         return bookingList;
     }
 
+    private static ObservableList<Booking> getFullBookings(ResultSet rs) throws SQLException, ClassNotFoundException{
+        ObservableList<Booking> bookingList = FXCollections.observableArrayList();
+
+        while (rs.next()){
+            Booking booking = new Booking();
+            booking.setId(rs.getInt("id"));
+            booking.setNumber_of_tickets(rs.getInt("number_of_tickets"));
+            booking.setEvent_id(rs.getInt("event_id"));
+            booking.setUser_id(rs.getInt("user_id"));
+            booking.setPayment_id(rs.getInt("payment_id"));
+            booking.setUpForeignKeys();
+            bookingList.add(booking);
+        }
+        return bookingList;
+    }
+
     public static ObservableList<Booking> getBookingsByUserID (int id) throws SQLException, ClassNotFoundException {
         String selectStmt = "SELECT * " +
                 "FROM booking " +
                 "WHERE user_id ='" + id + "'";
         try{
             ResultSet rsEvent = DB.dbExecuteQuery(selectStmt);
-            ObservableList<Booking> bookingList = getEventList(rsEvent);
+            ObservableList<Booking> bookingList = getFullBookings(rsEvent);
+
+//            for (int i = 0; bookingList.)
+
 
             return bookingList;
         }catch(SQLException e){
@@ -52,6 +71,21 @@ public class BookingDAO {
         }
     }
 
+    public static Booking getBookingBYID (int id) throws SQLException, ClassNotFoundException {
+        String selectStmt = "SELECT * " +
+                "FROM `booking` " +
+                "WHERE id = \"" + id + "\"";
+        try{
+            ResultSet rs = DB.dbExecuteQuery(selectStmt);
+            Booking booking = getBookingFromResultSet(rs);
+
+            return booking;
+        }catch(SQLException e){
+            System.err.println("ERROR While searching for a Booking with: " + id + " name, error occured: " + e);
+            System.err.println(selectStmt);
+            throw e;
+        }
+    }
 
     public static void insertBooking (int number_of_tickets, int event_id, int user_id, int payment_id) throws SQLException, ClassNotFoundException {
         //Declare a DELETE statement
