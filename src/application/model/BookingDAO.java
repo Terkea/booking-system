@@ -37,10 +37,10 @@ public class BookingDAO {
         return bookingList;
     }
 
-    public static ObservableList<Booking> searchActiveEvent (int id) throws SQLException, ClassNotFoundException {
+    public static ObservableList<Booking> getBookingsByUserID (int id) throws SQLException, ClassNotFoundException {
         String selectStmt = "SELECT * " +
                 "FROM booking " +
-                "WHERE name ='" + id + "'";
+                "WHERE user_id ='" + id + "'";
         try{
             ResultSet rsEvent = DB.dbExecuteQuery(selectStmt);
             ObservableList<Booking> bookingList = getEventList(rsEvent);

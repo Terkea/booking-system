@@ -264,6 +264,7 @@ public class Application implements Initializable {
             viewConcertsPane.toFront();
             loadEventsData();
         } else if (event.getSource() == viewBookingsButton) {
+            loadMyBookingsData();
             viewBookingsPane.toFront();
         }
     }
@@ -580,34 +581,44 @@ public class Application implements Initializable {
     //BOOKINGS PANE
     //EVENT PANE
     private void loadMyBookingsData() {
-        festivalNameColumnBookingsPane.setCellValueFactory(cellData -> EventDAO.getEventByID(cellData.getValue().getEvent_id()).getName());
+//        festivalNameColumnBookingsPane.setCellValueFactory(cellData -> cellData.getValue().event_idProperty().asString());
+        festivalNameColumnBookingsPane.setCellValueFactory(cellData -> {
+            try {
+                return EventDAO.getEventByID(cellData.getValue().getEvent_id()).getName();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        });
         ticketsBoughtColumnBookingsPane.setCellValueFactory(cellData -> cellData.getValue().number_of_ticketsProperty().asString());
-        dateColumnBookingsPane.setCellValueFactory(cellData -> EventDAO.getEventByID(cellData.getValue().getEvent_id()).getDate());
+//        dateColumnBookingsPane.setCellValueFactory(cellData -> cellData.getValue().);
+        invoiceColumnBookingsPane.setCellValueFactory(cellData-> cellData.getValue().payment_idProperty().asString());
 //        invoiceColumnBookingsPane.setCellValueFactory(cellData -> PaymentDAO.getP(cellData.getValue().getEvent_id()).getDate());
 
 
 
-//        try {
-//            ObservableList<Event> eventData = EventDAO.getAllActiveEvents();
-//            populateEvents(eventData);
-//        } catch (SQLException e) {
-//            System.err.println("Error occured while getting event information from DB " + e);
-//        } catch (ClassNotFoundException e) {
-//            System.err.println("Error occured while getting event information from DB " + e);
-//        }
+        try {
+            ObservableList<Booking> bookingData = BookingDAO.getBookingsByUserID(ACTUALUSER.getId());
+            populatebookings(bookingData);
+        } catch (SQLException e) {
+            System.err.println("Error occured while getting event information from DB " + e);
+        } catch (ClassNotFoundException e) {
+            System.err.println("Error occured while getting event information from DB " + e);
+        }
     }
-//
-//    @FXML
-//    private void populateEvents(Event event) throws ClassNotFoundException {
-//        ObservableList<Event> eventData = FXCollections.observableArrayList();
-//        eventData.add(event);
-//        concertsTableConcertsPane.setItems(eventData);
-//    }
-//
-//    @FXML
-//    private void populateEvents(ObservableList<Event> eventData) throws ClassNotFoundException {
-//        concertsTableConcertsPane.setItems(eventData);
-//    }
+
+    @FXML
+    private void populateBooking(Booking booking) throws ClassNotFoundException {
+        ObservableList<Booking> bookingData = FXCollections.observableArrayList();
+        bookingData.add(booking);
+        myBookingsTable.setItems(bookingData);
+    }
+
+    @FXML
+    private void populatebookings(ObservableList<Booking> bookingData) throws ClassNotFoundException {
+        myBookingsTable.setItems(bookingData);
+    }
 
 
 }

@@ -509,30 +509,30 @@
             </AnchorPane>
             <AnchorPane fx:id="viewBookingsPane" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #FFF2F2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <TableView layoutX="28.0" layoutY="130.0" prefHeight="394.0" prefWidth="560.0" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="145.0">
+                  <TableView fx:id="myBookingsTable" layoutX="28.0" layoutY="130.0" prefHeight="394.0" prefWidth="560.0" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="145.0">
                     <columns>
-                      <TableColumn prefWidth="106.0" text="Name" />
-                      <TableColumn prefWidth="145.0" text="Tickets" />
-                        <TableColumn prefWidth="133.0" text="Date" />
-                        <TableColumn prefWidth="175.0" text="Invoice" />
+                      <TableColumn fx:id="festivalNameColumnBookingsPane" prefWidth="106.0" text="Name" />
+                      <TableColumn fx:id="ticketsBoughtColumnBookingsPane" prefWidth="145.0" text="Tickets" />
+                        <TableColumn fx:id="dateColumnBookingsPane" prefWidth="133.0" text="Date" />
+                        <TableColumn fx:id="invoiceColumnBookingsPane" prefWidth="175.0" text="Invoice" />
                     </columns>
                   </TableView>
-                  <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="434.0" layoutY="105.0" prefHeight="28.0" prefWidth="146.0" style="-fx-background-color: #FF998E;" text="Search" AnchorPane.bottomAnchor="467.0" AnchorPane.leftAnchor="434.0" AnchorPane.rightAnchor="20.0">
+                  <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="413.0" layoutY="104.0" prefHeight="30.0" prefWidth="167.0" style="-fx-background-color: #FF998E;" text="Search" AnchorPane.rightAnchor="20.0">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </JFXButton>
-                  <JFXTextField focusColor="#ff998e" layoutX="20.0" layoutY="106.0" prefHeight="25.0" prefWidth="387.0" promptText="keyword" unFocusColor="BLACK" />
-                  <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="123.0" layoutY="558.0" prefHeight="38.0" prefWidth="356.0" style="-fx-background-color: #FF998E;" text="See more details" />
-               </children>
-            </AnchorPane>
-            <AnchorPane layoutX="-136.0" layoutY="28.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="90.0" prefWidth="600.0" style="-fx-background-color: #FFE5E2;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <Label alignment="CENTER" layoutX="164.0" layoutY="26.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="38.0" prefWidth="272.0" text="My bookings" AnchorPane.leftAnchor="164.0" AnchorPane.rightAnchor="164.0" AnchorPane.topAnchor="26.0">
-                     <font>
-                        <Font size="26.0" />
-                     </font>
-                  </Label>
+                  <JFXTextField focusColor="#ff998e" layoutX="20.0" layoutY="106.0" prefHeight="25.0" prefWidth="370.0" promptText="keyword" unFocusColor="BLACK" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="210.0" />
+                  <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="123.0" layoutY="550.0" prefHeight="38.0" prefWidth="356.0" style="-fx-background-color: #FF998E;" text="See more details" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="115.0" AnchorPane.rightAnchor="115.0" />
+                  <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="90.0" prefWidth="600.0" style="-fx-background-color: #FFE5E2;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="164.0" layoutY="26.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="38.0" prefWidth="272.0" text="My bookings" AnchorPane.leftAnchor="164.0" AnchorPane.rightAnchor="164.0" AnchorPane.topAnchor="26.0">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
                </children>
             </AnchorPane>
          </children>
