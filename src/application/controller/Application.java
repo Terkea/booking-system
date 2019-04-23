@@ -331,13 +331,13 @@ public class Application implements Initializable {
         } else {
             websiteAccountPaneTextField.setVisible(false);
         }
-        if (ACTUALUSER.getCorporate_name() != null) {
-            corporatOrganizationAccountPaneTextField.setText(ACTUALUSER.getCorporate_name());
+        if (ACTUALUSER.getCorporate_organisation_name() != null) {
+            corporatOrganizationAccountPaneTextField.setText(ACTUALUSER.getCorporate_organisation_name());
         } else {
             corporatOrganizationAccountPaneTextField.setVisible(false);
         }
-        if (ACTUALUSER.getOrganization_name() != null) {
-            corporatOrganizationAccountPaneTextField.appendText(", " + ACTUALUSER.getCorporate_name());
+        if (ACTUALUSER.getEvents_organiser_name() != null) {
+            corporatOrganizationAccountPaneTextField.appendText(", " + ACTUALUSER.getEvents_organiser_name());
         } else {
             corporatOrganizationAccountPaneTextField.setVisible(false);
         }
@@ -357,7 +357,7 @@ public class Application implements Initializable {
         postcodeUpdateProfileTextField.setText(ACTUALUSER.getPostcode());
         phoneUpdateProfileTextField.setText(ACTUALUSER.getMobile_no());
         websiteUpdateProfileTextField.setText(ACTUALUSER.getWebsite_address());
-        corporateNameUpdateProfileTextField.setText(ACTUALUSER.getCorporate_name());
+        corporateNameUpdateProfileTextField.setText(ACTUALUSER.getCorporate_organisation_name());
         contactNameUpdateProfileTextField.setText(ACTUALUSER.getContact_name());
         contactPhoneUpdateProfileTextField.setText(ACTUALUSER.getContact_phone());
         titleEditProfileComboBox.setPromptText(ACTUALUSER.getTitle());
@@ -440,7 +440,7 @@ public class Application implements Initializable {
         update.setDob(dobUpdateProfileDatePicker.getValue().toString());
         update.setContact_name(contactNameUpdateProfileTextField.getText());
         update.setContact_phone(contactPhoneUpdateProfileTextField.getText());
-        update.setOrganization_name(corporateNameUpdateProfileTextField.getText());
+        update.setCorporate_organisation_name(corporateNameUpdateProfileTextField.getText());
         update.setMobile_no(phoneUpdateProfileTextField.getText());
         update.setWebsite_address(websiteUpdateProfileTextField.getText());
 

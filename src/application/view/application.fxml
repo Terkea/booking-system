@@ -616,7 +616,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <JFXTextArea fx:id="descriptionLabelMyBookingPane" editable="false" focusColor="#ff998e" promptText="test" style="-fx-opacity: 1;" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        <JFXTextArea fx:id="descriptionLabelMyBookingPane" focusColor="#ff998e" promptText="test" style="-fx-opacity: 1;" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.rowIndex="3">
                            <font>
                               <Font size="18.0" />
                            </font></JFXTextArea>

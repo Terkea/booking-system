@@ -16,12 +16,12 @@ public class User {
     private StringProperty dob;
     private StringProperty contact_name; // default null
     private StringProperty contact_phone; // default null
-    private StringProperty organization_name; // default null
+    private StringProperty corporate_organisation_name; // default null
     private StringProperty email_address; // unique
     private StringProperty mobile_no;
     private StringProperty website_address; // default null
     private StringProperty password;
-    private StringProperty corporate_name; // default null
+    private StringProperty events_organiser_name; // default null
     private BooleanProperty is_admin; // default null
 
 
@@ -39,16 +39,16 @@ public class User {
         this.dob = new SimpleStringProperty();
         this.contact_name = new SimpleStringProperty();
         this.contact_phone = new SimpleStringProperty();
-        this.organization_name = new SimpleStringProperty();
+        this.corporate_organisation_name = new SimpleStringProperty();
         this.email_address = new SimpleStringProperty();
         this.mobile_no = new SimpleStringProperty();
         this.website_address = new SimpleStringProperty();
         this.password = new SimpleStringProperty();
-        this.corporate_name = new SimpleStringProperty();
+        this.events_organiser_name = new SimpleStringProperty();
         this.is_admin = new SimpleBooleanProperty();
     }
 
-    public User(IntegerProperty id, StringProperty title, StringProperty first_name, StringProperty last_name, StringProperty gender, StringProperty address_line, StringProperty address_line2, StringProperty town, StringProperty county, StringProperty postcode, StringProperty dob, StringProperty contact_name, StringProperty contact_phone, StringProperty organization_name, StringProperty email_address, StringProperty mobile_no, StringProperty website_address, StringProperty password, StringProperty corporate_name, BooleanProperty is_admin) {
+    public User(IntegerProperty id, StringProperty title, StringProperty first_name, StringProperty last_name, StringProperty gender, StringProperty address_line, StringProperty address_line2, StringProperty town, StringProperty county, StringProperty postcode, StringProperty dob, StringProperty contact_name, StringProperty contact_phone, StringProperty corporate_organisation_name, StringProperty email_address, StringProperty mobile_no, StringProperty website_address, StringProperty password, StringProperty events_organiser_name, BooleanProperty is_admin) {
         this.id = new SimpleIntegerProperty();
         this.title = new SimpleStringProperty();
         this.first_name = new SimpleStringProperty();
@@ -62,12 +62,12 @@ public class User {
         this.dob = new SimpleStringProperty();
         this.contact_name = new SimpleStringProperty();
         this.contact_phone = new SimpleStringProperty();
-        this.organization_name = new SimpleStringProperty();
+        this.corporate_organisation_name = new SimpleStringProperty();
         this.email_address = new SimpleStringProperty();
         this.mobile_no = new SimpleStringProperty();
         this.website_address = new SimpleStringProperty();
         this.password = new SimpleStringProperty();
-        this.corporate_name = new SimpleStringProperty();
+        this.events_organiser_name = new SimpleStringProperty();
         this.is_admin = new SimpleBooleanProperty();
     }
 
@@ -87,14 +87,38 @@ public class User {
                 ", dob=" + dob +
                 ", contact_name=" + contact_name +
                 ", contact_phone=" + contact_phone +
-                ", organization_name=" + organization_name +
+                ", corporate_organisation_name=" + corporate_organisation_name +
                 ", email_address=" + email_address +
                 ", mobile_no=" + mobile_no +
                 ", website_address=" + website_address +
                 ", password=" + password +
-                ", corporate_name=" + corporate_name +
+                ", events_organiser_name=" + events_organiser_name +
                 ", is_admin=" + is_admin +
                 '}';
+    }
+
+    public String getCorporate_organisation_name() {
+        return corporate_organisation_name.get();
+    }
+
+    public StringProperty corporate_organisation_nameProperty() {
+        return corporate_organisation_name;
+    }
+
+    public void setCorporate_organisation_name(String corporate_organisation_name) {
+        this.corporate_organisation_name.set(corporate_organisation_name);
+    }
+
+    public String getEvents_organiser_name() {
+        return events_organiser_name.get();
+    }
+
+    public StringProperty events_organiser_nameProperty() {
+        return events_organiser_name;
+    }
+
+    public void setEvents_organiser_name(String events_organiser_name) {
+        this.events_organiser_name.set(events_organiser_name);
     }
 
     public int getId() {
@@ -253,18 +277,6 @@ public class User {
         this.contact_phone.set(contact_phone);
     }
 
-    public String getOrganization_name() {
-        return organization_name.get();
-    }
-
-    public StringProperty organization_nameProperty() {
-        return organization_name;
-    }
-
-    public void setOrganization_name(String organization_name) {
-        this.organization_name.set(organization_name);
-    }
-
     public String getEmail_address() {
         return email_address.get();
     }
@@ -313,17 +325,6 @@ public class User {
         this.password.set(password);
     }
 
-    public String getCorporate_name() {
-        return corporate_name.get();
-    }
-
-    public StringProperty corporate_nameProperty() {
-        return corporate_name;
-    }
-
-    public void setCorporate_name(String corporate_name) {
-        this.corporate_name.set(corporate_name);
-    }
 
     public boolean isIs_admin() {
         return is_admin.get();

@@ -217,7 +217,7 @@ public class Register {
                 user.setDob(dobDatePicker.getValue().toString());
                 user.setContact_name(contactNameText.getText());
                 user.setContact_phone(contactNumberText.getText());
-                user.setCorporate_name(corporateNameText.getText());
+                user.setCorporate_organisation_name(corporateNameText.getText());
                 user.setEmail_address(emailText.getText());
                 user.setMobile_no(phoneText.getText());
                 user.setWebsite_address(websiteText.getText());
@@ -226,7 +226,7 @@ public class Register {
                 String hasshedPassword = pwd.hash(password.getText());
                 user.setPassword(hasshedPassword);
 
-                user.setOrganization_name(null);
+                user.setEvents_organiser_name(null);
                 user.setIs_admin(false);
 
 
@@ -234,7 +234,7 @@ public class Register {
                 try {
                     insert.insertUser(user.getTitle(), user.getFirst_name(), user.getLast_name(), user.getGender(), user.getAddress_line(), user.getAddress_line2(),
                             user.getTown(), user.getCounty(), user.getPostcode(), user.getDob(), user.getContact_name(), user.getContact_phone(),
-                            user.getOrganization_name(), user.getEmail_address(), user.getMobile_no(), user.getWebsite_address(), user.getPassword(), user.getCorporate_name(),
+                            user.getCorporate_organisation_name(), user.getEmail_address(), user.getMobile_no(), user.getWebsite_address(), user.getPassword(), user.getEvents_organiser_name(),
                             user.isIs_admin());
 
 

@@ -24,12 +24,12 @@ public class UserDAO {
             user.setDob(rs.getString("dob"));
             user.setContact_name(rs.getString("contact_name"));
             user.setContact_phone(rs.getString("contact_phone"));
-            user.setOrganization_name(rs.getString("organisation_name"));
+            user.setCorporate_organisation_name(rs.getString("corporate_organisation_name"));
             user.setEmail_address(rs.getString("email_address"));
             user.setMobile_no(rs.getString("mobile_no"));
             user.setWebsite_address(rs.getString("web_address"));
             user.setPassword(rs.getString("password"));
-            user.setCorporate_name(rs.getString("corporate_name"));
+            user.setEvents_organiser_name(rs.getString("events_organiser_name"));
             user.setIs_admin(rs.getBoolean("is_admin"));
         }
         return user;
@@ -53,12 +53,12 @@ public class UserDAO {
             user.setDob(rs.getString("dob"));
             user.setContact_name(rs.getString("contact_name"));
             user.setContact_phone(rs.getString("contact_phone"));
-            user.setOrganization_name(rs.getString("organisation_name"));
+            user.setCorporate_organisation_name(rs.getString("corporate_organisation_name"));
             user.setEmail_address(rs.getString("email_address"));
             user.setMobile_no(rs.getString("mobile_no"));
             user.setWebsite_address(rs.getString("web_address"));
             user.setPassword(rs.getString("password"));
-            user.setCorporate_name(rs.getString("corporate_name"));
+            user.setEvents_organiser_name(rs.getString("events_organiser_name"));
             user.setIs_admin(rs.getBoolean("is_admin"));
 
             userList.add(user);
@@ -164,7 +164,7 @@ public class UserDAO {
         //Declare a DELETE statement
         String updateStmt = "INSERT INTO `user` " +
                         "(`title`, `first_name`, `last_name`, `gender`, `address_line`, `address_line2`, `town`, `county`, `postcode`, `dob`, " +
-                         "`contact_name`, `contact_phone`, `organisation_name`, `email_address`, `mobile_no`, `web_address`, `password`, `corporate_name`, `is_admin`) " +
+                         "`contact_name`, `contact_phone`, `corporate_organisation_name`, `email_address`, `mobile_no`, `web_address`, `password`, `events_organiser_name`, `is_admin`) " +
                         "VALUES\n" +
                         "('" +title+ "', '" +first_name+ "', '" +last_name+ "', '"+gender+ "', '"+address_line+ "', '"+address_line2+ "', '"+town+ "', '"+
                         county+ "', '"+postcode+ "', '"+dob+ "', '"+contact_name+ "', '"+contact_phone+ "', '"+organization_name+ "', '"+email_address+ "', '"+
@@ -195,7 +195,7 @@ public class UserDAO {
                 "dob = '" + user.getDob() + "', " +
                 "contact_name = '" + user.getContact_name() + "', " +
                 "contact_phone = '" + user.getContact_phone() + "', " +
-                "organisation_name = '" + user.getOrganization_name() + "', " +
+                "corporate_organisation_name = '" + user.getCorporate_organisation_name() + "', " +
                 "mobile_no = '" + user.getMobile_no() + "', " +
                 "web_address = '" + user.getWebsite_address() + "' " +
                 "WHERE id = '" + user.getId() + "';";
