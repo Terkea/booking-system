@@ -7,10 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e45a1d1-83c6-47d2-83a7-58cd49d8d856" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/controller/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/controller/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/controller/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/controller/Register.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/model/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/model/Booking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/model/BookingDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/model/BookingDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/model/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/model/UserDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/view/application.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/view/application.fxml" afterDir="false" />
     </list>
@@ -26,51 +26,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/application/controller/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="442" column="46" selection-start-line="442" selection-start-column="46" selection-end-line="442" selection-end-column="46" />
+            <state relative-caret-position="5">
+              <caret line="716" column="109" selection-start-line="716" selection-start-column="109" selection-end-line="716" selection-end-column="109" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#10905#10906#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/application/model/Booking.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1938#1939#0" expanded="true" />
+                <element signature="e#1981#1982#0" expanded="true" />
+                <element signature="e#2020#2021#0" expanded="true" />
+                <element signature="e#2061#2062#0" expanded="true" />
+                <element signature="e#2113#2114#0" expanded="true" />
+                <element signature="e#2148#2149#0" expanded="true" />
+                <element signature="e#2204#2205#0" expanded="true" />
+                <element signature="e#2255#2256#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/application/model/BookingDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="474">
+              <caret line="134" column="18" selection-start-line="134" selection-start-column="18" selection-end-line="134" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/application/controller/Register.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2556">
-              <caret line="122" column="30" selection-start-line="122" selection-start-column="30" selection-end-line="122" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/application/model/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-420">
-              <caret line="111" column="34" selection-start-line="111" selection-start-column="34" selection-end-line="111" selection-end-column="34" />
-              <folding>
-                <element signature="e#3795#3796#0" expanded="true" />
-                <element signature="e#3851#3852#0" expanded="true" />
-                <element signature="e#3918#3919#0" expanded="true" />
-                <element signature="e#3968#3969#0" expanded="true" />
-                <element signature="e#4183#4184#0" expanded="true" />
-                <element signature="e#4233#4234#0" expanded="true" />
-                <element signature="e#4294#4295#0" expanded="true" />
-                <element signature="e#4338#4339#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/application/model/UserDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="166" column="77" selection-start-line="166" selection-start-column="60" selection-end-line="166" selection-end-column="77" />
             </state>
           </provider>
         </entry>
@@ -86,9 +82,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getuser</find>
-      <find>updateprofile</find>
-      <find>id</find>
       <find>changePasswordButtonMyAccountPane</find>
       <find>loadUser</find>
       <find>loadMyAcount</find>
@@ -114,8 +107,11 @@
       <find>status</find>
       <find>selected</find>
       <find>description</find>
-      <find>descriptionLabelMyBookingPane</find>
       <find>select *</find>
+      <find>descriptionLabelMyBookingPane</find>
+      <find>organisation_name</find>
+      <find>loadMyBookingsData</find>
+      <find>getFullBookings</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -133,16 +129,16 @@
         <option value="$PROJECT_DIR$/src/application/system/DB.java" />
         <option value="$PROJECT_DIR$/src/test/strings for checks" />
         <option value="$PROJECT_DIR$/src/application/model/Payment.java" />
-        <option value="$PROJECT_DIR$/src/application/Main.java" />
         <option value="$PROJECT_DIR$/src/application/model/Event.java" />
         <option value="$PROJECT_DIR$/src/application/model/EventDAO.java" />
-        <option value="$PROJECT_DIR$/src/application/model/Booking.java" />
-        <option value="$PROJECT_DIR$/src/application/model/BookingDAO.java" />
         <option value="$PROJECT_DIR$/src/application/model/PaymentDAO.java" />
         <option value="$PROJECT_DIR$/src/application/model/User.java" />
-        <option value="$PROJECT_DIR$/src/application/model/UserDAO.java" />
-        <option value="$PROJECT_DIR$/src/application/controller/Application.java" />
         <option value="$PROJECT_DIR$/src/application/controller/Register.java" />
+        <option value="$PROJECT_DIR$/src/application/model/UserDAO.java" />
+        <option value="$PROJECT_DIR$/src/application/Main.java" />
+        <option value="$PROJECT_DIR$/src/application/model/BookingDAO.java" />
+        <option value="$PROJECT_DIR$/src/application/model/Booking.java" />
+        <option value="$PROJECT_DIR$/src/application/controller/Application.java" />
       </list>
     </option>
   </component>
@@ -264,9 +260,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.1913646" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.1913646" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.3336887" />
       <window_info id="Designer" order="3" />
@@ -275,7 +270,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3290461" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3290461" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39978564" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -301,7 +296,7 @@
       <window_info anchor="right" id="Theme Preview" order="10" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.18923241" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.1913646" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.3336887" />
       <window_info id="Designer" order="3" />
@@ -310,7 +305,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3290461" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3290461" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39978564" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -370,13 +365,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/controller/Login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="47" column="34" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/testing/dbh/DBUtil.java" />
     <entry file="file://$PROJECT_DIR$/src/testing/model/User.java" />
     <entry file="file://$PROJECT_DIR$/src/testing/model/UserDAO.java" />
@@ -410,44 +398,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="560">
           <caret line="51" column="13" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/model/Booking.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-640">
-          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1589#1590#0" expanded="true" />
-            <element signature="e#1628#1629#0" expanded="true" />
-            <element signature="e#1678#1679#0" expanded="true" />
-            <element signature="e#1711#1712#0" expanded="true" />
-            <element signature="e#1763#1764#0" expanded="true" />
-            <element signature="e#1810#1811#0" expanded="true" />
-            <element signature="e#1847#1848#0" expanded="true" />
-            <element signature="e#1886#1887#0" expanded="true" />
-            <element signature="e#1936#1937#0" expanded="true" />
-            <element signature="e#1969#1970#0" expanded="true" />
-            <element signature="e#2021#2022#0" expanded="true" />
-            <element signature="e#2068#2069#0" expanded="true" />
-            <element signature="e#2102#2103#0" expanded="true" />
-            <element signature="e#2138#2139#0" expanded="true" />
-            <element signature="e#2185#2186#0" expanded="true" />
-            <element signature="e#2215#2216#0" expanded="true" />
-            <element signature="e#2261#2262#0" expanded="true" />
-            <element signature="e#2302#2303#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/model/BookingDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1420">
-          <caret line="76" column="37" selection-start-line="76" selection-start-column="37" selection-end-line="76" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -527,13 +477,6 @@
             <element signature="e#4243#4244#0" expanded="true" />
             <element signature="e#4290#4291#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
         </state>
       </provider>
     </entry>
@@ -627,27 +570,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/controller/Application.java">
+    <entry file="file://$PROJECT_DIR$/src/application/controller/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="442" column="46" selection-start-line="442" selection-start-column="46" selection-end-line="442" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="218">
+          <caret line="45" column="34" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/application/controller/Register.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2556">
+        <state relative-caret-position="-2542">
           <caret line="122" column="30" selection-start-line="122" selection-start-column="30" selection-end-line="122" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/application/model/UserDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="166" column="77" selection-start-line="166" selection-start-column="60" selection-end-line="166" selection-end-column="77" />
+        <state relative-caret-position="367">
+          <caret line="235" column="34" lean-forward="true" selection-start-line="235" selection-start-column="34" selection-end-line="235" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
+          <folding>
+            <element signature="e#798#799#0" expanded="true" />
+            <element signature="e#826#827#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/model/BookingDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="134" column="18" selection-start-line="134" selection-start-column="18" selection-end-line="134" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/model/Booking.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1938#1939#0" expanded="true" />
+            <element signature="e#1981#1982#0" expanded="true" />
+            <element signature="e#2020#2021#0" expanded="true" />
+            <element signature="e#2061#2062#0" expanded="true" />
+            <element signature="e#2113#2114#0" expanded="true" />
+            <element signature="e#2148#2149#0" expanded="true" />
+            <element signature="e#2204#2205#0" expanded="true" />
+            <element signature="e#2255#2256#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/controller/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5">
+          <caret line="716" column="109" selection-start-line="716" selection-start-column="109" selection-end-line="716" selection-end-column="109" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#10905#10906#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

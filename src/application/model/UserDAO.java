@@ -225,4 +225,20 @@ public class UserDAO {
         }
     }
 
+    public static boolean checkCorporateOrganization(int id){
+        try {
+            User attempt = searchUsersByID(id);
+            if (attempt.getCorporate_organisation_name() == null || attempt.getCorporate_organisation_name().equals("null")
+                    || attempt.getCorporate_organisation_name().equals("NULL") || attempt.getCorporate_organisation_name().isEmpty()){
+                return false;
+            }
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
 }

@@ -1,9 +1,6 @@
 package application.model;
 
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
 
 import java.sql.SQLException;
 
@@ -16,6 +13,7 @@ public class Booking {
     private StringProperty event_name;
     private StringProperty event_date;
     private StringProperty location;
+    private DoubleProperty ticket_price;
 
     public Booking(){
         this.id = new SimpleIntegerProperty();
@@ -33,6 +31,7 @@ public class Booking {
             this.event_name = new SimpleStringProperty(EventDAO.getEventByIDProperty(event_id).getName());
             this.event_date = new SimpleStringProperty(EventDAO.getEventByIDProperty(event_id).getDate());
             this.location = new SimpleStringProperty((EventDAO.getEventByIDProperty(event_id).getLocation()));
+            this.ticket_price = new SimpleDoubleProperty(((EventDAO.getEventByIDProperty(event_id).getTicket_price())));
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
@@ -48,15 +47,20 @@ public class Booking {
         this.payment_id = new SimpleIntegerProperty();
     }
 
-    @Override
-    public String toString() {
-        return "Booking{" +
-                "id=" + id +
-                ", number_of_tickets=" + number_of_tickets +
-                ", event_id=" + event_id +
-                ", user_id=" + user_id +
-                ", payment_id=" + payment_id +
-                '}';
+    public void setLocation(String location) {
+        this.location.set(location);
+    }
+
+    public double getTicket_price() {
+        return ticket_price.get();
+    }
+
+    public DoubleProperty ticket_priceProperty() {
+        return ticket_price;
+    }
+
+    public void setTicket_price(double ticket_price) {
+        this.ticket_price.set(ticket_price);
     }
 
     public String getEvent_name() {

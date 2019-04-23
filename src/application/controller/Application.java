@@ -278,6 +278,23 @@ public class Application implements Initializable {
     @FXML
     private AnchorPane moreDetailsAboutMyBookingPane;
 
+    @FXML
+    private JFXButton makePaymentsButton;
+
+    @FXML
+    private AnchorPane makePaymentPane;
+
+    @FXML
+    private TableView<Booking> pendingPaymentsTableView;
+
+    @FXML
+    private TableColumn<Booking, String> eventNameColumnMakePaymentPane;
+
+    @FXML
+    private TableColumn<Booking, String> ammountColumnMakePaymentPane;
+
+    @FXML
+    private TableColumn<Booking, String> ticketsColumnMakePaymentPane;
 
 
 
@@ -299,6 +316,9 @@ public class Application implements Initializable {
         } else if (event.getSource() == viewBookingsButton) {
             loadMyBookingsData();
             viewBookingsPane.toFront();
+        }else if (event.getSource() == makePaymentsButton){
+            loadUnpaidBookings();
+            makePaymentPane.toFront();
         }
     }
 
@@ -306,9 +326,18 @@ public class Application implements Initializable {
     // ACCOUNT PANE
     @FXML
     public void loadUser(User user) {
-
+//        makePaymentsButton.setVisible(false);
         if (user != null) {
             this.ACTUALUSER = user;
+
+
+            if (UserDAO.checkCorporateOrganization(user.getId())){
+                makePaymentsButton.setVisible(true);
+            }else{
+                makePaymentsButton.setVisible(false);
+            }
+
+
             welcomeLabel.setText(user.getTitle() + " " + user.getFirst_name() + " " + user.getLast_name());
             loadMyAcount();
         }
@@ -680,5 +709,35 @@ public class Application implements Initializable {
         }
     }
 
+
+    //makePaymentPane
+    private void loadUnpaidBookings() {
+        eventNameColumnMakePaymentPane.setCellValueFactory(cellData -> cellData.getValue().event_nameProperty());
+        ticketsColumnMakePaymentPane.setCellValueFactory(cellData -> cellData.getValue().number_of_ticketsProperty().asString());
+        ammountColumnMakePaymentPane.setCellValueFactory(cellData -> cellData.getValue().ticket_priceProperty().asString());
+//        locationColumnBookingsPane.setCellValueFactory(cellData -> cellData.getValue().locationProperty());
+
+        try {
+            ObservableList<Booking> bookingData = BookingDAO.getAllMyUnpaidBookings(ACTUALUSER.getId());
+            populateUnpaidBookings(bookingData);
+        } catch (SQLException e) {
+            System.err.println("Error occured while getting event information from DB " + e);
+        } catch (ClassNotFoundException e) {
+            System.err.println("Error occured while getting event information from DB " + e);
+        }
+    }
+
+
+    @FXML
+    private void populateUnpaidBooking(Booking booking){
+        ObservableList<Booking> bookingData = FXCollections.observableArrayList();
+        bookingData.add(booking);
+        pendingPaymentsTableView.setItems(bookingData);
+    }
+
+    @FXML
+    private void populateUnpaidBookings(ObservableList<Booking> bookingData){
+        pendingPaymentsTableView.setItems(bookingData);
+    }
 
 }

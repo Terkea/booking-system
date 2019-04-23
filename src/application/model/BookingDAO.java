@@ -126,4 +126,22 @@ public class BookingDAO {
     }
 
 
+    public static ObservableList<Booking> getAllMyUnpaidBookings (int id) throws SQLException, ClassNotFoundException {
+        String selectStmt = "SELECT * " +
+                "FROM booking " +
+                "INNER JOIN payment " +
+                "ON `booking`.`payment_id` = `payment`.`id` " +
+                "WHERE `payment`.`user_id` =  " + id +
+                " AND `payment`.`status` = 0";
+        try{
+            ResultSet rsEvent = DB.dbExecuteQuery(selectStmt);
+            ObservableList<Booking> bookingList = getFullBookings(rsEvent);
+
+            return bookingList;
+        }catch(SQLException e){
+            System.out.println("ERROR While searching for a booking with: " + id + " id, error occured: " + e);
+            throw e;
+        }
+    }
+
 }
