@@ -8,6 +8,7 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -640,24 +641,45 @@
                         </Label>
                      </children>
                   </AnchorPane>
-                  <TableView fx:id="pendingPaymentsTableView" layoutX="100.0" layoutY="218.0" prefHeight="315.0" prefWidth="425.0" AnchorPane.bottomAnchor="135.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="150.0">
+                  <TableView fx:id="pendingPaymentsTableView" layoutX="30.0" layoutY="100.0" prefHeight="319.0" prefWidth="540.0" AnchorPane.bottomAnchor="181.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="100.0">
                     <columns>
                       <TableColumn fx:id="eventNameColumnMakePaymentPane" prefWidth="199.0" text="Event Name" />
-                      <TableColumn fx:id="ammountColumnMakePaymentPane" minWidth="2.0" prefWidth="161.0" text="Ticket Price" />
-                        <TableColumn fx:id="ticketsColumnMakePaymentPane" prefWidth="179.0" text="Tickets bought" />
+                      <TableColumn fx:id="ammountColumnMakePaymentPane" minWidth="2.0" prefWidth="161.0" text="Tickets bought" />
+                        <TableColumn fx:id="ticketsColumnMakePaymentPane" prefWidth="179.0" text="Ticket price" />
                     </columns>
                   </TableView>
-                  <JFXButton fx:id="buyTicketsButtonMoreDetailsPane1" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="138.0" layoutY="524.0" onAction="#buyTickets" prefHeight="38.0" prefWidth="324.0" style="-fx-background-color: #FF998E;" text="Pay" AnchorPane.bottomAnchor="38.0" AnchorPane.leftAnchor="138.0" AnchorPane.rightAnchor="138.0" />
-                  <Label layoutX="30.0" layoutY="475.0" text="Total">
+                  <JFXButton fx:id="buyTicketsButtonMoreDetailsPane1" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="138.0" layoutY="540.0" onAction="#buyTickets" prefHeight="38.0" prefWidth="324.0" style="-fx-background-color: #FF998E;" text="Pay" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="138.0" AnchorPane.rightAnchor="138.0" />
+                  <Label layoutX="30.0" layoutY="436.0" prefHeight="27.0" prefWidth="200.0" text="Full price" AnchorPane.bottomAnchor="137.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="370.0" AnchorPane.topAnchor="436.0">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="320.0" layoutY="475.0" prefHeight="27.0" prefWidth="250.0" text="512312312312 GBP" textAlignment="RIGHT">
+                  <Label fx:id="totalLabelMakePaymentPane" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="320.0" layoutY="436.0" prefHeight="27.0" prefWidth="250.0" text="512312312312 GBP" textAlignment="RIGHT" AnchorPane.bottomAnchor="137.0" AnchorPane.leftAnchor="320.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="436.0">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
+                  <Label layoutX="30.0" layoutY="463.0" prefHeight="27.0" prefWidth="200.0" text="-20 % Discount">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="discountLabelPaymentPane" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="320.0" layoutY="463.0" prefHeight="27.0" prefWidth="250.0" text="512312312312 GBP - 20%" textAlignment="RIGHT">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="30.0" layoutY="502.0" prefHeight="27.0" prefWidth="200.0" text="TOTAL">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="afterDiscountLabelPaymentPane" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="320.0" layoutY="502.0" prefHeight="27.0" prefWidth="250.0" text="512312312312 GBP - 20%" textAlignment="RIGHT">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="14.0" layoutY="501.0" prefHeight="1.0" prefWidth="560.0" />
                </children>
             </AnchorPane>
          </children>

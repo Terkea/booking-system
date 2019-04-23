@@ -10,6 +10,7 @@ import java.util.ResourceBundle;
 import application.model.*;
 import application.system.Password;
 import com.jfoenix.controls.*;
+import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -31,6 +32,9 @@ public class Application implements Initializable {
 
     @FXML
     private Label welcomeLabel;
+
+    @FXML
+    private Label afterDiscountLabelPaymentPane;
 
     @FXML
     private Label eventNameLabelMyBookingPane;
@@ -232,6 +236,12 @@ public class Application implements Initializable {
 
     @FXML
     private Label titleLabelMoreDetailsEventPane;
+
+    @FXML
+    private Label totalLabelMakePaymentPane;
+
+    @FXML
+    private Label discountLabelPaymentPane;
 
     @FXML
     private Label locationLabelMoreDetailsEventPane;
@@ -715,11 +725,24 @@ public class Application implements Initializable {
         eventNameColumnMakePaymentPane.setCellValueFactory(cellData -> cellData.getValue().event_nameProperty());
         ticketsColumnMakePaymentPane.setCellValueFactory(cellData -> cellData.getValue().number_of_ticketsProperty().asString());
         ammountColumnMakePaymentPane.setCellValueFactory(cellData -> cellData.getValue().ticket_priceProperty().asString());
-//        locationColumnBookingsPane.setCellValueFactory(cellData -> cellData.getValue().locationProperty());
 
         try {
             ObservableList<Booking> bookingData = BookingDAO.getAllMyUnpaidBookings(ACTUALUSER.getId());
+
+            double sum = 0.0d;
+
+            for (int i = 0; i<bookingData.size(); i++){
+                sum += bookingData.get(i).getNumber_of_tickets() * bookingData.get(i).getTicket_price();
+            }
+
+            double discount = (sum * 20.0/100.0);
+
+            totalLabelMakePaymentPane.setText(sum + " GBP");
+//            System.out.println(discount);
+            discountLabelPaymentPane.setText(discount + " GBP");
+            afterDiscountLabelPaymentPane.setText(sum - discount + " GBP");
             populateUnpaidBookings(bookingData);
+
         } catch (SQLException e) {
             System.err.println("Error occured while getting event information from DB " + e);
         } catch (ClassNotFoundException e) {
