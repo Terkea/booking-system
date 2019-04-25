@@ -60,13 +60,29 @@ public class PaymentDAO {
         }
     }
 
-    public static void insertPayment (double ammount, String card_no, String expire_date, String card_holder_name, String cvs, int user_id, String description, double status) throws SQLException, ClassNotFoundException {
+    public static void insertPayment (double ammount, String card_no, String expire_date, String card_holder_name, String cvs, int user_id, String description, double status, double discounted) throws SQLException, ClassNotFoundException {
         //Declare a DELETE statement
         String updateStmt = "INSERT INTO `payment` " +
-                "(`ammount`, `card_no`, `expire_date`, `card_holder_name`, `cvs`, `user_id` , `description`, `status`) " +
+                "(`ammount`, `card_no`, `expire_date`, `card_holder_name`, `cvs`, `user_id` , `description`, `status`, `discounted`) " +
                 "VALUES\n" +
-                "('" +ammount+ "', '" +card_no+ "', '" +expire_date+ "', '"+card_holder_name+ "', '"+cvs + "', '"+user_id+ "' ," + description + "', '" + status + "');";
+                "('" +ammount+ "', '" +card_no+ "', '" +expire_date+ "', '"+card_holder_name+ "', '"+cvs + "', '"+user_id+ "' ," + description + "', '" + status + "', '" + discounted + "');";
 
+        try {
+            DB.dbExecuteUpdate(updateStmt);
+        } catch (SQLException e) {
+            System.err.println("Error occurred while INSERTING PAYMENT Operation: " + e);
+            System.err.println(updateStmt);
+            throw e;
+        }
+    }
+
+    public static void insertMonthlyPayment (double ammount, int user_id, String description, double status, double discounted) throws SQLException, ClassNotFoundException {
+        //Declare a DELETE statement
+        String updateStmt = "INSERT INTO `payment` " +
+                "(`ammount`, `user_id` , `description`, `status`, `discounted`) " +
+                "VALUES\n" +
+                "('" +ammount+ "', '" +user_id+ "' ," + description + "', '" + status + "', '" + discounted + "');";
+        System.out.println(updateStmt);
         try {
             DB.dbExecuteUpdate(updateStmt);
         } catch (SQLException e) {

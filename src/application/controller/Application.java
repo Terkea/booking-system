@@ -37,6 +37,9 @@ public class Application implements Initializable {
     private Label afterDiscountLabelPaymentPane;
 
     @FXML
+    private Label errorCorporatePaymentFieldsNotFilled;
+
+    @FXML
     private Label eventNameLabelMyBookingPane;
 
     @FXML
@@ -49,7 +52,28 @@ public class Application implements Initializable {
     private Label dateLabelMyBookingPane;
 
     @FXML
+    private AnchorPane ticketsPaymentForCorporateOrganizationPane;
+
+    @FXML
     private JFXTextArea descriptionLabelMyBookingPane;
+
+    @FXML
+    private AnchorPane cardPaymentAnchorPane;
+
+    @FXML
+    private JFXTextField cardNameTicketCorporatePaymentPane;
+
+    @FXML
+    private JFXTextField cardNumberCorporateTicketPaymentPane;
+
+    @FXML
+    private JFXTextField yearCorporateTicketPaymentPane;
+
+    @FXML
+    private JFXTextField monthCorporateTicketPaymentPane;
+
+    @FXML
+    private JFXTextField securityCodeCorporateTicketPaymentPane;
 
     @FXML
     private Label paymentStatusLabelMyBookingPane;
@@ -110,6 +134,9 @@ public class Application implements Initializable {
 
     @FXML
     private JFXTextField emailAccountPaneTextField;
+
+    @FXML
+    private JFXButton corporatePay;
 
     @FXML
     private JFXTextField phoneAccountPaneTextField;
@@ -259,6 +286,9 @@ public class Application implements Initializable {
     private Label eventTypeLabelMoreDetailsEventPane;
 
     @FXML
+    private AnchorPane payByCardOrganiserAnchorPane;
+
+    @FXML
     private Label descriptionLabelMoreDetailsEventPane;
 
     @FXML
@@ -284,6 +314,18 @@ public class Application implements Initializable {
 
     @FXML
     private JFXButton searchButtonMyBookings;
+
+    @FXML
+    private Label fullPriceLabelMakeOrganiserPaymentPane;
+
+    @FXML
+    private Label discountLabelMakeOrganiserPaymentPane;
+
+    @FXML
+    private Label totalValueLabelMakeOrganiserPaymentPane;
+
+    @FXML
+    private JFXCheckBox payMohtnlycheckBoxPaymentPane;
 
     @FXML
     private AnchorPane moreDetailsAboutMyBookingPane;
@@ -570,18 +612,47 @@ public class Application implements Initializable {
 
     @FXML
     void buyTickets(ActionEvent event) {
-        ticketsPaymentPane.toFront();
         Event selectedEvent = null;
-        try {
-            selectedEvent = EventDAO.getEventByID(concertsTableConcertsPane.getSelectionModel().getSelectedItem().getId());
-            unitsNameTicketPaymentPane.setText(howManyLabelMoreDetailsPane.getText() + "x " + selectedEvent.getName() + " " + selectedEvent.getEvent_type());
-            quantityPriceTicketsPaymentPane.setText(selectedEvent.getTicket_price() + "GBP * " + howManyLabelMoreDetailsPane.getText());
-            totalTicketPaymentPane.setText(Double.parseDouble(howManyLabelMoreDetailsPane.getText()) * (selectedEvent.getTicket_price()) + " GBP");
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+        if (UserDAO.checkCorporateOrganization(ACTUALUSER.getId())){
+            // if corporate
+            ticketsPaymentForCorporateOrganizationPane.toFront();
+            try {
+                selectedEvent = EventDAO.getEventByID(concertsTableConcertsPane.getSelectionModel().getSelectedItem().getId());
+                double discount = 20.0/100.0;
+
+                fullPriceLabelMakeOrganiserPaymentPane.setText(howManyLabelMoreDetailsPane.getText() + " x " + selectedEvent.getTicket_price() + " = " +
+                        Double.parseDouble(howManyLabelMoreDetailsPane.getText())*selectedEvent.getTicket_price() + " GBP");
+                totalValueLabelMakeOrganiserPaymentPane.setText(Double.parseDouble(howManyLabelMoreDetailsPane.getText())*selectedEvent.getTicket_price()-
+                        (Double.parseDouble(howManyLabelMoreDetailsPane.getText())*selectedEvent.getTicket_price()*discount) + "GBP"
+                );
+                discountLabelMakeOrganiserPaymentPane.setText(discount*Double.parseDouble(howManyLabelMoreDetailsPane.getText()) *
+                        selectedEvent.getTicket_price() + "GBP");
+
+                if (payMohtnlycheckBoxPaymentPane.isSelected()){
+                    payByCardOrganiserAnchorPane.setVisible(false);
+                }
+
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        }else{
+            //if not corporate
+            ticketsPaymentPane.toFront();
+            try {
+                selectedEvent = EventDAO.getEventByID(concertsTableConcertsPane.getSelectionModel().getSelectedItem().getId());
+                unitsNameTicketPaymentPane.setText(howManyLabelMoreDetailsPane.getText() + "x " + selectedEvent.getName() + " " + selectedEvent.getEvent_type());
+                quantityPriceTicketsPaymentPane.setText(selectedEvent.getTicket_price() + "GBP * " + howManyLabelMoreDetailsPane.getText());
+                totalTicketPaymentPane.setText(Double.parseDouble(howManyLabelMoreDetailsPane.getText()) * (selectedEvent.getTicket_price()) + " GBP");
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
         }
 
     }
@@ -630,7 +701,7 @@ public class Application implements Initializable {
                             cardNumberTicketPaymentPane.getText(), monthTicketPaymentPane.getText() + "/" + yearTicketPaymentPane.getText(),
                             cardNameTicketPaymentPane.getText(), securityCodeTicketPaymentPane.getText(),
                             ACTUALUSER.getId(),
-                            "'" + howManyLabelMoreDetailsPane.getText() + "x " + selectedEvent.getName() + " " + selectedEvent.getEvent_type() + " tickets", 1);
+                            "'" + howManyLabelMoreDetailsPane.getText() + "x " + selectedEvent.getName() + " " + selectedEvent.getEvent_type() + " tickets", 1, 0);
 
                     //DO THE BOOKING AFTERWARDS
                     //PAYMENT ID has to be retrieved based on the last entry in payments for the user or at least that how I see it
@@ -761,6 +832,80 @@ public class Application implements Initializable {
     @FXML
     private void populateUnpaidBookings(ObservableList<Booking> bookingData){
         pendingPaymentsTableView.setItems(bookingData);
+    }
+
+    //Corporate Organization Pay
+    @FXML
+    void corporatePay(ActionEvent event) {
+        Event selectedEvent = null;
+        if (payMohtnlycheckBoxPaymentPane.isSelected()){
+            try {
+                double discount = 20.0/100.0;
+                selectedEvent = EventDAO.getEventByID(concertsTableConcertsPane.getSelectionModel().getSelectedItem().getId());
+                PaymentDAO.insertMonthlyPayment(Double.parseDouble(howManyLabelMoreDetailsPane.getText())*selectedEvent.getTicket_price()-
+                                (Double.parseDouble(howManyLabelMoreDetailsPane.getText())*selectedEvent.getTicket_price()*discount), ACTUALUSER.getId(),
+                        "'" + howManyLabelMoreDetailsPane.getText() + "x " + selectedEvent.getName() + " " + selectedEvent.getEvent_type() + " tickets",
+                        0, 1);
+
+                //DO THE BOOKING AFTERWARDS
+                //PAYMENT ID has to be retrieved based on the last entry in payments for the user or at least that how I see it
+                Payment currentPayment = PaymentDAO.getLastPaymentByID(ACTUALUSER.getId());
+                BookingDAO.insertBooking(Integer.parseInt(howManyLabelMoreDetailsPane.getText()), selectedEvent.getId(), ACTUALUSER.getId(), currentPayment.getId());
+
+                ticketsPaymentPane.toFront();
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+
+
+
+
+        }else{
+            JFXTextField requiredFields[] = {cardNameTicketCorporatePaymentPane, cardNumberCorporateTicketPaymentPane,
+                    monthCorporateTicketPaymentPane, yearCorporateTicketPaymentPane, securityCodeCorporateTicketPaymentPane};
+            boolean[] checkResults = new boolean[requiredFields.length];
+
+
+            for (int i = 0; i < requiredFields.length; i++) {
+                checkResults[i] = validationForTextFields(requiredFields[i]);
+            }
+
+            if (checkBooleanArray(checkResults)) {
+                if (cardNumberCorporateTicketPaymentPane.getText().length() != 16) {
+                    errorCorporatePaymentFieldsNotFilled.setText("Invalid card number");
+                } else {
+                    PaymentDAO entry = new PaymentDAO();
+
+                    try {
+                        double discount = 20.0/100.0;
+                        selectedEvent = EventDAO.getEventByID(concertsTableConcertsPane.getSelectionModel().getSelectedItem().getId());
+                        PaymentDAO.insertPayment(Double.parseDouble(howManyLabelMoreDetailsPane.getText())*selectedEvent.getTicket_price()-
+                                        (Double.parseDouble(howManyLabelMoreDetailsPane.getText())*selectedEvent.getTicket_price()*discount),
+                                cardNumberCorporateTicketPaymentPane.getText(), monthCorporateTicketPaymentPane.getText() + "/" + yearCorporateTicketPaymentPane.getText(),
+                                cardNameTicketCorporatePaymentPane.getText(), securityCodeCorporateTicketPaymentPane.getText(),
+                                ACTUALUSER.getId(),
+                                "'" + howManyLabelMoreDetailsPane.getText() + "x " + selectedEvent.getName() + " " + selectedEvent.getEvent_type() + " tickets", 1, 1);
+
+                        //DO THE BOOKING AFTERWARDS
+                        //PAYMENT ID has to be retrieved based on the last entry in payments for the user or at least that how I see it
+                        Payment currentPayment = PaymentDAO.getLastPaymentByID(ACTUALUSER.getId());
+                        BookingDAO.insertBooking(Integer.parseInt(howManyLabelMoreDetailsPane.getText()), selectedEvent.getId(), ACTUALUSER.getId(), currentPayment.getId());
+
+                        viewBookingsPane.toFront();
+
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    } catch (ClassNotFoundException e) {
+                        e.printStackTrace();
+                    }
+                }
+            } else {
+                errorCorporatePaymentFieldsNotFilled.setText("All fields are required");
+            }
+        }
     }
 
 }
