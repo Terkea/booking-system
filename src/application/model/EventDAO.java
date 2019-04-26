@@ -78,9 +78,9 @@ public class EventDAO {
         String selectStmt = "SELECT * " +
                 "FROM event " +
                 "WHERE name " +
-                "LIKE \"%" + keyword + "\"" +
+                "LIKE \"%" + keyword + "%\"" +
                 "OR location " +
-                "LIKE \"%" + keyword + "\"" +
+                "LIKE \"%" + keyword + "%\"" +
                 "AND status = 1";
         try{
             ResultSet rsEvent = DB.dbExecuteQuery(selectStmt);

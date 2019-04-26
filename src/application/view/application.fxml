@@ -871,7 +871,7 @@
                         <TableColumn fx:id="phoneColumnManageAccountsPane" prefWidth="173.0" text="Phone" />
                     </columns>
                   </TableView>
-                  <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="413.0" layoutY="111.0" prefHeight="30.0" prefWidth="167.0" style="-fx-background-color: #FF998E;" text="Search" AnchorPane.rightAnchor="20.0">
+                  <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="413.0" layoutY="111.0" onAction="#searchUser" prefHeight="30.0" prefWidth="167.0" style="-fx-background-color: #FF998E;" text="Search" AnchorPane.rightAnchor="20.0">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -902,7 +902,7 @@
                         <Font size="14.0" />
                      </font>
                   </JFXButton>
-                  <JFXTextField focusColor="#ff998e" layoutX="20.0" layoutY="111.0" prefHeight="25.0" prefWidth="370.0" promptText="keyword" unFocusColor="BLACK" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="210.0" />
+                  <JFXTextField fx:id="keywordTextFieldManageAccountsPane" focusColor="#ff998e" layoutX="20.0" layoutY="111.0" prefHeight="25.0" prefWidth="370.0" promptText="keyword" unFocusColor="BLACK" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="210.0" />
                </children>
             </AnchorPane>
          </children>

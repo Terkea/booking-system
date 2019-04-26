@@ -62,6 +62,8 @@ public class Application implements Initializable {
     @FXML
     private TableColumn<User, String> phoneColumnManageAccountsPane;
     @FXML
+    private JFXTextField keywordTextFieldManageAccountsPane;
+    @FXML
     private Label totalValueLabelPayPendingBookingsPane;
     @FXML
     private AnchorPane payPendingBookingsPane;
@@ -972,6 +974,18 @@ public class Application implements Initializable {
     private void getAllAgents(){
         try {
             ObservableList<User> userData = UserDAO.getAllAgents();
+            populateAllUsers(userData);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void searchUser(){
+        try {
+            ObservableList<User> userData = UserDAO.searchUser(keywordTextFieldManageAccountsPane.getText());
             populateAllUsers(userData);
         } catch (SQLException e) {
             e.printStackTrace();

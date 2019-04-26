@@ -66,6 +66,29 @@ public class UserDAO {
         return userList;
     }
 
+    public static ObservableList<User> searchUser (String keyword) throws SQLException, ClassNotFoundException {
+
+        String selectStmt = "SELECT * " +
+                "FROM user " +
+                "WHERE first_name " +
+                "LIKE \"%" + keyword + "%\"" +
+                " OR last_name  " +
+                "LIKE \"%" + keyword + "%\"" +
+                " OR email_address " +
+                "LIKE \"%" + keyword + "%\"" +
+                " OR mobile_no  " +
+                "LIKE \"%" + keyword + "%\";";
+        try{
+            ResultSet rsEvent = DB.dbExecuteQuery(selectStmt);
+            ObservableList<User> usersData = getUserList(rsEvent);
+
+            return usersData;
+        }catch(SQLException e){
+            System.out.println("ERROR While searching for a booking with: " + keyword + " name, error occured: " + e);
+            throw e;
+        }
+    }
+
     public static ObservableList<User> searchUsersByName (String keyword) throws SQLException, ClassNotFoundException {
         String selectStmt = "SELECT * " +
                 "FROM user " +
