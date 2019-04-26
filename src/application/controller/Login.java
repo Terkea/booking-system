@@ -40,15 +40,15 @@ public class Login {
             if (email.getText().equals("") && password.getText().equals("")){
                 errorLabel.setText("Fill the form");
             }else{
-                User loginAttempt = checkLogin.searchUsersByEmail(email.getText());
+                User loginAttempt = UserDAO.searchUsersByEmail(email.getText());
                 if (loginAttempt != null){
                     Password checkCredentials = new Password();
-                    if (checkCredentials.verifyHash(password.getText(), loginAttempt.getPassword())){
+                    if (Password.verifyHash(password.getText(), loginAttempt.getPassword())){
                         System.out.println("password match");
                         //redirect
 
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/application.fxml"));
-                        Parent root = (Parent) loader.load();
+                        Parent root = loader.load();
 
                         Application appController = loader.getController();
                         appController.loadUser(loginAttempt);

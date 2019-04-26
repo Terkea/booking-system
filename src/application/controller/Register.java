@@ -180,9 +180,9 @@ public class Register {
         String error = "FIELD REQUIRED";
         boolean resultOverAll = false;
 
-        TextField fields[] = {firstNameText, lastNameText, address1Text, townText
+        TextField[] fields = {firstNameText, lastNameText, address1Text, townText
                 , countyText, postcodeText, emailText, phoneText}; // + title, gender, dob, password and password check
-        ComboBox comboFields[] = {genderComboBox, titleComboBox};
+        ComboBox[] comboFields = {genderComboBox, titleComboBox};
 
         //The result of the validation per field
         boolean[] validationResultsPerField = new boolean[fields.length];
@@ -201,7 +201,7 @@ public class Register {
                 && checkPasswordsMatch(password, passwordCheck) && checkPasswords(password, passwordCheck)
                 && termsAndConditionsCheck(termsCheckBox) && checkDOB()){
             UserDAO check = new UserDAO();
-            if (check.checkEmailUnique(emailText.getText())){
+            if (UserDAO.checkEmailUnique(emailText.getText())){
                 System.out.println("Validation PASSED");
 
                 User user = new User();
@@ -223,7 +223,7 @@ public class Register {
                 user.setWebsite_address(websiteText.getText());
 
                 Password pwd = new Password();
-                String hasshedPassword = pwd.hash(password.getText());
+                String hasshedPassword = Password.hash(password.getText());
                 user.setPassword(hasshedPassword);
 
                 user.setEvents_organiser_name(null);
@@ -232,7 +232,7 @@ public class Register {
 
                 UserDAO insert = new UserDAO();
                 try {
-                    insert.insertUser(user.getTitle(), user.getFirst_name(), user.getLast_name(), user.getGender(), user.getAddress_line(), user.getAddress_line2(),
+                    UserDAO.insertUser(user.getTitle(), user.getFirst_name(), user.getLast_name(), user.getGender(), user.getAddress_line(), user.getAddress_line2(),
                             user.getTown(), user.getCounty(), user.getPostcode(), user.getDob(), user.getContact_name(), user.getContact_phone(),
                             user.getCorporate_organisation_name(), user.getEmail_address(), user.getMobile_no(), user.getWebsite_address(), user.getPassword(), user.getEvents_organiser_name(),
                             user.isIs_admin());

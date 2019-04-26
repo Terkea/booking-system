@@ -30,365 +30,243 @@ import javafx.stage.Stage;
 public class Application implements Initializable {
 
 
+    public User ACTUALUSER = null;
     @FXML
     private Label welcomeLabel;
-
     @FXML
     private Label afterDiscountLabelPaymentPane;
-
     @FXML
     private Label errorCorporatePaymentFieldsNotFilled;
-
     @FXML
     private Label eventNameLabelMyBookingPane;
-
     @FXML
     private Label eventTypeLabelMyBookingPane;
-
     @FXML
     private JFXButton payPendingBookingsButton;
-
     @FXML
     private Label fullPriceLabelPayPendingBookingsPane;
-
     @FXML
     private Label discountLabelPayPendingBookingsPane;
-
     @FXML
     private Label totalValueLabelPayPendingBookingsPane;
-
     @FXML
     private AnchorPane payPendingBookingsPane;
-
     @FXML
     private Label locationLabelMyBookingPane;
-
     @FXML
     private Label dateLabelMyBookingPane;
-
     @FXML
     private AnchorPane ticketsPaymentForCorporateOrganizationPane;
-
     @FXML
     private JFXTextArea descriptionLabelMyBookingPane;
-
     @FXML
     private AnchorPane cardPaymentAnchorPane;
-
     @FXML
     private JFXTextField cardNameTicketCorporatePaymentPane;
-
     @FXML
     private JFXTextField cardNumberCorporateTicketPaymentPane;
-
     @FXML
     private JFXTextField yearCorporateTicketPaymentPane;
-
     @FXML
     private JFXTextField monthCorporateTicketPaymentPane;
-
     @FXML
     private JFXTextField securityCodeCorporateTicketPaymentPane;
-
     @FXML
     private Label paymentStatusLabelMyBookingPane;
-
     @FXML
     private JFXButton seeMoreButtonMyBookingsPane;
-
     @FXML
     private Label errorPaymentFieldsNotFilled;
-
     @FXML
     private Label totalTicketPaymentPane;
-
     @FXML
     private JFXTextField searchTextFieldConcertsPane;
-
     @FXML
     private JFXButton searchButtonConcertsPane;
-
     @FXML
     private JFXButton seeMoreButtonConcertPane;
-
     @FXML
     private Label PayPendingBookingsPane;
-
     @FXML
     private JFXTextField cardNamePendingPaymentsPane;
-
     @FXML
     private JFXTextField cardNumberPendingPaymentsPane;
-
     @FXML
     private JFXTextField yearPendingPaymentsPane;
-
     @FXML
     private JFXTextField monthPendingPaymentsPane;
-
     @FXML
     private JFXTextField securityCodePendingPaymentsPane;
-
     @FXML
     private Label errorLabelPasswordPane;
-
     @FXML
     private JFXButton myAccountButton;
-
     @FXML
     private JFXButton viewConcertsFestivalsButton;
-
     @FXML
     private JFXButton viewBookingsButton;
-
     @FXML
     private Pane accountPane;
-
     @FXML
     private Pane viewConcertsPane;
-
     @FXML
     private Pane viewBookingsPane;
-
     @FXML
     private Pane editProfilePane;
-
     @FXML
     private JFXTextField addressesAccountPaneTextField;
-
     @FXML
     private JFXTextField titleNameAccountPaneTextField = new JFXTextField();
-
     @FXML
     private JFXTextField townCountPostCodeAccountPaneTextField;
-
     @FXML
     private JFXTextField contactNamePhoneAccountPaneTextField;
-
     @FXML
     private JFXTextField emailAccountPaneTextField;
-
     @FXML
     private JFXButton corporatePay;
-
     @FXML
     private JFXTextField phoneAccountPaneTextField;
-
     @FXML
     private JFXTextField websiteAccountPaneTextField;
-
     @FXML
     private JFXTextField corporatOrganizationAccountPaneTextField;
-
     @FXML
     private JFXTextField dobAccountPaneTextField;
-
     @FXML
     private JFXTextField firstNameUpdateProfileTextField;
-
     @FXML
     private JFXTextField lastNameUpdateProfileTextField;
-
     @FXML
     private JFXComboBox<String> titleEditProfileComboBox = new JFXComboBox();
-
     @FXML
     private Label errorPayPendingBookingsPane;
-
     @FXML
     private JFXDatePicker dobUpdateProfileDatePicker = new JFXDatePicker();
-
     @FXML
     private AnchorPane seeMoreEventPane;
-
     @FXML
     private AnchorPane ticketsPaymentPane;
-
     @FXML
     private JFXTextField addressUpdateProfileTextField;
-
     @FXML
     private JFXTextField address2UpdateProfileTextField;
-
     @FXML
     private JFXTextField townUpdateProfileTextField;
-
     @FXML
     private Label unitsNameTicketPaymentPane;
-
     @FXML
     private Label quantityPriceTicketsPaymentPane;
-
     @FXML
     private JFXTextField cardNameTicketPaymentPane;
-
     @FXML
     private JFXTextField cardNumberTicketPaymentPane;
-
     @FXML
     private JFXTextField yearTicketPaymentPane;
-
     @FXML
     private JFXTextField monthTicketPaymentPane;
-
     @FXML
     private JFXTextField securityCodeTicketPaymentPane;
-
     @FXML
     private JFXTextField countyUpdateProfileTextField;
-
     @FXML
     private JFXTextField postcodeUpdateProfileTextField;
-
     @FXML
     private JFXTextField phoneUpdateProfileTextField;
-
     @FXML
     private JFXTextField websiteUpdateProfileTextField;
-
     @FXML
     private JFXTextField corporateNameUpdateProfileTextField;
-
     @FXML
     private JFXTextField contactNameUpdateProfileTextField;
-
     @FXML
     private JFXTextField contactPhoneUpdateProfileTextField;
-
     @FXML
     private JFXButton changePasswordButtonMyAccountPane;
-
     @FXML
     private JFXButton updateProfileButtonUpdatePane;
-
     @FXML
     private AnchorPane changeMyPasswordPane;
-
     @FXML
     private JFXPasswordField currentPasswordChangePasswordPane;
-
     @FXML
     private JFXButton buyTicketsButtonMoreDetailsPane;
-
     @FXML
     private JFXPasswordField passwordChangePasswordPane;
-
     @FXML
     private JFXPasswordField confirmPasswordChangePasswordPane;
-
     @FXML
     private TableView<Event> concertsTableConcertsPane;
-
     @FXML
     private TableColumn<Event, String> nameColumnConcertsPane;
-
     @FXML
     private TableColumn<Event, String> dateColumnConcertsPane;
-
     @FXML
     private TableColumn<Event, String> locationColumnConcertsPane;
-
     @FXML
     private TableColumn<Event, Integer> ticketsColumnConcertsPane;
-
     @FXML
     private TableColumn<Event, Double> priceColumnConcertsPane;
-
     @FXML
     private TableColumn<Event, String> typeColumnConcertsPane;
-
     @FXML
     private Label titleLabelMoreDetailsEventPane;
-
     @FXML
     private Label totalLabelMakePaymentPane;
-
     @FXML
     private Label discountLabelPaymentPane;
-
     @FXML
     private Label locationLabelMoreDetailsEventPane;
-
     @FXML
     private Label dateLabelMoreDetailsEventPane;
-
     @FXML
     private Label ticketsAvailableLabelMoreDetailsEventPane;
-
     @FXML
     private Label ticketPriceLabelMoreDetailsEventPane;
-
     @FXML
     private Label eventTypeLabelMoreDetailsEventPane;
-
     @FXML
     private AnchorPane payByCardOrganiserAnchorPane;
-
     @FXML
     private Label descriptionLabelMoreDetailsEventPane;
-
     @FXML
     private JFXTextField howManyLabelMoreDetailsPane;
-
     @FXML
     private TableView<Booking> myBookingsTable;
-
     @FXML
     private TableColumn<Booking, String> festivalNameColumnBookingsPane;
-
     @FXML
     private TableColumn<Booking, String> ticketsBoughtColumnBookingsPane;
-
     @FXML
     private TableColumn<Booking, String> dateColumnBookingsPane;
-
     @FXML
     private TableColumn<Booking, String> locationColumnBookingsPane;
-
     @FXML
     private JFXTextField keywordTextFieldMyBookindsPane;
-
     @FXML
     private JFXButton searchButtonMyBookings;
-
     @FXML
     private Label fullPriceLabelMakeOrganiserPaymentPane;
-
     @FXML
     private Label discountLabelMakeOrganiserPaymentPane;
-
     @FXML
     private Label totalValueLabelMakeOrganiserPaymentPane;
-
     @FXML
     private JFXCheckBox payMohtnlycheckBoxPaymentPane;
-
     @FXML
     private AnchorPane moreDetailsAboutMyBookingPane;
-
     @FXML
     private JFXButton makePaymentsButton;
-
     @FXML
     private AnchorPane makePaymentPane;
-
     @FXML
     private TableView<Booking> pendingPaymentsTableView;
-
     @FXML
     private TableColumn<Booking, String> eventNameColumnMakePaymentPane;
-
     @FXML
     private TableColumn<Booking, String> ammountColumnMakePaymentPane;
-
     @FXML
     private TableColumn<Booking, String> ticketsColumnMakePaymentPane;
-
-
-
-
-
-    public User ACTUALUSER = null;
 
     @Override
     public void initialize(URL url, ResourceBundle rs) {
@@ -504,7 +382,7 @@ public class Application implements Initializable {
         }
 
         Password password = new Password();
-        if (password.verifyHash(currentPasswordChangePasswordPane.getText(), ACTUALUSER.getPassword())) {
+        if (Password.verifyHash(currentPasswordChangePasswordPane.getText(), ACTUALUSER.getPassword())) {
 
             if (confirmPasswordChangePasswordPane.getText().equals("") || confirmPasswordChangePasswordPane.getText().isEmpty() ||
                     passwordChangePasswordPane.getText().isEmpty() || passwordChangePasswordPane.getText().equals("")) {
@@ -513,7 +391,7 @@ public class Application implements Initializable {
             } else {
                 if (passwordChangePasswordPane.getText().equals(confirmPasswordChangePasswordPane.getText()) && confirmPasswordChangePasswordPane.getText().equals(passwordChangePasswordPane.getText())) {
                     UserDAO update = new UserDAO();
-                    update.updateUserPassword(ACTUALUSER.getId(), password.hash(passwordChangePasswordPane.getText()));
+                    update.updateUserPassword(ACTUALUSER.getId(), Password.hash(passwordChangePasswordPane.getText()));
 
                     try {
                         Parent registerParent = FXMLLoader.load(getClass().getResource("../view/login.fxml"));
@@ -717,7 +595,7 @@ public class Application implements Initializable {
     @FXML
     void pay(ActionEvent event) {
 
-        JFXTextField requiredFields[] = {cardNameTicketPaymentPane, cardNumberTicketPaymentPane, monthTicketPaymentPane, yearTicketPaymentPane, securityCodeTicketPaymentPane};
+        JFXTextField[] requiredFields = {cardNameTicketPaymentPane, cardNumberTicketPaymentPane, monthTicketPaymentPane, yearTicketPaymentPane, securityCodeTicketPaymentPane};
         boolean[] checkResults = new boolean[requiredFields.length];
         Event selectedEvent = null;
 
@@ -830,7 +708,7 @@ public class Application implements Initializable {
     //pay pending bookings pane
     @FXML
     private void makePendingPayments(ActionEvent event){
-        JFXTextField requiredFields[] = {cardNamePendingPaymentsPane, cardNumberPendingPaymentsPane,
+        JFXTextField[] requiredFields = {cardNamePendingPaymentsPane, cardNumberPendingPaymentsPane,
                 monthPendingPaymentsPane, yearPendingPaymentsPane, securityCodePendingPaymentsPane};
         boolean[] checkResults = new boolean[requiredFields.length];
 
@@ -966,7 +844,7 @@ public class Application implements Initializable {
 
 
         }else{
-            JFXTextField requiredFields[] = {cardNameTicketCorporatePaymentPane, cardNumberCorporateTicketPaymentPane,
+            JFXTextField[] requiredFields = {cardNameTicketCorporatePaymentPane, cardNumberCorporateTicketPaymentPane,
                     monthCorporateTicketPaymentPane, yearCorporateTicketPaymentPane, securityCodeCorporateTicketPaymentPane};
             boolean[] checkResults = new boolean[requiredFields.length];
 
