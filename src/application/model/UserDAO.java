@@ -129,6 +129,20 @@ public class UserDAO {
         }
     }
 
+
+    public static ObservableList<User> getAllAdmins () throws SQLException, ClassNotFoundException{
+        String selectStmt = "SELECT * FROM user WHERE is_admin = 1";
+        try {
+            ResultSet rsUsers = DB.dbExecuteQuery(selectStmt);
+            ObservableList<User> userList = getUserList(rsUsers);
+
+            return userList;
+        }catch (SQLException e){
+            System.err.println("SQL select operation has failed: " + e );
+            throw e;
+        }
+    }
+
     public static void deleteUser(int userId) throws SQLException, ClassNotFoundException{
         String stmt = "DELETE FROM user WHERE id = " + userId;
 

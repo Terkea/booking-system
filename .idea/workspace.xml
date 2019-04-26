@@ -7,9 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e45a1d1-83c6-47d2-83a7-58cd49d8d856" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/controller/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/controller/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/model/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/model/UserDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/view/application.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/view/application.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -27,11 +25,31 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/application/controller/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="110" column="42" lean-forward="true" selection-start-line="110" selection-start-column="42" selection-end-line="110" selection-end-column="42" />
+            <state relative-caret-position="453">
+              <caret line="939" column="5" lean-forward="true" selection-start-line="939" selection-start-column="5" selection-end-line="939" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#39910#39911#0" expanded="true" />
+                <element signature="e#39970#39971#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/application/model/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/application/model/UserDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="118" column="50" selection-start-line="118" selection-start-column="39" selection-end-line="118" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -47,9 +65,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>front</find>
-      <find>howManyLabelMoreDetailsPane</find>
-      <find>buyTickets</find>
       <find>buyTicketsButtonMoreDetailsPane</find>
       <find>#buyTickets</find>
       <find>pane</find>
@@ -77,6 +92,9 @@
       <find>pendingpa</find>
       <find>search</find>
       <find>getFullBookings</find>
+      <find>manageA</find>
+      <find>load</find>
+      <find>populate</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -655,13 +673,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/strings for checks">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -710,19 +721,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/application/model/UserDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="300">
+          <caret line="118" column="50" selection-start-line="118" selection-start-column="39" selection-end-line="118" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/application/controller/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="110" column="42" lean-forward="true" selection-start-line="110" selection-start-column="42" selection-end-line="110" selection-end-column="42" />
+        <state relative-caret-position="453">
+          <caret line="939" column="5" lean-forward="true" selection-start-line="939" selection-start-column="5" selection-end-line="939" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#39910#39911#0" expanded="true" />
+            <element signature="e#39970#39971#0" expanded="true" />
           </folding>
         </state>
       </provider>

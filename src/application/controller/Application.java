@@ -48,6 +48,20 @@ public class Application implements Initializable {
     @FXML
     private Label discountLabelPayPendingBookingsPane;
     @FXML
+    private TableView<User> allUsersTableView;
+
+    @FXML
+    private TableColumn<User, String> firstNameColumnManageAccountsPane;
+
+    @FXML
+    private TableColumn<User, String> lastNameColumnManageAccountsPane;
+
+    @FXML
+    private TableColumn<User, String> emailColumnManageAccountsPane;
+
+    @FXML
+    private TableColumn<User, String> phoneColumnManageAccountsPane;
+    @FXML
     private Label totalValueLabelPayPendingBookingsPane;
     @FXML
     private AnchorPane payPendingBookingsPane;
@@ -63,6 +77,8 @@ public class Application implements Initializable {
     private AnchorPane cardPaymentAnchorPane;
     @FXML
     private JFXTextField cardNameTicketCorporatePaymentPane;
+    @FXML
+    private JFXButton manageAccountsButton;
     @FXML
     private JFXTextField cardNumberCorporateTicketPaymentPane;
     @FXML
@@ -287,6 +303,9 @@ public class Application implements Initializable {
         }else if (event.getSource() == makePaymentsButton){
             loadUnpaidBookings();
             makePaymentPane.toFront();
+        }else if (event.getSource() == manageAccountsButton){
+            loadAllAccounts();
+            manageAccountsPane.toFront();
         }
     }
 
@@ -303,6 +322,12 @@ public class Application implements Initializable {
                 makePaymentsButton.setVisible(true);
             }else{
                 makePaymentsButton.setVisible(false);
+            }
+
+            if (UserDAO.checkAdmin(user.getId())){
+                manageAccountsButton.setVisible(true);
+            }else{
+                manageAccountsButton.setVisible(false);
             }
 
 
@@ -888,6 +913,35 @@ public class Application implements Initializable {
                 errorCorporatePaymentFieldsNotFilled.setText("All fields are required");
             }
         }
+    }
+
+    //MANAGE ACCOUNTS PANE
+    private void loadAllAccounts(){
+        firstNameColumnManageAccountsPane.setCellValueFactory(cellData -> cellData.getValue().first_nameProperty());
+        lastNameColumnManageAccountsPane.setCellValueFactory(cellData -> cellData.getValue().last_nameProperty());
+        emailColumnManageAccountsPane.setCellValueFactory(cellData -> cellData.getValue().email_addressProperty());
+        phoneColumnManageAccountsPane.setCellValueFactory(cellData -> cellData.getValue().email_addressProperty());
+
+        try {
+            ObservableList<User> userData = UserDAO.getAllUsers();
+            populateAllUsers(userData);
+        } catch (SQLException e) {
+            System.err.println("Error occured while getting event information from DB " + e);
+        } catch (ClassNotFoundException e) {
+            System.err.println("Error occured while getting event information from DB " + e);
+        }
+    }
+
+    @FXML
+    private void pupulateAllUsers(User user){
+        ObservableList<User> userData = FXCollections.observableArrayList();
+        userData.add(user);
+        allUsersTableView.setItems(userData);
+    }
+
+    @FXML
+    private void populateAllUsers(ObservableList<User> userData) {
+        allUsersTableView.setItems(userData);
     }
 
 }
