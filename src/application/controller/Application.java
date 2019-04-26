@@ -46,6 +46,21 @@ public class Application implements Initializable {
     private Label eventTypeLabelMyBookingPane;
 
     @FXML
+    private JFXButton payPendingBookingsButton;
+
+    @FXML
+    private Label fullPriceLabelPayPendingBookingsPane;
+
+    @FXML
+    private Label discountLabelPayPendingBookingsPane;
+
+    @FXML
+    private Label totalValueLabelPayPendingBookingsPane;
+
+    @FXML
+    private AnchorPane payPendingBookingsPane;
+
+    @FXML
     private Label locationLabelMyBookingPane;
 
     @FXML
@@ -95,6 +110,24 @@ public class Application implements Initializable {
 
     @FXML
     private JFXButton seeMoreButtonConcertPane;
+
+    @FXML
+    private Label PayPendingBookingsPane;
+
+    @FXML
+    private JFXTextField cardNamePendingPaymentsPane;
+
+    @FXML
+    private JFXTextField cardNumberPendingPaymentsPane;
+
+    @FXML
+    private JFXTextField yearPendingPaymentsPane;
+
+    @FXML
+    private JFXTextField monthPendingPaymentsPane;
+
+    @FXML
+    private JFXTextField securityCodePendingPaymentsPane;
 
     @FXML
     private Label errorLabelPasswordPane;
@@ -158,6 +191,9 @@ public class Application implements Initializable {
 
     @FXML
     private JFXComboBox<String> titleEditProfileComboBox = new JFXComboBox();
+
+    @FXML
+    private Label errorPayPendingBookingsPane;
 
     @FXML
     private JFXDatePicker dobUpdateProfileDatePicker = new JFXDatePicker();
@@ -791,11 +827,75 @@ public class Application implements Initializable {
     }
 
 
+    //pay pending bookings pane
+    @FXML
+    private void makePendingPayments(ActionEvent event){
+        JFXTextField requiredFields[] = {cardNamePendingPaymentsPane, cardNumberPendingPaymentsPane,
+                monthPendingPaymentsPane, yearPendingPaymentsPane, securityCodePendingPaymentsPane};
+        boolean[] checkResults = new boolean[requiredFields.length];
+
+        for (int i = 0; i < requiredFields.length; i++) {
+            checkResults[i] = validationForTextFields(requiredFields[i]);
+        }
+
+        if (checkBooleanArray(checkResults)) {
+            if (cardNumberPendingPaymentsPane.getText().length() != 16) {
+                errorPayPendingBookingsPane.setText("Invalid card number");
+            } else {
+                try {
+                    ObservableList<Booking> bookingData = BookingDAO.getAllMyUnpaidBookings(ACTUALUSER.getId());
+                    for (int i = 0; i<bookingData.size(); i++){
+                        PaymentDAO.updatePendingPayments(bookingData.get(i).getPayment_id(), cardNumberPendingPaymentsPane.getText(),
+                                monthPendingPaymentsPane.getText() + "/" + yearPendingPaymentsPane.getText(), cardNamePendingPaymentsPane.getText(),
+                                securityCodePendingPaymentsPane.getText(), 1);
+                    }
+                    makePaymentPane.toFront();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        } else {
+            errorPayPendingBookingsPane.setText("All fields are required");
+        }
+    }
+
     //makePaymentPane
+    @FXML
+    private void moveToPayPendingBookings(ActionEvent event){
+        payPendingBookingsPane.toFront();
+        try {
+            ObservableList<Booking> bookingData = BookingDAO.getAllMyUnpaidBookings(ACTUALUSER.getId());
+
+            double sum = 0.0d;
+
+            for (int i = 0; i<bookingData.size(); i++){
+                sum += bookingData.get(i).getNumber_of_tickets() * bookingData.get(i).getTicket_price();
+            }
+
+            double discount = (sum * 20.0/100.0);
+
+            fullPriceLabelPayPendingBookingsPane.setText(sum + " GBP");
+//            System.out.println(discount);
+            discountLabelPayPendingBookingsPane.setText(discount + " GBP");
+            totalValueLabelPayPendingBookingsPane.setText(sum - discount + " GBP");
+
+        } catch (SQLException e) {
+            System.err.println("Error occured while getting event information from DB " + e);
+        } catch (ClassNotFoundException e) {
+            System.err.println("Error occured while getting event information from DB " + e);
+        }
+
+    }
+
     private void loadUnpaidBookings() {
         eventNameColumnMakePaymentPane.setCellValueFactory(cellData -> cellData.getValue().event_nameProperty());
         ticketsColumnMakePaymentPane.setCellValueFactory(cellData -> cellData.getValue().number_of_ticketsProperty().asString());
         ammountColumnMakePaymentPane.setCellValueFactory(cellData -> cellData.getValue().ticket_priceProperty().asString());
+
+
 
         try {
             ObservableList<Booking> bookingData = BookingDAO.getAllMyUnpaidBookings(ACTUALUSER.getId());
@@ -835,6 +935,8 @@ public class Application implements Initializable {
     }
 
     //Corporate Organization Pay
+
+
     @FXML
     void corporatePay(ActionEvent event) {
         Event selectedEvent = null;

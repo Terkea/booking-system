@@ -92,6 +92,25 @@ public class PaymentDAO {
         }
     }
 
+    public static void updatePendingPayments(int paymentID, String card_no, String expire_date, String card_holder_name, String cvs, int status){
+
+        String query = "UPDATE payment " +
+                "SET card_no = '" + card_no + "', " +
+                "expire_date = '" + expire_date + "', " +
+                "card_holder_name = '" + card_holder_name + "', " +
+                "cvs = '" + cvs + "', " +
+                "status = '" + status + "' " +
+                "WHERE id = '" + paymentID + "';";
+        try {
+            DB.dbExecuteUpdate(query);
+//            System.out.println("Restart required to apply settings");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public static Payment getLastPaymentByID (int id) throws SQLException, ClassNotFoundException {
         String selectStmt = "SELECT * \n" +
