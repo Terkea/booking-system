@@ -108,6 +108,8 @@ public class Application implements Initializable {
     @FXML
     private Pane accountPane;
     @FXML
+    private AnchorPane manageAccountsPane;
+    @FXML
     private Pane viewConcertsPane;
     @FXML
     private Pane viewBookingsPane;

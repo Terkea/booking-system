@@ -1,9 +1,6 @@
 package application;
 
-import application.model.Event;
-import application.model.EventDAO;
-import application.model.PaymentDAO;
-import application.model.UserDAO;
+import application.model.*;
 import application.system.Password;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

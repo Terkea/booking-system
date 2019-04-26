@@ -225,7 +225,20 @@ public class UserDAO {
         try {
             User attempt = searchUsersByID(id);
             return attempt.getCorporate_organisation_name() != null && !attempt.getCorporate_organisation_name().equals("null")
-                    && !attempt.getCorporate_organisation_name().equals("NULL") && !attempt.getCorporate_organisation_name().isEmpty();
+                    && !attempt.getCorporate_organisation_name().equals("NULL") && !attempt.getCorporate_organisation_name().isEmpty()
+                    && !attempt.getCorporate_organisation_name().equals("");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public static boolean checkAdmin(int id){
+        try {
+            User attempt = searchUsersByID(id);
+            return attempt.isIs_admin();
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
