@@ -891,10 +891,10 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" prefHeight="30.0" prefWidth="1075.0" style="-fx-background-color: #FF998E;" text="Customers" />
-                        <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" prefHeight="30.0" prefWidth="990.0" style="-fx-background-color: #FF998E;" text="Corporates" GridPane.columnIndex="2" />
-                        <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" prefHeight="30.0" prefWidth="512.0" style="-fx-background-color: #FF998E;" text="Agents" GridPane.columnIndex="4" />
-                        <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" prefHeight="30.0" prefWidth="695.0" style="-fx-background-color: #FF998E;" text="Organisers" GridPane.columnIndex="6" />
+                        <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" onAction="#getAllCustomers" prefHeight="30.0" prefWidth="1075.0" style="-fx-background-color: #FF998E;" text="Customers" />
+                        <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" onAction="#getAllCorporates" prefHeight="30.0" prefWidth="990.0" style="-fx-background-color: #FF998E;" text="Corporates" GridPane.columnIndex="2" />
+                        <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" onAction="#getAllAgents" prefHeight="30.0" prefWidth="512.0" style="-fx-background-color: #FF998E;" text="Agents" GridPane.columnIndex="4" />
+                        <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" onAction="#getAllOrganisers" prefHeight="30.0" prefWidth="695.0" style="-fx-background-color: #FF998E;" text="Organisers" GridPane.columnIndex="6" />
                      </children>
                   </GridPane>
                   <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="20.0" layoutY="549.0" prefHeight="30.0" prefWidth="560.0" style="-fx-background-color: #FF998E;" text="View / Edit" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">

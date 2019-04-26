@@ -933,6 +933,54 @@ public class Application implements Initializable {
     }
 
     @FXML
+    private void getAllCorporates(){
+        try {
+            ObservableList<User> userData = UserDAO.getAllCorporateOrganisations();
+            populateAllUsers(userData);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void getAllOrganisers(){
+        try {
+            ObservableList<User> userData = UserDAO.getAllEventOrganisers();
+            populateAllUsers(userData);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void getAllCustomers(){
+        try {
+            ObservableList<User> userData = UserDAO.getAllCustomers();
+            populateAllUsers(userData);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void getAllAgents(){
+        try {
+            ObservableList<User> userData = UserDAO.getAllAgents();
+            populateAllUsers(userData);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
     private void pupulateAllUsers(User user){
         ObservableList<User> userData = FXCollections.observableArrayList();
         userData.add(user);

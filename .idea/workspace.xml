@@ -8,7 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9e45a1d1-83c6-47d2-83a7-58cd49d8d856" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/application/controller/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/controller/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/model/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/model/UserDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/view/application.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/view/application.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/strings for checks" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/strings for checks" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,8 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/application/controller/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
-              <caret line="939" column="5" lean-forward="true" selection-start-line="939" selection-start-column="5" selection-end-line="939" selection-end-column="5" />
+            <state relative-caret-position="273">
+              <caret line="972" column="13" lean-forward="true" selection-start-line="972" selection-start-column="13" selection-end-line="972" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#39910#39911#0" expanded="true" />
@@ -37,19 +39,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/application/model/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/application/model/UserDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="118" column="50" selection-start-line="118" selection-start-column="39" selection-end-line="118" selection-end-column="50" />
+            <state relative-caret-position="238">
+              <caret line="166" column="51" selection-start-line="166" selection-start-column="39" selection-end-line="166" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -65,7 +58,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>buyTicketsButtonMoreDetailsPane</find>
       <find>#buyTickets</find>
       <find>pane</find>
       <find>festivalNameColumnBookingsPane</find>
@@ -95,6 +87,7 @@
       <find>manageA</find>
       <find>load</find>
       <find>populate</find>
+      <find>handle</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -110,7 +103,6 @@
         <option value="$PROJECT_DIR$/src/testing/model/UserDAO.java" />
         <option value="$PROJECT_DIR$/src/testing/controller/Accounts.java" />
         <option value="$PROJECT_DIR$/src/application/system/DB.java" />
-        <option value="$PROJECT_DIR$/src/test/strings for checks" />
         <option value="$PROJECT_DIR$/src/application/model/Payment.java" />
         <option value="$PROJECT_DIR$/src/application/model/Event.java" />
         <option value="$PROJECT_DIR$/src/application/model/EventDAO.java" />
@@ -120,8 +112,9 @@
         <option value="$APPLICATION_CONFIG_DIR$/idea64.exe.vmoptions" />
         <option value="$PROJECT_DIR$/src/application/model/PaymentDAO.java" />
         <option value="$PROJECT_DIR$/src/application/model/BookingDAO.java" />
-        <option value="$PROJECT_DIR$/src/application/model/UserDAO.java" />
         <option value="$PROJECT_DIR$/src/application/Main.java" />
+        <option value="$PROJECT_DIR$/src/test/strings for checks" />
+        <option value="$PROJECT_DIR$/src/application/model/UserDAO.java" />
         <option value="$PROJECT_DIR$/src/application/controller/Application.java" />
       </list>
     </option>
@@ -673,13 +666,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/strings for checks">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/application/model/PaymentDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1076">
@@ -721,6 +707,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/strings for checks">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/application/model/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -730,15 +723,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/application/model/UserDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="118" column="50" selection-start-line="118" selection-start-column="39" selection-end-line="118" selection-end-column="50" />
+        <state relative-caret-position="238">
+          <caret line="166" column="51" selection-start-line="166" selection-start-column="39" selection-end-line="166" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/application/controller/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="939" column="5" lean-forward="true" selection-start-line="939" selection-start-column="5" selection-end-line="939" selection-end-column="5" />
+        <state relative-caret-position="273">
+          <caret line="972" column="13" lean-forward="true" selection-start-line="972" selection-start-column="13" selection-end-line="972" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#39910#39911#0" expanded="true" />

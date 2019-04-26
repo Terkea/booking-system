@@ -130,8 +130,65 @@ public class UserDAO {
     }
 
 
-    public static ObservableList<User> getAllAdmins () throws SQLException, ClassNotFoundException{
-        String selectStmt = "SELECT * FROM user WHERE is_admin = 1";
+    public static ObservableList<User> getAllCorporateOrganisations () throws SQLException, ClassNotFoundException{
+        String selectStmt = "SELECT * \n" +
+                "FROM user\n" +
+                "WHERE NOT (`corporate_organisation_name` = \"null\" \n" +
+                "           OR `corporate_organisation_name` = \"NULL\" \n" +
+                "           OR `corporate_organisation_name` = \"\");";
+        try {
+            ResultSet rsUsers = DB.dbExecuteQuery(selectStmt);
+            ObservableList<User> userList = getUserList(rsUsers);
+
+            return userList;
+        }catch (SQLException e){
+            System.err.println("SQL select operation has failed: " + e );
+            throw e;
+        }
+    }
+
+    public static ObservableList<User> getAllEventOrganisers () throws SQLException, ClassNotFoundException{
+        String selectStmt = "SELECT * \n" +
+                "FROM user\n" +
+                "WHERE NOT (`events_organiser_name` = \"null\" \n" +
+                "           OR `events_organiser_name` = \"NULL\" \n" +
+                "           OR `events_organiser_name` = \"\");";
+        try {
+            ResultSet rsUsers = DB.dbExecuteQuery(selectStmt);
+            ObservableList<User> userList = getUserList(rsUsers);
+
+            return userList;
+        }catch (SQLException e){
+            System.err.println("SQL select operation has failed: " + e );
+            throw e;
+        }
+    }
+
+    public static ObservableList<User> getAllAgents () throws SQLException, ClassNotFoundException{
+        String selectStmt = "SELECT * " +
+                "FROM `user` " +
+                "WHERE is_agent = true;";
+        try {
+            ResultSet rsUsers = DB.dbExecuteQuery(selectStmt);
+            ObservableList<User> userList = getUserList(rsUsers);
+
+            return userList;
+        }catch (SQLException e){
+            System.err.println("SQL select operation has failed: " + e );
+            throw e;
+        }
+    }
+
+    public static ObservableList<User> getAllCustomers () throws SQLException, ClassNotFoundException{
+        String selectStmt = "SELECT *\n" +
+                "FROM user\n" +
+                "WHERE (`corporate_organisation_name` = \"null\" OR `corporate_organisation_name` = \"NULL\" OR `corporate_organisation_name` = \"\" OR `corporate_organisation_name` = null)\n" +
+                "AND\n" +
+                "(`events_organiser_name` = \"null\" OR `events_organiser_name` = \"NULL\" OR `events_organiser_name` = \"\" OR `events_organiser_name` = null)\n" +
+                "AND\n" +
+                "is_admin = false\n" +
+                "AND\n" +
+                "is_admin = false;";
         try {
             ResultSet rsUsers = DB.dbExecuteQuery(selectStmt);
             ObservableList<User> userList = getUserList(rsUsers);
