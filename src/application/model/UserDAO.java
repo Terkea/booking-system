@@ -270,19 +270,17 @@ public class UserDAO {
         }
     }
 
-    public void updateUser(User user){
+    public static void updateUser(User user){
 
         String query = "UPDATE user " +
-                "SET title = '" + user.getTitle() + "', " +
+                "SET " +
                 "first_name = '" + user.getFirst_name() + "', " +
                 "last_name = '" + user.getLast_name() + "', " +
-//                "gender = " + user.getGender() + ", " +
                 "address_line = '" + user.getAddress_line() + "', " +
                 "address_line2 = '" + user.getAddress_line2() + "', " +
                 "town = '" + user.getTown() + "', " +
                 "county = '" + user.getCounty() + "', " +
                 "postcode = '" + user.getPostcode() + "', " +
-                "dob = '" + user.getDob() + "', " +
                 "contact_name = '" + user.getContact_name() + "', " +
                 "contact_phone = '" + user.getContact_phone() + "', " +
                 "corporate_organisation_name = '" + user.getCorporate_organisation_name() + "', " +
@@ -321,6 +319,20 @@ public class UserDAO {
             return attempt.getCorporate_organisation_name() != null && !attempt.getCorporate_organisation_name().equals("null")
                     && !attempt.getCorporate_organisation_name().equals("NULL") && !attempt.getCorporate_organisation_name().isEmpty()
                     && !attempt.getCorporate_organisation_name().equals("");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public static boolean checkEventOrganiser(int id){
+        try {
+            User attempt = searchUsersByID(id);
+            return attempt.getEvents_organiser_name() != null && !attempt.getEvents_organiser_name().equals("null")
+                    && !attempt.getEvents_organiser_name().equals("NULL") && !attempt.getEvents_organiser_name().isEmpty()
+                    && !attempt.getEvents_organiser_name().equals("");
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {

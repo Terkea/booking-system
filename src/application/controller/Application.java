@@ -34,6 +34,38 @@ public class Application implements Initializable {
     @FXML
     private Label welcomeLabel;
     @FXML
+    private JFXTextField firstNameEditUserAccountPane;
+
+    @FXML
+    private JFXTextField lastNameEditUserAccountPane;
+
+    @FXML
+    private JFXTextField addressEditUserAccountPane;
+
+    @FXML
+    private JFXTextField address2EditUserAccountPane;
+
+    @FXML
+    private JFXTextField townEditUserAccountPane;
+
+    @FXML
+    private JFXTextField countyEditUserAccountPane;
+
+    @FXML
+    private JFXTextField postcodeEditUserAccountPane;
+
+    @FXML
+    private JFXTextField phoneEditUserAccountPane;
+
+    @FXML
+    private JFXTextField websiteEditUserAccountPane;
+
+    @FXML
+    private JFXTextField corporateEditUserAccountPane;
+
+    @FXML
+    private JFXTextField contactEditUserAccountPane;
+    @FXML
     private Label afterDiscountLabelPaymentPane;
     @FXML
     private Label errorCorporatePaymentFieldsNotFilled;
@@ -43,6 +75,8 @@ public class Application implements Initializable {
     private Label eventTypeLabelMyBookingPane;
     @FXML
     private JFXButton payPendingBookingsButton;
+    @FXML
+    private Label userIdLabelEditProfilePane;
     @FXML
     private Label fullPriceLabelPayPendingBookingsPane;
     @FXML
@@ -62,6 +96,8 @@ public class Application implements Initializable {
     @FXML
     private TableColumn<User, String> phoneColumnManageAccountsPane;
     @FXML
+    private Label userRankLabel;
+    @FXML
     private JFXTextField keywordTextFieldManageAccountsPane;
     @FXML
     private Label totalValueLabelPayPendingBookingsPane;
@@ -75,6 +111,8 @@ public class Application implements Initializable {
     private AnchorPane ticketsPaymentForCorporateOrganizationPane;
     @FXML
     private JFXTextArea descriptionLabelMyBookingPane;
+    @FXML
+    private AnchorPane editViewUserProfilePane;
     @FXML
     private AnchorPane cardPaymentAnchorPane;
     @FXML
@@ -369,9 +407,6 @@ public class Application implements Initializable {
 
     @FXML
     void editProfileAccountPane(ActionEvent event) {
-        titleEditProfileComboBox.getItems().addAll(
-                "Mr.", "Mrs.", "Ms", "Miss", "Master", "Maid", "Madam"
-        );
         firstNameUpdateProfileTextField.setText(ACTUALUSER.getFirst_name());
         lastNameUpdateProfileTextField.setText(ACTUALUSER.getLast_name());
         addressUpdateProfileTextField.setText(ACTUALUSER.getAddress_line());
@@ -385,7 +420,6 @@ public class Application implements Initializable {
         contactNameUpdateProfileTextField.setText(ACTUALUSER.getContact_name());
         contactPhoneUpdateProfileTextField.setText(ACTUALUSER.getContact_phone());
         titleEditProfileComboBox.setPromptText(ACTUALUSER.getTitle());
-        dobUpdateProfileDatePicker.setPromptText(ACTUALUSER.getDob());
 
         editProfilePane.toFront();
     }
@@ -453,7 +487,6 @@ public class Application implements Initializable {
     void updateMyProfile(ActionEvent event) {
         User update = new User();
         update.setId(ACTUALUSER.getId());
-        update.setTitle(titleEditProfileComboBox.getValue());
         update.setFirst_name(firstNameUpdateProfileTextField.getText());
         update.setLast_name(lastNameUpdateProfileTextField.getText());
         update.setAddress_line(addressUpdateProfileTextField.getText());
@@ -461,7 +494,6 @@ public class Application implements Initializable {
         update.setTown(townUpdateProfileTextField.getText());
         update.setCounty(countyUpdateProfileTextField.getText());
         update.setPostcode(postcodeUpdateProfileTextField.getText());
-        update.setDob(dobUpdateProfileDatePicker.getValue().toString());
         update.setContact_name(contactNameUpdateProfileTextField.getText());
         update.setContact_phone(contactPhoneUpdateProfileTextField.getText());
         update.setCorporate_organisation_name(corporateNameUpdateProfileTextField.getText());
@@ -1006,4 +1038,67 @@ public class Application implements Initializable {
         allUsersTableView.setItems(userData);
     }
 
+
+    //VIEW/EDIT USER PROFILE PANE
+    @FXML
+    private void viewEditUserAccount(){
+        try {
+            User selectedUser = UserDAO.searchUsersByID(allUsersTableView.getSelectionModel().getSelectedItem().getId());
+            firstNameEditUserAccountPane.setText(selectedUser.getFirst_name());
+            lastNameEditUserAccountPane.setText(selectedUser.getLast_name());
+            phoneEditUserAccountPane.setText(selectedUser.getMobile_no());
+            addressEditUserAccountPane.setText(selectedUser.getAddress_line());
+            address2EditUserAccountPane.setText(selectedUser.getAddress_line2());
+            websiteEditUserAccountPane.setText(selectedUser.getWebsite_address());
+            townEditUserAccountPane.setText(selectedUser.getTown());
+            countyEditUserAccountPane.setText(selectedUser.getCounty());
+            postcodeEditUserAccountPane.setText(selectedUser.getPostcode());
+            contactEditUserAccountPane.setText(selectedUser.getContact_phone());
+            contactEditUserAccountPane.setText(selectedUser.getContact_phone());
+
+            userIdLabelEditProfilePane.setText(Integer.toString(selectedUser.getId()));
+            userIdLabelEditProfilePane.setVisible(false);
+
+            if (UserDAO.checkAdmin(selectedUser.getId())){
+                userRankLabel.setText("Admin");
+            }
+            if (UserDAO.checkCorporateOrganization(selectedUser.getId())){
+                userRankLabel.setText("Corporate");
+            }
+            if (UserDAO.checkEventOrganiser(selectedUser.getId())){
+                userRankLabel.setText("Organiser");
+            }
+            if (!UserDAO.checkAdmin(selectedUser.getId()) && !UserDAO.checkCorporateOrganization(selectedUser.getId())
+                    && !UserDAO.checkEventOrganiser(selectedUser.getId())) {
+                userRankLabel.setText("Customer");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
+        editViewUserProfilePane.toFront();
+    }
+
+    @FXML
+    private void updateUserProfile(){
+        User update = new User();
+        update.setId(Integer.parseInt(userIdLabelEditProfilePane.getText()));
+        update.setFirst_name(firstNameEditUserAccountPane.getText());
+        update.setLast_name(lastNameEditUserAccountPane.getText());
+        update.setMobile_no(phoneEditUserAccountPane.getText());
+        update.setAddress_line(addressEditUserAccountPane.getText());
+        update.setAddress_line2(address2EditUserAccountPane.getText());
+        update.setWebsite_address(websiteEditUserAccountPane.getText());
+        update.setTown(townEditUserAccountPane.getText());
+        update.setCounty(countyEditUserAccountPane.getText());
+        update.setPostcode(postcodeEditUserAccountPane.getText());
+        update.setContact_name(contactEditUserAccountPane.getText());
+        update.setContact_phone(contactEditUserAccountPane.getText());
+
+        UserDAO.updateUser(update);
+        manageAccountsPane.toFront();
+    }
 }
