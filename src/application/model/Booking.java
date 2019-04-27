@@ -14,6 +14,10 @@ public class Booking {
     private StringProperty event_date;
     private StringProperty location;
     private DoubleProperty ticket_price;
+    private StringProperty user_first_name;
+    private StringProperty user_last_name;
+
+
 
     public Booking(){
         this.id = new SimpleIntegerProperty();
@@ -32,6 +36,8 @@ public class Booking {
             this.event_date = new SimpleStringProperty(EventDAO.getEventByIDProperty(event_id).getDate());
             this.location = new SimpleStringProperty((EventDAO.getEventByIDProperty(event_id).getLocation()));
             this.ticket_price = new SimpleDoubleProperty(((EventDAO.getEventByIDProperty(event_id).getTicket_price())));
+            this.user_first_name = new SimpleStringProperty(UserDAO.searchUsersByID(user_id).getFirst_name());
+            this.user_last_name = new SimpleStringProperty(UserDAO.searchUsersByID(user_id).getLast_name());
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
@@ -55,6 +61,29 @@ public class Booking {
         return ticket_price.get();
     }
 
+    public String getUser_first_name() {
+        return user_first_name.get();
+    }
+
+    public StringProperty user_first_nameProperty() {
+        return user_first_name;
+    }
+
+    public void setUser_first_name(String user_first_name) {
+        this.user_first_name.set(user_first_name);
+    }
+
+    public String getUser_last_name() {
+        return user_last_name.get();
+    }
+
+    public StringProperty user_last_nameProperty() {
+        return user_last_name;
+    }
+
+    public void setUser_last_name(String user_last_name) {
+        this.user_last_name.set(user_last_name);
+    }
     public DoubleProperty ticket_priceProperty() {
         return ticket_price;
     }

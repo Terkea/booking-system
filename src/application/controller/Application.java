@@ -33,6 +33,10 @@ public class Application implements Initializable {
     public User ACTUALUSER = null;
     @FXML
     private Label welcomeLabel;
+
+    @FXML
+    private AnchorPane manageBookingsPane;
+
     @FXML
     private JFXTextField firstNameEditUserAccountPane;
 
@@ -115,6 +119,8 @@ public class Application implements Initializable {
     private AnchorPane editViewUserProfilePane;
     @FXML
     private AnchorPane cardPaymentAnchorPane;
+    @FXML
+    private JFXButton manageBookings;
     @FXML
     private JFXTextField cardNameTicketCorporatePaymentPane;
     @FXML
@@ -346,6 +352,8 @@ public class Application implements Initializable {
         }else if (event.getSource() == manageAccountsButton){
             loadAllAccounts();
             manageAccountsPane.toFront();
+        }else if (event.getSource() == manageBookings){
+            manageBookingsPane.toFront();
         }
     }
 
@@ -366,8 +374,10 @@ public class Application implements Initializable {
 
             if (UserDAO.checkAdmin(user.getId())){
                 manageAccountsButton.setVisible(true);
+                manageBookings.setVisible(true);
             }else{
                 manageAccountsButton.setVisible(false);
+                manageBookings.setVisible(false);
             }
 
 
@@ -1101,4 +1111,7 @@ public class Application implements Initializable {
         UserDAO.updateUser(update);
         manageAccountsPane.toFront();
     }
+
+    //MANAGE BOOKINGS PANE
+
 }

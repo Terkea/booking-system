@@ -53,6 +53,11 @@
                   <Font size="16.0" />
                </font>
             </JFXButton>
+            <JFXButton fx:id="manageBookings" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="200.0" text="Manage Bookings" textFill="#ffe6e3">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXButton>
               </children>
           </VBox>
       <AnchorPane layoutX="200.0" prefHeight="600.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -1007,6 +1012,26 @@
                   </GridPane>
                </children>
             </AnchorPane>
+            <AnchorPane fx:id="manageBookingsPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFF2F2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="90.0" prefWidth="600.0" style="-fx-background-color: #FFE5E2;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="127.0" layoutY="26.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="38.0" prefWidth="346.0" text="Manage Bookings" AnchorPane.leftAnchor="127.0" AnchorPane.rightAnchor="127.0" AnchorPane.topAnchor="26.0">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <TableView layoutX="40.0" layoutY="119.0" prefHeight="319.0" prefWidth="446.0" AnchorPane.bottomAnchor="160.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="120.0">
+                    <columns>
+                      <TableColumn prefWidth="119.0" text="Event" />
+                      <TableColumn prefWidth="132.0" text="Tickets bought" />
+                        <TableColumn prefWidth="133.0" text="User FN" />
+                        <TableColumn prefWidth="175.0" text="User LN" />
+                    </columns>
+                  </TableView>
+               </children></AnchorPane>
          </children>
       </AnchorPane>
     </children>

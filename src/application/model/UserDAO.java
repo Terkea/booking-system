@@ -1,6 +1,7 @@
 package application.model;
 
 import application.system.DB;
+import javafx.beans.property.IntegerProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import java.sql.ResultSet;
@@ -127,6 +128,22 @@ public class UserDAO {
         String selectStmt = "SELECT * " +
                 "FROM `user` " +
                 "WHERE id = \"" + keyword + "\"";
+        try{
+            ResultSet rs = DB.dbExecuteQuery(selectStmt);
+            User user = getUserFromResultSet(rs);
+
+            return user;
+        }catch(SQLException e){
+            System.err.println("ERROR While searching for a User with: " + keyword + " name, error occured: " + e);
+            System.err.println(selectStmt);
+            throw e;
+        }
+    }
+
+    public static User searchUsersByID (IntegerProperty keyword) throws SQLException, ClassNotFoundException {
+        String selectStmt = "SELECT * " +
+                "FROM `user` " +
+                "WHERE id = \"" + keyword.getValue() + "\"";
         try{
             ResultSet rs = DB.dbExecuteQuery(selectStmt);
             User user = getUserFromResultSet(rs);
