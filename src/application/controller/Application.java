@@ -1165,4 +1165,40 @@ public class Application implements Initializable {
     private void populateAllBookings(ObservableList<Booking> bookingData){
         allBookingsTableView.setItems(bookingData);
     }
+
+    @FXML
+    private void getAllUnpaidBookings(){
+        try {
+            ObservableList<Booking> bookingData = BookingDAO.getAllUnpaidBookings();
+            populateAllBookings(bookingData);
+        } catch (SQLException e) {
+            System.err.println("Error occured while getting event information from DB " + e);
+        } catch (ClassNotFoundException e) {
+            System.err.println("Error occured while getting event information from DB " + e);
+        }
+    }
+
+    @FXML
+    private void getAllPaidBookings(){
+        try {
+            ObservableList<Booking> bookingData = BookingDAO.getAllPaidBookings();
+            populateAllBookings(bookingData);
+        } catch (SQLException e) {
+            System.err.println("Error occured while getting event information from DB " + e);
+        } catch (ClassNotFoundException e) {
+            System.err.println("Error occured while getting event information from DB " + e);
+        }
+    }
+
+    @FXML
+    private void getAllDiscountedBookings(){
+        try {
+            ObservableList<Booking> bookingData = BookingDAO.getAllDiscountedBookings();
+            populateAllBookings(bookingData);
+        } catch (SQLException e) {
+            System.err.println("Error occured while getting event information from DB " + e);
+        } catch (ClassNotFoundException e) {
+            System.err.println("Error occured while getting event information from DB " + e);
+        }
+    }
 }

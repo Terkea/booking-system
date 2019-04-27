@@ -147,6 +147,60 @@ public class BookingDAO {
         }
     }
 
+    public static ObservableList<Booking> getAllUnpaidBookings () throws SQLException, ClassNotFoundException {
+        String selectStmt = "SELECT *\n" +
+                "FROM booking\n" +
+                "INNER JOIN payment\n" +
+                "ON booking.payment_id = payment.id\n" +
+                "WHERE\n" +
+                "payment.status = 0";
+        try{
+            ResultSet rsEvent = DB.dbExecuteQuery(selectStmt);
+            ObservableList<Booking> bookingList = getFullBookings(rsEvent);
+
+            return bookingList;
+        }catch(SQLException e){
+            System.out.println("ERROR While searching for all unpaid bookings, error occured: " + e);
+            throw e;
+        }
+    }
+
+    public static ObservableList<Booking> getAllPaidBookings () throws SQLException, ClassNotFoundException {
+        String selectStmt = "SELECT *\n" +
+                "FROM booking\n" +
+                "INNER JOIN payment\n" +
+                "ON booking.payment_id = payment.id\n" +
+                "WHERE\n" +
+                "payment.status = 1";
+        try{
+            ResultSet rsEvent = DB.dbExecuteQuery(selectStmt);
+            ObservableList<Booking> bookingList = getFullBookings(rsEvent);
+
+            return bookingList;
+        }catch(SQLException e){
+            System.out.println("ERROR While searching for all unpaid bookings, error occured: " + e);
+            throw e;
+        }
+    }
+
+    public static ObservableList<Booking> getAllDiscountedBookings () throws SQLException, ClassNotFoundException {
+        String selectStmt = "SELECT *\n" +
+                "FROM booking\n" +
+                "INNER JOIN payment\n" +
+                "ON booking.payment_id = payment.id\n" +
+                "WHERE\n" +
+                "payment.discounted = 1";
+        try{
+            ResultSet rsEvent = DB.dbExecuteQuery(selectStmt);
+            ObservableList<Booking> bookingList = getFullBookings(rsEvent);
+
+            return bookingList;
+        }catch(SQLException e){
+            System.out.println("ERROR While searching for all unpaid bookings, error occured: " + e);
+            throw e;
+        }
+    }
+
     public static ObservableList<Booking> getAllBookings () throws SQLException, ClassNotFoundException{
         String selectStmt = "SELECT * FROM booking";
         try {

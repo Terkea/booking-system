@@ -1045,9 +1045,9 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" prefHeight="30.0" prefWidth="1075.0" style="-fx-background-color: #FF998E;" text="Unpaid" />
-                        <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" prefHeight="30.0" prefWidth="990.0" style="-fx-background-color: #FF998E;" text="Paid" GridPane.columnIndex="2" />
-                        <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" prefHeight="30.0" prefWidth="512.0" style="-fx-background-color: #FF998E;" text="Discounted" GridPane.columnIndex="4" />
+                        <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" onAction="#getAllUnpaidBookings" prefHeight="30.0" prefWidth="1075.0" style="-fx-background-color: #FF998E;" text="Unpaid" />
+                        <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" onAction="#getAllPaidBookings" prefHeight="30.0" prefWidth="990.0" style="-fx-background-color: #FF998E;" text="Paid" GridPane.columnIndex="2" />
+                        <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" onAction="#getAllDiscountedBookings" prefHeight="30.0" prefWidth="512.0" style="-fx-background-color: #FF998E;" text="Discounted" GridPane.columnIndex="4" />
                      </children>
                   </GridPane>
                   <GridPane layoutX="20.0" layoutY="548.0" prefHeight="30.0" prefWidth="560.0" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
