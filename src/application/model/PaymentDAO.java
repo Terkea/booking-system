@@ -22,6 +22,7 @@ public class PaymentDAO {
             payment.setUser_id(rs.getInt("user_id"));
             payment.setStatus(rs.getBoolean("status"));
             payment.setDescription(rs.getString("description"));
+            payment.setDiscounted(rs.getBoolean("discounted"));
         }
         return payment;
     }
@@ -40,6 +41,7 @@ public class PaymentDAO {
             payment.setUser_id(rs.getInt("user_id"));
             payment.setStatus(rs.getBoolean("status"));
             payment.setDescription(rs.getString("description"));
+            payment.setDiscounted(rs.getBoolean("discounted"));
             paymentList.add(payment);
         }
         return paymentList;

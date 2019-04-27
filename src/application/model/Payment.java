@@ -12,6 +12,7 @@ public class Payment {
     private IntegerProperty user_id;
     private BooleanProperty status;
     private StringProperty description;
+    private BooleanProperty discounted;
 
 
     public Payment(){
@@ -24,6 +25,7 @@ public class Payment {
         this.user_id = new SimpleIntegerProperty();
         this.status = new SimpleBooleanProperty();
         this.description = new SimpleStringProperty();
+        this.discounted = new SimpleBooleanProperty();
     }
 
     public Payment(IntegerProperty id, DoubleProperty ammount, StringProperty card_no, StringProperty expire_date, StringProperty card_holder_name, StringProperty cvs, IntegerProperty user_id, BooleanProperty status, StringProperty description) {
@@ -36,6 +38,18 @@ public class Payment {
         this.user_id = new SimpleIntegerProperty();
         this.status = new SimpleBooleanProperty();
         this.description = new SimpleStringProperty();
+    }
+
+    public boolean isDiscounted() {
+        return discounted.get();
+    }
+
+    public BooleanProperty discountedProperty() {
+        return discounted;
+    }
+
+    public void setDiscounted(boolean discounted) {
+        this.discounted.set(discounted);
     }
 
     public int getId() {

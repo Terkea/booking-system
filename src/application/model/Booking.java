@@ -16,6 +16,8 @@ public class Booking {
     private DoubleProperty ticket_price;
     private StringProperty user_first_name;
     private StringProperty user_last_name;
+    private StringProperty discounted;
+    private StringProperty paid;
 
 
 
@@ -38,6 +40,8 @@ public class Booking {
             this.ticket_price = new SimpleDoubleProperty(((EventDAO.getEventByIDProperty(event_id).getTicket_price())));
             this.user_first_name = new SimpleStringProperty(UserDAO.searchUsersByID(user_id).getFirst_name());
             this.user_last_name = new SimpleStringProperty(UserDAO.searchUsersByID(user_id).getLast_name());
+            this.paid = new SimpleStringProperty(Boolean.toString(PaymentDAO.getPaymentByIdProperty(payment_id).isStatus()));
+            this.discounted = new SimpleStringProperty(Boolean.toString(PaymentDAO.getPaymentByIdProperty(payment_id).isDiscounted()));
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
