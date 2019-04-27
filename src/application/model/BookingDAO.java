@@ -147,4 +147,17 @@ public class BookingDAO {
         }
     }
 
+    public static ObservableList<Booking> getAllBookings () throws SQLException, ClassNotFoundException{
+        String selectStmt = "SELECT * FROM booking";
+        try {
+            ResultSet rsEvent = DB.dbExecuteQuery(selectStmt);
+            ObservableList<Booking> bookingList = getFullBookings(rsEvent);
+
+            return bookingList;
+        }catch (SQLException e){
+            System.err.println("SQL select operation has failed: " + e );
+            throw e;
+        }
+    }
+
 }

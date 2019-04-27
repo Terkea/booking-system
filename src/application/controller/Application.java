@@ -35,6 +35,27 @@ public class Application implements Initializable {
     private Label welcomeLabel;
 
     @FXML
+    private TableView<Booking> allBookingsTableView;
+
+    @FXML
+    private TableColumn<Booking, String> eventNameColumnManageBookingsPane;
+
+    @FXML
+    private TableColumn<Booking, String> ticketsboughtColumnManageBookingsPane;
+
+    @FXML
+    private TableColumn<Booking, String> userFNColumnManageBookingsPane;
+
+    @FXML
+    private TableColumn<Booking, String> userLNColumnManageBookingsPane;
+
+    @FXML
+    private TableColumn<Booking, String> discountedColumnManageBookingsPane;
+
+    @FXML
+    private TableColumn<Booking, String> paidColumnManageBookingsPane;
+
+    @FXML
     private AnchorPane manageBookingsPane;
 
     @FXML
@@ -353,6 +374,7 @@ public class Application implements Initializable {
             loadAllAccounts();
             manageAccountsPane.toFront();
         }else if (event.getSource() == manageBookings){
+            loadAllBookings();
             manageBookingsPane.toFront();
         }
     }
@@ -1113,5 +1135,34 @@ public class Application implements Initializable {
     }
 
     //MANAGE BOOKINGS PANE
+    @FXML
+    private void loadAllBookings(){
+        eventNameColumnManageBookingsPane.setCellValueFactory(cellData -> cellData.getValue().event_nameProperty());
+        ticketsboughtColumnManageBookingsPane.setCellValueFactory(cellData -> cellData.getValue().number_of_ticketsProperty().asString());
+        userFNColumnManageBookingsPane.setCellValueFactory(cellData -> cellData.getValue().user_first_nameProperty());
+        userLNColumnManageBookingsPane.setCellValueFactory(cellData -> cellData.getValue().user_last_nameProperty());
+        discountedColumnManageBookingsPane.setCellValueFactory(cellData -> cellData.getValue().discountedProperty());
+        paidColumnManageBookingsPane.setCellValueFactory(cellData-> cellData.getValue().paidProperty());
 
+        try {
+            ObservableList<Booking> bookingData = BookingDAO.getAllBookings();
+            populateAllBookings(bookingData);
+        } catch (SQLException e) {
+            System.err.println("Error occured while getting event information from DB " + e);
+        } catch (ClassNotFoundException e) {
+            System.err.println("Error occured while getting event information from DB " + e);
+        }
+    }
+
+    @FXML
+    private void populateAllBookings(Booking booking){
+        ObservableList<Booking> bookingData = FXCollections.observableArrayList();
+        bookingData.add(booking);
+        allBookingsTableView.setItems(bookingData);
+    }
+
+    @FXML
+    private void populateAllBookings(ObservableList<Booking> bookingData){
+        allBookingsTableView.setItems(bookingData);
+    }
 }

@@ -57,6 +57,30 @@ public class Booking {
         this.payment_id = new SimpleIntegerProperty();
     }
 
+    public String getDiscounted() {
+        return discounted.get();
+    }
+
+    public StringProperty discountedProperty() {
+        return discounted;
+    }
+
+    public void setDiscounted(String discounted) {
+        this.discounted.set(discounted);
+    }
+
+    public String getPaid() {
+        return paid.get();
+    }
+
+    public StringProperty paidProperty() {
+        return paid;
+    }
+
+    public void setPaid(String paid) {
+        this.paid.set(paid);
+    }
+
     public void setLocation(String location) {
         this.location.set(location);
     }

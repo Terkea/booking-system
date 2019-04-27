@@ -1023,14 +1023,14 @@
                         </Label>
                      </children>
                   </AnchorPane>
-                  <TableView layoutX="40.0" layoutY="145.0" prefHeight="349.0" prefWidth="560.0" AnchorPane.bottomAnchor="106.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="150.0">
+                  <TableView fx:id="allBookingsTableView" layoutX="40.0" layoutY="145.0" prefHeight="349.0" prefWidth="560.0" AnchorPane.bottomAnchor="106.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="150.0">
                     <columns>
-                      <TableColumn prefWidth="77.0" text="Event" />
-                      <TableColumn prefWidth="101.0" text="Tickets bought" />
-                        <TableColumn prefWidth="91.0" text="User FN" />
-                        <TableColumn prefWidth="123.0" text="User LN" />
-                        <TableColumn prefWidth="106.0" text="Discounted" />
-                        <TableColumn prefWidth="61.0" text="Paid" />
+                      <TableColumn fx:id="eventNameColumnManageBookingsPane" prefWidth="77.0" text="Event" />
+                      <TableColumn fx:id="ticketsboughtColumnManageBookingsPane" prefWidth="101.0" text="Tickets bought" />
+                        <TableColumn fx:id="userFNColumnManageBookingsPane" prefWidth="112.0" text="User FN" />
+                        <TableColumn fx:id="userLNColumnManageBookingsPane" prefWidth="139.0" text="User LN" />
+                        <TableColumn fx:id="discountedColumnManageBookingsPane" prefWidth="69.0" text="Discounted" />
+                        <TableColumn fx:id="paidColumnManageBookingsPane" prefWidth="61.0" text="Paid" />
                     </columns>
                   </TableView>
                   <GridPane layoutX="20.0" layoutY="510.0" prefHeight="25.0" prefWidth="560.0" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
