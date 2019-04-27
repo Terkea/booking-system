@@ -201,6 +201,33 @@ public class BookingDAO {
         }
     }
 
+    public static ObservableList<Booking> searchThroughAllBookings (String keyword) throws SQLException, ClassNotFoundException {
+        String selectStmt = "SELECT *\n" +
+                "FROM booking\n" +
+                "INNER JOIN user\n" +
+                "ON booking.user_id = user.id\n" +
+                "INNER JOIN event\n" +
+                "ON booking.event_id = event.id\n" +
+                "WHERE\n" +
+                "user.first_name " +
+                "LIKE \"%" + keyword + "%\"" +
+                "OR\n" +
+                "user.last_name " +
+                "LIKE \"%" + keyword + "%\"" +
+                "OR\n" +
+                "event.name " +
+                "LIKE \"%" + keyword + "%\"";
+        try{
+            ResultSet rsEvent = DB.dbExecuteQuery(selectStmt);
+            ObservableList<Booking> bookingList = getFullBookings(rsEvent);
+
+            return bookingList;
+        }catch(SQLException e){
+            System.out.println("ERROR While searching for all unpaid bookings, error occured: " + e);
+            throw e;
+        }
+    }
+
     public static ObservableList<Booking> getAllBookings () throws SQLException, ClassNotFoundException{
         String selectStmt = "SELECT * FROM booking";
         try {
@@ -210,6 +237,17 @@ public class BookingDAO {
             return bookingList;
         }catch (SQLException e){
             System.err.println("SQL select operation has failed: " + e );
+            throw e;
+        }
+    }
+
+    public static void delete(int id) throws SQLException, ClassNotFoundException{
+        String stmt = "DELETE FROM booking WHERE id = " + id;
+
+        try{
+            DB.dbExecuteUpdate(stmt);
+        }catch (SQLException e){
+            System.err.println("Error during DELETE operation: " +e );
             throw e;
         }
     }

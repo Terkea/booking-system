@@ -167,6 +167,30 @@ public class PaymentDAO {
         }
     }
 
+    public static void pay(int id){
+        String query =  "UPDATE payment\n" +
+                "SET status = 1\n" +
+                "WHERE id = " + id;
+        try {
+            DB.dbExecuteUpdate(query);
+            System.out.println("Restart required to apply settings");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void delete(int id) throws SQLException, ClassNotFoundException{
+        String stmt = "DELETE FROM payment WHERE id = " + id;
+
+        try{
+            DB.dbExecuteUpdate(stmt);
+        }catch (SQLException e){
+            System.err.println("Error during DELETE operation: " +e );
+            throw e;
+        }
+    }
 
 
 }

@@ -47,6 +47,9 @@ public class Application implements Initializable {
     private TableColumn<Booking, String> userFNColumnManageBookingsPane;
 
     @FXML
+    private JFXTextField searchKeywordManageBookingsPane;
+
+    @FXML
     private TableColumn<Booking, String> userLNColumnManageBookingsPane;
 
     @FXML
@@ -1199,6 +1202,38 @@ public class Application implements Initializable {
             System.err.println("Error occured while getting event information from DB " + e);
         } catch (ClassNotFoundException e) {
             System.err.println("Error occured while getting event information from DB " + e);
+        }
+    }
+
+    @FXML
+    private void searchAllBookings(){
+        try {
+            ObservableList<Booking> bookingData = BookingDAO.searchThroughAllBookings(searchKeywordManageBookingsPane.getText());
+            populateAllBookings(bookingData);
+        } catch (SQLException e) {
+            System.err.println("Error occured while getting event information from DB " + e);
+        } catch (ClassNotFoundException e) {
+            System.err.println("Error occured while getting event information from DB " + e);
+        }
+    }
+
+    @FXML
+    private void paySelectedBooking(){
+        PaymentDAO.pay(allBookingsTableView.getSelectionModel().getSelectedItem().getPayment_id());
+        System.out.println(allBookingsTableView.getSelectionModel().getSelectedItem().getPayment_id());
+        loadAllBookings();
+    }
+
+    @FXML
+    private void deleteSelectedBooking(){
+        try {
+            BookingDAO.delete(allBookingsTableView.getSelectionModel().getSelectedItem().getId());
+            PaymentDAO.delete(allBookingsTableView.getSelectionModel().getSelectedItem().getPayment_id());
+            loadAllBookings();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         }
     }
 }
