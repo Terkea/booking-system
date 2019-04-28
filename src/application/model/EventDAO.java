@@ -74,6 +74,19 @@ public class EventDAO {
         }
     }
 
+    public static ObservableList<Event> retrieveAllEvents () throws SQLException, ClassNotFoundException{
+        String selectStmt = "SELECT * FROM event";
+        try {
+            ResultSet rsEvent = DB.dbExecuteQuery(selectStmt);
+            ObservableList<Event> eventList = getEventList(rsEvent);
+
+            return eventList;
+        }catch (SQLException e){
+            System.err.println("SQL select operation has failed: " + e );
+            throw e;
+        }
+    }
+
     public static ObservableList<Event> searchActiveEvent (String keyword) throws SQLException, ClassNotFoundException {
         String selectStmt = "SELECT * " +
                 "FROM event " +
@@ -147,4 +160,48 @@ public class EventDAO {
         }
     }
 
+    public static ObservableList<Event> searchThroughAllEvents (String keyword) throws SQLException, ClassNotFoundException {
+        String selectStmt = "SELECT * " +
+                "FROM event " +
+                "WHERE name " +
+                "LIKE \"%" + keyword + "\"" +
+                "OR location " +
+                "LIKE \"%" + keyword + "\"";
+        try{
+            ResultSet rsEvent = DB.dbExecuteQuery(selectStmt);
+            ObservableList<Event> eventList = getEventList(rsEvent);
+
+            return eventList;
+        }catch(SQLException e){
+            System.out.println("ERROR While searching for a User with: " + keyword + " name, error occured: " + e);
+            throw e;
+        }
+    }
+
+
+    public static void setStatusOn(int id){
+        String query =  "UPDATE event\n" +
+                "SET status = 1\n" +
+                "WHERE id = " + id;
+        try {
+            DB.dbExecuteUpdate(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void setStatusOff(int id){
+        String query =  "UPDATE event\n" +
+                "SET status = 0\n" +
+                "WHERE id = " + id;
+        try {
+            DB.dbExecuteUpdate(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 }

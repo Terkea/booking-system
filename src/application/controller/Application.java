@@ -71,6 +71,12 @@ public class Application implements Initializable {
     private JFXTextField addressEditUserAccountPane;
 
     @FXML
+    private JFXTextField searchKeywordManageEventsPane;
+
+    @FXML
+    private JFXButton manageEvents;
+
+    @FXML
     private JFXTextField address2EditUserAccountPane;
 
     @FXML
@@ -355,6 +361,25 @@ public class Application implements Initializable {
     private TableColumn<Booking, String> ammountColumnMakePaymentPane;
     @FXML
     private TableColumn<Booking, String> ticketsColumnMakePaymentPane;
+    @FXML
+    private AnchorPane manageEventsPane;
+    @FXML
+    private TableView<Event> manageEventsTableView;
+
+    @FXML
+    private TableColumn<Event, String> nameColumnManageEventsPane;
+
+    @FXML
+    private TableColumn<Event, String> typeColumnManageEventsPane;
+
+    @FXML
+    private TableColumn<Event, Integer> ticketsAvailableColumnManageEventsPane;
+
+    @FXML
+    private TableColumn<Event, Double> ticketPriceeColumnManageEventsPane;
+
+    @FXML
+    private TableColumn<Event, String> statusColumnManageEventsPane;
 
     @Override
     public void initialize(URL url, ResourceBundle rs) {
@@ -379,6 +404,9 @@ public class Application implements Initializable {
         }else if (event.getSource() == manageBookings){
             loadAllBookings();
             manageBookingsPane.toFront();
+        }else if (event.getSource() == manageEvents){
+            loadAllEvents();
+            manageEventsPane.toFront();
         }
     }
 
@@ -400,9 +428,11 @@ public class Application implements Initializable {
             if (UserDAO.checkAdmin(user.getId())){
                 manageAccountsButton.setVisible(true);
                 manageBookings.setVisible(true);
+                manageEvents.setVisible(true);
             }else{
                 manageAccountsButton.setVisible(false);
                 manageBookings.setVisible(false);
+                manageEvents.setVisible(false);
             }
 
 
@@ -1235,5 +1265,60 @@ public class Application implements Initializable {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    // MANAGE EVENTS PANE
+    @FXML
+    private void loadAllEvents(){
+        nameColumnManageEventsPane.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
+        typeColumnManageEventsPane.setCellValueFactory(cellData -> cellData.getValue().event_typeProperty());
+        ticketsAvailableColumnManageEventsPane.setCellValueFactory(cellData -> cellData.getValue().tickets_availableProperty().asObject());
+        ticketPriceeColumnManageEventsPane.setCellValueFactory(cellData -> cellData.getValue().ticket_priceProperty().asObject());
+        statusColumnManageEventsPane.setCellValueFactory(cellData -> cellData.getValue().statusProperty().asString());
+
+        try {
+            ObservableList<Event> eventData = EventDAO.retrieveAllEvents();
+            populateAllEvents(eventData);
+        } catch (SQLException e) {
+            System.err.println("Error occured while getting event information from DB " + e);
+        } catch (ClassNotFoundException e) {
+            System.err.println("Error occured while getting event information from DB " + e);
+        }
+    }
+
+    @FXML
+    private void populateAllEvents(Event event) throws ClassNotFoundException {
+        ObservableList<Event> eventData = FXCollections.observableArrayList();
+        eventData.add(event);
+        manageEventsTableView.setItems(eventData);
+    }
+
+    @FXML
+    private void populateAllEvents(ObservableList<Event> eventData) throws ClassNotFoundException {
+        manageEventsTableView.setItems(eventData);
+    }
+
+    @FXML
+    private void searchAllEvents(){
+        try {
+            ObservableList<Event> eventData = EventDAO.searchThroughAllEvents(searchKeywordManageEventsPane.getText());
+            populateAllEvents(eventData);
+        } catch (SQLException e) {
+            System.out.println("Error occured while getting event information from DB " + e);
+        } catch (ClassNotFoundException e) {
+            System.err.println("Error occured while getting event information from DB " + e);
+        }
+    }
+
+    @FXML
+    private void setStatusOn(){
+        EventDAO.setStatusOn(manageEventsTableView.getSelectionModel().getSelectedItem().getId());
+        loadAllEvents();
+    }
+
+    @FXML
+    private void setStatusOff(){
+        EventDAO.setStatusOff(manageEventsTableView.getSelectionModel().getSelectedItem().getId());
+        loadAllEvents();
     }
 }

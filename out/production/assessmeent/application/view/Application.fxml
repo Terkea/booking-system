@@ -58,6 +58,11 @@
                   <Font size="16.0" />
                </font>
             </JFXButton>
+            <JFXButton fx:id="manageEvents" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="200.0" text="Manage Events" textFill="#ffe6e3">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXButton>
               </children>
           </VBox>
       <AnchorPane layoutX="200.0" prefHeight="600.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -1070,6 +1075,68 @@
                      </font>
                   </JFXButton>
                   <JFXTextField fx:id="searchKeywordManageBookingsPane" focusColor="#ff998e" layoutX="20.0" layoutY="110.0" prefHeight="25.0" prefWidth="370.0" promptText="keyword" unFocusColor="BLACK" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="210.0" AnchorPane.topAnchor="110.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="manageEventsPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFF2F2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="90.0" prefWidth="600.0" style="-fx-background-color: #FFE5E2;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="127.0" layoutY="26.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="38.0" prefWidth="346.0" text="Manage Events" AnchorPane.leftAnchor="127.0" AnchorPane.rightAnchor="127.0" AnchorPane.topAnchor="26.0">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <TableView fx:id="manageEventsTableView" layoutX="26.0" layoutY="145.0" prefHeight="319.0" prefWidth="540.0" AnchorPane.bottomAnchor="130.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="150.0">
+                    <columns>
+                      <TableColumn fx:id="nameColumnManageEventsPane" prefWidth="75.0" text="Name" />
+                      <TableColumn fx:id="typeColumnManageEventsPane" prefWidth="75.0" text="Type" />
+                        <TableColumn fx:id="ticketsAvailableColumnManageEventsPane" prefWidth="115.0" text="Tickets available" />
+                        <TableColumn fx:id="ticketPriceeColumnManageEventsPane" prefWidth="140.0" text="Ticket price" />
+                        <TableColumn fx:id="statusColumnManageEventsPane" prefWidth="154.0" text="Status" />
+                    </columns>
+                  </TableView>
+                  <JFXTextField fx:id="searchKeywordManageEventsPane" focusColor="#ff998e" layoutX="20.0" layoutY="113.0" prefHeight="25.0" prefWidth="370.0" promptText="keyword" unFocusColor="BLACK" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="210.0" AnchorPane.topAnchor="113.0" />
+                  <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="413.0" layoutY="111.0" onAction="#searchAllEvents" prefHeight="30.0" prefWidth="167.0" style="-fx-background-color: #FF998E;" text="Search" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="111.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <GridPane layoutX="20.0" layoutY="487.0" prefHeight="30.0" prefWidth="560.0" AnchorPane.bottomAnchor="83.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" onAction="#setStatusOn" prefHeight="30.0" prefWidth="739.0" style="-fx-background-color: #FF998E;" text="Status ON">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" onAction="#setStatusOff" prefHeight="30.0" prefWidth="710.0" style="-fx-background-color: #FF998E;" text="Status OFF" GridPane.columnIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" onAction="#searchAllBookings" prefHeight="30.0" prefWidth="739.0" style="-fx-background-color: #FF998E;" text="View/Edit" GridPane.columnIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </GridPane>
+                  <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="21.0" layoutY="544.0" onAction="#searchAllBookings" prefHeight="30.0" prefWidth="560.0" style="-fx-background-color: #FF998E;" text="Create new Event" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXButton>
                </children>
             </AnchorPane>
          </children>
