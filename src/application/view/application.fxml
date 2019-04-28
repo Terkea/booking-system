@@ -2,9 +2,13 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXChipView?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTimePicker?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
@@ -1137,6 +1141,134 @@
                         <Font size="14.0" />
                      </font>
                   </JFXButton>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="createNewEventPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFF2F2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane layoutX="166.0" layoutY="14.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="90.0" prefWidth="600.0" style="-fx-background-color: #FFE5E2;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="127.0" layoutY="26.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="38.0" prefWidth="346.0" text="Create new Event" AnchorPane.leftAnchor="127.0" AnchorPane.rightAnchor="127.0" AnchorPane.topAnchor="26.0">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <GridPane layoutX="26.0" layoutY="104.0" prefHeight="376.0" prefWidth="435.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="110.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="336.0" minWidth="10.0" prefWidth="164.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="336.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="10.0" minHeight="25.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="10.0" minHeight="25.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="10.0" minHeight="25.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="10.0" minHeight="25.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="10.0" minHeight="25.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="10.0" minHeight="25.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="10.0" minHeight="25.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label prefHeight="27.0" prefWidth="236.0" text="Name:">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets bottom="-15.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label prefHeight="27.0" prefWidth="236.0" text="Type:" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="-15.0" />
+                           </padding>
+                        </Label>
+                        <Label prefHeight="27.0" prefWidth="236.0" text="Location:" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="-15.0" />
+                           </padding>
+                        </Label>
+                        <Label prefHeight="27.0" prefWidth="236.0" text="Date:" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="-15.0" />
+                           </padding>
+                        </Label>
+                        <Label prefHeight="27.0" prefWidth="236.0" text="Tickets available: " GridPane.rowIndex="5">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="-15.0" />
+                           </padding>
+                        </Label>
+                        <Label prefHeight="27.0" prefWidth="236.0" text="Price per ticket: " GridPane.rowIndex="4">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="-15.0" />
+                           </padding>
+                        </Label>
+                        <Label prefHeight="27.0" prefWidth="236.0" text="Performers: " GridPane.rowIndex="9">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="27.0" prefWidth="236.0" text="Status: " GridPane.rowIndex="6">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="-15.0" />
+                           </padding>
+                        </Label>
+                        <Label prefHeight="27.0" prefWidth="236.0" text="Full address:" GridPane.rowIndex="7">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="-15.0" />
+                           </padding>
+                        </Label>
+                        <Label prefHeight="27.0" prefWidth="236.0" text="Performance time:" GridPane.rowIndex="8">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="-15.0" />
+                           </padding>
+                        </Label>
+                        <Label prefHeight="27.0" prefWidth="236.0" text="Other Details" GridPane.rowIndex="10">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField alignment="CENTER" focusColor="#ff998e" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" />
+                        <JFXTextField focusColor="#ff998e" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" />
+                        <JFXTextField focusColor="#ff998e" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.vgrow="ALWAYS" />
+                        <JFXTextField focusColor="#ff998e" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <JFXTextField focusColor="#ff998e" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.vgrow="ALWAYS" />
+                        <JFXTextField focusColor="#ff998e" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="7" GridPane.vgrow="ALWAYS" />
+                        <JFXComboBox prefHeight="25.0" prefWidth="3229.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="6" GridPane.vgrow="ALWAYS" />
+                        <JFXTimePicker defaultColor="#ff4f40" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="8" GridPane.vgrow="ALWAYS" />
+                        <JFXDatePicker defaultColor="#ff4f40" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS" />
+                        <JFXChipView prefHeight="98.0" prefWidth="3227.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="9" GridPane.vgrow="ALWAYS" />
+                        <JFXTextArea GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="10" GridPane.vgrow="ALWAYS" />
+                        <JFXComboBox prefHeight="25.0" prefWidth="1984.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+                     </children>
+                  </GridPane>
                </children>
             </AnchorPane>
          </children>

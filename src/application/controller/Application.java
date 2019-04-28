@@ -62,6 +62,9 @@ public class Application implements Initializable {
     private AnchorPane manageBookingsPane;
 
     @FXML
+    private JFXChipView<Event> performersChipViewCreateEventPane = new JFXChipView<>();
+
+    @FXML
     private JFXTextField firstNameEditUserAccountPane;
 
     @FXML
