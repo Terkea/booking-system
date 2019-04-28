@@ -62,7 +62,7 @@ public class Application implements Initializable {
     private AnchorPane manageBookingsPane;
 
     @FXML
-    private JFXChipView<Event> performersChipViewCreateEventPane = new JFXChipView<>();
+    private JFXChipView<ObservableList<Band>> performersChipViewCreateEventPane = new JFXChipView<>();
 
     @FXML
     private JFXTextField firstNameEditUserAccountPane;
@@ -75,6 +75,9 @@ public class Application implements Initializable {
 
     @FXML
     private JFXTextField searchKeywordManageEventsPane;
+
+    @FXML
+    private AnchorPane createNewEventPane;
 
     @FXML
     private JFXButton manageEvents;
@@ -1323,5 +1326,38 @@ public class Application implements Initializable {
     private void setStatusOff(){
         EventDAO.setStatusOff(manageEventsTableView.getSelectionModel().getSelectedItem().getId());
         loadAllEvents();
+    }
+
+
+    // CREATE NEW EVENT PANE
+
+    @FXML
+    private void createNewEvent(){
+
+        try {
+            ObservableList<Band> bandList = BandDAO.getAllBands();
+            String[] bands = new String[bandList.size()];
+            for (int i = 0; i < bandList.size(); i++){
+                bands[i] = bandList.get(i).getId() + ". " + bandList.get(i).getName();
+            }
+
+            performersChipViewCreateEventPane.chipFactoryProperty(BandDAO.getAllBands());
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
+
+//        try {
+//            performersChipViewCreateEventPane.getChips().addAll(BandDAO.getAllBands());
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        } catch (ClassNotFoundException e) {
+//            e.printStackTrace();
+//        }
+        createNewEventPane.toFront();
     }
 }

@@ -1136,7 +1136,7 @@
                         </JFXButton>
                      </children>
                   </GridPane>
-                  <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="21.0" layoutY="544.0" onAction="#searchAllBookings" prefHeight="30.0" prefWidth="560.0" style="-fx-background-color: #FF998E;" text="Create new Event" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                  <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="21.0" layoutY="544.0" onAction="#createNewEvent" prefHeight="30.0" prefWidth="560.0" style="-fx-background-color: #FF998E;" text="Create new Event" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -1264,7 +1264,7 @@
                         <JFXComboBox prefHeight="25.0" prefWidth="3229.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="6" GridPane.vgrow="ALWAYS" />
                         <JFXTimePicker defaultColor="#ff4f40" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="8" GridPane.vgrow="ALWAYS" />
                         <JFXDatePicker defaultColor="#ff4f40" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS" />
-                        <JFXChipView prefHeight="98.0" prefWidth="3227.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="9" GridPane.vgrow="ALWAYS" />
+                        <JFXChipView fx:id="performersChipViewCreateEventPane" prefHeight="98.0" prefWidth="3227.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="9" GridPane.vgrow="ALWAYS" />
                         <JFXTextArea GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="10" GridPane.vgrow="ALWAYS" />
                         <JFXComboBox prefHeight="25.0" prefWidth="1984.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
                      </children>
