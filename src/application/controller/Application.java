@@ -1453,8 +1453,12 @@ public class Application implements Initializable {
         }
 
         try {
-
             EventDAO.insertEvent(insert, status);
+
+            for (int i = 0; i<performersChipViewCreateEventPane.getChips().size(); i++){
+                Event_PerformersDAO.insertEvent_performers(EventDAO.getLastEventCreatedByOrganiserID(ACTUALUSER.getId()).getId(), getBandsIdFromChip(performersChipViewCreateEventPane.getChips().get(i)));
+            }
+
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
@@ -1462,8 +1466,8 @@ public class Application implements Initializable {
         }
 
 
-        for (int i = 0; i<performersChipViewCreateEventPane.getChips().size(); i++){
+//        for (int i = 0; i<performersChipViewCreateEventPane.getChips().size(); i++){
 //            getBandsIdFromChip(performersChipViewCreateEventPane.getChips().get(i))
-        }
+//        }
     }
 }

@@ -219,6 +219,24 @@ public class EventDAO {
             System.out.print("Error occurred while DELETE Operation: " + e);
             throw e;
         }
+    }
 
+    public static Event getLastEventCreatedByOrganiserID (int id) throws SQLException, ClassNotFoundException {
+        String selectStmt = "SELECT * \n" +
+                "FROM event\n" +
+                "WHERE\n" +
+                "organizer_id = " + id +
+                " ORDER BY id DESC\n" +
+                "LIMIT 1";
+        try{
+            ResultSet rs = DB.dbExecuteQuery(selectStmt);
+            Event event = getEventFromResultSet(rs);
+
+            return event;
+        }catch(SQLException e){
+            System.err.println("ERROR While searching for a Payment with: " + id + " user_id, error occured: " + e);
+            System.err.println(selectStmt);
+            throw e;
+        }
     }
 }
