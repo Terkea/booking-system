@@ -10,13 +10,13 @@ import java.util.ResourceBundle;
 import application.model.*;
 import application.system.Password;
 import com.jfoenix.controls.*;
-import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 
+import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -25,7 +25,9 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.util.StringConverter;
 
 public class Application implements Initializable {
 
@@ -53,6 +55,9 @@ public class Application implements Initializable {
     private TableColumn<Booking, String> userLNColumnManageBookingsPane;
 
     @FXML
+    private JFXTextArea performersTextAreaCreateEventPane;
+
+    @FXML
     private TableColumn<Booking, String> discountedColumnManageBookingsPane;
 
     @FXML
@@ -62,7 +67,7 @@ public class Application implements Initializable {
     private AnchorPane manageBookingsPane;
 
     @FXML
-    private JFXChipView<ObservableList<Band>> performersChipViewCreateEventPane = new JFXChipView<>();
+    private JFXChipView<String> performersChipViewCreateEventPane = new JFXChipView<>();;
 
     @FXML
     private JFXTextField firstNameEditUserAccountPane;
@@ -1337,11 +1342,13 @@ public class Application implements Initializable {
         try {
             ObservableList<Band> bandList = BandDAO.getAllBands();
             String[] bands = new String[bandList.size()];
+
             for (int i = 0; i < bandList.size(); i++){
-                bands[i] = bandList.get(i).getId() + ". " + bandList.get(i).getName();
+                performersChipViewCreateEventPane.getSuggestions().addAll(bandList.get(i).getId() + "." +bandList.get(i).getName());
             }
 
-            performersChipViewCreateEventPane.chipFactoryProperty(BandDAO.getAllBands());
+
+
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -1349,15 +1356,21 @@ public class Application implements Initializable {
             e.printStackTrace();
         }
 
-
-
-//        try {
-//            performersChipViewCreateEventPane.getChips().addAll(BandDAO.getAllBands());
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        } catch (ClassNotFoundException e) {
-//            e.printStackTrace();
-//        }
         createNewEventPane.toFront();
+    }
+
+    private int getBadsIdFromChip(String chipName){
+        if (chipName.contains(".")){
+            int dotInted = chipName.indexOf(".");
+            return Integer.parseInt(chipName.substring(0,dotInted));
+        }
+        return 1231245122;
+    }
+
+    @FXML
+    private void addNewEvent(){
+        for (int i = 0; i<performersChipViewCreateEventPane.getChips().size(); i++){
+//            getBadsIdFromChip(performersChipViewCreateEventPane.getChips().get(i))
+        }
     }
 }
