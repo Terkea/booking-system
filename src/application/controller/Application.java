@@ -52,6 +52,36 @@ public class Application implements Initializable {
     private JFXTextField searchKeywordManageBookingsPane;
 
     @FXML
+    private JFXTextField eventNameTextFieldCreateEventPane;
+
+    @FXML
+    private JFXTextField locationTextFieldCreateEventPane;
+
+    @FXML
+    private JFXTextField ticketPriceTextFieldCreateEventPane;
+
+    @FXML
+    private JFXTextField ticketsAvailableTextFieldCreateEventPane;
+
+    @FXML
+    private JFXTextField fullAddressTextFieldCreateEventPane;
+
+    @FXML
+    private JFXComboBox<Label> statusComboBoxCreateEventPane = new JFXComboBox<>();
+
+    @FXML
+    private JFXTimePicker performanceTimeTimePickerCreateEventPane = new JFXTimePicker();
+
+    @FXML
+    private JFXDatePicker dateDatePickerTextFieldCreateEventPane;
+
+    @FXML
+    private JFXTextArea otherDetailsTextAreaCreateEventPane;
+
+    @FXML
+    private JFXComboBox<Label> eventTypeComboBoxCreateEventPane = new JFXComboBox<>();
+
+    @FXML
     private TableColumn<Booking, String> userLNColumnManageBookingsPane;
 
     @FXML
@@ -333,7 +363,7 @@ public class Application implements Initializable {
     @FXML
     private AnchorPane payByCardOrganiserAnchorPane;
     @FXML
-    private Label descriptionLabelMoreDetailsEventPane;
+    private JFXTextArea descriptionLabelMoreDetailsEventPane;
     @FXML
     private JFXTextField howManyLabelMoreDetailsPane;
     @FXML
@@ -401,8 +431,8 @@ public class Application implements Initializable {
         if (event.getSource() == myAccountButton) {
             accountPane.toFront();
         } else if (event.getSource() == viewConcertsFestivalsButton) {
-            viewConcertsPane.toFront();
             loadEventsData();
+            viewConcertsPane.toFront();
         } else if (event.getSource() == viewBookingsButton) {
             loadMyBookingsData();
             viewBookingsPane.toFront();
@@ -650,7 +680,7 @@ public class Application implements Initializable {
 
 
         //concertsTableConcertsPane.getSelectionModel().getSelectedItem().getId()
-        seeMoreEventPane.toFront();
+
         titleLabelMoreDetailsEventPane.setText(selectedEvent.getName());
         locationLabelMoreDetailsEventPane.setText(selectedEvent.getLocation());
         dateLabelMoreDetailsEventPane.setText(selectedEvent.getDate());
@@ -659,6 +689,7 @@ public class Application implements Initializable {
         eventTypeLabelMoreDetailsEventPane.setText(selectedEvent.getEvent_type());
         descriptionLabelMoreDetailsEventPane.setText(selectedEvent.getDescription());
         // NEED TO BE ADDED THE BANDS/ARTISTIS WHO ARE GONNA
+        seeMoreEventPane.toFront();
     }
 
     @FXML
@@ -1339,6 +1370,33 @@ public class Application implements Initializable {
     @FXML
     private void createNewEvent(){
 
+        eventTypeComboBoxCreateEventPane.getItems().add(new Label("Concert"));
+        eventTypeComboBoxCreateEventPane.getItems().add(new Label("Festival"));
+        eventTypeComboBoxCreateEventPane.setConverter(new StringConverter<Label>() {
+            @Override
+            public String toString(Label object) {
+                return object==null? "" : object.getText();
+            }
+
+            @Override
+            public Label fromString(String string) {
+                return new Label(string);
+            }
+        });
+        statusComboBoxCreateEventPane.getItems().add(new Label("Available"));
+        statusComboBoxCreateEventPane.getItems().add(new Label("Unavailable"));
+        statusComboBoxCreateEventPane.setConverter(new StringConverter<Label>() {
+            @Override
+            public String toString(Label object) {
+                return object==null? "" : object.getText();
+            }
+
+            @Override
+            public Label fromString(String string) {
+                return new Label(string);
+            }
+        });
+
         try {
             ObservableList<Band> bandList = BandDAO.getAllBands();
             String[] bands = new String[bandList.size()];
@@ -1346,10 +1404,6 @@ public class Application implements Initializable {
             for (int i = 0; i < bandList.size(); i++){
                 performersChipViewCreateEventPane.getSuggestions().addAll(bandList.get(i).getId() + "." +bandList.get(i).getName());
             }
-
-
-
-
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
@@ -1359,7 +1413,7 @@ public class Application implements Initializable {
         createNewEventPane.toFront();
     }
 
-    private int getBadsIdFromChip(String chipName){
+    private int getBandsIdFromChip(String chipName){
         if (chipName.contains(".")){
             int dotInted = chipName.indexOf(".");
             return Integer.parseInt(chipName.substring(0,dotInted));
@@ -1369,8 +1423,47 @@ public class Application implements Initializable {
 
     @FXML
     private void addNewEvent(){
+
+
+        Event insert = new Event();
+        insert.setOrganizer_id(ACTUALUSER.getId());
+        insert.setLocation(locationTextFieldCreateEventPane.getText());
+        insert.setName(eventNameTextFieldCreateEventPane.getText());
+        insert.setEvent_type(eventTypeComboBoxCreateEventPane.getValue().getText());
+        insert.setDate(dateDatePickerTextFieldCreateEventPane.getValue().toString());
+        insert.setTicket_price(Double.parseDouble(ticketPriceTextFieldCreateEventPane.getText()));
+        insert.setTickets_available(Integer.parseInt(ticketsAvailableTextFieldCreateEventPane.getText()));
+        insert.setStatus(Boolean.parseBoolean(statusComboBoxCreateEventPane.getAccessibleText()));
+        insert.setDescription("Full Address: \n" +
+                fullAddressTextFieldCreateEventPane.getText()+ "\n" +
+                "Performance Time: \n"+
+                performanceTimeTimePickerCreateEventPane.getValue() + "\n" +
+                "Performers: " + "\n" +
+                performersChipViewCreateEventPane.getChips() + "\n" +
+                "Other Details: " + "\n" +
+                otherDetailsTextAreaCreateEventPane.getText());
+
+
+        boolean status = false;
+        if (statusComboBoxCreateEventPane.getValue().getText() == "Unavailable"){
+            status = false;
+        }
+        if (statusComboBoxCreateEventPane.getValue().getText() == "Available"){
+            status = true;
+        }
+
+        try {
+
+            EventDAO.insertEvent(insert, status);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
         for (int i = 0; i<performersChipViewCreateEventPane.getChips().size(); i++){
-//            getBadsIdFromChip(performersChipViewCreateEventPane.getChips().get(i))
+//            getBandsIdFromChip(performersChipViewCreateEventPane.getChips().get(i))
         }
     }
 }

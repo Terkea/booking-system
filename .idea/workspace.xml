@@ -7,10 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e45a1d1-83c6-47d2-83a7-58cd49d8d856" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/com_jfoenix_jfoenix_8_0_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/com_jfoenix_jfoenix_8_0_8.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/assessmeent/application/controller/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assessmeent/application/controller/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/assessmeent/application/model/EventDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assessmeent/application/model/EventDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/assessmeent/application/view/Application.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assessmeent/application/view/Application.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/controller/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/controller/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/model/EventDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/model/EventDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/view/application.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/view/application.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -28,8 +30,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/application/controller/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="1373" column="9" lean-forward="true" selection-start-line="1373" selection-start-column="9" selection-end-line="1373" selection-end-column="9" />
+            <state relative-caret-position="282">
+              <caret line="691" column="35" lean-forward="true" selection-start-line="691" selection-start-column="35" selection-end-line="691" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -38,19 +40,20 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.ideaLibSources/jfoenix-8.0.8-sources.jar!/com/jfoenix/controls/JFXChipView.java">
+        <entry file="file://$PROJECT_DIR$/src/application/view/application.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1540">
-              <caret line="116" column="69" selection-start-line="116" selection-start-column="69" selection-end-line="116" selection-end-column="69" />
+            <state relative-caret-position="-1906">
+              <caret line="188" column="25" selection-start-line="188" selection-start-column="25" selection-end-line="188" selection-end-column="25" />
             </state>
           </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/application/model/PaymentDAO.java">
+        <entry file="file://$PROJECT_DIR$/src/application/model/EventDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="34" column="43" selection-start-line="34" selection-start-column="43" selection-end-line="34" selection-end-column="43" />
+            <state relative-caret-position="645">
+              <caret line="212" column="82" selection-start-line="212" selection-start-column="82" selection-end-line="212" selection-end-column="82" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -59,25 +62,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/application/model/Band.java">
+        <entry file="file://$PROJECT_DIR$/src/application/model/UserDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="27" selection-start-line="27" selection-end-line="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/application/model/BandDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="36" selection-start-line="36" selection-end-line="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="162">
+              <caret line="271" column="51" lean-forward="true" selection-start-line="271" selection-start-column="51" selection-end-line="271" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -93,18 +81,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>pending</find>
-      <find>makePendingPayments</find>
-      <find>errorPayPendingBookingsPane</find>
-      <find>pendingpa</find>
-      <find>getFullBookings</find>
-      <find>manageA</find>
-      <find>load</find>
-      <find>populate</find>
-      <find>handle</find>
-      <find>searchUser</find>
-      <find>updateMyProfile</find>
-      <find>account</find>
       <find>event</find>
       <find>get</find>
       <find>check</find>
@@ -123,6 +99,18 @@
       <find>chipview</find>
       <find>#</find>
       <find>performersChipViewCreateEventPane</find>
+      <find>add</find>
+      <find>combobox</find>
+      <find>combobo</find>
+      <find>titleEditProfileComboBox</find>
+      <find>ComboBox</find>
+      <find>eventTypeComboBoxCreateEventPane</find>
+      <find>Mr.</find>
+      <find>insert</find>
+      <find>eventType</find>
+      <find>viewconcerts</find>
+      <find>loadEventsData</find>
+      <find>seeMoreDetailsButtonConcertPane</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -149,10 +137,10 @@
         <option value="$PROJECT_DIR$/src/application/model/Booking.java" />
         <option value="$PROJECT_DIR$/src/application/model/PaymentDAO.java" />
         <option value="$PROJECT_DIR$/src/application/model/BookingDAO.java" />
-        <option value="$PROJECT_DIR$/src/application/model/EventDAO.java" />
         <option value="$PROJECT_DIR$/src/application/model/Band.java" />
         <option value="$PROJECT_DIR$/src/application/model/BandDAO.java" />
         <option value="$PROJECT_DIR$/src/test/chipview.java" />
+        <option value="$PROJECT_DIR$/src/application/model/EventDAO.java" />
         <option value="$PROJECT_DIR$/src/application/controller/Application.java" />
       </list>
     </option>
@@ -289,6 +277,43 @@
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.21481876" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" weight="0.3336887" />
+      <window_info id="Designer" order="3" />
+      <window_info id="Image Layers" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.3290461" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39978564" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Application Servers" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Problems" order="9" />
+      <window_info anchor="bottom" id="Changes" order="10" />
+      <window_info anchor="bottom" id="Profiler" order="11" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50053304" side_tool="true" weight="0.3290461" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.3279743" />
+      <window_info anchor="bottom" id="Terminal" order="14" weight="0.3290461" />
+      <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.3290461" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="JetGradle" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="right" id="Maven" order="7" weight="0.32995737" />
+      <window_info anchor="right" id="Capture Analysis" order="8" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info anchor="right" id="Theme Preview" order="10" />
+      <window_info anchor="right" id="Coverage" order="11" side_tool="true" weight="0.32995737" />
+    </layout>
+    <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.21481876" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.3336887" />
@@ -324,41 +349,6 @@
       <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info anchor="right" id="Theme Preview" order="10" />
       <window_info anchor="right" id="Coverage" order="11" side_tool="true" weight="0.32995737" />
-    </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.1913646" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" weight="0.3336887" />
-      <window_info id="Designer" order="3" />
-      <window_info id="Image Layers" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Capture Tool" order="6" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3290461" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39978564" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Application Servers" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Problems" order="9" />
-      <window_info anchor="bottom" id="Changes" order="10" />
-      <window_info anchor="bottom" id="Profiler" order="11" />
-      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.3279743" />
-      <window_info anchor="bottom" id="Terminal" order="14" weight="0.3290461" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="JetGradle" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" id="Palette" order="5" />
-      <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info anchor="right" id="Maven" order="7" />
-      <window_info anchor="right" id="Capture Analysis" order="8" />
-      <window_info anchor="right" id="Palette&#9;" order="9" />
-      <window_info anchor="right" id="Theme Preview" order="10" />
     </layout-to-restore>
   </component>
   <component name="XDebuggerManager">
@@ -554,99 +544,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/controller/Register.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3600">
-          <caret line="180" column="33" selection-start-line="180" selection-start-column="33" selection-end-line="180" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/view/application.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/application/system/DB.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="295">
           <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/model/Event.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="127" column="27" selection-start-line="127" selection-start-column="21" selection-end-line="127" selection-end-column="27" />
-          <folding>
-            <element signature="e#1861#1862#0" expanded="true" />
-            <element signature="e#1892#1893#0" expanded="true" />
-            <element signature="e#1935#1936#0" expanded="true" />
-            <element signature="e#1960#1961#0" expanded="true" />
-            <element signature="e#1993#1994#0" expanded="true" />
-            <element signature="e#2024#2025#0" expanded="true" />
-            <element signature="e#2055#2056#0" expanded="true" />
-            <element signature="e#2088#2089#0" expanded="true" />
-            <element signature="e#2132#2133#0" expanded="true" />
-            <element signature="e#2159#2160#0" expanded="true" />
-            <element signature="e#2199#2200#0" expanded="true" />
-            <element signature="e#2234#2235#0" expanded="true" />
-            <element signature="e#2269#2270#0" expanded="true" />
-            <element signature="e#2306#2307#0" expanded="true" />
-            <element signature="e#2354#2355#0" expanded="true" />
-            <element signature="e#2385#2386#0" expanded="true" />
-            <element signature="e#2433#2434#0" expanded="true" />
-            <element signature="e#2476#2477#0" expanded="true" />
-            <element signature="e#2507#2508#0" expanded="true" />
-            <element signature="e#2540#2541#0" expanded="true" />
-            <element signature="e#2584#2585#0" expanded="true" />
-            <element signature="e#2611#2612#0" expanded="true" />
-            <element signature="e#2651#2652#0" expanded="true" />
-            <element signature="e#2686#2687#0" expanded="true" />
-            <element signature="e#2724#2725#0" expanded="true" />
-            <element signature="e#2764#2765#0" expanded="true" />
-            <element signature="e#2815#2816#0" expanded="true" />
-            <element signature="e#2849#2850#0" expanded="true" />
-            <element signature="e#2903#2904#0" expanded="true" />
-            <element signature="e#2952#2953#0" expanded="true" />
-            <element signature="e#2993#2994#0" expanded="true" />
-            <element signature="e#3039#3040#0" expanded="true" />
-            <element signature="e#3097#3098#0" expanded="true" />
-            <element signature="e#3137#3138#0" expanded="true" />
-            <element signature="e#3200#3201#0" expanded="true" />
-            <element signature="e#3261#3262#0" expanded="true" />
-            <element signature="e#3300#3301#0" expanded="true" />
-            <element signature="e#3341#3342#0" expanded="true" />
-            <element signature="e#3393#3394#0" expanded="true" />
-            <element signature="e#3428#3429#0" expanded="true" />
-            <element signature="e#3484#3485#0" expanded="true" />
-            <element signature="e#3535#3536#0" expanded="true" />
-            <element signature="e#3568#3569#0" expanded="true" />
-            <element signature="e#3603#3604#0" expanded="true" />
-            <element signature="e#3650#3651#0" expanded="true" />
-            <element signature="e#3679#3680#0" expanded="true" />
-            <element signature="e#3724#3725#0" expanded="true" />
-            <element signature="e#3763#3764#0" expanded="true" />
-            <element signature="e#3799#3800#0" expanded="true" />
-            <element signature="e#3840#3841#0" expanded="true" />
-            <element signature="e#3893#3894#0" expanded="true" />
-            <element signature="e#3928#3929#0" expanded="true" />
-            <element signature="e#3981#3982#0" expanded="true" />
-            <element signature="e#4032#4033#0" expanded="true" />
-            <element signature="e#4069#4070#0" expanded="true" />
-            <element signature="e#4108#4109#0" expanded="true" />
-            <element signature="e#4158#4159#0" expanded="true" />
-            <element signature="e#4191#4192#0" expanded="true" />
-            <element signature="e#4243#4244#0" expanded="true" />
-            <element signature="e#4290#4291#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -720,34 +623,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/application/model/BookingDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4780">
           <caret line="244" column="42" selection-start-line="244" selection-start-column="42" selection-end-line="244" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/model/UserDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4740">
-          <caret line="242" selection-start-line="242" selection-end-line="251" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/model/EventDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="194" column="35" selection-start-line="194" selection-start-column="23" selection-end-line="194" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -790,13 +669,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.ideaLibSources/jfoenix-8.0.8-sources.jar!/com/jfoenix/controls/JFXChipView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1540">
-          <caret line="116" column="69" selection-start-line="116" selection-start-column="69" selection-end-line="116" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/application/model/PaymentDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
@@ -817,16 +689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/model/BandDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/jfoenix/jfoenix/8.0.8/jfoenix-8.0.8.jar!/css/controls/jfx-chip-view.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="181">
@@ -834,10 +696,138 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="10" column="30" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ideaLibSources/jfoenix-8.0.8-sources.jar!/com/jfoenix/controls/JFXChipView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="116" column="69" selection-start-line="116" selection-start-column="69" selection-end-line="116" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/model/BandDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="538">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/controller/Register.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="90" column="14" selection-start-line="90" selection-start-column="11" selection-end-line="90" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/model/Event.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="147" column="16" selection-start-line="147" selection-start-column="16" selection-end-line="147" selection-end-column="16" />
+          <folding>
+            <element signature="e#1861#1862#0" expanded="true" />
+            <element signature="e#1892#1893#0" expanded="true" />
+            <element signature="e#1935#1936#0" expanded="true" />
+            <element signature="e#1960#1961#0" expanded="true" />
+            <element signature="e#1993#1994#0" expanded="true" />
+            <element signature="e#2024#2025#0" expanded="true" />
+            <element signature="e#2055#2056#0" expanded="true" />
+            <element signature="e#2088#2089#0" expanded="true" />
+            <element signature="e#2132#2133#0" expanded="true" />
+            <element signature="e#2159#2160#0" expanded="true" />
+            <element signature="e#2199#2200#0" expanded="true" />
+            <element signature="e#2234#2235#0" expanded="true" />
+            <element signature="e#2269#2270#0" expanded="true" />
+            <element signature="e#2306#2307#0" expanded="true" />
+            <element signature="e#2354#2355#0" expanded="true" />
+            <element signature="e#2385#2386#0" expanded="true" />
+            <element signature="e#2433#2434#0" expanded="true" />
+            <element signature="e#2476#2477#0" expanded="true" />
+            <element signature="e#2507#2508#0" expanded="true" />
+            <element signature="e#2540#2541#0" expanded="true" />
+            <element signature="e#2584#2585#0" expanded="true" />
+            <element signature="e#2611#2612#0" expanded="true" />
+            <element signature="e#2651#2652#0" expanded="true" />
+            <element signature="e#2686#2687#0" expanded="true" />
+            <element signature="e#2724#2725#0" expanded="true" />
+            <element signature="e#2764#2765#0" expanded="true" />
+            <element signature="e#2815#2816#0" expanded="true" />
+            <element signature="e#2849#2850#0" expanded="true" />
+            <element signature="e#2903#2904#0" expanded="true" />
+            <element signature="e#2952#2953#0" expanded="true" />
+            <element signature="e#2993#2994#0" expanded="true" />
+            <element signature="e#3039#3040#0" expanded="true" />
+            <element signature="e#3097#3098#0" expanded="true" />
+            <element signature="e#3137#3138#0" expanded="true" />
+            <element signature="e#3200#3201#0" expanded="true" />
+            <element signature="e#3261#3262#0" expanded="true" />
+            <element signature="e#3300#3301#0" expanded="true" />
+            <element signature="e#3341#3342#0" expanded="true" />
+            <element signature="e#3393#3394#0" expanded="true" />
+            <element signature="e#3428#3429#0" expanded="true" />
+            <element signature="e#3484#3485#0" expanded="true" />
+            <element signature="e#3535#3536#0" expanded="true" />
+            <element signature="e#3568#3569#0" expanded="true" />
+            <element signature="e#3603#3604#0" expanded="true" />
+            <element signature="e#3650#3651#0" expanded="true" />
+            <element signature="e#3679#3680#0" expanded="true" />
+            <element signature="e#3724#3725#0" expanded="true" />
+            <element signature="e#3763#3764#0" expanded="true" />
+            <element signature="e#3799#3800#0" expanded="true" />
+            <element signature="e#3840#3841#0" expanded="true" />
+            <element signature="e#3893#3894#0" expanded="true" />
+            <element signature="e#3928#3929#0" expanded="true" />
+            <element signature="e#3981#3982#0" expanded="true" />
+            <element signature="e#4032#4033#0" expanded="true" />
+            <element signature="e#4069#4070#0" expanded="true" />
+            <element signature="e#4108#4109#0" expanded="true" />
+            <element signature="e#4158#4159#0" expanded="true" />
+            <element signature="e#4191#4192#0" expanded="true" />
+            <element signature="e#4243#4244#0" expanded="true" />
+            <element signature="e#4290#4291#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/model/UserDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="271" column="51" lean-forward="true" selection-start-line="271" selection-start-column="51" selection-end-line="271" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/model/EventDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="212" column="82" selection-start-line="212" selection-start-column="82" selection-end-line="212" selection-end-column="82" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/view/application.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1906">
+          <caret line="188" column="25" selection-start-line="188" selection-start-column="25" selection-end-line="188" selection-end-column="25" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/application/controller/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="1373" column="9" lean-forward="true" selection-start-line="1373" selection-start-column="9" selection-end-line="1373" selection-end-column="9" />
+        <state relative-caret-position="282">
+          <caret line="691" column="35" lean-forward="true" selection-start-line="691" selection-start-column="35" selection-end-line="691" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

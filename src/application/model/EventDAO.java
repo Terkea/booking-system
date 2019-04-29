@@ -204,4 +204,21 @@ public class EventDAO {
             e.printStackTrace();
         }
     }
+
+    public static void insertEvent(Event event, boolean status) throws SQLException, ClassNotFoundException{
+        String updateStmt = "INSERT INTO event\n" +
+                "(`location`, `date`, `name`, `description`, `tickets_available`, `ticket_price`, `event_type`, `status`, `organizer_id`)\n" +
+                "VALUES\n" +
+                "('" +event.getLocation()+ "', '" +event.getDate()+ "', '" +event.getName()+ "', '"+event.getDescription()+ "', '"+event.getTickets_available()+
+                "', '"+event.getTicket_price()+ "', '"+event.getEvent_type()+ "', "+ status + ", '"+ event.getOrganizer_id()+ "');";
+
+
+        try {
+            DB.dbExecuteUpdate(updateStmt);
+        } catch (SQLException e) {
+            System.out.print("Error occurred while DELETE Operation: " + e);
+            throw e;
+        }
+
+    }
 }

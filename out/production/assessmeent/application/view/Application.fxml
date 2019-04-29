@@ -185,136 +185,6 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="seeMoreEventPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFF2F2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="90.0" prefWidth="600.0" style="-fx-background-color: #FFE5E2;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <Label fx:id="titleLabelMoreDetailsEventPane" alignment="CENTER" layoutX="203.0" layoutY="26.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Title Event" AnchorPane.leftAnchor="203.0" AnchorPane.rightAnchor="203.0" AnchorPane.topAnchor="26.0">
-                           <font>
-                              <Font size="26.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-                  <GridPane layoutX="186.0" layoutY="226.0" prefHeight="242.0" prefWidth="500.0" AnchorPane.bottomAnchor="258.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="100.0">
-                    <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
-                     <children>
-                        <Label alignment="BOTTOM_LEFT" prefHeight="17.0" prefWidth="935.0" text="Location: ">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="BOTTOM_LEFT" prefHeight="17.0" prefWidth="935.0" text="Date:" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="BOTTOM_LEFT" prefHeight="17.0" prefWidth="935.0" text="Tickets Available:" GridPane.rowIndex="2">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="BOTTOM_LEFT" prefHeight="17.0" prefWidth="935.0" text="Ticket Price: " GridPane.rowIndex="3">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="BOTTOM_LEFT" prefHeight="17.0" prefWidth="935.0" text="Event Type:" GridPane.rowIndex="4">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="BOTTOM_LEFT" prefHeight="17.0" prefWidth="935.0" text="Description:" GridPane.rowIndex="5">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="BOTTOM_LEFT" prefHeight="17.0" prefWidth="935.0" text="Location: ">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="locationLabelMoreDetailsEventPane" alignment="BOTTOM_LEFT" prefHeight="17.0" prefWidth="935.0" text="Location: " GridPane.columnIndex="1">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="dateLabelMoreDetailsEventPane" alignment="BOTTOM_LEFT" prefHeight="17.0" prefWidth="935.0" text="Date:" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="ticketsAvailableLabelMoreDetailsEventPane" alignment="BOTTOM_LEFT" prefHeight="17.0" prefWidth="935.0" text="Tickets Available:" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="ticketPriceLabelMoreDetailsEventPane" alignment="BOTTOM_LEFT" prefHeight="17.0" prefWidth="935.0" text="Ticket Price: " GridPane.columnIndex="1" GridPane.rowIndex="3">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="eventTypeLabelMoreDetailsEventPane" alignment="BOTTOM_LEFT" prefHeight="17.0" prefWidth="935.0" text="Event Type:" GridPane.columnIndex="1" GridPane.rowIndex="4">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="descriptionLabelMoreDetailsEventPane" alignment="BOTTOM_LEFT" prefHeight="17.0" prefWidth="935.0" text="Description:" GridPane.columnIndex="1" GridPane.rowIndex="5">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </GridPane>
-                  <JFXButton fx:id="buyTicketsButtonMoreDetailsPane" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="449.0" layoutY="534.0" onAction="#buyTickets" prefHeight="38.0" prefWidth="228.0" style="-fx-background-color: #FF998E;" text="Buy Tickets" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="50.0" />
-                  <JFXTextField fx:id="howManyLabelMoreDetailsPane" focusColor="#ff7060" layoutX="50.0" layoutY="538.0" prefHeight="30.0" prefWidth="250.0" promptText="How many tickets you wish to buy?" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="300.0">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </JFXTextField>
-               </children>
-            </AnchorPane>
-            <AnchorPane fx:id="viewConcertsPane" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #FFF2F2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <TableView fx:id="concertsTableConcertsPane" layoutX="41.0" layoutY="157.0" prefHeight="363.0" prefWidth="560.0" style="-fx-background-color: #FFE5E2;" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="157.0">
-                    <columns>
-                      <TableColumn fx:id="nameColumnConcertsPane" prefWidth="75.0" text="Name" />
-                        <TableColumn fx:id="locationColumnConcertsPane" prefWidth="106.0" text="Location" />
-                        <TableColumn fx:id="ticketsColumnConcertsPane" prefWidth="124.0" text="Tickets Available" />
-                        <TableColumn fx:id="priceColumnConcertsPane" prefWidth="71.0" text="Price" />
-                        <TableColumn fx:id="typeColumnConcertsPane" prefWidth="71.0" text="Type" />
-                      <TableColumn fx:id="dateColumnConcertsPane" prefWidth="112.0" text="Date" />
-                    </columns>
-                  </TableView>
-                  <JFXTextField fx:id="searchTextFieldConcertsPane" focusColor="#ff7060" layoutX="20.0" layoutY="107.0" prefHeight="30.0" prefWidth="435.0" unFocusColor="BLACK" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="145.0" AnchorPane.topAnchor="107.0">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </JFXTextField>
-                  <JFXButton fx:id="seeMoreButtonConcertPane" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="59.0" layoutY="538.0" onAction="#seeMoreDetailsButtonConcertPane" prefHeight="38.0" prefWidth="482.0" style="-fx-background-color: #FF998E;" text="See more details about that event" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="59.0" AnchorPane.rightAnchor="59.0" />
-                  <JFXButton fx:id="searchButtonConcertsPane" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="479.0" layoutY="107.0" onAction="#searchConcertsPane" prefHeight="38.0" prefWidth="101.0" style="-fx-background-color: #FF998E;" text="Search" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="107.0" />
-                  <AnchorPane layoutX="162.0" layoutY="13.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="90.0" prefWidth="600.0" style="-fx-background-color: #FFE5E2;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <Label alignment="CENTER" layoutX="203.0" layoutY="26.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="View Events" AnchorPane.leftAnchor="203.0" AnchorPane.rightAnchor="203.0" AnchorPane.topAnchor="26.0">
-                           <font>
-                              <Font size="26.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-               </children>
-            </AnchorPane>
             <AnchorPane fx:id="moreDetailsAboutMyBookingPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFF2F2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="90.0" prefWidth="600.0" style="-fx-background-color: #FFE5E2;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -1255,17 +1125,17 @@
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
-                        <JFXTextField alignment="CENTER" focusColor="#ff998e" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" />
-                        <JFXTextField focusColor="#ff998e" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" />
-                        <JFXTextField focusColor="#ff998e" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.vgrow="ALWAYS" />
+                        <JFXTextField fx:id="eventNameTextFieldCreateEventPane" alignment="CENTER" focusColor="#ff998e" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" />
+                        <JFXTextField fx:id="locationTextFieldCreateEventPane" focusColor="#ff998e" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" />
+                        <JFXTextField fx:id="ticketPriceTextFieldCreateEventPane" focusColor="#ff998e" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.vgrow="ALWAYS" />
                         <JFXTextField focusColor="#ff998e" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <JFXTextField focusColor="#ff998e" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.vgrow="ALWAYS" />
-                        <JFXTextField focusColor="#ff998e" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="7" GridPane.vgrow="ALWAYS" />
-                        <JFXComboBox prefHeight="25.0" prefWidth="3229.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="6" GridPane.vgrow="ALWAYS" />
-                        <JFXTimePicker defaultColor="#ff4f40" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="8" GridPane.vgrow="ALWAYS" />
-                        <JFXDatePicker defaultColor="#ff4f40" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS" />
-                        <JFXTextArea focusColor="#ff998e" prefHeight="57.0" prefWidth="336.0" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="10" GridPane.vgrow="ALWAYS" />
-                        <JFXComboBox prefHeight="25.0" prefWidth="1984.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+                        <JFXTextField fx:id="ticketsAvailableTextFieldCreateEventPane" focusColor="#ff998e" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.vgrow="ALWAYS" />
+                        <JFXTextField fx:id="fullAddressTextFieldCreateEventPane" focusColor="#ff998e" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="7" GridPane.vgrow="ALWAYS" />
+                        <JFXComboBox fx:id="statusComboBoxCreateEventPane" focusColor="#ff998e" prefHeight="25.0" prefWidth="3229.0" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="6" GridPane.vgrow="ALWAYS" />
+                        <JFXTimePicker fx:id="performanceTimeTimePickerCreateEventPane" defaultColor="#ff4f40" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="8" GridPane.vgrow="ALWAYS" />
+                        <JFXDatePicker fx:id="dateDatePickerTextFieldCreateEventPane" defaultColor="#ff4f40" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS" />
+                        <JFXTextArea fx:id="otherDetailsTextAreaCreateEventPane" focusColor="#ff998e" prefHeight="57.0" prefWidth="336.0" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="10" GridPane.vgrow="ALWAYS" />
+                        <JFXComboBox fx:id="eventTypeComboBoxCreateEventPane" focusColor="#ff998e" prefHeight="25.0" prefWidth="1984.0" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
                         <JFXChipView fx:id="performersChipViewCreateEventPane" prefHeight="140.0" prefWidth="2979.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
                      </children>
                   </GridPane>
@@ -1274,6 +1144,132 @@
                         <Font size="14.0" />
                      </font>
                   </JFXButton>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="viewConcertsPane" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #FFF2F2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <TableView fx:id="concertsTableConcertsPane" layoutX="41.0" layoutY="157.0" prefHeight="363.0" prefWidth="560.0" style="-fx-background-color: #FFE5E2;" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="157.0">
+                    <columns>
+                      <TableColumn fx:id="nameColumnConcertsPane" prefWidth="75.0" text="Name" />
+                        <TableColumn fx:id="locationColumnConcertsPane" prefWidth="106.0" text="Location" />
+                        <TableColumn fx:id="ticketsColumnConcertsPane" prefWidth="124.0" text="Tickets Available" />
+                        <TableColumn fx:id="priceColumnConcertsPane" prefWidth="71.0" text="Price" />
+                        <TableColumn fx:id="typeColumnConcertsPane" prefWidth="71.0" text="Type" />
+                      <TableColumn fx:id="dateColumnConcertsPane" prefWidth="112.0" text="Date" />
+                    </columns>
+                  </TableView>
+                  <JFXTextField fx:id="searchTextFieldConcertsPane" focusColor="#ff7060" layoutX="20.0" layoutY="107.0" prefHeight="30.0" prefWidth="435.0" unFocusColor="BLACK" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="145.0" AnchorPane.topAnchor="107.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXButton fx:id="seeMoreButtonConcertPane" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="59.0" layoutY="538.0" onAction="#seeMoreDetailsButtonConcertPane" prefHeight="38.0" prefWidth="482.0" style="-fx-background-color: #FF998E;" text="See more details about that event" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="59.0" AnchorPane.rightAnchor="59.0" />
+                  <JFXButton fx:id="searchButtonConcertsPane" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="479.0" layoutY="107.0" onAction="#searchConcertsPane" prefHeight="38.0" prefWidth="101.0" style="-fx-background-color: #FF998E;" text="Search" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="107.0" />
+                  <AnchorPane layoutX="162.0" layoutY="13.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="90.0" prefWidth="600.0" style="-fx-background-color: #FFE5E2;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="203.0" layoutY="26.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="View Events" AnchorPane.leftAnchor="203.0" AnchorPane.rightAnchor="203.0" AnchorPane.topAnchor="26.0">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seeMoreEventPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFF2F2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="90.0" prefWidth="600.0" style="-fx-background-color: #FFE5E2;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label fx:id="titleLabelMoreDetailsEventPane" alignment="CENTER" layoutX="203.0" layoutY="26.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Title Event" AnchorPane.leftAnchor="203.0" AnchorPane.rightAnchor="203.0" AnchorPane.topAnchor="26.0">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <GridPane layoutX="186.0" layoutY="103.0" prefHeight="412.0" prefWidth="500.0" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="110.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="65.0" minHeight="0.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="138.0" minHeight="0.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="198.0" minHeight="0.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="303.0" minHeight="0.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="305.0" minHeight="0.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="324.0" minHeight="10.0" prefHeight="222.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label alignment="BOTTOM_LEFT" prefHeight="17.0" prefWidth="935.0" text="Location: ">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="BOTTOM_LEFT" prefHeight="17.0" prefWidth="935.0" text="Date:" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="BOTTOM_LEFT" prefHeight="17.0" prefWidth="935.0" text="Tickets Available:" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="BOTTOM_LEFT" prefHeight="17.0" prefWidth="935.0" text="Ticket Price: " GridPane.rowIndex="3">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="BOTTOM_LEFT" prefHeight="17.0" prefWidth="935.0" text="Event Type:" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="BOTTOM_LEFT" prefHeight="17.0" prefWidth="935.0" text="Description:" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="BOTTOM_LEFT" prefHeight="17.0" prefWidth="935.0" text="Location: ">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="locationLabelMoreDetailsEventPane" alignment="BOTTOM_LEFT" prefHeight="17.0" prefWidth="935.0" text="Location: " GridPane.columnIndex="1">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="dateLabelMoreDetailsEventPane" alignment="BOTTOM_LEFT" prefHeight="17.0" prefWidth="935.0" text="Date:" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="ticketsAvailableLabelMoreDetailsEventPane" alignment="BOTTOM_LEFT" prefHeight="17.0" prefWidth="935.0" text="Tickets Available:" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="ticketPriceLabelMoreDetailsEventPane" alignment="BOTTOM_LEFT" prefHeight="17.0" prefWidth="935.0" text="Ticket Price: " GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="eventTypeLabelMoreDetailsEventPane" alignment="BOTTOM_LEFT" prefHeight="17.0" prefWidth="935.0" text="Event Type:" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <JFXTextArea fx:id="descriptionLabelMoreDetailsEventPane" editable="false" focusColor="#ff7060" prefHeight="287.0" prefWidth="250.0" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                     </children>
+                  </GridPane>
+                  <JFXButton fx:id="buyTicketsButtonMoreDetailsPane" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="449.0" layoutY="534.0" onAction="#buyTickets" prefHeight="38.0" prefWidth="228.0" style="-fx-background-color: #FF998E;" text="Buy Tickets" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="50.0" />
+                  <JFXTextField fx:id="howManyLabelMoreDetailsPane" focusColor="#ff7060" layoutX="50.0" layoutY="538.0" prefHeight="30.0" prefWidth="250.0" promptText="How many tickets you wish to buy?" unFocusColor="BLACK" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="300.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
                </children>
             </AnchorPane>
          </children>
