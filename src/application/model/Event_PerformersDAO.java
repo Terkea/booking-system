@@ -63,4 +63,14 @@ public class Event_PerformersDAO {
             throw e;
         }
     }
+
+    public static void deleteEvent_Performer(int id) throws SQLException, ClassNotFoundException{
+        String stmt = "DELETE FROM event_performers WHERE id = " + id;
+        try{
+            DB.dbExecuteUpdate(stmt);
+        }catch (SQLException e){
+            System.err.println("Error during DELETE operation: " +e );
+            throw e;
+        }
+    }
 }

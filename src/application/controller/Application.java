@@ -1473,6 +1473,7 @@ public class Application implements Initializable {
 
     @FXML
     private void updateEvent(){
+        ObservableList<Event_Performers> oldEvent_performersList = null;
         Event update = new Event();
         update.setName(eventNameTextFieldEditEventPane.getText());
         update.setLocation(locationTextFieldEditEventPane.getText());
@@ -1481,7 +1482,36 @@ public class Application implements Initializable {
         update.setDescription(detailsTextAreaEditEventPane.getText());
 
 
+
+        try {
+            oldEvent_performersList = Event_PerformersDAO.getAllPerformersByEventId(Integer.parseInt(eventIdLabelEditEventPane.getText()));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        for (int i = 0; i<oldEvent_performersList.size();i++){
+            try {
+                Event_PerformersDAO.deleteEvent_Performer(oldEvent_performersList.get(i).getId());
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+
         EventDAO.updateEvent(update, ACTUALUSER.getId(), Integer.parseInt(eventIdLabelEditEventPane.getText()));
+        for (int i = 0; i<performersChipViewEditEventPane.getChips().size(); i++){
+            try {
+                Event_PerformersDAO.insertEvent_performers(Integer.parseInt(eventIdLabelEditEventPane.getText()), getBandsIdFromChip(performersChipViewEditEventPane.getChips().get(i)));
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+
         loadAllEvents();
         manageEventsPane.toFront();
     }
