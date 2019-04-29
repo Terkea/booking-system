@@ -239,4 +239,24 @@ public class EventDAO {
             throw e;
         }
     }
+
+    public static void updateEvent(Event event, int organiser_id, int event_id){
+
+        String query = "UPDATE event " +
+                "SET " +
+                "name = '" + event.getName() + "', " +
+                "location = '" + event.getLocation() + "', " +
+                "ticket_price = '" + event.getTicket_price() + "', " +
+                "tickets_available = '" + event.getTickets_available() + "', " +
+                "description = '" + event.getDescription() + "', " +
+                "updated_by = '" + organiser_id + "' " +
+                "WHERE id = '" + event_id + "';";
+        try {
+            DB.dbExecuteUpdate(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 }

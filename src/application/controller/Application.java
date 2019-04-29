@@ -91,6 +91,9 @@ public class Application implements Initializable {
     private JFXTextArea performersTextAreaCreateEventPane;
 
     @FXML
+    private Label eventIdLabelEditEventPane;
+
+    @FXML
     private JFXTextField eventNameTextFieldEditEventPane;
 
     @FXML
@@ -1399,6 +1402,9 @@ public class Application implements Initializable {
 
     @FXML
     private  void viewOrEditEvent(){
+        eventIdLabelEditEventPane.setText(String.valueOf(manageEventsTableView.getSelectionModel().getSelectedItem().getId()));
+        eventIdLabelEditEventPane.setVisible(false);
+
         eventTypeEditEventPane.getItems().add(new Label("Concert"));
         eventTypeEditEventPane.getItems().add(new Label("Festival"));
         eventTypeEditEventPane.setConverter(new StringConverter<Label>() {
@@ -1451,20 +1457,33 @@ public class Application implements Initializable {
             Event selectedEvent = EventDAO.getEventByID(manageEventsTableView.getSelectionModel().getSelectedItem().getId());
 
             eventNameTextFieldEditEventPane.setText(selectedEvent.getName());
-            eventTypeEditEventPane.setPromptText(selectedEvent.getEvent_type());
             locationTextFieldEditEventPane.setText(selectedEvent.getLocation());
-            dateDatePickerTextFieldEditEventPane.setPromptText(selectedEvent.getDate().replaceAll("-", "/"));
+//            dateDatePickerTextFieldEditEventPane.setPromptText(selectedEvent.getDate().replaceAll("-", "/"));
             ticketPriceTextFieldEditEventPane.setText(selectedEvent.getTicket_price() + "");
             ticketsAvailableTextFieldEditEventPane.setText(selectedEvent.getTickets_available() + "");
             detailsTextAreaEditEventPane.setText(selectedEvent.getDescription());
+
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-
-
         viewEditEventPane.toFront();
+    }
+
+    @FXML
+    private void updateEvent(){
+        Event update = new Event();
+        update.setName(eventNameTextFieldEditEventPane.getText());
+        update.setLocation(locationTextFieldEditEventPane.getText());
+        update.setTicket_price(Double.parseDouble(ticketPriceTextFieldEditEventPane.getText()));
+        update.setTickets_available(Integer.parseInt(ticketsAvailableTextFieldEditEventPane.getText()));
+        update.setDescription(detailsTextAreaEditEventPane.getText());
+
+
+        EventDAO.updateEvent(update, ACTUALUSER.getId(), Integer.parseInt(eventIdLabelEditEventPane.getText()));
+        loadAllEvents();
+        manageEventsPane.toFront();
     }
 
     // CREATE NEW EVENT PANE
