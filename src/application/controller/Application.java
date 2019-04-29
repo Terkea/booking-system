@@ -1479,8 +1479,13 @@ public class Application implements Initializable {
         update.setLocation(locationTextFieldEditEventPane.getText());
         update.setTicket_price(Double.parseDouble(ticketPriceTextFieldEditEventPane.getText()));
         update.setTickets_available(Integer.parseInt(ticketsAvailableTextFieldEditEventPane.getText()));
-        update.setDescription(detailsTextAreaEditEventPane.getText());
+//        update.setDescription(detailsTextAreaEditEventPane.getText());
 
+        String[] newPerformers = new String[performersChipViewEditEventPane.getChips().size()];
+        for (int i = 0; i<newPerformers.length;i++){
+            newPerformers[i] = performersChipViewEditEventPane.getChips().get(i);
+        }
+        update.setDescription(addPerformers(detailsTextAreaEditEventPane.getText(), newPerformers));
 
 
         try {
@@ -1516,6 +1521,23 @@ public class Application implements Initializable {
         manageEventsPane.toFront();
     }
 
+    public static String addPerformers(String string, String[] performers){
+
+        String getAllPerformers = "[";
+        for (int i = 0; i<performers.length;i++){
+            if (i == performers.length-1){
+                getAllPerformers +=performers[i] + "]";
+            }
+            if (i < performers.length && i != performers.length-1){
+                getAllPerformers +=performers[i] + ", ";
+            }
+        }
+
+        String firstPart = string.substring(0, string.indexOf("["));
+        String lastPart = string.substring(string.indexOf("]")+1, string.length());
+
+        return firstPart + getAllPerformers + lastPart;
+    }
     // CREATE NEW EVENT PANE
 
     @FXML
