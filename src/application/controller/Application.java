@@ -52,6 +52,9 @@ public class Application implements Initializable {
     private JFXTextField searchKeywordManageBookingsPane;
 
     @FXML
+    private AnchorPane viewEditEventPane;
+
+    @FXML
     private JFXTextField eventNameTextFieldCreateEventPane;
 
     @FXML
@@ -88,6 +91,36 @@ public class Application implements Initializable {
     private JFXTextArea performersTextAreaCreateEventPane;
 
     @FXML
+    private JFXTextField eventNameTextFieldEditEventPane;
+
+    @FXML
+    private JFXTextField locationTextFieldEditEventPane;
+
+    @FXML
+    private JFXTextField ticketPriceTextFieldEditEventPane;
+
+    @FXML
+    private JFXTextField ticketsAvailableTextFieldEditEventPane;
+
+    @FXML
+    private JFXTextField fullAddressTextFieldEditEventPane;
+
+    @FXML
+    private JFXComboBox<Label> statusComboBoxEditEventPane = new JFXComboBox<>();
+
+    @FXML
+    private JFXDatePicker dateDatePickerTextFieldEditEventPane;
+
+    @FXML
+    private JFXComboBox<Label> eventTypeEditEventPane = new JFXComboBox<>();
+
+    @FXML
+    private JFXChipView<String> performersChipViewEditEventPane= new JFXChipView<>();
+
+    @FXML
+    private JFXTextArea detailsTextAreaEditEventPane;
+
+    @FXML
     private TableColumn<Booking, String> discountedColumnManageBookingsPane;
 
     @FXML
@@ -97,7 +130,7 @@ public class Application implements Initializable {
     private AnchorPane manageBookingsPane;
 
     @FXML
-    private JFXChipView<String> performersChipViewCreateEventPane = new JFXChipView<>();;
+    private JFXChipView<String> performersChipViewCreateEventPane = new JFXChipView<>();
 
     @FXML
     private JFXTextField firstNameEditUserAccountPane;
@@ -1364,6 +1397,75 @@ public class Application implements Initializable {
         loadAllEvents();
     }
 
+    @FXML
+    private  void viewOrEditEvent(){
+        eventTypeEditEventPane.getItems().add(new Label("Concert"));
+        eventTypeEditEventPane.getItems().add(new Label("Festival"));
+        eventTypeEditEventPane.setConverter(new StringConverter<Label>() {
+            @Override
+            public String toString(Label object) {
+                return object==null? "" : object.getText();
+            }
+
+            @Override
+            public Label fromString(String string) {
+                return new Label(string);
+            }
+        });
+        statusComboBoxEditEventPane.getItems().add(new Label("Available"));
+        statusComboBoxEditEventPane.getItems().add(new Label("Unavailable"));
+        statusComboBoxEditEventPane.setConverter(new StringConverter<Label>() {
+            @Override
+            public String toString(Label object) {
+                return object==null? "" : object.getText();
+            }
+
+            @Override
+            public Label fromString(String string) {
+                return new Label(string);
+            }
+        });
+
+
+        ObservableList<Band> bandList = null;
+        ObservableList<Event_Performers> event_performersList= null;
+        try {
+            bandList = BandDAO.getAllBands();
+            event_performersList = Event_PerformersDAO.getAllPerformersByEventId(manageEventsTableView.getSelectionModel().getSelectedItem().getId());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        for (int i = 0; i < bandList.size(); i++){
+            performersChipViewEditEventPane.getSuggestions().addAll(bandList.get(i).getId() + "." +bandList.get(i).getName());
+        }
+
+        for (int i = 0; i<event_performersList.size(); i++){
+            performersChipViewEditEventPane.getChips().add(event_performersList.get(i).getBand_id() + "." + event_performersList.get(i).getBand_name());
+        }
+
+
+        try {
+            Event selectedEvent = EventDAO.getEventByID(manageEventsTableView.getSelectionModel().getSelectedItem().getId());
+
+            eventNameTextFieldEditEventPane.setText(selectedEvent.getName());
+            eventTypeEditEventPane.setPromptText(selectedEvent.getEvent_type());
+            locationTextFieldEditEventPane.setText(selectedEvent.getLocation());
+            dateDatePickerTextFieldEditEventPane.setPromptText(selectedEvent.getDate().replaceAll("-", "/"));
+            ticketPriceTextFieldEditEventPane.setText(selectedEvent.getTicket_price() + "");
+            ticketsAvailableTextFieldEditEventPane.setText(selectedEvent.getTickets_available() + "");
+            detailsTextAreaEditEventPane.setText(selectedEvent.getDescription());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
+        viewEditEventPane.toFront();
+    }
 
     // CREATE NEW EVENT PANE
 
@@ -1399,7 +1501,6 @@ public class Application implements Initializable {
 
         try {
             ObservableList<Band> bandList = BandDAO.getAllBands();
-            String[] bands = new String[bandList.size()];
 
             for (int i = 0; i < bandList.size(); i++){
                 performersChipViewCreateEventPane.getSuggestions().addAll(bandList.get(i).getId() + "." +bandList.get(i).getName());
@@ -1458,16 +1559,11 @@ public class Application implements Initializable {
             for (int i = 0; i<performersChipViewCreateEventPane.getChips().size(); i++){
                 Event_PerformersDAO.insertEvent_performers(EventDAO.getLastEventCreatedByOrganiserID(ACTUALUSER.getId()).getId(), getBandsIdFromChip(performersChipViewCreateEventPane.getChips().get(i)));
             }
-
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
 
-
-//        for (int i = 0; i<performersChipViewCreateEventPane.getChips().size(); i++){
-//            getBandsIdFromChip(performersChipViewCreateEventPane.getChips().get(i))
-//        }
     }
 }

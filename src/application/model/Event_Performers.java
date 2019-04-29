@@ -2,11 +2,16 @@ package application.model;
 
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
+import java.sql.SQLException;
 
 public class Event_Performers {
     private IntegerProperty id;
     private IntegerProperty event_id;
     private IntegerProperty band_id;
+    private StringProperty band_name;
 
 
 
@@ -22,6 +27,16 @@ public class Event_Performers {
         this.band_id = new SimpleIntegerProperty();
     }
 
+    public void setUpForeignKeys(){
+        try {
+            this.band_name = new SimpleStringProperty(BandDAO.getBandByID(band_id).getName());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public String toString() {
         return "Event_Performers{" +
@@ -29,6 +44,18 @@ public class Event_Performers {
                 ", event_id=" + event_id +
                 ", band_id=" + band_id +
                 '}';
+    }
+
+    public String getBand_name() {
+        return band_name.get();
+    }
+
+    public StringProperty band_nameProperty() {
+        return band_name;
+    }
+
+    public void setBand_name(String band_name) {
+        this.band_name.set(band_name);
     }
 
     public int getId() {

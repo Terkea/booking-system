@@ -1,6 +1,7 @@
 package application.model;
 
 import application.system.DB;
+import javafx.beans.property.IntegerProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -45,6 +46,22 @@ public class BandDAO {
             return bandList;
         }catch(SQLException e){
             System.err.println("ERROR While searching for a bands error occured: " + e);
+            throw e;
+        }
+    }
+
+    public static Band getBandByID (IntegerProperty id) throws SQLException, ClassNotFoundException {
+        String selectStmt = "SELECT * " +
+                "FROM `band` " +
+                "WHERE id = \"" + id.getValue() + "\"";
+        try{
+            ResultSet rs = DB.dbExecuteQuery(selectStmt);
+            Band band = getBandFromResultSet(rs);
+
+            return band;
+        }catch(SQLException e){
+            System.err.println("ERROR While searching for a Booking with: " + id.getValue() + " name, error occured: " + e);
+            System.err.println(selectStmt);
             throw e;
         }
     }

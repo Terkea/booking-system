@@ -28,7 +28,7 @@ public class Event_PerformersDAO {
             event_performers.setId(rs.getInt("id"));
             event_performers.setBand_id(rs.getInt("band_id"));
             event_performers.setEvent_id(rs.getInt("event_id"));
-
+            event_performers.setUpForeignKeys();
             event_performersList.add(event_performers);
         }
         return event_performersList;
@@ -45,6 +45,21 @@ public class Event_PerformersDAO {
         } catch (SQLException e) {
             System.err.println("Error occurred while INSERTING event performers Operation: " + e);
             System.err.println(updateStmt);
+            throw e;
+        }
+    }
+
+    public static ObservableList<Event_Performers> getAllPerformersByEventId (int id) throws SQLException, ClassNotFoundException {
+        String selectStmt = "SELECT * " +
+                "FROM event_performers " +
+                "WHERE event_id = " + id;
+        try{
+            ResultSet rsEvent = DB.dbExecuteQuery(selectStmt);
+            ObservableList<Event_Performers> event_performersList = getEventPerformersList(rsEvent);
+
+            return event_performersList;
+        }catch(SQLException e){
+            System.err.println("ERROR While searching for a event performers by event id: " + id + " , error occured: " + e);
             throw e;
         }
     }
