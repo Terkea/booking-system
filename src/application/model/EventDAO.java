@@ -164,9 +164,9 @@ public class EventDAO {
         String selectStmt = "SELECT * " +
                 "FROM event " +
                 "WHERE name " +
-                "LIKE \"%" + keyword + "\"" +
+                "LIKE \"%" + keyword + "%\"" +
                 "OR location " +
-                "LIKE \"%" + keyword + "\"";
+                "LIKE \"%" + keyword + "%\"";
         try{
             ResultSet rsEvent = DB.dbExecuteQuery(selectStmt);
             ObservableList<Event> eventList = getEventList(rsEvent);
@@ -257,6 +257,17 @@ public class EventDAO {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
+        }
+    }
+
+    public static void delete(int id) throws SQLException, ClassNotFoundException{
+        String stmt = "DELETE FROM event WHERE id = " + id;
+
+        try{
+            DB.dbExecuteUpdate(stmt);
+        }catch (SQLException e){
+            System.err.println("Error during DELETE operation: " +e );
+            throw e;
         }
     }
 }

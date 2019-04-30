@@ -61,12 +61,24 @@ public class BookingDAO {
             ResultSet rsEvent = DB.dbExecuteQuery(selectStmt);
             ObservableList<Booking> bookingList = getFullBookings(rsEvent);
 
-//            for (int i = 0; bookingList.)
-
-
             return bookingList;
         }catch(SQLException e){
             System.err.println("ERROR While searching for a Bookings with user_id: " + id + ", error occured: " + e);
+            throw e;
+        }
+    }
+
+    public static ObservableList<Booking> getBookingsByEventID (int id) throws SQLException, ClassNotFoundException {
+        String selectStmt = "SELECT * " +
+                "FROM booking " +
+                "WHERE event_id ='" + id + "'";
+        try{
+            ResultSet rsEvent = DB.dbExecuteQuery(selectStmt);
+            ObservableList<Booking> bookingList = getFullBookings(rsEvent);
+
+            return bookingList;
+        }catch(SQLException e){
+            System.err.println("ERROR While searching for a Bookings with event_id: " + id + ", error occured: " + e);
             throw e;
         }
     }

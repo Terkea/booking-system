@@ -47,4 +47,19 @@ public class NotificationDAO {
             throw e;
         }
     }
+
+    public static ObservableList<Notification> getAllMyNotifications (int id) throws SQLException, ClassNotFoundException {
+        String selectStmt = "SELECT * " +
+                "FROM notification " +
+                "WHERE user_id = " + id;
+        try{
+            ResultSet rsEvent = DB.dbExecuteQuery(selectStmt);
+            ObservableList<Notification> notificationList = getNotificationList(rsEvent);
+
+            return notificationList;
+        }catch(SQLException e){
+            System.err.println("ERROR While searching for a notification by event user_id: " + id + " , error occured: " + e);
+            throw e;
+        }
+    }
 }

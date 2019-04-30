@@ -1542,7 +1542,6 @@ public class Application implements Initializable {
 
     @FXML
     private void createNewEvent(){
-
         eventTypeComboBoxCreateEventPane.getItems().add(new Label("Concert"));
         eventTypeComboBoxCreateEventPane.getItems().add(new Label("Festival"));
         eventTypeComboBoxCreateEventPane.setConverter(new StringConverter<Label>() {
@@ -1595,8 +1594,6 @@ public class Application implements Initializable {
 
     @FXML
     private void addNewEvent(){
-
-
         Event insert = new Event();
         insert.setOrganizer_id(ACTUALUSER.getId());
         insert.setLocation(locationTextFieldCreateEventPane.getText());
@@ -1635,6 +1632,73 @@ public class Application implements Initializable {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    private void deleteEvent(){
+        Event selectedEvent = null;
+        ObservableList<Event_Performers> performersList = null;
+        ObservableList<Booking> bookingList = null;
+        try {
+            selectedEvent = EventDAO.getEventByID(manageEventsTableView.getSelectionModel().getSelectedItem().getId());
+            performersList = Event_PerformersDAO.getAllPerformersByEventId(selectedEvent.getId());
+            bookingList = BookingDAO.getBookingsByEventID(selectedEvent.getId());
+            System.out.println(selectedEvent.getId());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
+        //3.delete bookings
+        for (int i = 0; i<bookingList.size();i++){
+            try {
+                BookingDAO.delete(bookingList.get(i).getId());
+            } catch (SQLException e) {
+                System.err.println("Delete booking error");
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+
+        //4.delete payments
+        for (int i = 0; i<bookingList.size();i++){
+            try {
+                PaymentDAO.delete(bookingList.get(i).getPayment_id());
+            } catch (SQLException e) {
+                System.err.println("Delete payment error");
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+
+        //2.delete performers
+        for (int i = 0; i<performersList.size();i++){
+            try {
+                Event_PerformersDAO.deleteEvent_Performer(performersList.get(i).getId());
+                System.err.println("Delete performers error");
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+
+        //1.delete event
+        try {
+            EventDAO.delete(selectedEvent.getId());
+        } catch (SQLException e) {
+            System.err.println("Delete event error");
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
+        loadAllEvents();
 
     }
 }
