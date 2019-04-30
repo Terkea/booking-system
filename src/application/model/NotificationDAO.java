@@ -15,7 +15,6 @@ public class NotificationDAO {
             notification.setId(rs.getInt("id"));
             notification.setDetails(rs.getString("details"));
             notification.setUser_id(rs.getInt("user_id"));
-            notification.setEvent_id(rs.getInt("event_id"));
         }
         return notification;
     }
@@ -28,16 +27,15 @@ public class NotificationDAO {
             notification.setId(rs.getInt("id"));
             notification.setDetails(rs.getString("details"));
             notification.setUser_id(rs.getInt("user_id"));
-            notification.setEvent_id(rs.getInt("event_id"));
         }
         return notificationList;
     }
 
-    public static void insertNotification(Notification notification) throws SQLException, ClassNotFoundException{
+    public static void insertNotification(int user_id, String details) throws SQLException, ClassNotFoundException{
         String updateStmt = "INSERT INTO `notification`" +
-                "(`details` , `event_id`, `user_id`) " +
+                "(`details`, `user_id`) " +
                 "VALUES\n" +
-                "('" +notification.getDetails()+ "', '" +notification.getEvent_id()+ "', '" +notification.getUser_id() +"');";
+                "('" +details+ "', '" +user_id+"');";
         System.out.println(updateStmt);
         try {
             DB.dbExecuteUpdate(updateStmt);

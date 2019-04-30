@@ -133,18 +133,17 @@ public class PaymentDAO {
     }
 
 
-    public static Payment getPaymentByID (IntegerProperty keyword) throws SQLException, ClassNotFoundException {
+    public static Payment getPaymentByID (int id) throws SQLException, ClassNotFoundException {
         String selectStmt = "SELECT * " +
                 "FROM `payment` " +
-                "WHERE id = \"" + keyword + "\"";
-//                "AND status = 1";
+                "WHERE id = \"" + id + "\"";
         try{
             ResultSet rs = DB.dbExecuteQuery(selectStmt);
             Payment payment = getPaymentFromResultSet(rs);
 
             return payment;
         }catch(SQLException e){
-            System.err.println("ERROR While searching for a payment with: " + keyword + " name, error occured: " + e);
+            System.err.println("ERROR While searching for a payment with: " + id + " name, error occured: " + e);
             System.err.println(selectStmt);
             throw e;
         }

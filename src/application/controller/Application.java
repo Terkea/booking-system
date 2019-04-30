@@ -1402,6 +1402,8 @@ public class Application implements Initializable {
 
     @FXML
     private  void viewOrEditEvent(){
+
+
         eventIdLabelEditEventPane.setText(String.valueOf(manageEventsTableView.getSelectionModel().getSelectedItem().getId()));
         eventIdLabelEditEventPane.setVisible(false);
 
@@ -1443,11 +1445,12 @@ public class Application implements Initializable {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-
+        performersChipViewEditEventPane.getSuggestions().clear();
         for (int i = 0; i < bandList.size(); i++){
             performersChipViewEditEventPane.getSuggestions().addAll(bandList.get(i).getId() + "." +bandList.get(i).getName());
         }
 
+        performersChipViewEditEventPane.getChips().clear();
         for (int i = 0; i<event_performersList.size(); i++){
             performersChipViewEditEventPane.getChips().add(event_performersList.get(i).getBand_id() + "." + event_performersList.get(i).getBand_name());
         }
@@ -1468,6 +1471,9 @@ public class Application implements Initializable {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+//
+
+        loadAllEvents();
         viewEditEventPane.toFront();
     }
 
@@ -1651,51 +1657,30 @@ public class Application implements Initializable {
         }
 
 
-        //3.delete bookings
-        for (int i = 0; i<bookingList.size();i++){
-            try {
-                BookingDAO.delete(bookingList.get(i).getId());
-            } catch (SQLException e) {
-                System.err.println("Delete booking error");
-                e.printStackTrace();
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            }
-        }
-
-        //4.delete payments
-        for (int i = 0; i<bookingList.size();i++){
-            try {
-                PaymentDAO.delete(bookingList.get(i).getPayment_id());
-            } catch (SQLException e) {
-                System.err.println("Delete payment error");
-                e.printStackTrace();
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            }
-        }
-
-        //2.delete performers
-        for (int i = 0; i<performersList.size();i++){
-            try {
-                Event_PerformersDAO.deleteEvent_Performer(performersList.get(i).getId());
-                System.err.println("Delete performers error");
-            } catch (SQLException e) {
-                e.printStackTrace();
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            }
-        }
-
-        //1.delete event
         try {
+
+            for (int i = 0; i<bookingList.size(); i++){
+                NotificationDAO.insertNotification(bookingList.get(i).getUser_id(),
+                        "Unfortunately we had to cancel " + EventDAO.getEventByID(bookingList.get(i).getEvent_id()).getName() +
+                                EventDAO.getEventByID(bookingList.get(i).getEvent_id()).getEvent_type() + " Event, no worries. " +
+                "We will refund you the whole ammount of " + PaymentDAO.getPaymentByID(bookingList.get(i).getPayment_id()).getAmmount() + " GBP " +
+                        "It may take a few days for the refund to appear on your statement.");
+                BookingDAO.delete(bookingList.get(i).getId());
+                PaymentDAO.delete(bookingList.get(i).getPayment_id());
+            }
+            for (int i = 0; i<performersList.size(); i++){
+                Event_PerformersDAO.deleteEvent_Performer(performersList.get(i).getId());
+            }
             EventDAO.delete(selectedEvent.getId());
         } catch (SQLException e) {
-            System.err.println("Delete event error");
+            System.err.println("Delete error");
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+
+
+
 
 
         loadAllEvents();
