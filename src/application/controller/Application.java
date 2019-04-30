@@ -746,12 +746,7 @@ public class Application implements Initializable {
                 );
                 discountLabelMakeOrganiserPaymentPane.setText(discount*Double.parseDouble(howManyLabelMoreDetailsPane.getText()) *
                         selectedEvent.getTicket_price() + "GBP");
-
-                if (payMohtnlycheckBoxPaymentPane.isSelected()){
-                    payByCardOrganiserAnchorPane.setVisible(false);
-                }
-
-
+                
             } catch (SQLException e) {
                 e.printStackTrace();
             } catch (ClassNotFoundException e) {
@@ -1036,7 +1031,8 @@ public class Application implements Initializable {
                 Payment currentPayment = PaymentDAO.getLastPaymentByID(ACTUALUSER.getId());
                 BookingDAO.insertBooking(Integer.parseInt(howManyLabelMoreDetailsPane.getText()), selectedEvent.getId(), ACTUALUSER.getId(), currentPayment.getId());
 
-                ticketsPaymentPane.toFront();
+                loadMyBookingsData();
+                viewBookingsPane.toFront();
 
             } catch (SQLException e) {
                 e.printStackTrace();

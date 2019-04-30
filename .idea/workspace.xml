@@ -7,13 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e45a1d1-83c6-47d2-83a7-58cd49d8d856" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assessmeent/application/controller/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assessmeent/application/controller/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assessmeent/application/model/NotificationDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assessmeent/application/model/NotificationDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assessmeent/application/model/PaymentDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assessmeent/application/model/PaymentDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/controller/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/controller/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/model/NotificationDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/model/NotificationDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/model/PaymentDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/model/PaymentDAO.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,8 +24,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/application/controller/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="1452" column="59" selection-start-line="1452" selection-start-column="59" selection-end-line="1452" selection-end-column="59" />
+            <state relative-caret-position="433">
+              <caret line="1039" column="43" selection-start-line="1039" selection-start-column="43" selection-end-line="1039" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -50,8 +44,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tickets_availableProperty</find>
-      <find>ticketsColumnConcertsPane</find>
       <find>setCellValueFactory</find>
       <find>chi</find>
       <find>#</find>
@@ -80,6 +72,8 @@
       <find>c</find>
       <find>chipview</find>
       <find>performersChipViewEditEventPane</find>
+      <find>ticketsPaymentForCorporateOrganizationPane</find>
+      <find>viewBookingsButton</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -908,8 +902,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/application/controller/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="1452" column="59" selection-start-line="1452" selection-start-column="59" selection-end-line="1452" selection-end-column="59" />
+        <state relative-caret-position="433">
+          <caret line="1039" column="43" selection-start-line="1039" selection-start-column="43" selection-end-line="1039" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
