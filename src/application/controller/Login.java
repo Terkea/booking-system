@@ -55,6 +55,8 @@ public class Login {
 
                         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                         stage.hide();
+                        stage.setMinHeight(600);
+                        stage.setMinWidth(800);
                         stage.setScene(new Scene(root));
                         stage.setResizable(true);
                         stage.show();
