@@ -458,6 +458,18 @@ public class Application implements Initializable {
     @FXML
     private TableColumn<Event, String> statusColumnManageEventsPane;
 
+    @FXML
+    private AnchorPane welcomePagePane;
+
+    @FXML
+    private Label eventAvailableLabelWelcomePane;
+
+    @FXML
+    private Label myBookingsCountLabelWelcomePane;
+
+    @FXML
+    private JFXTextArea notificationsTextAreaWelcomePane;
+
     @Override
     public void initialize(URL url, ResourceBundle rs) {
     }
@@ -511,10 +523,50 @@ public class Application implements Initializable {
                 manageBookings.setVisible(false);
                 manageEvents.setVisible(false);
             }
+            if (UserDAO.checkEventOrganiser(user.getId())){
+                manageEvents.setVisible(true);
+            }else{
+                manageEvents.setVisible(false);
+            }
 
 
             welcomeLabel.setText(user.getTitle() + " " + user.getFirst_name() + " " + user.getLast_name());
             loadMyAcount();
+            loadWelcomePage();
+            welcomePagePane.toFront();
+        }
+    }
+
+    //WELCOME PAGE PANE
+    @FXML
+    private void loadWelcomePage(){
+        try {
+            myBookingsCountLabelWelcomePane.setText(BookingDAO.getBookingsByUserID(ACTUALUSER.getId()).size() + "");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            eventAvailableLabelWelcomePane.setText(EventDAO.getAllEvents().size() + "");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            ObservableList<Notification> myNotifications = NotificationDAO.getAllMyNotifications(ACTUALUSER.getId());
+
+            for(int i = 0; i<myNotifications.size();i++){
+                notificationsTextAreaWelcomePane.appendText(i+1 + ". " + myNotifications.get(i).getDetails() + "\n \n");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         }
     }
 
@@ -541,7 +593,7 @@ public class Application implements Initializable {
             corporatOrganizationAccountPaneTextField.setVisible(false);
         }
         if (ACTUALUSER.getEvents_organiser_name() != null) {
-            corporatOrganizationAccountPaneTextField.appendText(", " + ACTUALUSER.getEvents_organiser_name());
+            corporatOrganizationAccountPaneTextField.appendText(ACTUALUSER.getEvents_organiser_name());
         } else {
             corporatOrganizationAccountPaneTextField.setVisible(false);
         }
@@ -567,7 +619,7 @@ public class Application implements Initializable {
     }
 
     @FXML
-    void changeMyPassword(ActionEvent event) {
+    void changeMyPassword() {
         changeMyPasswordPane.toFront();
     }
 
@@ -680,19 +732,19 @@ public class Application implements Initializable {
     }
 
     @FXML
-    private void populateEvents(Event event) throws ClassNotFoundException {
+    private void populateEvents(Event event) {
         ObservableList<Event> eventData = FXCollections.observableArrayList();
         eventData.add(event);
         concertsTableConcertsPane.setItems(eventData);
     }
 
     @FXML
-    private void populateEvents(ObservableList<Event> eventData) throws ClassNotFoundException {
+    private void populateEvents(ObservableList<Event> eventData) {
         concertsTableConcertsPane.setItems(eventData);
     }
 
     @FXML
-    void searchConcertsPane(ActionEvent event) {
+    void searchConcertsPane() {
         try {
             ObservableList<Event> eventData = EventDAO.searchActiveEvent(searchTextFieldConcertsPane.getText());
             populateEvents(eventData);
@@ -704,7 +756,7 @@ public class Application implements Initializable {
     }
 
     @FXML
-    void seeMoreDetailsButtonConcertPane(ActionEvent event) {
+    void seeMoreDetailsButtonConcertPane() {
         Event selectedEvent = null;
         try {
             selectedEvent = EventDAO.getEventByID(concertsTableConcertsPane.getSelectionModel().getSelectedItem().getId());
@@ -746,7 +798,7 @@ public class Application implements Initializable {
                 );
                 discountLabelMakeOrganiserPaymentPane.setText(discount*Double.parseDouble(howManyLabelMoreDetailsPane.getText()) *
                         selectedEvent.getTicket_price() + "GBP");
-                
+
             } catch (SQLException e) {
                 e.printStackTrace();
             } catch (ClassNotFoundException e) {
@@ -1659,8 +1711,8 @@ public class Application implements Initializable {
                 NotificationDAO.insertNotification(bookingList.get(i).getUser_id(),
                         "Unfortunately we had to cancel " + EventDAO.getEventByID(bookingList.get(i).getEvent_id()).getName() +
                                 EventDAO.getEventByID(bookingList.get(i).getEvent_id()).getEvent_type() + " Event, no worries. " +
-                "We will refund you the whole ammount of " + PaymentDAO.getPaymentByID(bookingList.get(i).getPayment_id()).getAmmount() + " GBP " +
-                        "It may take a few days for the refund to appear on your statement.");
+                                "We will refund you the whole ammount of " + PaymentDAO.getPaymentByID(bookingList.get(i).getPayment_id()).getAmmount() + " GBP " +
+                                "It may take a few days for the refund to appear on your statement.");
                 BookingDAO.delete(bookingList.get(i).getId());
                 PaymentDAO.delete(bookingList.get(i).getPayment_id());
             }
@@ -1674,11 +1726,6 @@ public class Application implements Initializable {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-
-
-
-
-
         loadAllEvents();
 
     }

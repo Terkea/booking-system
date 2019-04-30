@@ -19,14 +19,18 @@ public class NotificationDAO {
         return notification;
     }
 
-    private static ObservableList<Notification> getNotificationList(ResultSet rs) throws SQLException{
+    private static ObservableList<Notification> getNofiticationList(ResultSet rs) throws SQLException{
         ObservableList<Notification> notificationList = FXCollections.observableArrayList();
 
         while (rs.next()){
             Notification notification = new Notification();
+            notification = new Notification();
             notification.setId(rs.getInt("id"));
             notification.setDetails(rs.getString("details"));
             notification.setUser_id(rs.getInt("user_id"));
+
+
+            notificationList.add(notification);
         }
         return notificationList;
     }
@@ -47,12 +51,12 @@ public class NotificationDAO {
     }
 
     public static ObservableList<Notification> getAllMyNotifications (int id) throws SQLException, ClassNotFoundException {
-        String selectStmt = "SELECT * " +
-                "FROM notification " +
+        String selectStmt = "SELECT *\n" +
+                "FROM notification\n" +
                 "WHERE user_id = " + id;
         try{
             ResultSet rsEvent = DB.dbExecuteQuery(selectStmt);
-            ObservableList<Notification> notificationList = getNotificationList(rsEvent);
+            ObservableList<Notification> notificationList = getNofiticationList(rsEvent);
 
             return notificationList;
         }catch(SQLException e){

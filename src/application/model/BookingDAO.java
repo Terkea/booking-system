@@ -21,21 +21,6 @@ public class BookingDAO {
         return booking;
     }
 
-    private static ObservableList<Booking> getEventList(ResultSet rs) throws SQLException, ClassNotFoundException{
-        ObservableList<Booking> bookingList = FXCollections.observableArrayList();
-
-        while (rs.next()){
-            Booking booking = new Booking();
-            booking.setId(rs.getInt("id"));
-            booking.setNumber_of_tickets(rs.getInt("number_of_tickets"));
-            booking.setEvent_id(rs.getInt("event_id"));
-            booking.setUser_id(rs.getInt("user_id"));
-            booking.setPayment_id(rs.getInt("payment_id"));
-
-            bookingList.add(booking);
-        }
-        return bookingList;
-    }
 
     private static ObservableList<Booking> getFullBookings(ResultSet rs) throws SQLException, ClassNotFoundException{
         ObservableList<Booking> bookingList = FXCollections.observableArrayList();
