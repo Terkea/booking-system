@@ -27,6 +27,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 import javafx.util.StringConverter;
 
 public class Application implements Initializable {
@@ -585,12 +586,12 @@ public class Application implements Initializable {
         } else {
             websiteAccountPaneTextField.setVisible(false);
         }
-        if (ACTUALUSER.getCorporate_organisation_name() != null) {
+        if (UserDAO.checkCorporateOrganization(ACTUALUSER.getId())) {
             corporatOrganizationAccountPaneTextField.setText("Corporate Organization: " + ACTUALUSER.getCorporate_organisation_name());
         } else {
             corporatOrganizationAccountPaneTextField.setVisible(false);
         }
-        if (ACTUALUSER.getEvents_organiser_name() != null) {
+        if (UserDAO.checkEventOrganiser(ACTUALUSER.getId())) {
             corporatOrganizationAccountPaneTextField.appendText("Event Organiser: : " + ACTUALUSER.getEvents_organiser_name());
         } else {
             corporatOrganizationAccountPaneTextField.setVisible(false);
@@ -697,9 +698,12 @@ public class Application implements Initializable {
 
         try {
             Parent registerParent = FXMLLoader.load(getClass().getResource("../view/login.fxml"));
-            Scene registerScene = new Scene(registerParent);
+            Scene registerScene = new Scene(registerParent, 200, 200);
 
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            window.setWidth(100);
+
             window.hide();
             window.setScene(registerScene);
             window.show();

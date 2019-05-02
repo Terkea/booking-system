@@ -1384,7 +1384,7 @@
                      </children></AnchorPane>
                   <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="90.0" prefWidth="600.0" style="-fx-background-color: #FFE5E2;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <Label alignment="CENTER" layoutX="203.0" layoutY="26.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Account Settings" AnchorPane.leftAnchor="203.0" AnchorPane.rightAnchor="203.0" AnchorPane.topAnchor="26.0">
+                        <Label alignment="CENTER" layoutX="203.0" layoutY="26.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="38.0" prefWidth="397.0" text="Account Settings" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="26.0">
                            <font>
                               <Font size="26.0" />
                            </font>
