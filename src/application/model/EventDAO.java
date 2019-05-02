@@ -90,10 +90,10 @@ public class EventDAO {
     public static ObservableList<Event> searchActiveEvent (String keyword) throws SQLException, ClassNotFoundException {
         String selectStmt = "SELECT * " +
                 "FROM event " +
-                "WHERE name " +
+                "WHERE (name " +
                 "LIKE \"%" + keyword + "%\"" +
                 "OR location " +
-                "LIKE \"%" + keyword + "%\"" +
+                "LIKE \"%" + keyword + "%\")" +
                 "AND status = 1";
         try{
             ResultSet rsEvent = DB.dbExecuteQuery(selectStmt);

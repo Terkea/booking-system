@@ -1353,6 +1353,9 @@
                            <font>
                               <Font size="18.0" />
                            </font>
+                           <padding>
+                              <Insets top="20.0" />
+                           </padding>
                         </Label>
                         <Label fx:id="eventTypeLabelMyBookingPane" text="Event type: " GridPane.columnIndex="1">
                            <font>
@@ -1373,6 +1376,9 @@
                            <font>
                               <Font size="18.0" />
                            </font>
+                           <padding>
+                              <Insets top="20.0" />
+                           </padding>
                         </Label>
                         <JFXTextArea fx:id="descriptionLabelMyBookingPane" focusColor="#ff998e" promptText="test" style="-fx-opacity: 1;" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.rowIndex="3">
                            <font>
