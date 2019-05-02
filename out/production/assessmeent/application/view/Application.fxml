@@ -1360,7 +1360,7 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <JFXTextArea fx:id="notificationsTextAreaWelcomePane" editable="false" focusColor="#ff7061" layoutX="-9.0" layoutY="29.0" unFocusColor="BLACK" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0" />
+                        <JFXTextArea fx:id="notificationsTextAreaWelcomePane" editable="false" focusColor="#ff7061" layoutX="-9.0" layoutY="29.0" text="You don't have any notifications.&#10;" unFocusColor="BLACK" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0" />
                      </children>
                   </AnchorPane>
                   <AnchorPane layoutX="31.0" layoutY="386.0" prefHeight="148.0" prefWidth="250.0" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="30.0">

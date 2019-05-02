@@ -503,7 +503,6 @@ public class Application implements Initializable {
     // ACCOUNT PANE
     @FXML
     public void loadUser(User user) {
-//        makePaymentsButton.setVisible(false);
         if (user != null) {
             this.ACTUALUSER = user;
 
@@ -528,7 +527,6 @@ public class Application implements Initializable {
             }else{
                 manageEvents.setVisible(false);
             }
-
 
             welcomeLabel.setText(user.getTitle() + " " + user.getFirst_name() + " " + user.getLast_name());
             loadMyAcount();
@@ -588,12 +586,12 @@ public class Application implements Initializable {
             websiteAccountPaneTextField.setVisible(false);
         }
         if (ACTUALUSER.getCorporate_organisation_name() != null) {
-            corporatOrganizationAccountPaneTextField.setText(ACTUALUSER.getCorporate_organisation_name());
+            corporatOrganizationAccountPaneTextField.setText("Corporate Organization: " + ACTUALUSER.getCorporate_organisation_name());
         } else {
             corporatOrganizationAccountPaneTextField.setVisible(false);
         }
         if (ACTUALUSER.getEvents_organiser_name() != null) {
-            corporatOrganizationAccountPaneTextField.appendText(ACTUALUSER.getEvents_organiser_name());
+            corporatOrganizationAccountPaneTextField.appendText("Event Organiser: : " + ACTUALUSER.getEvents_organiser_name());
         } else {
             corporatOrganizationAccountPaneTextField.setVisible(false);
         }
