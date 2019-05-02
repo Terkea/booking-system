@@ -1,6 +1,7 @@
 package application.model;
 
 import application.system.DB;
+import com.sun.rowset.CachedRowSetImpl;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -247,6 +248,15 @@ public class BookingDAO {
             System.err.println("Error during DELETE operation: " +e );
             throw e;
         }
+    }
+
+    public static int getAmmountOfTicketsSold(int id) throws SQLException, ClassNotFoundException{
+        int ammount = 0;
+        ObservableList<Booking> bookings = getBookingsByEventID(id);
+        for (int i = 0;i<bookings.size();i++){
+            ammount += bookings.get(i).getNumber_of_tickets();
+        }
+        return ammount;
     }
 
 }

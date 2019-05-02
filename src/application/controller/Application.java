@@ -10,6 +10,9 @@ import java.util.ResourceBundle;
 import application.model.*;
 import application.system.Password;
 import com.jfoenix.controls.*;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -723,6 +726,7 @@ public class Application implements Initializable {
         priceColumnConcertsPane.setCellValueFactory(cellData -> cellData.getValue().ticket_priceProperty().asObject());
 
 
+
         try {
             ObservableList<Event> eventData = EventDAO.getAllActiveEvents();
             populateEvents(eventData);
@@ -768,17 +772,23 @@ public class Application implements Initializable {
             e.printStackTrace();
         }
 
+        int ticketsBought = 0;
+        try {
+            ticketsBought = BookingDAO.getAmmountOfTicketsSold(selectedEvent.getId());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
-        //concertsTableConcertsPane.getSelectionModel().getSelectedItem().getId()
 
         titleLabelMoreDetailsEventPane.setText(selectedEvent.getName());
         locationLabelMoreDetailsEventPane.setText(selectedEvent.getLocation());
         dateLabelMoreDetailsEventPane.setText(selectedEvent.getDate());
-        ticketsAvailableLabelMoreDetailsEventPane.setText(selectedEvent.getTickets_available() + "- tickets booked");
+        ticketsAvailableLabelMoreDetailsEventPane.setText((selectedEvent.getTickets_available() - ticketsBought) + "");
         ticketPriceLabelMoreDetailsEventPane.setText(selectedEvent.getTicket_price() + " GBP");
         eventTypeLabelMoreDetailsEventPane.setText(selectedEvent.getEvent_type());
         descriptionLabelMoreDetailsEventPane.setText(selectedEvent.getDescription());
-        // NEED TO BE ADDED THE BANDS/ARTISTIS WHO ARE GONNA
         seeMoreEventPane.toFront();
     }
 
