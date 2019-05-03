@@ -10,5 +10,6 @@
     <orderEntry type="library" name="mysql:mysql-connector-java:8.0.13" level="project" />
     <orderEntry type="library" name="org.springframework.security:spring-security-crypto:3.2.7.RELEASE" level="project" />
     <orderEntry type="library" name="com.jfoenix:jfoenix:8.0.8" level="project" />
+    <orderEntry type="library" name="ch.codeblock.qrinvoice.itext5:qrinvoice-itext5:1.3" level="project" />
   </component>
 </module>

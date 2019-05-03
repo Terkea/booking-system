@@ -1739,6 +1739,5 @@ public class Application implements Initializable {
             e.printStackTrace();
         }
         loadAllEvents();
-
     }
 }

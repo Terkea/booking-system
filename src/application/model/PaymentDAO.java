@@ -23,6 +23,7 @@ public class PaymentDAO {
             payment.setStatus(rs.getBoolean("status"));
             payment.setDescription(rs.getString("description"));
             payment.setDiscounted(rs.getBoolean("discounted"));
+            payment.setDate_created(rs.getString("date_created"));
         }
         return payment;
     }
@@ -42,6 +43,7 @@ public class PaymentDAO {
             payment.setStatus(rs.getBoolean("status"));
             payment.setDescription(rs.getString("description"));
             payment.setDiscounted(rs.getBoolean("discounted"));
+            payment.setDate_created(rs.getString("date_created"));
             paymentList.add(payment);
         }
         return paymentList;
