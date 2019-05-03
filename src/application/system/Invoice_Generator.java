@@ -7,8 +7,10 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.sql.SQLException;
 
+import static com.sun.deploy.trace.Trace.flush;
+
 public class Invoice_Generator {
-    public static void generateInvoiceByBookingId(int bookingID){
+    public static String generateInvoiceByBookingId(int bookingID){
         Booking currentBooking = null;
         User currentUser = null;
         Payment currentPayment = null;
@@ -45,11 +47,10 @@ public class Invoice_Generator {
             e.printStackTrace();
         }
 
-
+        String fileName = currentBooking.getId() + "" + currentBooking.getEvent_id() + "" + currentBooking.getPayment_id();
         Document document = new Document();
         try {
-            PdfWriter.getInstance(document, new FileOutputStream(new File(currentBooking.getId() + ""
-                    + currentBooking.getEvent_id() + "" + currentBooking.getPayment_id() + ".pdf")));
+            PdfWriter.getInstance(document, new FileOutputStream(new File(fileName + ".pdf")));
             document.open();
 
             Font title = new Font();
@@ -142,11 +143,9 @@ public class Invoice_Generator {
             p6.setAlignment(Element.ALIGN_RIGHT);
             document.add(p6);
             document.close();
-
-            System.out.println("Done");
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return fileName;
     }
-
 }

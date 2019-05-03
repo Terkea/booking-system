@@ -1,13 +1,16 @@
 package application.controller;
 
 
-import java.io.IOException;
+import java.awt.*;
+import java.io.*;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 
 import application.model.*;
+import application.model.Event;
+import application.system.Invoice_Generator;
 import application.system.Password;
 import com.jfoenix.controls.*;
 import javafx.beans.property.IntegerProperty;
@@ -165,6 +168,9 @@ public class Application implements Initializable {
 
     @FXML
     private JFXTextField countyEditUserAccountPane;
+
+    @FXML
+    private Label eventIDhiddenLabelMoreDetailsAboutbookingPane;
 
     @FXML
     private JFXTextField postcodeEditUserAccountPane;
@@ -954,7 +960,9 @@ public class Application implements Initializable {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        moreDetailsAboutMyBookingPane.toFront();
+
+        eventIDhiddenLabelMoreDetailsAboutbookingPane.setText(selectedBooking.getId() + "");
+        eventIDhiddenLabelMoreDetailsAboutbookingPane.setVisible(false);
         eventNameLabelMyBookingPane.setText(selectedBooking.getEvent_name());
         eventTypeLabelMyBookingPane.setText(currentEvent.getEvent_type());
         locationLabelMyBookingPane.setText(currentEvent.getLocation());
@@ -964,6 +972,25 @@ public class Application implements Initializable {
             paymentStatusLabelMyBookingPane.setText("Paid");
         }else{
             paymentStatusLabelMyBookingPane.setText("Pending");
+        }
+        moreDetailsAboutMyBookingPane.toFront();
+    }
+
+    @FXML
+    private void downloadInvoicePublic(){
+        String current = null;
+        try {
+            current = new java.io.File( "." ).getCanonicalPath();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String file = Invoice_Generator.generateInvoiceByBookingId(Integer.parseInt(eventIDhiddenLabelMoreDetailsAboutbookingPane.getText()));
+
+        File invoice = new File(current+ "\\" + file + ".pdf");
+        try {
+            Desktop.getDesktop().open(invoice);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -1346,6 +1373,24 @@ public class Application implements Initializable {
             System.err.println("Error occured while getting event information from DB " + e);
         } catch (ClassNotFoundException e) {
             System.err.println("Error occured while getting event information from DB " + e);
+        }
+    }
+
+    @FXML
+    private void downloadInvoice(){
+        String current = null;
+        try {
+            current = new java.io.File( "." ).getCanonicalPath();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String file = Invoice_Generator.generateInvoiceByBookingId(allBookingsTableView.getSelectionModel().getSelectedItem().getId());
+
+        File invoice = new File(current+ "\\" + file + ".pdf");
+        try {
+            Desktop.getDesktop().open(invoice);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
