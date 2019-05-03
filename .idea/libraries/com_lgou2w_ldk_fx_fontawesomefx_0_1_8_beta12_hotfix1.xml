@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="com.lgou2w:ldk-fx-fontawesomefx:0.1.8-beta12-hotfix1" type="repository">
+    <properties maven-id="com.lgou2w:ldk-fx-fontawesomefx:0.1.8-beta12-hotfix1" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/lgou2w/ldk-fx-fontawesomefx/0.1.8-beta12-hotfix1/ldk-fx-fontawesomefx-0.1.8-beta12-hotfix1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/lgou2w/ldk-fx-common/0.1.8-beta12-hotfix1/ldk-fx-common-0.1.8-beta12-hotfix1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/lgou2w/ldk-common/0.1.8-beta12-hotfix1/ldk-common-0.1.8-beta12-hotfix1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/de/jensd/fontawesomefx-commons/9.1.2-jpms/fontawesomefx-commons-9.1.2-jpms.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/de/jensd/fontawesomefx-fontawesome/4.7.0-9.1.2-jpms/fontawesomefx-fontawesome-4.7.0-9.1.2-jpms.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib/1.3.31/kotlin-stdlib-1.3.31.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib-common/1.3.31/kotlin-stdlib-common-1.3.31.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/annotations/13.0/annotations-13.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
