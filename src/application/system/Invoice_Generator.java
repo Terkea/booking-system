@@ -5,9 +5,10 @@ import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.*;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.sql.SQLException;
-
-import static com.sun.deploy.trace.Trace.flush;
 
 public class Invoice_Generator {
     public static String generateInvoiceByBookingId(int bookingID){
@@ -55,7 +56,12 @@ public class Invoice_Generator {
 
             Font title = new Font();
             title.setSize(25);
-            Paragraph p = new Paragraph("Vikings Invoice" ,title);
+            Paragraph p = new Paragraph("" , title);
+            if (currentPayment.isStatus() == false){
+                p.add("Invoice no. " + fileName);
+            }else{
+                p.add("Receipt no. " + fileName);
+            }
             p.setAlignment(Element.ALIGN_CENTER);
             document.add(p);
 
@@ -65,9 +71,12 @@ public class Invoice_Generator {
             info.setSize(10);
             Paragraph p2 = new Paragraph("Vikings" +
                     "\n" +
-                    "Company address, \n" +
-                    "Company city, county, postcode \n" +
-                    "Company phone, website, contact info\n", info);
+                    "111 Hight Street, \n" +
+                    "London, SW7 2NX, \n" +
+                    "England \n \n" +
+                    "0800 845 4647 \n" +
+                    "www.vikings.com, \n" +
+                    "info@vikings.com \n", info);
             p2.setAlignment(Element.ALIGN_LEFT);
             document.add(p2);
 
@@ -75,15 +84,22 @@ public class Invoice_Generator {
             document.add(new Paragraph("\n"));
             document.add(new Paragraph("\n"));
 
+            DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+            Date date = new Date();
+            Paragraph issued = new Paragraph("Issued: " + (dateFormat.format(date)) + " \n \n", info);
+            issued.setAlignment(Element.ALIGN_LEFT);
+            document.add(issued);
+
+
             Font bold = new Font();
             bold.setStyle(Font.BOLD);
 
-            Paragraph p3 = new Paragraph("Bill to: \n" , bold);
+            Paragraph p3 = new Paragraph("To: " , bold);
             document.add(p3);
             p3.setAlignment(Element.ALIGN_BOTTOM);
 
-            Paragraph p4 = new Paragraph(
-                    currentUser.getTitle() + " " + currentUser.getFirst_name() + " " + currentUser.getLast_name() + "\n" +
+
+            Paragraph p4 = new Paragraph(currentUser.getTitle() + " " + currentUser.getFirst_name() + " " + currentUser.getLast_name() + "\n" +
                             currentUser.getAddress_line() +", \n" +
                             currentUser.getAddress_line2() + " \n" +
                             currentUser.getTown() + " " + currentUser.getCounty() + " \n" +
@@ -92,8 +108,6 @@ public class Invoice_Generator {
 
             document.add(new Paragraph("\n"));
             document.add(new Paragraph("\n"));
-            document.add(new Paragraph("\n"));
-
 
             PdfPTable table = new PdfPTable(new float[]{3,3,3,3});
             table.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
@@ -104,7 +118,7 @@ public class Invoice_Generator {
             table.addCell("Event name");
             table.addCell("Tickets bought");
             table.addCell("Ticket price");
-            table.addCell("Payment date and time");
+            table.addCell("Transaction date and time");
             table.setHeaderRows(1);
             PdfPCell[] cells = table.getRow(0).getCells();
             for (int i = 0; i<cells.length;i++){
@@ -142,6 +156,7 @@ public class Invoice_Generator {
             }
             p6.setAlignment(Element.ALIGN_RIGHT);
             document.add(p6);
+
             document.close();
         } catch (Exception e) {
             e.printStackTrace();
