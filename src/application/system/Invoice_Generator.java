@@ -58,7 +58,11 @@ public class Invoice_Generator {
             title.setSize(25);
             Paragraph p = new Paragraph("" , title);
             if (currentPayment.isStatus() == false){
-                p.add("Invoice no. " + fileName);
+                if (UserDAO.checkCorporateOrganization(currentUser.getId())){
+                    p.add("Invoice no. " + fileName);
+                }else{
+                    p.add("Receipt no. " + fileName);
+                }
             }else{
                 p.add("Receipt no. " + fileName);
             }

@@ -523,19 +523,20 @@ public class Application implements Initializable {
                 makePaymentsButton.setVisible(false);
             }
 
-            if (UserDAO.checkAdmin(user.getId())){
-                manageAccountsButton.setVisible(true);
-                manageBookings.setVisible(true);
-                manageEvents.setVisible(true);
-            }else{
-                manageAccountsButton.setVisible(false);
-                manageBookings.setVisible(false);
-                manageEvents.setVisible(false);
-            }
             if (UserDAO.checkEventOrganiser(user.getId())){
                 manageEvents.setVisible(true);
             }else{
                 manageEvents.setVisible(false);
+            }
+
+            if (UserDAO.checkAdmin(user.getId())){
+                manageEvents.setVisible(true);
+                manageAccountsButton.setVisible(true);
+                manageBookings.setVisible(true);
+            }else{
+                manageEvents.setVisible(false);
+                manageAccountsButton.setVisible(false);
+                manageBookings.setVisible(false);
             }
 
             welcomeLabel.setText(user.getTitle() + " " + user.getFirst_name() + " " + user.getLast_name());
