@@ -516,28 +516,31 @@ public class Application implements Initializable {
         if (user != null) {
             this.ACTUALUSER = user;
 
+            manageEvents.setVisible(false);
+            manageAccountsButton.setVisible(false);
+            manageBookings.setVisible(false);
+            makePaymentsButton.setVisible(false);
 
             if (UserDAO.checkCorporateOrganization(user.getId())){
                 makePaymentsButton.setVisible(true);
-            }else{
-                makePaymentsButton.setVisible(false);
             }
 
             if (UserDAO.checkEventOrganiser(user.getId())){
+                viewConcertsFestivalsButton.setVisible(false);
+                viewBookingsButton.setVisible(false);
+
                 manageEvents.setVisible(true);
-            }else{
-                manageEvents.setVisible(false);
             }
 
             if (UserDAO.checkAdmin(user.getId())){
+                viewConcertsFestivalsButton.setVisible(false);
+                viewBookingsButton.setVisible(false);
+
                 manageEvents.setVisible(true);
                 manageAccountsButton.setVisible(true);
                 manageBookings.setVisible(true);
-            }else{
-                manageEvents.setVisible(false);
-                manageAccountsButton.setVisible(false);
-                manageBookings.setVisible(false);
             }
+
 
             welcomeLabel.setText(user.getTitle() + " " + user.getFirst_name() + " " + user.getLast_name());
             loadMyAcount();
