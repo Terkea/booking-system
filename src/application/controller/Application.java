@@ -541,6 +541,11 @@ public class Application implements Initializable {
                 manageBookings.setVisible(true);
             }
 
+            if (UserDAO.checkAgent(user.getId())){
+                viewConcertsFestivalsButton.setVisible(false);
+                viewBookingsButton.setVisible(false);
+            }
+
 
             welcomeLabel.setText(user.getTitle() + " " + user.getFirst_name() + " " + user.getLast_name());
             loadMyAcount();

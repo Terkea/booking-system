@@ -32,6 +32,7 @@ public class UserDAO {
             user.setPassword(rs.getString("password"));
             user.setEvents_organiser_name(rs.getString("events_organiser_name"));
             user.setIs_admin(rs.getBoolean("is_admin"));
+            user.setIs_agent(rs.getBoolean("is_agent"));
         }
         return user;
     }
@@ -61,6 +62,7 @@ public class UserDAO {
             user.setPassword(rs.getString("password"));
             user.setEvents_organiser_name(rs.getString("events_organiser_name"));
             user.setIs_admin(rs.getBoolean("is_admin"));
+            user.setIs_agent(rs.getBoolean("is_agent"));
 
             userList.add(user);
         }
@@ -362,6 +364,18 @@ public class UserDAO {
         try {
             User attempt = searchUsersByID(id);
             return attempt.isIs_admin();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public static boolean checkAgent(int id){
+        try {
+            User attempt = searchUsersByID(id);
+            return attempt.isIs_agent();
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {

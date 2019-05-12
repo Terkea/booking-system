@@ -23,6 +23,7 @@ public class User {
     private StringProperty password;
     private StringProperty events_organiser_name; // default null
     private BooleanProperty is_admin; // default null
+    private BooleanProperty is_agent;
 
 
     public User() {
@@ -46,9 +47,10 @@ public class User {
         this.password = new SimpleStringProperty();
         this.events_organiser_name = new SimpleStringProperty();
         this.is_admin = new SimpleBooleanProperty();
+        this.is_agent = new SimpleBooleanProperty();
     }
 
-    public User(IntegerProperty id, StringProperty title, StringProperty first_name, StringProperty last_name, StringProperty gender, StringProperty address_line, StringProperty address_line2, StringProperty town, StringProperty county, StringProperty postcode, StringProperty dob, StringProperty contact_name, StringProperty contact_phone, StringProperty corporate_organisation_name, StringProperty email_address, StringProperty mobile_no, StringProperty website_address, StringProperty password, StringProperty events_organiser_name, BooleanProperty is_admin) {
+    public User(IntegerProperty id, StringProperty title, StringProperty first_name, StringProperty last_name, StringProperty gender, StringProperty address_line, StringProperty address_line2, StringProperty town, StringProperty county, StringProperty postcode, StringProperty dob, StringProperty contact_name, StringProperty contact_phone, StringProperty corporate_organisation_name, StringProperty email_address, StringProperty mobile_no, StringProperty website_address, StringProperty password, StringProperty events_organiser_name, BooleanProperty is_admin, BooleanProperty is_agent) {
         this.id = new SimpleIntegerProperty();
         this.title = new SimpleStringProperty();
         this.first_name = new SimpleStringProperty();
@@ -69,6 +71,7 @@ public class User {
         this.password = new SimpleStringProperty();
         this.events_organiser_name = new SimpleStringProperty();
         this.is_admin = new SimpleBooleanProperty();
+        this.is_agent = new SimpleBooleanProperty();
     }
 
     @Override
@@ -95,6 +98,18 @@ public class User {
                 ", events_organiser_name=" + events_organiser_name +
                 ", is_admin=" + is_admin +
                 '}';
+    }
+
+    public boolean isIs_agent() {
+        return is_agent.get();
+    }
+
+    public BooleanProperty is_agentProperty() {
+        return is_agent;
+    }
+
+    public void setIs_agent(boolean is_agent) {
+        this.is_agent.set(is_agent);
     }
 
     public String getCorporate_organisation_name() {
