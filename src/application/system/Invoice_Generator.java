@@ -154,9 +154,9 @@ public class Invoice_Generator {
             total.setStyle(Font.BOLD);
             Paragraph p6 = new Paragraph();
             if (currentPayment.isDiscounted() == true){
-                p6.add("TOTAL AMMOUNT: " + totalAmmount + " GBP \n");
+                p6.add("TOTAL AMOUNT: " + totalAmmount + " GBP \n");
             }else{
-                p6.add("TOTAL AMMOUNT: " + ammount + " GBP \n");
+                p6.add("TOTAL AMOUNT: " + ammount + " GBP \n");
             }
             p6.setAlignment(Element.ALIGN_RIGHT);
             document.add(p6);

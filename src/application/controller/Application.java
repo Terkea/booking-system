@@ -606,11 +606,15 @@ public class Application implements Initializable {
         }
         if (UserDAO.checkCorporateOrganization(ACTUALUSER.getId())) {
             corporatOrganizationAccountPaneTextField.setText("Corporate Organization: " + ACTUALUSER.getCorporate_organisation_name());
-        } else {
-            corporatOrganizationAccountPaneTextField.setVisible(false);
         }
         if (UserDAO.checkEventOrganiser(ACTUALUSER.getId())) {
             corporatOrganizationAccountPaneTextField.appendText("Event Organiser: : " + ACTUALUSER.getEvents_organiser_name());
+        }
+        if (UserDAO.checkAdmin(ACTUALUSER.getId())) {
+            corporatOrganizationAccountPaneTextField.appendText("Admin");
+        }
+        if (UserDAO.checkAgent(ACTUALUSER.getId())) {
+            corporatOrganizationAccountPaneTextField.appendText("Agent");
         } else {
             corporatOrganizationAccountPaneTextField.setVisible(false);
         }
@@ -1306,6 +1310,9 @@ public class Application implements Initializable {
             }
             if (UserDAO.checkEventOrganiser(selectedUser.getId())){
                 userRankLabel.setText("Organiser");
+            }
+            if (UserDAO.checkAgent(selectedUser.getId())){
+                userRankLabel.setText("Agent");
             }
             if (!UserDAO.checkAdmin(selectedUser.getId()) && !UserDAO.checkCorporateOrganization(selectedUser.getId())
                     && !UserDAO.checkEventOrganiser(selectedUser.getId())) {
