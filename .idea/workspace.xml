@@ -10,8 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e45a1d1-83c6-47d2-83a7-58cd49d8d856" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/controller/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/controller/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/model/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/model/UserDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/view/application.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/view/application.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -26,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/application/controller/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="618" column="66" selection-start-line="618" selection-start-column="66" selection-end-line="618" selection-end-column="66" />
+            <state relative-caret-position="442">
+              <caret line="1410" column="32" lean-forward="true" selection-start-line="1410" selection-start-column="32" selection-end-line="1410" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#20438#20439#0" expanded="true" />
@@ -39,6 +38,27 @@
                 <element signature="e#26527#26528#0" expanded="true" />
                 <element signature="e#49235#49236#0" expanded="true" />
                 <element signature="e#49287#49288#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/application/model/UserDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="224" column="42" lean-forward="true" selection-start-line="224" selection-start-column="42" selection-end-line="224" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/application/system/Invoice_Generator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="262">
+              <caret line="61" column="34" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -55,8 +75,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>search</find>
-      <find>getPayment</find>
       <find>delete</find>
       <find>c</find>
       <find>chipview</find>
@@ -76,7 +94,6 @@
       <find>dbExecuteQuery</find>
       <find>pane</find>
       <find>moreDetailsAboutMyBookingPane</find>
-      <find>account</find>
       <find>downloadInvoicePublic</find>
       <find>byid</find>
       <find>manage</find>
@@ -85,6 +102,9 @@
       <find>setLast</find>
       <find>profile</find>
       <find>corporatOrganizationAccountPaneTextField</find>
+      <find>account</find>
+      <find>customers</find>
+      <find>invoice</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -123,9 +143,9 @@
         <option value="$PROJECT_DIR$/src/application/system/Password.java" />
         <option value="$PROJECT_DIR$/src/test/strings for checks" />
         <option value="$PROJECT_DIR$/src/application/model/User.java" />
-        <option value="$PROJECT_DIR$/src/application/model/UserDAO.java" />
         <option value="$PROJECT_DIR$/src/application/system/Invoice_Generator.java" />
         <option value="$PROJECT_DIR$/src/application/controller/Application.java" />
+        <option value="$PROJECT_DIR$/src/application/model/UserDAO.java" />
       </list>
     </option>
   </component>
@@ -302,7 +322,7 @@
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.26226014" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.26226014" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.3336887" />
       <window_info id="Designer" order="3" />
@@ -311,7 +331,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.3290461" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.3290461" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39978564" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -817,27 +837,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/model/UserDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5260">
-          <caret line="268" column="73" selection-start-line="268" selection-start-column="73" selection-end-line="268" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/application/model/NotificationDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="640">
           <caret line="37" column="41" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/system/Invoice_Generator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2900">
-          <caret line="153" column="38" selection-start-line="153" selection-start-column="38" selection-end-line="153" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -854,10 +857,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/model/UserDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="224" column="42" lean-forward="true" selection-start-line="224" selection-start-column="42" selection-end-line="224" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/application/controller/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="618" column="66" selection-start-line="618" selection-start-column="66" selection-end-line="618" selection-end-column="66" />
+        <state relative-caret-position="442">
+          <caret line="1410" column="32" lean-forward="true" selection-start-line="1410" selection-start-column="32" selection-end-line="1410" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#20438#20439#0" expanded="true" />
@@ -866,6 +876,16 @@
             <element signature="e#26527#26528#0" expanded="true" />
             <element signature="e#49235#49236#0" expanded="true" />
             <element signature="e#49287#49288#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/system/Invoice_Generator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="61" column="34" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
