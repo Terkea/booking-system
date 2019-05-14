@@ -1311,58 +1311,6 @@
                   <JFXTextField fx:id="keywordTextFieldManageAccountsPane" focusColor="#ff998e" layoutX="20.0" layoutY="111.0" prefHeight="25.0" prefWidth="370.0" promptText="keyword" unFocusColor="BLACK" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="210.0" />
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="welcomePagePane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFF2F2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <AnchorPane fx:id="welcomePagePane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="90.0" prefWidth="600.0" style="-fx-background-color: #FFE5E2;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <Label alignment="CENTER" layoutX="127.0" layoutY="26.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="38.0" prefWidth="346.0" text="Welcome Page" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="26.0">
-                           <font>
-                              <Font size="26.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane layoutX="30.0" layoutY="109.0" prefHeight="191.0" prefWidth="540.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="110.0">
-                     <children>
-                        <Pane layoutY="29.0" prefHeight="2.0" prefWidth="540.0" style="-fx-background-color: #FF7061;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="29.0" />
-                        <Label layoutY="-2.0" prefHeight="17.0" prefWidth="179.0" text="NOTIFICATIONS">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                        <JFXTextArea fx:id="notificationsTextAreaWelcomePane" editable="false" focusColor="#ff7061" layoutX="-9.0" layoutY="29.0" unFocusColor="BLACK" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0" />
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane layoutX="31.0" layoutY="386.0" prefHeight="148.0" prefWidth="250.0" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="30.0">
-                     <children>
-                        <Label alignment="CENTER" layoutY="1.0" prefHeight="27.0" prefWidth="260.0" text="MY BOOKINGS">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="myBookingsCountLabelWelcomePane" alignment="CENTER" layoutX="65.0" layoutY="43.0" prefHeight="115.0" prefWidth="130.0" text="150">
-                           <font>
-                              <Font size="30.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane layoutX="300.0" layoutY="381.0" prefHeight="148.0" prefWidth="250.0" AnchorPane.bottomAnchor="66.0" AnchorPane.rightAnchor="30.0">
-                     <children>
-                        <Label alignment="CENTER" layoutY="1.0" prefHeight="27.0" prefWidth="260.0" text="EVENTS AVAILABLE">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="eventAvailableLabelWelcomePane" alignment="CENTER" layoutX="65.0" layoutY="43.0" prefHeight="115.0" prefWidth="130.0" text="150">
-                           <font>
-                              <Font size="30.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-               </children>
-            </AnchorPane>
             <AnchorPane fx:id="accountPane" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #FFF2F0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <AnchorPane layoutY="90.0" prefHeight="510.0" prefWidth="600.0" style="-fx-background-color: #FFF2F2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="89.0">
@@ -1424,6 +1372,58 @@
                         <Label alignment="CENTER" layoutX="203.0" layoutY="26.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="38.0" prefWidth="397.0" text="Account Settings" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="26.0">
                            <font>
                               <Font size="26.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="welcomePagePane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFF2F2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane fx:id="welcomePagePane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="90.0" prefWidth="600.0" style="-fx-background-color: #FFE5E2;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="127.0" layoutY="26.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="38.0" prefWidth="346.0" text="Welcome" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="26.0">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="30.0" layoutY="109.0" prefHeight="191.0" prefWidth="540.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="110.0">
+                     <children>
+                        <Pane layoutY="29.0" prefHeight="2.0" prefWidth="540.0" style="-fx-background-color: #FF7061;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="29.0" />
+                        <Label layoutY="-2.0" prefHeight="17.0" prefWidth="179.0" text="NOTIFICATIONS">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <JFXTextArea fx:id="notificationsTextAreaWelcomePane" editable="false" focusColor="#ff7061" layoutX="-9.0" layoutY="29.0" unFocusColor="BLACK" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="31.0" layoutY="386.0" prefHeight="148.0" prefWidth="250.0" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="30.0">
+                     <children>
+                        <Label alignment="CENTER" layoutY="1.0" prefHeight="27.0" prefWidth="260.0" text="MY BOOKINGS">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="myBookingsCountLabelWelcomePane" alignment="CENTER" layoutX="65.0" layoutY="43.0" prefHeight="115.0" prefWidth="130.0">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="300.0" layoutY="381.0" prefHeight="148.0" prefWidth="250.0" AnchorPane.bottomAnchor="66.0" AnchorPane.rightAnchor="30.0">
+                     <children>
+                        <Label alignment="CENTER" layoutY="1.0" prefHeight="27.0" prefWidth="260.0" text="EVENTS AVAILABLE">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="eventAvailableLabelWelcomePane" alignment="CENTER" layoutX="65.0" layoutY="43.0" prefHeight="115.0" prefWidth="130.0">
+                           <font>
+                              <Font size="30.0" />
                            </font>
                         </Label>
                      </children>

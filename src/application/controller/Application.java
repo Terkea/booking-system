@@ -615,7 +615,9 @@ public class Application implements Initializable {
         }
         if (UserDAO.checkAgent(ACTUALUSER.getId())) {
             corporatOrganizationAccountPaneTextField.appendText("Agent");
-        } else {
+        }
+        if(!UserDAO.checkCorporateOrganization(ACTUALUSER.getId()) && !UserDAO.checkEventOrganiser(ACTUALUSER.getId()) &&
+                !UserDAO.checkAdmin(ACTUALUSER.getId()) && !UserDAO.checkAgent(ACTUALUSER.getId())) {
             corporatOrganizationAccountPaneTextField.setVisible(false);
         }
     }
