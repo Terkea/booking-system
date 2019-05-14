@@ -1784,7 +1784,7 @@ public class Application implements Initializable {
 
             for (int i = 0; i<bookingList.size(); i++){
                 NotificationDAO.insertNotification(bookingList.get(i).getUser_id(),
-                        "Unfortunately we had to cancel " + EventDAO.getEventByID(bookingList.get(i).getEvent_id()).getName() +
+                        "Unfortunately we had to cancel " + EventDAO.getEventByID(bookingList.get(i).getEvent_id()).getName() + "" +
                                 EventDAO.getEventByID(bookingList.get(i).getEvent_id()).getEvent_type() + " Event, no worries. " +
                                 "We will refund you the whole ammount of " + PaymentDAO.getPaymentByID(bookingList.get(i).getPayment_id()).getAmmount() + " GBP " +
                                 "It may take a few days for the refund to appear on your statement.");
