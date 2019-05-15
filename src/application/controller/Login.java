@@ -37,7 +37,7 @@ public class Login {
 
         UserDAO checkLogin = new UserDAO();
         try {
-            if (email.getText().equals("") && password.getText().equals("")){
+            if (email.getText().equals("") || password.getText().equals("")){
                 errorLabel.setText("Fill the form");
             }else{
                 User loginAttempt = UserDAO.searchUsersByEmail(email.getText());
@@ -65,6 +65,8 @@ public class Login {
                     }else{
                         errorLabel.setText("Oh snap! Double check the email or password");
                     }
+                }else{
+                    errorLabel.setText("Invalid account");
                 }
             }
 
