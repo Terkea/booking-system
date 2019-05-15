@@ -10,6 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e45a1d1-83c6-47d2-83a7-58cd49d8d856" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/application/controller/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/controller/Login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/view/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/view/login.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -48,8 +49,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/application/controller/Login.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="50" column="52" lean-forward="true" selection-start-line="50" selection-start-column="52" selection-end-line="50" selection-end-column="52" />
+            <state relative-caret-position="232">
+              <caret line="55" column="91" selection-start-line="55" selection-start-column="91" selection-end-line="55" selection-end-column="91" />
             </state>
           </provider>
         </entry>
@@ -77,7 +78,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>delete</find>
       <find>c</find>
       <find>chipview</find>
       <find>performersChipViewEditEventPane</find>
@@ -107,6 +107,7 @@
       <find>account</find>
       <find>customers</find>
       <find>invoice</find>
+      <find>customer</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -133,7 +134,6 @@
         <option value="$PROJECT_DIR$/src/application/model/Event_PerformersDAO.java" />
         <option value="$PROJECT_DIR$/src/test/practice.java" />
         <option value="$PROJECT_DIR$/src/application/model/Notification.java" />
-        <option value="$PROJECT_DIR$/src/application/controller/Login.java" />
         <option value="$PROJECT_DIR$/src/application/model/NotificationDAO.java" />
         <option value="$PROJECT_DIR$/src/application/view/login.fxml" />
         <option value="$PROJECT_DIR$/src/application/Main.java" />
@@ -148,6 +148,7 @@
         <option value="$PROJECT_DIR$/src/application/system/Invoice_Generator.java" />
         <option value="$PROJECT_DIR$/src/application/controller/Application.java" />
         <option value="$PROJECT_DIR$/src/application/model/UserDAO.java" />
+        <option value="$PROJECT_DIR$/src/application/controller/Login.java" />
       </list>
     </option>
   </component>
@@ -322,7 +323,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.2761194" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -333,7 +333,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.3290461" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.3290461" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39978564" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -881,8 +881,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/application/controller/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="50" column="52" lean-forward="true" selection-start-line="50" selection-start-column="52" selection-end-line="50" selection-end-column="52" />
+        <state relative-caret-position="232">
+          <caret line="55" column="91" selection-start-line="55" selection-start-column="91" selection-end-line="55" selection-end-column="91" />
         </state>
       </provider>
     </entry>
