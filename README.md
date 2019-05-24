@@ -1,5 +1,7 @@
 ### Introduction
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a92a05144cb5427e876d4647dad9adc5)](https://app.codacy.com/app/Terkea/booking-system?utm_source=github.com&utm_medium=referral&utm_content=Terkea/booking-system&utm_campaign=Badge_Grade_Dashboard)
+
 Vikings Global Music Concerts & Festivals Booking Agency – booking system – has been designed using Model View Controller (MVC), nowadays, commonly used in Java as an architecture for creating applications.
 The Data Access Object (DAO) has been implemented to dissociate its components form each other, for the operations to be performed on the objects in order to easily manipulate the data.
 
