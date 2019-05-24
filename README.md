@@ -28,6 +28,9 @@ The Concert Festival Organisers registration is made by the administrator. The O
 All passwords are encrypted using the BCrypt algorithm
 The main window has a minimum resolution of 800x600 in order to preserve all the components and avoid the case when the User wants to go below that size. In order to make it responsive I used the following components: VBox, HBox, GridPane and AnchorPane alongside the AnchorPane Constraints offered by JavaFx which allowed me to set the relative position (top, bottom, left and right) to the parent pane. The only issue that I got was that I couldn’t modify the behaviour of certain components such as: Label, TextArea, TextField, ComboBox and so on. What I mean by that is that at one stage I tried to assign them a behaviour similar to responsive websites where the text size scales alongside the size of the component but I gave up on that idea.
 
+### WARNING
+Keep in mind that this is a mock application with no real life usage purpose yet, the payments are not validated.
+
 ### Libraries used throughout the project:
 
 mysql:mysql-connector-java:8.0.13
