@@ -42,3 +42,5 @@ com.lgou2w:ldk-fx-fontawesomefx:0.1.8-beta12-hotfix1
 
 
 ### Install
+Download and import the sql file provided which can be found in the main folder.
+Edit DB.java from System packet with your host credentials
