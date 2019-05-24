@@ -10,8 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e45a1d1-83c6-47d2-83a7-58cd49d8d856" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/application/controller/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/controller/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/view/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/view/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking-system.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/assessmeent/application/model/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assessmeent/application/model/UserDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/view/application.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/view/application.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,11 +27,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/application/controller/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="1763" column="5" lean-forward="true" selection-start-line="1763" selection-start-column="5" selection-end-line="1763" selection-end-column="5" />
+            <state relative-caret-position="485">
+              <caret line="662" selection-start-line="662" selection-end-line="662" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/application/controller/Register.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4300">
+              <caret line="230" selection-start-line="230" selection-end-line="230" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -40,17 +54,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/application/model/UserDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="233" column="13" lean-forward="true" selection-start-line="233" selection-start-column="13" selection-end-line="233" selection-end-column="13" />
+            <state relative-caret-position="7180">
+              <caret line="364" selection-start-line="364" selection-end-line="365" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/application/system/DB.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="440">
+              <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/application/controller/Login.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="55" column="91" selection-start-line="55" selection-start-column="91" selection-end-line="55" selection-end-column="91" />
+            <state relative-caret-position="520">
+              <caret line="39" column="77" selection-start-line="39" selection-start-column="77" selection-end-line="39" selection-end-column="77" />
             </state>
           </provider>
         </entry>
@@ -78,9 +104,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>c</find>
-      <find>chipview</find>
-      <find>performersChipViewEditEventPane</find>
       <find>ticketsPaymentForCorporateOrganizationPane</find>
       <find>viewBookingsButton</find>
       <find>payByCardOrganiserAnchorPane</find>
@@ -108,6 +131,9 @@
       <find>customers</find>
       <find>invoice</find>
       <find>customer</find>
+      <find>loadallevents</find>
+      <find>editprofile</find>
+      <find>discount</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -147,8 +173,8 @@
         <option value="$PROJECT_DIR$/src/application/model/User.java" />
         <option value="$PROJECT_DIR$/src/application/system/Invoice_Generator.java" />
         <option value="$PROJECT_DIR$/src/application/controller/Application.java" />
-        <option value="$PROJECT_DIR$/src/application/model/UserDAO.java" />
         <option value="$PROJECT_DIR$/src/application/controller/Login.java" />
+        <option value="$PROJECT_DIR$/src/application/model/UserDAO.java" />
       </list>
     </option>
   </component>
@@ -160,7 +186,7 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="y" value="16" />
     <option name="width" value="1936" />
     <option name="height" value="1066" />
   </component>
@@ -169,8 +195,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -324,7 +350,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.2761194" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.31449893" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.3336887" />
       <window_info id="Designer" order="3" />
@@ -795,16 +821,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/system/DB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/application/model/Notification.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -842,23 +858,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/controller/Register.java">
+    <entry file="file://$PROJECT_DIR$/src/application/controller/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4380">
-          <caret line="234" column="34" selection-start-line="234" selection-start-column="34" selection-end-line="234" selection-end-column="34" />
+        <state relative-caret-position="485">
+          <caret line="662" selection-start-line="662" selection-end-line="662" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/controller/Application.java">
+    <entry file="file://$PROJECT_DIR$/src/application/controller/Register.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="1763" column="5" lean-forward="true" selection-start-line="1763" selection-start-column="5" selection-end-line="1763" selection-end-column="5" />
+        <state relative-caret-position="4300">
+          <caret line="230" selection-start-line="230" selection-end-line="230" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/model/UserDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7180">
+          <caret line="364" selection-start-line="364" selection-end-line="365" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/system/DB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/controller/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="39" column="77" selection-start-line="39" selection-start-column="77" selection-end-line="39" selection-end-column="77" />
         </state>
       </provider>
     </entry>
@@ -869,20 +909,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/model/UserDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="233" column="13" lean-forward="true" selection-start-line="233" selection-start-column="13" selection-end-line="233" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/controller/Login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="55" column="91" selection-start-line="55" selection-start-column="91" selection-end-line="55" selection-end-column="91" />
         </state>
       </provider>
     </entry>
